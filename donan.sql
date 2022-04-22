@@ -409,7 +409,7 @@ INSERT [dbo].[Users] ([TenDangNhap], [Password],[MaNhanVien], [Quyen]) VALUES (N
 INSERT [dbo].[Users] ([TenDangNhap], [Password],[MaNhanVien], [Quyen]) VALUES (N'huy', N'huy','N2', 0)
 
 SET IDENTITY_INSERT [SanPham] ON
-INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (1, 1, N'Bàn phím cơ AKKO 3108 v2 World Tour Tokyo', 10, 1, 1590000.0000, 34,'')
+INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (1, 1,N'Bàn phím cơ AKKO 3108 v2 World Tour Tokyo', 10, 1, 1590000.0000, 34,'')
 INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (2, 2,N'Bàn phím cơ AKKO 3108 v2 DS Matcha Red Bean', 10, 1, 1590000.0000, 100,'')
 INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (3, 3,N'Bàn phím cơ AKKO 3098 DS Matcha Red Bean', 10, 1, 1590000.0000, 10,'')
 INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (4, 3,N'Intel Core i5 12600KF / 3.7GHz Turbo 4.9GHz / 10 Nhân 16 Luồng / 20MB / LGA 1700', 1, 3, 7990000.0000, 10,'')
