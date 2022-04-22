@@ -33,7 +33,7 @@ CREATE TABLE [dbo].[SanPham](
 	CONSTRAINT PK_SP PRIMARY KEY(MaSanPham))
 	
 CREATE TABLE [dbo].[PhieuNhap](
-	[MaPhieuNhap] nvarchar(25), 
+	[MaPhieuNhap] int IDENTITY(1,1), 
 	[MaNhanVien] nvarchar(25),
 	[MaNhaPhanPhoi] int,
 	[TongTien] [money],
@@ -171,7 +171,7 @@ END
 CREATE TRIGGER KT_NGAYNHAP ON PHIEUNHAP
 FOR INSERT, UPDATE
 AS
-	DECLARE @MAPN CHAR(10),@NGAYNHAP DATE
+	DECLARE @MAPN int,@NGAYNHAP DATE
 	IF NOT EXISTS (SELECT * FROM deleted)
 	BEGIN
 		SELECT @MAPN = MaPhieuNhap,@NGAYNHAP = NgayNhap
@@ -215,7 +215,7 @@ END
 CREATE TRIGGER KT_DKM ON DotKhuyenMai
 FOR INSERT, UPDATE
 AS
-	DECLARE @madot CHAR(10),@ngaybd DATE,@ngaykt DATE
+	DECLARE @madot int,@ngaybd DATE,@ngaykt DATE
 	IF NOT EXISTS (SELECT * FROM deleted)
 	BEGIN
 		SELECT @madot = MaDot,@ngaykt = NgayKT
@@ -264,7 +264,7 @@ create trigger cntien on [dbo].[ChiTietHoaDon]
 for insert
 as
 begin
-	declare @mahd int,@masp nchar(10),@gmail nvarchar(50),@sl int,@ngaydat date, @tiensp money,@tongtien money
+	declare @mahd int,@masp int,@gmail nvarchar(50),@sl int,@ngaydat date, @tiensp money,@tongtien money
 	set @mahd=(select MaHoaDon from inserted)
 	set @masp=(select MaSanPham from inserted)
 	set @gmail=(select Gmail from inserted)
@@ -279,7 +279,7 @@ create trigger cntt on [dbo].[ChiTietHoaDon]
 for insert
 as
 begin
-	declare @mahd int,@masp nchar(10),@gmail nvarchar(50),@sl int,@ngaydat date,@tiensp money,@tlgiam float,@madot int,@tongtt money
+	declare @mahd int,@masp int,@gmail nvarchar(50),@sl int,@ngaydat date,@tiensp money,@tlgiam float,@madot int,@tongtt money
 	set @mahd=(select MaHoaDon from inserted)
 	set @masp=(select MaSanPham from inserted)
 	set @gmail=(select Gmail from inserted)
@@ -305,7 +305,7 @@ create trigger mucgiam on [dbo].[ChiTietHoaDon]
 for insert
 as
 begin
-	declare @mahd int,@masp nchar(10),@gmail nvarchar(50),@sl int,@ngaydat date,@tiensp money,@tlgiam float,@madot int,@tongtt money
+	declare @mahd int,@masp int,@gmail nvarchar(50),@sl int,@ngaydat date,@tiensp money,@tlgiam float,@madot int,@tongtt money
 	set @mahd=(select MaHoaDon from inserted)
 	set @masp=(select MaSanPham from inserted)
 	set @gmail=(select Gmail from inserted)
@@ -417,13 +417,13 @@ INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham]
 INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (6, 3,N'Chuột Akko AG325', 3, 1, 490000.0000, 10,'')
 SET IDENTITY_INSERT [SanPham] OFF
 
-INSERT [dbo].[PhieuNhap] ([MaPhieuNhap], [MaNhanVien], [MaNhaPhanPhoi], [TongTien], [NgayNhap]) VALUES ('P1','N1',1,NULL,'16/3/2021')
-INSERT [dbo].[PhieuNhap] ([MaPhieuNhap], [MaNhanVien], [MaNhaPhanPhoi], [TongTien], [NgayNhap]) VALUES ('P2','N2',2,NULL,'16/3/2021')
-INSERT [dbo].[PhieuNhap] ([MaPhieuNhap], [MaNhanVien], [MaNhaPhanPhoi], [TongTien], [NgayNhap]) VALUES ('P3','N3',3,NULL,'16/3/2021')
+INSERT [dbo].[PhieuNhap] ([MaPhieuNhap], [MaNhanVien], [MaNhaPhanPhoi], [TongTien], [NgayNhap]) VALUES (1,'N1',1,NULL,'16/3/2021')
+INSERT [dbo].[PhieuNhap] ([MaPhieuNhap], [MaNhanVien], [MaNhaPhanPhoi], [TongTien], [NgayNhap]) VALUES (1,'N2',2,NULL,'16/3/2021')
+INSERT [dbo].[PhieuNhap] ([MaPhieuNhap], [MaNhanVien], [MaNhaPhanPhoi], [TongTien], [NgayNhap]) VALUES (1,'N3',3,NULL,'16/3/2021')
 
-INSERT [dbo].[ChiTietPhieuNhap] ([MaPhieuNhap], [MaSanPham], [SoLuong], [TienNhap]) VALUES ('P1', 1, 3, 7390000.0000)
-INSERT [dbo].[ChiTietPhieuNhap] ([MaPhieuNhap], [MaSanPham], [SoLuong], [TienNhap]) VALUES ('P2', 2, 43, 1800000.0000)
-INSERT [dbo].[ChiTietPhieuNhap] ([MaPhieuNhap], [MaSanPham], [SoLuong], [TienNhap]) VALUES ('P3', 3, 1, 1300000.0000)
+INSERT [dbo].[ChiTietPhieuNhap] ([MaPhieuNhap], [MaSanPham], [SoLuong], [TienNhap]) VALUES (1, 1, 3, 1590000.0000)
+INSERT [dbo].[ChiTietPhieuNhap] ([MaPhieuNhap], [MaSanPham], [SoLuong], [TienNhap]) VALUES (1, 2, 43, 1590000.0000)
+INSERT [dbo].[ChiTietPhieuNhap] ([MaPhieuNhap], [MaSanPham], [SoLuong], [TienNhap]) VALUES (1, 3, 1, 1590000.0000)
 
 INSERT [dbo].[KhachHang] ([Gmail], [Pass], [TenKhachHang], [Ngaysinh], [GioiTinh], [DiaChi], [SDT]) VALUES ('sonlaso1119@gmail.com','123',N'ĐỖ GIA HUY','25/1/2001',N'Nam',N'BÌNH TÂN TPHCM',0903714326)
 INSERT [dbo].[KhachHang] ([Gmail], [Pass], [TenKhachHang], [Ngaysinh], [GioiTinh], [DiaChi], [SDT]) VALUES ('sonlaso11119@gmail.com','123',N'NGUYỄN NGỌC SƠN','16/3/2001',N'Nam',N'LONG AN ',0906533337)
