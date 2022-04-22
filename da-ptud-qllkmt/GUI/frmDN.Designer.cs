@@ -30,13 +30,15 @@
         {
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::GUI.LoadForm), true, true);
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDangNhap
             // 
-            this.btnDangNhap.Location = new System.Drawing.Point(218, 134);
+            this.btnDangNhap.Location = new System.Drawing.Point(291, 165);
+            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(75, 23);
+            this.btnDangNhap.Size = new System.Drawing.Size(100, 28);
             this.btnDangNhap.TabIndex = 0;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
@@ -46,12 +48,23 @@
             // 
             this.splashScreenManager1.ClosingDelay = 500;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(291, 106);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frmDN
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 290);
+            this.ClientSize = new System.Drawing.Size(539, 357);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDangNhap);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmDN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDN";
@@ -63,5 +76,6 @@
 
         private System.Windows.Forms.Button btnDangNhap;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
+        private System.Windows.Forms.Button button1;
     }
 }
