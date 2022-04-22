@@ -12,3 +12,5 @@ C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\bin\Debug\BLL.pdb
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\bin\Debug\DTO.pdb
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmDN.resources
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.LoadForm.resources
+C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmTrangChu.resources
+C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.exe.licenses

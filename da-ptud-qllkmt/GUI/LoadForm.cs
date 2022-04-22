@@ -39,5 +39,10 @@ namespace GUI
         public enum WaitFormCommand
         {
         }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
