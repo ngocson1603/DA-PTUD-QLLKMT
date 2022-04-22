@@ -56,8 +56,8 @@ CREATE TABLE [dbo].[HangSanXuat](
 	CONSTRAINT PK_HSX PRIMARY KEY(MaHangSanXuat))
 
 CREATE TABLE [dbo].[ChiTietPhieuNhap](
-	[MaPhieuNhap] nvarchar(25),
-	[MaSanPham] nvarchar(25),
+	[MaPhieuNhap] int,
+	[MaSanPham] int,
 	[SoLuong] [int],
 	[TienNhap] [money],
 	CONSTRAINT PK_CTPN PRIMARY KEY(MaPhieuNhap,MaSanPham))
@@ -74,7 +74,7 @@ CREATE TABLE [dbo].[KhachHang](
 
 CREATE TABLE [dbo].[ChiTietHoaDon](
 	[MaHoaDon] int IDENTITY(1,1), 
-	[MaSanPham] [nvarchar](25),
+	[MaSanPham] int,
 	[Gmail] nvarchar(50),
 	[MucGiam] [money],
 	[SoLuong] [int],
@@ -440,7 +440,7 @@ INSERT [dbo].[ChiTietDotKhuyenMai] ([MaDot], [MaSanPham], [TiLeGiamGia]) VALUES 
 INSERT [dbo].[ChiTietDotKhuyenMai] ([MaDot], [MaSanPham], [TiLeGiamGia]) VALUES (2, 2,0.6)
 
 SET IDENTITY_INSERT [ChiTietHoaDon] ON
-INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [MucGiam], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon]) VALUES (1, 'S01','sonlaso1119@gmail.com', NULL, 5, 7890000.0000, NULL, '12/3/2021')
-INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [MucGiam], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon]) VALUES (2, 'S02','sonlaso1119@gmail.com',NULL, 6,  1890000.0000, NULL, '15/3/2021')
-INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [MucGiam], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon]) VALUES (3, 'S02','sonlaso1119@gmail.com', NULL, 8,  1890000.0000, NULL, '23/3/2021')
+INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [MucGiam], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon]) VALUES (1, 1,'sonlaso1119@gmail.com', NULL, 5, 7890000.0000, NULL, '12/3/2021')
+INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [MucGiam], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon]) VALUES (2, 2,'sonlaso1119@gmail.com',NULL, 6,  1890000.0000, NULL, '15/3/2021')
+INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [MucGiam], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon]) VALUES (3, 3,'sonlaso1119@gmail.com', NULL, 8,  1890000.0000, NULL, '23/3/2021')
 SET IDENTITY_INSERT [ChiTietHoaDon] OFF
