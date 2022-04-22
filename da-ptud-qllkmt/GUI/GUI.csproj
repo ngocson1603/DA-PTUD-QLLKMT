@@ -55,11 +55,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBanSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBanSanPham.Designer.cs">
+      <DependentUpon>frmBanSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDN.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDN.Designer.cs">
       <DependentUpon>frmDN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHienThiSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHienThiSanPham.Designer.cs">
+      <DependentUpon>frmHienThiSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKhachHang.Designer.cs">
+      <DependentUpon>frmKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLichSuMuaBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLichSuMuaBan.Designer.cs">
+      <DependentUpon>frmLichSuMuaBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhapLinhKien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhapLinhKien.Designer.cs">
+      <DependentUpon>frmNhapLinhKien.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTrangChu.cs">
       <SubType>Form</SubType>
@@ -75,8 +105,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBanSanPham.resx">
+      <DependentUpon>frmBanSanPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDN.resx">
       <DependentUpon>frmDN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHienThiSanPham.resx">
+      <DependentUpon>frmHienThiSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKhachHang.resx">
+      <DependentUpon>frmKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLichSuMuaBan.resx">
+      <DependentUpon>frmLichSuMuaBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhapLinhKien.resx">
+      <DependentUpon>frmNhapLinhKien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTrangChu.resx">
       <DependentUpon>frmTrangChu.cs</DependentUpon>
@@ -93,6 +138,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -106,6 +152,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nhap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thanhtoan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nhap1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thanhtoan1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nhap.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banra.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timkiem.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
