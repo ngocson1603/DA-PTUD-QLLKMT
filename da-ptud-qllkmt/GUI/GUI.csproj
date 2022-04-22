@@ -91,11 +91,29 @@
     <Compile Include="frmNhapLinhKien.Designer.cs">
       <DependentUpon>frmNhapLinhKien.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQLLinhKien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLLinhKien.Designer.cs">
+      <DependentUpon>frmQLLinhKien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongKe.Designer.cs">
+      <DependentUpon>frmThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmTrangChu.Designer.cs">
       <DependentUpon>frmTrangChu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTrangChuDanhChoNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTrangChuDanhChoNhanVien.Designer.cs">
+      <DependentUpon>frmTrangChuDanhChoNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="LoadForm.cs">
       <SubType>Form</SubType>
@@ -123,8 +141,17 @@
     <EmbeddedResource Include="frmNhapLinhKien.resx">
       <DependentUpon>frmNhapLinhKien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmQLLinhKien.resx">
+      <DependentUpon>frmQLLinhKien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongKe.resx">
+      <DependentUpon>frmThongKe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTrangChu.resx">
       <DependentUpon>frmTrangChu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTrangChuDanhChoNhanVien.resx">
+      <DependentUpon>frmTrangChuDanhChoNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoadForm.resx">
       <DependentUpon>LoadForm.cs</DependentUpon>
@@ -173,6 +200,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\timkiem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excek.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\capnhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taikhoan.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hienthi.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nhap1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hienthi1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lichsumuaban.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thongketimkiem.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lienhe.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\capnhat1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nhapvao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dangxuat.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
