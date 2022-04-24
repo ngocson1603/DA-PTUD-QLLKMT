@@ -14,3 +14,11 @@ C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmDN.res
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.LoadForm.resources
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmTrangChu.resources
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.exe.licenses
+C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmBanSanPham.resources
+C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmHienThiSanPham.resources
+C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmKhachHang.resources
+C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmLichSuMuaBan.resources
+C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmNhapLinhKien.resources
+C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmQLLinhKien.resources
+C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmThongKe.resources
+C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmTrangChuDanhChoNhanVien.resources
