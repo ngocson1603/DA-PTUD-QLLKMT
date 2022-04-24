@@ -18,7 +18,7 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void btnDangNhap_Click(object sender, EventArgs e)
+        private void gunardangnhap_Click(object sender, EventArgs e)
         {
             splashScreenManager1.ShowWaitForm();
             Thread.Sleep(1000);
@@ -26,6 +26,16 @@ namespace GUI
             frmTrangChu frm = new frmTrangChu();
             frm.Show();
             this.Hide();
+        }
+
+        private void gunathoat_Click(object sender, EventArgs e)
+        {
+            DialogResult a = MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Asterisk);
+            if (a == DialogResult.Yes)
+            {
+
+                Close();
+            }
         }
     }
 }
