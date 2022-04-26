@@ -37,24 +37,24 @@ namespace GUI.UserControls
         private void pictureHinh_Click(object sender, EventArgs e)
         {
             ten = lblTenSanPham.Text;
-            FlowLayoutPanel pnl = this.Parent as FlowLayoutPanel;
+            Panel pnl = this.Parent as Panel;
             Form frm1 = pnl.Parent as Form;
             frm1.Close();
 
             
-            frmDetailProduct frm = new frmDetailProduct();
-            frm.Show();
+            //frmDetailProduct frm = new frmDetailProduct();
+            //frm.Show();
 
 
-
+            
             
 
             //frmTrangChu frmTC = new frmTrangChu();
             //frmTC.motrangcon(new frmDetailProduct());
 
-            // pnl.Controls.Clear();
+             //pnl.Controls.Clear();
 
-            // hp.LoadChildForm(new frmDetailProduct(), pnl);
+             hp.LoadChildForm(new frmDetailProduct(), pnl);
         }
     }
 }
