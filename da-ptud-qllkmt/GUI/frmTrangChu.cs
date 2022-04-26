@@ -18,6 +18,24 @@ namespace GUI
             InitializeComponent();
         }
 
+        public Form currentchildform;
+        public void motrangcon(Form trangcon)
+        {
+            if (currentchildform != null)
+            {
+                currentchildform.Close();
+
+            }
+            currentchildform = trangcon;
+            trangcon.TopLevel = false;
+            trangcon.FormBorderStyle = FormBorderStyle.None;
+            trangcon.Dock = DockStyle.Fill;
+            panel1.Controls.Add(trangcon);
+            panel1.Tag = trangcon;
+            trangcon.BringToFront();
+            trangcon.Show();
+        }
+
         private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
         {
             DialogResult a = MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Asterisk);
@@ -36,6 +54,12 @@ namespace GUI
                 frmDN f = new frmDN();
                 f.Show();
             }
+        }
+
+        private void barButtonItem9_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            panel1.Controls.Clear();
+            motrangcon(new frmProductList());
         }
     }
 }

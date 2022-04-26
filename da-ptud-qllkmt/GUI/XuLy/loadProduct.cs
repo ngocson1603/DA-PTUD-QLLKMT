@@ -15,10 +15,11 @@ namespace GUI.XuLy
         public loadProduct()
         {
             LoadSP();
+            LoadSPDetail();
         }
         public void LoadSP()
         {
-            string caulenh = "select TenSanPham,Image from SanPham";
+            string caulenh = "select Image,TenSanPham from SanPham";
 
             SqlDataAdapter ds_sv = new SqlDataAdapter(caulenh, conn);
 
@@ -35,6 +36,27 @@ namespace GUI.XuLy
         public DataTable LoadDLSP()
         {
             return ds_SinhVien.Tables["SanPham"];
+        }
+
+        public void LoadSPDetail()
+        {
+            string caulenh = "select TenSanPham,TenLoaiSanPham,TenHangSanXuat,GiaBan,TonKho,Image from SanPham,LoaiSanPham,HangSanXuat where SanPham.HangSanXuat = HangSanXuat.MaHangSanXuat and SanPham.LoaiSanPham = LoaiSanPham.MaLoaiSanPham and TenSanPham = N'"+UserControls.listProduct.ten+"'";
+
+            SqlDataAdapter ds_sv = new SqlDataAdapter(caulenh, conn);
+
+            ds_sv.Fill(ds_SinhVien, "SanPhamDetail");
+            DataColumn[] key = new DataColumn[1];
+
+            key[0] = ds_SinhVien.Tables["SanPhamDetail"].Columns[0];
+
+            ds_SinhVien.Tables["SanPhamDetail"].PrimaryKey = key;
+        }
+
+
+
+        public DataTable LoadDLSPDetail()
+        {
+            return ds_SinhVien.Tables["SanPhamDetail"];
         }
     }
 }
