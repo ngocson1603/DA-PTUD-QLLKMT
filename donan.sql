@@ -29,7 +29,7 @@ CREATE TABLE [dbo].[SanPham](
 	[HangSanXuat] int,
 	[GiaBan] [money],
 	[TonKho] [int] NOT NULL,
-	[Image] image NULL CONSTRAINT [DF_SanPham_image]  DEFAULT (''),
+	[Image] nvarchar(100)
 	CONSTRAINT PK_SP PRIMARY KEY(MaSanPham))
 	
 CREATE TABLE [dbo].[PhieuNhap](
@@ -393,6 +393,8 @@ INSERT [dbo].[HangSanXuat] ([MaHangSanXuat], [TenHangSanXuat]) VALUES (2, N'Sams
 INSERT [dbo].[HangSanXuat] ([MaHangSanXuat], [TenHangSanXuat]) VALUES (3, N'Intel')
 INSERT [dbo].[HangSanXuat] ([MaHangSanXuat], [TenHangSanXuat]) VALUES (4, N'AMD')
 INSERT [dbo].[HangSanXuat] ([MaHangSanXuat], [TenHangSanXuat]) VALUES (5, N'Acer')
+INSERT [dbo].[HangSanXuat] ([MaHangSanXuat], [TenHangSanXuat]) VALUES (6, N'Asus')
+INSERT [dbo].[HangSanXuat] ([MaHangSanXuat], [TenHangSanXuat]) VALUES (7, N'Gigabyte')
 SET IDENTITY_INSERT [HangSanXuat] OFF
 
 SET IDENTITY_INSERT [ChucVu] ON
@@ -409,17 +411,19 @@ INSERT [dbo].[Users] ([TenDangNhap], [Password],[MaNhanVien], [Quyen]) VALUES (N
 INSERT [dbo].[Users] ([TenDangNhap], [Password],[MaNhanVien], [Quyen]) VALUES (N'huy', N'huy','N2', 0)
 
 SET IDENTITY_INSERT [SanPham] ON
-INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (1, 1,N'Bàn phím cơ AKKO 3108 v2 World Tour Tokyo', 10, 1, 1590000.0000, 34,'')
-INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (2, 2,N'Bàn phím cơ AKKO 3108 v2 DS Matcha Red Bean', 10, 1, 1590000.0000, 100,'')
-INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (3, 3,N'Bàn phím cơ AKKO 3098 DS Matcha Red Bean', 10, 1, 1590000.0000, 10,'')
-INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (4, 3,N'Intel Core i5 12600KF / 3.7GHz Turbo 4.9GHz / 10 Nhân 16 Luồng / 20MB / LGA 1700', 1, 3, 7990000.0000, 10,'')
-INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (5, 3,N'Laptop gaming Acer Predator Helios 300 PH315 54 99S6', 7, 5, 41990000.0000, 10,'')
-INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (6, 3,N'Chuột Akko AG325', 3, 1, 490000.0000, 10,'')
+INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (1, 1,N'Bàn phím cơ AKKO', 10, 1, 1590000.0000, 34,'ban-phim-co-akko-3108-v2-world-tour-tokyo.jpg')
+INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (2, 2,N'Bàn phím cơ Asus', 10, 6, 1590000.0000, 100,'akko-3108-ds-matcha-red-bean-01.jpg')
+INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (3, 3,N'Nguồn GIGABYTE P1000GM', 8, 7, 4290000.0000, 10,'PSU_GG_GP-P1000GM-5.jpg')
+INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (4, 3,N'Intel Core i5 12600KF', 1, 3, 7990000.0000, 10,'intelcorei5-12600k.jpg')
+INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (5, 3,N'Laptop gaming Acer Predator Helios', 7, 5, 41990000.0000, 10,'62709_laptop_acer_gaming_predator_helios_500_12.jpg')
+INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (6, 3,N'Chuột Akko AG325', 3, 1, 490000.0000, 10,'akkoag325pink.jpg')
 SET IDENTITY_INSERT [SanPham] OFF
 
+SET IDENTITY_INSERT [PhieuNhap] ON
 INSERT [dbo].[PhieuNhap] ([MaPhieuNhap], [MaNhanVien], [MaNhaPhanPhoi], [TongTien], [NgayNhap]) VALUES (1,'N1',1,NULL,'16/3/2021')
 INSERT [dbo].[PhieuNhap] ([MaPhieuNhap], [MaNhanVien], [MaNhaPhanPhoi], [TongTien], [NgayNhap]) VALUES (2,'N2',2,NULL,'16/3/2021')
 INSERT [dbo].[PhieuNhap] ([MaPhieuNhap], [MaNhanVien], [MaNhaPhanPhoi], [TongTien], [NgayNhap]) VALUES (3,'N3',3,NULL,'16/3/2021')
+SET IDENTITY_INSERT [PhieuNhap] OFF
 
 INSERT [dbo].[ChiTietPhieuNhap] ([MaPhieuNhap], [MaSanPham], [SoLuong], [TienNhap]) VALUES (1, 1, 3, 1590000.0000)
 INSERT [dbo].[ChiTietPhieuNhap] ([MaPhieuNhap], [MaSanPham], [SoLuong], [TienNhap]) VALUES (2, 2, 43, 1590000.0000)
@@ -435,12 +439,12 @@ INSERT [dbo].[DotKhuyenMai] ([MaDot], [NgayBD], [NgayKT]) VALUES (2,'17/3/2021',
 INSERT [dbo].[DotKhuyenMai] ([MaDot], [NgayBD], [NgayKT]) VALUES (3, '22/3/2021', '27/3/2021')
 SET IDENTITY_INSERT [DotKhuyenMai] OFF
 
-INSERT [dbo].[ChiTietDotKhuyenMai] ([MaDot], [MaSanPham], [TiLeGiamGia]) VALUES (1, 1,0.5)
-INSERT [dbo].[ChiTietDotKhuyenMai] ([MaDot], [MaSanPham], [TiLeGiamGia]) VALUES (2, 1,0.6)
-INSERT [dbo].[ChiTietDotKhuyenMai] ([MaDot], [MaSanPham], [TiLeGiamGia]) VALUES (2, 2,0.6)
-
 SET IDENTITY_INSERT [ChiTietHoaDon] ON
 INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [MucGiam], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon]) VALUES (1, 1,'sonlaso1119@gmail.com', NULL, 5, 7890000.0000, NULL, '12/3/2021')
 INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [MucGiam], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon]) VALUES (2, 2,'sonlaso1119@gmail.com',NULL, 6,  1890000.0000, NULL, '15/3/2021')
 INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [MucGiam], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon]) VALUES (3, 3,'sonlaso1119@gmail.com', NULL, 8,  1890000.0000, NULL, '23/3/2021')
 SET IDENTITY_INSERT [ChiTietHoaDon] OFF
+
+INSERT [dbo].[ChiTietDotKhuyenMai] ([MaDot], [MaSanPham], [TiLeGiamGia]) VALUES (1, 1,0.5)
+INSERT [dbo].[ChiTietDotKhuyenMai] ([MaDot], [MaSanPham], [TiLeGiamGia]) VALUES (2, 1,0.6)
+INSERT [dbo].[ChiTietDotKhuyenMai] ([MaDot], [MaSanPham], [TiLeGiamGia]) VALUES (2, 2,0.6)
