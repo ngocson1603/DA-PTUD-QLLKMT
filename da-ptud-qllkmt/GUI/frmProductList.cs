@@ -60,16 +60,16 @@ namespace GUI
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            int tensp;
-            bool b = int.TryParse(txtTimKiem.Text, out tensp);
-            if (b)
+            string a = txtTimKiem.Text;
+            if (a.Length > 0)
             {
-                var orders = (from s in dsSP where s.TenSP.ToLower().Contains(tensp.ToString()) select s).ToList();
+                var orders = (from s in dsSP where s.TenSP.Contains(a.ToString()) select s).ToList();
                 flowLayoutPanel1.Controls.Clear();
                 AddProDuct(orders);
             }
             else if (txtTimKiem.Text.Length == 0)
             {
+                flowLayoutPanel1.Controls.Clear();
                 AddProDuct(dsSP);
             }
             else

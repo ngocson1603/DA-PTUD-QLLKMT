@@ -46,18 +46,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 213);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(38, 213);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.Size = new System.Drawing.Size(106, 15);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Tên sản phẩm";
+            this.label1.Text = "Tên sản phẩm :";
             // 
             // lblTenSanPham
             // 
             this.lblTenSanPham.AutoSize = true;
-            this.lblTenSanPham.Location = new System.Drawing.Point(108, 213);
+            this.lblTenSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lblTenSanPham.Location = new System.Drawing.Point(142, 213);
             this.lblTenSanPham.Name = "lblTenSanPham";
-            this.lblTenSanPham.Size = new System.Drawing.Size(82, 13);
+            this.lblTenSanPham.Size = new System.Drawing.Size(96, 15);
             this.lblTenSanPham.TabIndex = 2;
             this.lblTenSanPham.Text = "lblTenSanPham";
             // 

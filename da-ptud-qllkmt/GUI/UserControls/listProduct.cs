@@ -38,29 +38,11 @@ namespace GUI.UserControls
         {
             ten = lblTenSanPham.Text;
             Panel pnl = this.Parent as Panel;
-            Form frm1 = pnl.Parent as Form;
-            frm1.Close();
-
-            
-            //Form frm2 = frm.Parent as Form;
-
-            
+            //Form frm1 = pnl.Parent as Form;
+            //frm1.Close();
 
             frmDetailProduct frm = new frmDetailProduct();
-            //frm.Show();
-            //pnl.Controls.Add(frm);
             hp.LoadChildForm(frm,frmTrangChu.pnltrang);
-
-
-            
-            
-
-            //frmTrangChu frmTC = new frmTrangChu();
-            //frmTC.motrangcon(new frmDetailProduct());
-
-             //pnl.Controls.Clear();
-
-             //hp.LoadChildForm(new frmDetailProduct(), pnl);
         }
     }
 }
