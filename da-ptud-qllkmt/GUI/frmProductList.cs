@@ -54,8 +54,8 @@ namespace GUI
                 flowLayoutPanel1.Controls.Add(u);
                 y += u.Height;
             }
-            flowLayoutPanel1.Height = y;
-            this.Height = y + 80;
+            //flowLayoutPanel1.Height = y;
+            //this.Height = y + 80;
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
