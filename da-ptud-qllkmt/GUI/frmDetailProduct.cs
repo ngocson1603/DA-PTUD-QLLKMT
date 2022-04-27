@@ -59,10 +59,11 @@ namespace GUI
                 u.Size = new System.Drawing.Size(1032, 661);
                 u.TabIndex = i++;
                 u.AddProducts(s);
+                u.Dock = DockStyle.Fill;
                 panel1.Controls.Add(u);
                 y += u.Height;
             }
-            panel1.Height = y;
+            //panel1.Height = y;
             //this.Height = y + 80;
         }
 
