@@ -36,5 +36,16 @@ namespace GUI.UserControls
             string direct = hp.Directory() + s.Hinh;
             pictureDetailSP.Image = GetImg(direct, pictureDetailSP.Width, pictureDetailSP.Height);       
         }
+
+        private void gunathoat_Click(object sender, EventArgs e)
+        {
+            Panel pnl = this.Parent as Panel;
+            Form frm1 = pnl.Parent as Form;
+            frm1.Close();
+
+
+            frmProductList frm = new frmProductList();
+            hp.LoadChildForm(frm, frmTrangChu.pnltrang);
+        }
     }
 }

@@ -42,8 +42,14 @@ namespace GUI.UserControls
             frm1.Close();
 
             
-            //frmDetailProduct frm = new frmDetailProduct();
+            //Form frm2 = frm.Parent as Form;
+
+            
+
+            frmDetailProduct frm = new frmDetailProduct();
             //frm.Show();
+            //pnl.Controls.Add(frm);
+            hp.LoadChildForm(frm,frmTrangChu.pnltrang);
 
 
             
@@ -54,7 +60,7 @@ namespace GUI.UserControls
 
              //pnl.Controls.Clear();
 
-             hp.LoadChildForm(new frmDetailProduct(), pnl);
+             //hp.LoadChildForm(new frmDetailProduct(), pnl);
         }
     }
 }

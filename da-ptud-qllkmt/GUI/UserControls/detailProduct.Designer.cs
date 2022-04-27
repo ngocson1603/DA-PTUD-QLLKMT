@@ -30,19 +30,19 @@ namespace GUI.UserControls
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTonkho = new System.Windows.Forms.Label();
+            this.lblGiaBan = new System.Windows.Forms.Label();
+            this.lblTenHang = new System.Windows.Forms.Label();
+            this.lblTenLoai = new System.Windows.Forms.Label();
+            this.lblTenSanPham = new System.Windows.Forms.Label();
+            this.gunathoat = new Guna.UI2.WinForms.Guna2Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureDetailSP = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureDetailSP = new System.Windows.Forms.PictureBox();
-            this.gunathoat = new Guna.UI2.WinForms.Guna2Button();
-            this.lblTenSanPham = new System.Windows.Forms.Label();
-            this.lblTenLoai = new System.Windows.Forms.Label();
-            this.lblTenHang = new System.Windows.Forms.Label();
-            this.lblGiaBan = new System.Windows.Forms.Label();
-            this.lblTonkho = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDetailSP)).BeginInit();
             this.SuspendLayout();
@@ -69,79 +69,60 @@ namespace GUI.UserControls
             this.panel1.Size = new System.Drawing.Size(1032, 661);
             this.panel1.TabIndex = 0;
             // 
-            // label2
+            // lblTonkho
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label2.Location = new System.Drawing.Point(68, 167);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 20);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Tên sản phẩm :";
+            this.lblTonkho.AutoSize = true;
+            this.lblTonkho.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTonkho.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblTonkho.Location = new System.Drawing.Point(237, 474);
+            this.lblTonkho.Name = "lblTonkho";
+            this.lblTonkho.Size = new System.Drawing.Size(65, 20);
+            this.lblTonkho.TabIndex = 25;
+            this.lblTonkho.Text = "Còn lại :";
             // 
-            // label1
+            // lblGiaBan
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(235, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(268, 31);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Thông Tin Sản Phẩm";
+            this.lblGiaBan.AutoSize = true;
+            this.lblGiaBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGiaBan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblGiaBan.Location = new System.Drawing.Point(237, 396);
+            this.lblGiaBan.Name = "lblGiaBan";
+            this.lblGiaBan.Size = new System.Drawing.Size(65, 20);
+            this.lblGiaBan.TabIndex = 24;
+            this.lblGiaBan.Text = "Còn lại :";
             // 
-            // label3
+            // lblTenHang
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label3.Location = new System.Drawing.Point(68, 246);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 20);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Loại :";
+            this.lblTenHang.AutoSize = true;
+            this.lblTenHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblTenHang.Location = new System.Drawing.Point(237, 319);
+            this.lblTenHang.Name = "lblTenHang";
+            this.lblTenHang.Size = new System.Drawing.Size(65, 20);
+            this.lblTenHang.TabIndex = 23;
+            this.lblTenHang.Text = "Còn lại :";
             // 
-            // label4
+            // lblTenLoai
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label4.Location = new System.Drawing.Point(68, 319);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 20);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Hãng :";
+            this.lblTenLoai.AutoSize = true;
+            this.lblTenLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenLoai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblTenLoai.Location = new System.Drawing.Point(237, 246);
+            this.lblTenLoai.Name = "lblTenLoai";
+            this.lblTenLoai.Size = new System.Drawing.Size(65, 20);
+            this.lblTenLoai.TabIndex = 22;
+            this.lblTenLoai.Text = "Còn lại :";
             // 
-            // label5
+            // lblTenSanPham
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label5.Location = new System.Drawing.Point(68, 396);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 20);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Giá bán :";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label6.Location = new System.Drawing.Point(68, 474);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 20);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Còn lại :";
-            // 
-            // pictureDetailSP
-            // 
-            this.pictureDetailSP.Location = new System.Drawing.Point(648, 167);
-            this.pictureDetailSP.Name = "pictureDetailSP";
-            this.pictureDetailSP.Size = new System.Drawing.Size(368, 375);
-            this.pictureDetailSP.TabIndex = 15;
-            this.pictureDetailSP.TabStop = false;
+            this.lblTenSanPham.AutoSize = true;
+            this.lblTenSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblTenSanPham.Location = new System.Drawing.Point(237, 167);
+            this.lblTenSanPham.Name = "lblTenSanPham";
+            this.lblTenSanPham.Size = new System.Drawing.Size(65, 20);
+            this.lblTenSanPham.TabIndex = 21;
+            this.lblTenSanPham.Text = "Còn lại :";
             // 
             // gunathoat
             // 
@@ -164,61 +145,81 @@ namespace GUI.UserControls
             this.gunathoat.TabIndex = 20;
             this.gunathoat.Text = "Thoát";
             this.gunathoat.UseTransparentBackground = true;
+            this.gunathoat.Click += new System.EventHandler(this.gunathoat_Click);
             // 
-            // lblTenSanPham
+            // label6
             // 
-            this.lblTenSanPham.AutoSize = true;
-            this.lblTenSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lblTenSanPham.Location = new System.Drawing.Point(237, 167);
-            this.lblTenSanPham.Name = "lblTenSanPham";
-            this.lblTenSanPham.Size = new System.Drawing.Size(65, 20);
-            this.lblTenSanPham.TabIndex = 21;
-            this.lblTenSanPham.Text = "Còn lại :";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label6.Location = new System.Drawing.Point(68, 474);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 20);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Còn lại :";
             // 
-            // lblTenLoai
+            // label5
             // 
-            this.lblTenLoai.AutoSize = true;
-            this.lblTenLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenLoai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lblTenLoai.Location = new System.Drawing.Point(237, 246);
-            this.lblTenLoai.Name = "lblTenLoai";
-            this.lblTenLoai.Size = new System.Drawing.Size(65, 20);
-            this.lblTenLoai.TabIndex = 22;
-            this.lblTenLoai.Text = "Còn lại :";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label5.Location = new System.Drawing.Point(68, 396);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 20);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Giá bán :";
             // 
-            // lblTenHang
+            // label4
             // 
-            this.lblTenHang.AutoSize = true;
-            this.lblTenHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lblTenHang.Location = new System.Drawing.Point(237, 319);
-            this.lblTenHang.Name = "lblTenHang";
-            this.lblTenHang.Size = new System.Drawing.Size(65, 20);
-            this.lblTenHang.TabIndex = 23;
-            this.lblTenHang.Text = "Còn lại :";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label4.Location = new System.Drawing.Point(68, 319);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 20);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Hãng :";
             // 
-            // lblGiaBan
+            // label3
             // 
-            this.lblGiaBan.AutoSize = true;
-            this.lblGiaBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGiaBan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lblGiaBan.Location = new System.Drawing.Point(237, 396);
-            this.lblGiaBan.Name = "lblGiaBan";
-            this.lblGiaBan.Size = new System.Drawing.Size(65, 20);
-            this.lblGiaBan.TabIndex = 24;
-            this.lblGiaBan.Text = "Còn lại :";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label3.Location = new System.Drawing.Point(68, 246);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 20);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Loại :";
             // 
-            // lblTonkho
+            // pictureDetailSP
             // 
-            this.lblTonkho.AutoSize = true;
-            this.lblTonkho.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTonkho.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lblTonkho.Location = new System.Drawing.Point(237, 474);
-            this.lblTonkho.Name = "lblTonkho";
-            this.lblTonkho.Size = new System.Drawing.Size(65, 20);
-            this.lblTonkho.TabIndex = 25;
-            this.lblTonkho.Text = "Còn lại :";
+            this.pictureDetailSP.Location = new System.Drawing.Point(648, 167);
+            this.pictureDetailSP.Name = "pictureDetailSP";
+            this.pictureDetailSP.Size = new System.Drawing.Size(368, 375);
+            this.pictureDetailSP.TabIndex = 15;
+            this.pictureDetailSP.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label2.Location = new System.Drawing.Point(68, 167);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(118, 20);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Tên sản phẩm :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(235, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(268, 31);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Thông Tin Sản Phẩm";
             // 
             // detailProduct
             // 

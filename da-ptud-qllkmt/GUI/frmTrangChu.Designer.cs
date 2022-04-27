@@ -80,7 +80,7 @@
             this.ribbonPage3,
             this.ribbonPage4});
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
-            this.ribbon.Size = new System.Drawing.Size(939, 143);
+            this.ribbon.Size = new System.Drawing.Size(1201, 143);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // barButtonItem1
@@ -223,24 +223,24 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 578);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 693);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(939, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1201, 31);
             // 
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 143);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(939, 435);
+            this.panel1.Size = new System.Drawing.Size(1201, 550);
             this.panel1.TabIndex = 2;
             // 
             // frmTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(939, 609);
+            this.ClientSize = new System.Drawing.Size(1201, 724);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);

@@ -16,7 +16,10 @@ namespace GUI
         public frmTrangChu()
         {
             InitializeComponent();
+            pnltrang = panel1;
         }
+
+        public static Panel pnltrang;
 
         public Form currentchildform;
         public void motrangcon(Form trangcon)

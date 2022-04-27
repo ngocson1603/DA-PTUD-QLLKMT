@@ -47,6 +47,7 @@ namespace GUI
             this.ClientSize = new System.Drawing.Size(1029, 622);
             this.Controls.Add(this.panel1);
             this.Name = "frmDetailProduct";
+            this.Tag = "";
             this.Text = "frmDetailProduct";
             this.Load += new System.EventHandler(this.frmDetailProduct_Load);
             this.ResumeLayout(false);
