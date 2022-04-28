@@ -76,28 +76,11 @@ CREATE TABLE [dbo].[ChiTietHoaDon](
 	[MaHoaDon] int IDENTITY(1,1), 
 	[MaSanPham] int,
 	[Gmail] nvarchar(50),
-	[MucGiam] [money],
 	[SoLuong] [int],
 	[TongTien] [money],
 	[TongTienHoaDon] [money],
 	[NgayLapHoaDon] [date],
 	CONSTRAINT PK_CTHOADON PRIMARY KEY(MaHoaDon))
-
-CREATE TABLE [dbo].[DotKhuyenMai]
-(
-	[MaDot] int IDENTITY(1,1), 
-	[NgayBD] DATE,
-	[NgayKT] DATE,
-	CONSTRAINT PK_DOTKM PRIMARY KEY(MaDot)
-)
-
-CREATE TABLE [dbo].[ChiTietDotKhuyenMai]
-(
-	[MaDot] int,
-	[MaSanPham] int,
-	[TiLeGiamGia] float,
-	CONSTRAINT PK_CTDKM PRIMARY KEY (MaDot,MaSanPham)
-)
 
 CREATE TABLE [dbo].[Users](
 	[TenDangNhap] [varchar](50) NOT NULL,
@@ -124,10 +107,6 @@ ALTER TABLE [dbo].[ChiTietPhieuNhap]
 ADD CONSTRAINT FK_CTPN_PN FOREIGN KEY(MaPhieuNhap) REFERENCES [dbo].[PhieuNhap](MaPhieuNhap)
 ALTER TABLE [dbo].[ChiTietPhieuNhap]
 ADD CONSTRAINT FK_CTPN_SP FOREIGN KEY(MaSanPham) REFERENCES [dbo].[SanPham](MaSanPham)
-ALTER TABLE [dbo].[ChiTietDotKhuyenMai]
-ADD CONSTRAINT FK_CTDKM_DKM FOREIGN KEY(MaDot) REFERENCES [dbo].[DotKhuyenMai](MaDot)
-ALTER TABLE [dbo].[ChiTietDotKhuyenMai]
-ADD CONSTRAINT FK_CTDKM_SP FOREIGN KEY(MaSanPham) REFERENCES [dbo].[SanPham](MaSanPham)
 ALTER TABLE [dbo].[ChiTietHoaDon]
 ADD CONSTRAINT FK_CT_HOADON_SANPHAM FOREIGN KEY(MaSanPham) REFERENCES [dbo].[SanPham](MaSanPham)
 ALTER TABLE [dbo].[ChiTietHoaDon]
@@ -211,54 +190,6 @@ AS
 		END
 	END
 END
---Ngày BD trước Ngày KT [ChiTietDKM]
-CREATE TRIGGER KT_DKM ON DotKhuyenMai
-FOR INSERT, UPDATE
-AS
-	DECLARE @madot int,@ngaybd DATE,@ngaykt DATE
-	IF NOT EXISTS (SELECT * FROM deleted)
-	BEGIN
-		SELECT @madot = MaDot,@ngaykt = NgayKT
-		FROM inserted
-		SELECT @ngaybd = NgayBD
-		FROM DotKhuyenMai
-		WHERE MaDot = @madot
-		IF(@ngaykt<@ngaybd)
-		BEGIN
-			RAISERROR (N'Ngày kết thúc phải sau ngày bắt đầu',16,1)
-			ROLLBACK
-			RETURN
-		END
-		IF DATEDIFF(DD,@ngaybd,@ngaykt) > 30
-		BEGIN
-			RAISERROR (N'Ngày kết thúc - ngày bắt đầu <= 30 ngày',16,1)
-			ROLLBACK
-			RETURN
-		END
-	END
-	ELSE
-	BEGIN
-		IF UPDATE(NgayKT)
-		BEGIN
-		SELECT @madot = MaDot,@ngaykt = NgayKT
-		FROM inserted
-		SELECT @ngaybd = NgayBD
-		FROM DotKhuyenMai
-		WHERE MaDot = @madot
-		IF(@ngaykt<@ngaybd)
-		BEGIN
-			RAISERROR (N'Ngày kết thúc phải sau ngày bắt đầu',16,1)
-			ROLLBACK
-			RETURN
-		END
-		IF DATEDIFF(DD,@ngaybd,@ngaykt) > 30
-		BEGIN
-			RAISERROR (N'Ngày kết thúc - ngày bắt đầu <= 30 ngày',16,1)
-			ROLLBACK
-			RETURN
-		END
-	END
-END
 --------------------tính tiền
 create trigger cntien on [dbo].[ChiTietHoaDon]
 for insert
@@ -273,58 +204,6 @@ begin
 	set @tiensp=(select GiaBan from SanPham where MaSanPham=@masp)
 	update [dbo].[ChiTietHoaDon]
 	set TongTien=@tiensp where MaSanPham=@masp
-end
-
-create trigger cntt on [dbo].[ChiTietHoaDon]
-for insert
-as
-begin
-	declare @mahd int,@masp int,@gmail nvarchar(50),@sl int,@ngaydat date,@tiensp money,@tlgiam float,@madot int,@tongtt money
-	set @mahd=(select MaHoaDon from inserted)
-	set @masp=(select MaSanPham from inserted)
-	set @gmail=(select Gmail from inserted)
-	set @sl=(select SoLuong from inserted)
-	set @ngaydat=(select NgayLapHoaDon from inserted)
-	set @tiensp=(select GiaBan from SanPham where MaSanPham=@masp)
-	set @madot=(select MaDot from DotKhuyenMai where @ngaydat between NgayBD and NgayKT)
-	set @tlgiam=(select TiLeGiamGia from ChiTietDotKhuyenMai where MaDot=@madot and MaSanPham=@masp)
-	if(@tlgiam is null)
-	begin
-		set @tlgiam=1
-	end
-	else
-	begin
-		set @tlgiam=@tlgiam
-	end
-	set @tongtt=(@sl*@tiensp*@tlgiam)
-	update [dbo].[ChiTietHoaDon]
-	set TongTienHoaDon=@tongtt where MaSanPham=@masp
-end
-
-create trigger mucgiam on [dbo].[ChiTietHoaDon]
-for insert
-as
-begin
-	declare @mahd int,@masp int,@gmail nvarchar(50),@sl int,@ngaydat date,@tiensp money,@tlgiam float,@madot int,@tongtt money
-	set @mahd=(select MaHoaDon from inserted)
-	set @masp=(select MaSanPham from inserted)
-	set @gmail=(select Gmail from inserted)
-	set @sl=(select SoLuong from inserted)
-	set @ngaydat=(select NgayLapHoaDon from inserted)
-	set @tiensp=(select GiaBan from SanPham where MaSanPham=@masp)
-	set @madot=(select MaDot from DotKhuyenMai where @ngaydat between NgayBD and NgayKT)
-	set @tlgiam=(select TiLeGiamGia from ChiTietDotKhuyenMai where MaDot=@madot and MaSanPham=@masp)
-	if(@tlgiam is null)
-	begin
-		set @tlgiam=1
-	end
-	else
-	begin
-		set @tlgiam=@tlgiam
-	end
-	set @tongtt=((@sl*@tiensp) - (@sl*@tiensp*@tlgiam))
-	update [dbo].[ChiTietHoaDon]
-	set MucGiam=@tongtt where MaHoaDon=@mahd
 end
 --tự động giảm khi tạo hóa đơn
 go
@@ -435,18 +314,8 @@ INSERT [dbo].[KhachHang] ([Gmail], [Pass], [TenKhachHang], [Ngaysinh], [GioiTinh
 INSERT [dbo].[KhachHang] ([Gmail], [Pass], [TenKhachHang], [Ngaysinh], [GioiTinh], [DiaChi], [SDT]) VALUES ('sonlaso11119@gmail.com','123',N'NGUYỄN NGỌC SƠN','16/3/2001',N'Nam',N'LONG AN ',0906533337)
 INSERT [dbo].[KhachHang] ([Gmail], [Pass], [TenKhachHang], [Ngaysinh], [GioiTinh], [DiaChi], [SDT]) VALUES ('sonlaso111119@gmail.com','123',N'NGUYỄN MINH TRUNG HIẾU','12/6/2001',N'Nam',N'BÌNH DƯƠNG ',0902114326)
 
-SET IDENTITY_INSERT [DotKhuyenMai] ON
-INSERT [dbo].[DotKhuyenMai] ([MaDot], [NgayBD], [NgayKT]) VALUES (1, '11/3/2021', '16/3/2021')
-INSERT [dbo].[DotKhuyenMai] ([MaDot], [NgayBD], [NgayKT]) VALUES (2,'17/3/2021', '20/3/2021')
-INSERT [dbo].[DotKhuyenMai] ([MaDot], [NgayBD], [NgayKT]) VALUES (3, '22/3/2021', '27/3/2021')
-SET IDENTITY_INSERT [DotKhuyenMai] OFF
-
 SET IDENTITY_INSERT [ChiTietHoaDon] ON
-INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [MucGiam], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon]) VALUES (1, 1,'sonlaso1119@gmail.com', NULL, 5, 7890000.0000, NULL, '12/3/2021')
-INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [MucGiam], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon]) VALUES (2, 2,'sonlaso1119@gmail.com',NULL, 6,  1890000.0000, NULL, '15/3/2021')
-INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [MucGiam], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon]) VALUES (3, 3,'sonlaso1119@gmail.com', NULL, 8,  1890000.0000, NULL, '23/3/2021')
+INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon]) VALUES (1, 1,'sonlaso1119@gmail.com', 5, 7890000.0000, NULL, '12/3/2021')
+INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon]) VALUES (2, 2,'sonlaso1119@gmail.com', 6,  1890000.0000, NULL, '15/3/2021')
+INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon]) VALUES (3, 3,'sonlaso1119@gmail.com', 8,  1890000.0000, NULL, '23/3/2021')
 SET IDENTITY_INSERT [ChiTietHoaDon] OFF
-
-INSERT [dbo].[ChiTietDotKhuyenMai] ([MaDot], [MaSanPham], [TiLeGiamGia]) VALUES (1, 1,0.5)
-INSERT [dbo].[ChiTietDotKhuyenMai] ([MaDot], [MaSanPham], [TiLeGiamGia]) VALUES (2, 1,0.6)
-INSERT [dbo].[ChiTietDotKhuyenMai] ([MaDot], [MaSanPham], [TiLeGiamGia]) VALUES (2, 2,0.6)
