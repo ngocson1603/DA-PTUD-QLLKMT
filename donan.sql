@@ -77,7 +77,7 @@ CREATE TABLE [dbo].[ChiTietHoaDon](
 	[MaSanPham] int,
 	[Gmail] nvarchar(50),
 	[SoLuong] [int],
-	[TongTien] [money],
+	[TongTien] int,
 	[TongTienHoaDon] [money],
 	[NgayLapHoaDon] [date],
 	[MaNhanVien] int, 
@@ -316,7 +316,7 @@ INSERT [dbo].[KhachHang] ([Gmail], [Pass], [TenKhachHang], [Ngaysinh], [GioiTinh
 INSERT [dbo].[KhachHang] ([Gmail], [Pass], [TenKhachHang], [Ngaysinh], [GioiTinh], [DiaChi], [SDT]) VALUES ('sonlaso111119@gmail.com','123',N'NGUYỄN MINH TRUNG HIẾU','12/6/2001',N'Nam',N'BÌNH DƯƠNG ',0902114326)
 
 SET IDENTITY_INSERT [ChiTietHoaDon] ON
-INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon],[MaNhanVien]) VALUES (1, 1,'sonlaso1119@gmail.com', 5, 7890000.0000, NULL, '12/3/2021',1)
-INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon],[MaNhanVien]) VALUES (2, 2,'sonlaso1119@gmail.com', 6,  1890000.0000, NULL, '15/3/2021',2)
-INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon],[MaNhanVien]) VALUES (3, 3,'sonlaso1119@gmail.com', 8,  1890000.0000, NULL, '23/3/2021',3)
+INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon],[MaNhanVien]) VALUES (1, 1,'sonlaso1119@gmail.com', 5, 7890000, NULL, '12/3/2021',1)
+INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon],[MaNhanVien]) VALUES (2, 2,'sonlaso1119@gmail.com', 6,  1890000, NULL, '15/3/2021',2)
+INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon],[MaNhanVien]) VALUES (3, 3,'sonlaso1119@gmail.com', 8,  1890000, NULL, '23/3/2021',3)
 SET IDENTITY_INSERT [ChiTietHoaDon] OFF
