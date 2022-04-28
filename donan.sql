@@ -2,7 +2,7 @@
 use QL_CUAHANGLINHKIENMAYTINH
 
 CREATE TABLE [dbo].[NhanVien](
-	[MaNhanVien] int IDENTITY(1,1), 
+	[MaNhanVien] [nvarchar](50),
 	[TenNhanVien] [nvarchar](50),
 	[NgaySinh] [date],
 	[GioiTinh] [nvarchar](10),
@@ -34,7 +34,7 @@ CREATE TABLE [dbo].[SanPham](
 	
 CREATE TABLE [dbo].[PhieuNhap](
 	[MaPhieuNhap] int IDENTITY(1,1), 
-	[MaNhanVien] int,
+	[MaNhanVien] [nvarchar](50),
 	[MaNhaPhanPhoi] int,
 	[TongTien] [money],
 	[NgayNhap] [date],
@@ -80,6 +80,7 @@ CREATE TABLE [dbo].[ChiTietHoaDon](
 	[TongTien] [money],
 	[TongTienHoaDon] [money],
 	[NgayLapHoaDon] [date],
+	[MaNhanVien] [nvarchar](50),
 	CONSTRAINT PK_CTHOADON PRIMARY KEY(MaHoaDon))
 
 CREATE TABLE [dbo].[Users](
@@ -248,9 +249,9 @@ END
 SET DATEFORMAT DMY
 
 SET IDENTITY_INSERT [NhaPhanPhoi] ON
-INSERT [dbo].[NhaPhanPhoi] ([MaNhaPhanPhoi], [TenNhaPhanPhoi], [DiaChi], [SDT], [Email]) VALUES (1, N'GearVN', N'Hồ Chí Minh', N'098674322', N'gearvn@gmail.com')
-INSERT [dbo].[NhaPhanPhoi] ([MaNhaPhanPhoi], [TenNhaPhanPhoi], [DiaChi], [SDT], [Email]) VALUES (2, N'Phong vũ', N'Trung Quốc ', N'34657865434', N'pv@gmail.com')
-INSERT [dbo].[NhaPhanPhoi] ([MaNhaPhanPhoi], [TenNhaPhanPhoi], [DiaChi], [SDT], [Email]) VALUES (3, N'Tin học ngôi sao', N'Việt Nam', N'34657865434', N'thns@gmail.com')
+INSERT [dbo].[NhaPhanPhoi] ([MaNhaPhanPhoi], [TenNhaPhanPhoi], [DiaChi], [SDT], [Email]) VALUES ('N1', N'GearVN', N'Hồ Chí Minh', N'098674322', N'gearvn@gmail.com')
+INSERT [dbo].[NhaPhanPhoi] ([MaNhaPhanPhoi], [TenNhaPhanPhoi], [DiaChi], [SDT], [Email]) VALUES ('N2', N'Phong vũ', N'Trung Quốc ', N'34657865434', N'pv@gmail.com')
+INSERT [dbo].[NhaPhanPhoi] ([MaNhaPhanPhoi], [TenNhaPhanPhoi], [DiaChi], [SDT], [Email]) VALUES ('N3', N'Tin học ngôi sao', N'Việt Nam', N'34657865434', N'thns@gmail.com')
 SET IDENTITY_INSERT [NhaPhanPhoi] OFF
 
 SET IDENTITY_INSERT [LoaiSanPham] ON
@@ -283,9 +284,9 @@ INSERT [dbo].[ChucVu] ([MaChucVu], [TenChucVu]) VALUES (3, N'Admin')
 SET IDENTITY_INSERT [ChucVu] OFF
 
 SET IDENTITY_INSERT [NhanVien] ON
-INSERT [dbo].[NhanVien] ([MaNhanVien], [TenNhanVien], [NgaySinh], [GioiTinh], [NgayVaoLam], [ChucVu], [DiaChi], [SoDT]) VALUES(1,N'Sơn sama','11/1/1999',N'Nam','16/3/2019',3,N'Việt Nam',N'0123131231');
-INSERT [dbo].[NhanVien] ([MaNhanVien], [TenNhanVien], [NgaySinh], [GioiTinh], [NgayVaoLam], [ChucVu], [DiaChi], [SoDT]) VALUES(2,N'Huy kun','24/2/2001',N'Nam','16/4/2020',1,N'Thái Lan',N'0121231231');
-INSERT [dbo].[NhanVien] ([MaNhanVien], [TenNhanVien], [NgaySinh], [GioiTinh], [NgayVaoLam], [ChucVu], [DiaChi], [SoDT]) VALUES(3,N'Lộc chan','14/3/1996',N'Nữ','16/1/2015',2,N'Campuchia',N'0176131231');
+INSERT [dbo].[NhanVien] ([MaNhanVien], [TenNhanVien], [NgaySinh], [GioiTinh], [NgayVaoLam], [ChucVu], [DiaChi], [SoDT]) VALUES('N1',N'Sơn sama','11/1/1999',N'Nam','16/3/2019',3,N'Việt Nam',N'0123131231');
+INSERT [dbo].[NhanVien] ([MaNhanVien], [TenNhanVien], [NgaySinh], [GioiTinh], [NgayVaoLam], [ChucVu], [DiaChi], [SoDT]) VALUES('N2',N'Huy kun','24/2/2001',N'Nam','16/4/2020',1,N'Thái Lan',N'0121231231');
+INSERT [dbo].[NhanVien] ([MaNhanVien], [TenNhanVien], [NgaySinh], [GioiTinh], [NgayVaoLam], [ChucVu], [DiaChi], [SoDT]) VALUES('N3',N'Lộc chan','14/3/1996',N'Nữ','16/1/2015',2,N'Campuchia',N'0176131231');
 SET IDENTITY_INSERT [NhanVien] OFF
 
 INSERT [dbo].[Users] ([TenDangNhap], [Password],[MaNhanVien], [Quyen]) VALUES (N'son', N'son',1, 1)
@@ -315,7 +316,7 @@ INSERT [dbo].[KhachHang] ([Gmail], [Pass], [TenKhachHang], [Ngaysinh], [GioiTinh
 INSERT [dbo].[KhachHang] ([Gmail], [Pass], [TenKhachHang], [Ngaysinh], [GioiTinh], [DiaChi], [SDT]) VALUES ('sonlaso111119@gmail.com','123',N'NGUYỄN MINH TRUNG HIẾU','12/6/2001',N'Nam',N'BÌNH DƯƠNG ',0902114326)
 
 SET IDENTITY_INSERT [ChiTietHoaDon] ON
-INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon]) VALUES (1, 1,'sonlaso1119@gmail.com', 5, 7890000.0000, NULL, '12/3/2021')
-INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon]) VALUES (2, 2,'sonlaso1119@gmail.com', 6,  1890000.0000, NULL, '15/3/2021')
-INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon]) VALUES (3, 3,'sonlaso1119@gmail.com', 8,  1890000.0000, NULL, '23/3/2021')
+INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon]) VALUES (1, 1,'sonlaso1119@gmail.com', 5, 7890000.0000, NULL, '12/3/2021','N1')
+INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon]) VALUES (2, 2,'sonlaso1119@gmail.com', 6,  1890000.0000, NULL, '15/3/2021','N2')
+INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon]) VALUES (3, 3,'sonlaso1119@gmail.com', 8,  1890000.0000, NULL, '23/3/2021','N3')
 SET IDENTITY_INSERT [ChiTietHoaDon] OFF
