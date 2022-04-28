@@ -35,6 +35,7 @@ namespace GUI.UserControls
             lblTonkho.Text = s.TonKho.ToString();
             string direct = hp.Directory() + s.Hinh;
             pictureDetailSP.Image = GetImg(direct, pictureDetailSP.Width, pictureDetailSP.Height);       
+            label8.Text = s.MaSP.ToString();
         }
 
         private void gunathoat_Click(object sender, EventArgs e)
@@ -46,6 +47,16 @@ namespace GUI.UserControls
 
             frmProductList frm = new frmProductList();
             hp.LoadChildForm(frm, frmTrangChu.pnltrang);
+        }
+
+        public static string ma = "";
+        public static string gia = "";
+
+        private void gunaMua_Click(object sender, EventArgs e)
+        {
+            ma = label8.Text;
+            gia = lblGiaBan.Text;
+            MessageBox.Show("Vui lòng kiểm tra trong phần giỏ hàng");
         }
     }
 }

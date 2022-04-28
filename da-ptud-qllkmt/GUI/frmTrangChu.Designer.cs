@@ -38,7 +38,6 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -67,8 +66,7 @@
             this.barButtonItem6,
             this.barButtonItem2,
             this.barButtonItem7,
-            this.barButtonItem8,
-            this.barButtonItem9});
+            this.barButtonItem8});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.MaxItemId = 12;
             this.ribbon.Name = "ribbon";
@@ -134,6 +132,7 @@
             this.barButtonItem7.Id = 9;
             this.barButtonItem7.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.LargeGlyph")));
             this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
             // 
             // barButtonItem8
             // 
@@ -141,13 +140,6 @@
             this.barButtonItem8.Id = 10;
             this.barButtonItem8.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.LargeGlyph")));
             this.barButtonItem8.Name = "barButtonItem8";
-            // 
-            // barButtonItem9
-            // 
-            this.barButtonItem9.Caption = "Sản phẩm";
-            this.barButtonItem9.Id = 11;
-            this.barButtonItem9.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.LargeGlyph")));
-            this.barButtonItem9.Name = "barButtonItem9";
             // 
             // ribbonPageCategory1
             // 
@@ -211,7 +203,6 @@
             // 
             this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem6);
             this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem7);
-            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem9);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Khu vực mua sắm";
             // 
@@ -279,6 +270,5 @@
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
     }
 }

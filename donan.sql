@@ -27,7 +27,7 @@ CREATE TABLE [dbo].[SanPham](
 	[TenSanPham] [nvarchar](200),
 	[LoaiSanPham] int,
 	[HangSanXuat] int,
-	[GiaBan] [money],
+	[GiaBan] int,
 	[TonKho] [int] NOT NULL,
 	[Image] nvarchar(100)
 	CONSTRAINT PK_SP PRIMARY KEY(MaSanPham))
@@ -291,12 +291,12 @@ INSERT [dbo].[Users] ([TenDangNhap], [Password],[MaNhanVien], [Quyen]) VALUES (N
 INSERT [dbo].[Users] ([TenDangNhap], [Password],[MaNhanVien], [Quyen]) VALUES (N'huy', N'huy','N2', 0)
 
 SET IDENTITY_INSERT [SanPham] ON
-INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (1, 1,N'Ban phim co AKKO', 10, 1, 1590000.0000, 34,'ban-phim-co-akko-3108-v2-world-tour-tokyo.jpg')
-INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (2, 2,N'Ban phim co Asus', 10, 6, 1590000.0000, 100,'akko-3108-ds-matcha-red-bean-01.jpg')
-INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (3, 3,N'Nguon GIGABYTE P1000GM', 8, 7, 4290000.0000, 10,'PSU_GG_GP-P1000GM-5.jpg')
-INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (4, 3,N'Intel Core i5 12600KF', 1, 3, 7990000.0000, 10,'intelcorei5-12600k.jpg')
-INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (5, 3,N'Laptop gaming Acer Predator Helios', 7, 5, 41990000.0000, 10,'62709_laptop_acer_gaming_predator_helios_500_12.jpg')
-INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (6, 3,N'Chuot Akko AG325', 3, 1, 490000.0000, 10,'akkoag325pink.jpg')
+INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (1, 1,N'Ban phim co AKKO', 10, 1, 1590000, 34,'ban-phim-co-akko-3108-v2-world-tour-tokyo.jpg')
+INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (2, 2,N'Ban phim co Asus', 10, 6, 1590000, 100,'akko-3108-ds-matcha-red-bean-01.jpg')
+INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (3, 3,N'Nguon GIGABYTE P1000GM', 8, 7, 4290000, 10,'PSU_GG_GP-P1000GM-5.jpg')
+INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (4, 3,N'Intel Core i5 12600KF', 1, 3, 7990000, 10,'intelcorei5-12600k.jpg')
+INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (5, 3,N'Laptop gaming Acer Predator Helios', 7, 5, 41990000, 10,'62709_laptop_acer_gaming_predator_helios_500_12.jpg')
+INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (6, 3,N'Chuot Akko AG325', 3, 1, 490000, 10,'akkoag325pink.jpg')
 SET IDENTITY_INSERT [SanPham] OFF
 
 SET IDENTITY_INSERT [PhieuNhap] ON

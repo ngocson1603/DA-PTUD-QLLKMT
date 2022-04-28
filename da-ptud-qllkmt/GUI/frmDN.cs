@@ -18,6 +18,8 @@ namespace GUI
             InitializeComponent();
         }
 
+        public static string taikhoan = "";
+
         private void gunardangnhap_Click(object sender, EventArgs e)
         {
             splashScreenManager1.ShowWaitForm();
@@ -26,6 +28,8 @@ namespace GUI
             frmTrangChu frm = new frmTrangChu();
             frm.Show();
             this.Hide();
+
+            taikhoan = txtUserName.Text;
         }
 
         private void gunathoat_Click(object sender, EventArgs e)

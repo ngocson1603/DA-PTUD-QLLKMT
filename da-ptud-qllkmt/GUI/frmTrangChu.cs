@@ -64,5 +64,11 @@ namespace GUI
             panel1.Controls.Clear();
             motrangcon(new frmProductList());
         }
+
+        private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            panel1.Controls.Clear();
+            motrangcon(new frmGioHang());
+        }
     }
 }

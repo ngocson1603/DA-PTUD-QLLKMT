@@ -38,88 +38,102 @@
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cboSoLuong = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.dateTimeNgay = new System.Windows.Forms.DateTimePicker();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTongTien = new System.Windows.Forms.TextBox();
+            this.txtMaSP = new System.Windows.Forms.TextBox();
+            this.txtGiaTien = new System.Windows.Forms.TextBox();
+            this.txtTK = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.Size = new System.Drawing.Size(173, 66);
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã hóa đơn";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 65);
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(3, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.Size = new System.Drawing.Size(173, 66);
             this.label2.TabIndex = 2;
             this.label2.Text = "Mã sản phẩm";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 130);
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Location = new System.Drawing.Point(3, 132);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.Size = new System.Drawing.Size(173, 66);
             this.label3.TabIndex = 3;
             this.label3.Text = "Tài khoản";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(341, 0);
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Location = new System.Drawing.Point(361, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.Size = new System.Drawing.Size(173, 66);
             this.label4.TabIndex = 4;
             this.label4.Text = "Số lượng";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(341, 65);
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Location = new System.Drawing.Point(361, 66);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 13);
+            this.label5.Size = new System.Drawing.Size(173, 66);
             this.label5.TabIndex = 5;
             this.label5.Text = "Giá tiền";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(341, 130);
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Location = new System.Drawing.Point(361, 132);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 13);
+            this.label6.Size = new System.Drawing.Size(173, 66);
             this.label6.TabIndex = 6;
             this.label6.Text = "Tổng tiền";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(679, 0);
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Location = new System.Drawing.Point(719, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(92, 13);
+            this.label8.Size = new System.Drawing.Size(173, 66);
             this.label8.TabIndex = 8;
             this.label8.Text = "Ngày lập hóa đơn";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(341, 24);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.LimeGreen;
+            this.label9.Location = new System.Drawing.Point(407, 9);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(92, 13);
+            this.label9.Size = new System.Drawing.Size(242, 31);
             this.label9.TabIndex = 9;
             this.label9.Text = "Giỏ hàng của bạn";
             // 
@@ -129,7 +143,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 481);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1016, 198);
+            this.panel1.Size = new System.Drawing.Size(1080, 198);
             this.panel1.TabIndex = 10;
             // 
             // tableLayoutPanel1
@@ -141,22 +155,21 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.Controls.Add(this.cboSoLuong, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button2, 5, 2);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimeNgay, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtTongTien, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtMaSP, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtGiaTien, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtTK, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.label4, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label5, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox3, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox4, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox5, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox6, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox7, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 5, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button2, 5, 2);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 4, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -164,96 +177,159 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1016, 198);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1080, 198);
             this.tableLayoutPanel1.TabIndex = 11;
+            // 
+            // cboSoLuong
+            // 
+            this.cboSoLuong.FormattingEnabled = true;
+            this.cboSoLuong.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30"});
+            this.cboSoLuong.Location = new System.Drawing.Point(540, 3);
+            this.cboSoLuong.Name = "cboSoLuong";
+            this.cboSoLuong.Size = new System.Drawing.Size(61, 21);
+            this.cboSoLuong.TabIndex = 11;
+            this.cboSoLuong.SelectedIndexChanged += new System.EventHandler(this.cboSoLuong_SelectedIndexChanged);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(898, 135);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(103, 51);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Mua";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // dateTimeNgay
+            // 
+            this.dateTimeNgay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dateTimeNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimeNgay.Location = new System.Drawing.Point(898, 3);
+            this.dateTimeNgay.Name = "dateTimeNgay";
+            this.dateTimeNgay.Size = new System.Drawing.Size(179, 20);
+            this.dateTimeNgay.TabIndex = 16;
             // 
             // textBox2
             // 
             this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Location = new System.Drawing.Point(172, 3);
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(182, 3);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(163, 20);
+            this.textBox2.Size = new System.Drawing.Size(173, 20);
             this.textBox2.TabIndex = 9;
             // 
-            // textBox3
+            // txtTongTien
             // 
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox3.Location = new System.Drawing.Point(172, 68);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(163, 20);
-            this.textBox3.TabIndex = 10;
+            this.txtTongTien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTongTien.Enabled = false;
+            this.txtTongTien.Location = new System.Drawing.Point(540, 135);
+            this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.Size = new System.Drawing.Size(173, 20);
+            this.txtTongTien.TabIndex = 14;
             // 
-            // textBox4
+            // txtMaSP
             // 
-            this.textBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox4.Location = new System.Drawing.Point(172, 133);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(163, 20);
-            this.textBox4.TabIndex = 11;
+            this.txtMaSP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMaSP.Enabled = false;
+            this.txtMaSP.Location = new System.Drawing.Point(182, 69);
+            this.txtMaSP.Name = "txtMaSP";
+            this.txtMaSP.Size = new System.Drawing.Size(173, 20);
+            this.txtMaSP.TabIndex = 10;
             // 
-            // textBox5
+            // txtGiaTien
             // 
-            this.textBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox5.Location = new System.Drawing.Point(510, 3);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(163, 20);
-            this.textBox5.TabIndex = 12;
+            this.txtGiaTien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtGiaTien.Enabled = false;
+            this.txtGiaTien.Location = new System.Drawing.Point(540, 69);
+            this.txtGiaTien.Name = "txtGiaTien";
+            this.txtGiaTien.Size = new System.Drawing.Size(173, 20);
+            this.txtGiaTien.TabIndex = 13;
             // 
-            // textBox6
+            // txtTK
             // 
-            this.textBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox6.Location = new System.Drawing.Point(510, 68);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(163, 20);
-            this.textBox6.TabIndex = 13;
+            this.txtTK.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTK.Enabled = false;
+            this.txtTK.Location = new System.Drawing.Point(182, 135);
+            this.txtTK.Name = "txtTK";
+            this.txtTK.Size = new System.Drawing.Size(173, 20);
+            this.txtTK.TabIndex = 11;
             // 
-            // textBox7
+            // panel2
             // 
-            this.textBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox7.Location = new System.Drawing.Point(510, 133);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(163, 20);
-            this.textBox7.TabIndex = 14;
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1080, 56);
+            this.panel2.TabIndex = 11;
             // 
-            // dateTimePicker1
+            // dataGridView1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(848, 3);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(165, 20);
-            this.dateTimePicker1.TabIndex = 16;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 56);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1080, 425);
+            this.dataGridView1.TabIndex = 12;
             // 
-            // button1
+            // pictureBox1
             // 
-            this.button1.Location = new System.Drawing.Point(679, 133);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Tính tiền";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(848, 133);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Mua";
-            this.button2.UseVisualStyleBackColor = true;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox1.Location = new System.Drawing.Point(723, 56);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(357, 425);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
             // 
             // frmGioHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 679);
+            this.ClientSize = new System.Drawing.Size(1080, 679);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label9);
             this.Name = "frmGioHang";
             this.Text = "frmGioHang";
+            this.Load += new System.EventHandler(this.frmGioHang_Load);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -268,15 +344,17 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtMaSP;
+        private System.Windows.Forms.TextBox txtTK;
+        private System.Windows.Forms.TextBox txtGiaTien;
+        private System.Windows.Forms.TextBox txtTongTien;
+        private System.Windows.Forms.DateTimePicker dateTimeNgay;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ComboBox cboSoLuong;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
