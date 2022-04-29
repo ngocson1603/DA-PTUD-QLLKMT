@@ -70,5 +70,17 @@ namespace GUI
             panel1.Controls.Clear();
             motrangcon(new frmGioHang());
         }
+
+        private void barButtonItem9_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            panel1.Controls.Clear();
+            motrangcon(new frmGiaoDien());
+        }
+
+        private void frmTrangChu_Load(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            motrangcon(new frmGiaoDien());
+        }
     }
 }
