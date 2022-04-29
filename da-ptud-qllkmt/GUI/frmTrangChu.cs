@@ -8,11 +8,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
+using BLL;
 
 namespace GUI
 {
     public partial class frmTrangChu : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        Helper hp = new Helper();
         public frmTrangChu()
         {
             InitializeComponent();
@@ -62,25 +64,25 @@ namespace GUI
         private void barButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
         {
             panel1.Controls.Clear();
-            motrangcon(new frmProductList());
+            hp.motrangcon(new frmProductList(),panel1);
         }
 
         private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
         {
             panel1.Controls.Clear();
-            motrangcon(new frmGioHang());
+            hp.motrangcon(new frmGioHang(), panel1);
         }
 
         private void barButtonItem9_ItemClick(object sender, ItemClickEventArgs e)
         {
             panel1.Controls.Clear();
-            motrangcon(new frmGiaoDien());
+            hp.motrangcon(new frmGiaoDien(), panel1);
         }
 
         private void frmTrangChu_Load(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            motrangcon(new frmGiaoDien());
+            hp.motrangcon(new frmGiaoDien(),panel1);
         }
     }
 }

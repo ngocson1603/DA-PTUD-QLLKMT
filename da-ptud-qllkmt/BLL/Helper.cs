@@ -20,15 +20,22 @@ namespace BLL
             return direct;
         }
 
-        public void LoadChildForm(Form frm, Panel pnl)
+        public Form currentchildform;
+        public void motrangcon(Form trangcon, Panel pnl)
         {
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Dock = DockStyle.Fill;
-            pnl.Controls.Add(frm);
-            pnl.Tag = frm;
-            frm.BringToFront();
-            frm.Show();
+            if (currentchildform != null)
+            {
+                currentchildform.Close();
+
+            }
+            currentchildform = trangcon;
+            trangcon.TopLevel = false;
+            trangcon.FormBorderStyle = FormBorderStyle.None;
+            trangcon.Dock = DockStyle.Fill;
+            pnl.Controls.Add(trangcon);
+            pnl.Tag = trangcon;
+            trangcon.BringToFront();
+            trangcon.Show();
         }
     }
 }

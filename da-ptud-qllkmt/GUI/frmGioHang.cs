@@ -19,12 +19,10 @@ namespace GUI
         public frmGioHang()
         {
             InitializeComponent();
-            
         }
 
         private void frmGioHang_Load(object sender, EventArgs e)
-        {
-            
+        { 
             dataGridView1.DataSource = bllgiohang.loadGioHang(frmDN.taikhoan);
             txtMaSP.Text = UserControls.detailProduct.ma;
             txtGiaTien.Text = UserControls.detailProduct.gia;
@@ -45,10 +43,18 @@ namespace GUI
 
         private void cboSoLuong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int sl = int.Parse(cboSoLuong.SelectedItem.ToString());
-            int gia = int.Parse(txtGiaTien.Text);
-            int kq = sl * gia;
-            txtTongTien.Text = kq.ToString();
+            int a = 0;
+            if (txtGiaTien.Text.Equals(string.Empty))
+            {
+                txtGiaTien.Text = a.ToString();
+            }
+            else
+            {
+                int gia = int.Parse(txtGiaTien.Text);
+                int sl = int.Parse(cboSoLuong.SelectedItem.ToString());
+                int kq = sl * gia;
+                txtTongTien.Text = kq.ToString();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

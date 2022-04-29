@@ -46,7 +46,7 @@ namespace GUI.UserControls
 
 
             frmProductList frm = new frmProductList();
-            hp.LoadChildForm(frm, frmTrangChu.pnltrang);
+            hp.motrangcon(frm, frmTrangChu.pnltrang);
         }
 
         public static string ma = "";

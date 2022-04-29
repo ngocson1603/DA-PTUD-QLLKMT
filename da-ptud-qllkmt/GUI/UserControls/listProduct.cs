@@ -42,7 +42,7 @@ namespace GUI.UserControls
             //frm1.Close();
 
             frmDetailProduct frm = new frmDetailProduct();
-            hp.LoadChildForm(frm,frmTrangChu.pnltrang);
+            hp.motrangcon(frm,frmTrangChu.pnltrang);
         }
     }
 }
