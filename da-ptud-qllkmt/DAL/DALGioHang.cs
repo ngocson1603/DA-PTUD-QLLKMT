@@ -33,5 +33,20 @@ namespace DAL
                 return false;
             }
         }
+
+        public bool xoaGioHang(int ma)
+        {
+            ChiTietHoaDon cthd = qllk.ChiTietHoaDons.Where(t => t.MaHoaDon == ma).FirstOrDefault();
+            try
+            {
+                qllk.ChiTietHoaDons.DeleteOnSubmit(cthd);
+                qllk.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

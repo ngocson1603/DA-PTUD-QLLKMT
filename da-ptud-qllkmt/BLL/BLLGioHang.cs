@@ -21,6 +21,11 @@ namespace BLL
             return dalgiohang.themGioHang(cthd);
         }
 
+        public bool xoaGioHang(int ma)
+        {
+            return dalgiohang.xoaGioHang(ma);
+        }
+
         public List<View_GioHang> loadGioHang(string tenkh)
         {
             return dalgiohang.loadGioHang(tenkh);

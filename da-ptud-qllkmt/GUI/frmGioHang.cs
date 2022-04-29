@@ -57,30 +57,6 @@ namespace GUI
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            ChiTietHoaDon cthd = new ChiTietHoaDon()
-            {
-                MaSanPham = int.Parse(txtMaSP.Text),
-                Gmail = txtTK.Text,
-                SoLuong = int.Parse(cboSoLuong.SelectedItem.ToString()),
-                TongTien = int.Parse(txtGiaTien.Text),
-                TongTienHoaDon = int.Parse(txtTongTien.Text),
-                NgayLapHoaDon = dateTimeNgay.Value
-            };
-
-            if (bllgiohang.themGioHang(cthd))
-            {
-                MessageBox.Show("Mua hàng thành công");
-                
-            }
-            else
-            {
-                MessageBox.Show("Mua hàng thất bại");
-                return;
-            }
-        }
-
         public Image GetImg(string direct, int w, int h)
         {
             Image i = Image.FromFile(direct);
@@ -101,6 +77,75 @@ namespace GUI
 
                 string direct = hp.Directory() + dataGridView1.CurrentRow.Cells[7].Value.ToString();
                 pictureBox1.Image = GetImg(direct, pictureBox1.Width, pictureBox1.Height);
+
+                guna2Button2.Enabled = true;
+            }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            dateTimeNgay.Text = DateTime.Now.ToString();
+            
+            int a = int.Parse(txtGiaTien.Text);
+            if(a == 0)
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm ở trang Mua Hàng");
+                return;
+            }
+            else 
+            {
+                int sl = int.Parse(cboSoLuong.SelectedItem.ToString());
+                int gia = int.Parse(txtGiaTien.Text);
+                int kq = sl * gia;
+                txtTongTien.Text = kq.ToString();
+                ChiTietHoaDon cthd = new ChiTietHoaDon()
+                {
+                    MaSanPham = int.Parse(txtMaSP.Text),
+                    Gmail = txtTK.Text,
+                    SoLuong = int.Parse(cboSoLuong.SelectedItem.ToString()),
+                    TongTien = int.Parse(txtGiaTien.Text),
+                    TongTienHoaDon = int.Parse(txtTongTien.Text),
+                    NgayLapHoaDon = dateTimeNgay.Value
+                };
+
+                if (bllgiohang.themGioHang(cthd))
+                {
+                    MessageBox.Show("Mua hàng thành công");
+                    dataGridView1.DataSource = bllgiohang.loadGioHang(frmDN.taikhoan);
+                }
+                else
+                {
+                    MessageBox.Show("Mua hàng thất bại");
+                    return;
+                }
+            }
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            int ngay = int.Parse(DateTime.Now.Day.ToString());
+            int ngaymua = int.Parse(dateTimeNgay.Value.Day.ToString());
+            int kq = ngay - ngaymua;
+            int a = int.Parse(textBox2.Text);
+            if (kq > 2)
+            {
+                MessageBox.Show("Đã mua 2 ngày không thể hủy đơn");
+                return;
+            }
+            else
+            {
+                if (bllgiohang.xoaGioHang(a))
+                {
+                    MessageBox.Show("Hủy đơn thành công");
+                    dataGridView1.DataSource = bllgiohang.loadGioHang(frmDN.taikhoan);
+                    guna2Button2.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Hủy đơn thất bại");
+                    guna2Button2.Enabled = false;
+                    return;
+                }
             }
         }
     }
