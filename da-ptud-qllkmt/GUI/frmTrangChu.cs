@@ -19,6 +19,7 @@ namespace GUI
         {
             InitializeComponent();
             pnltrang = panel1;
+            txtChao.Caption += "Xin chào : " + frmDN.taikhoan;
         }
 
         public static Panel pnltrang;

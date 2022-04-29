@@ -44,6 +44,7 @@
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnDangKy = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,6 +64,7 @@
             this.label3.Size = new System.Drawing.Size(56, 13);
             this.label3.TabIndex = 9;
             this.label3.Text = "Mật Khẩu:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -75,6 +77,7 @@
             this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "Tài Khoản:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // gunathoat
             // 
@@ -110,7 +113,7 @@
             this.gunardangnhap.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gunardangnhap.ForeColor = System.Drawing.Color.White;
             this.gunardangnhap.HoverState.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunardangnhap.Location = new System.Drawing.Point(115, 384);
+            this.gunardangnhap.Location = new System.Drawing.Point(18, 385);
             this.gunardangnhap.Margin = new System.Windows.Forms.Padding(2);
             this.gunardangnhap.Name = "gunardangnhap";
             this.gunardangnhap.Size = new System.Drawing.Size(105, 31);
@@ -131,6 +134,7 @@
             this.label1.Size = new System.Drawing.Size(101, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Ghi nhớ Mật Khẩu";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // check_DangNhap
             // 
@@ -148,6 +152,7 @@
             this.check_DangNhap.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.check_DangNhap.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.check_DangNhap.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.check_DangNhap.CheckedChanged += new System.EventHandler(this.check_DangNhap_CheckedChanged);
             // 
             // txtPassWord
             // 
@@ -172,6 +177,7 @@
             this.txtPassWord.Size = new System.Drawing.Size(208, 29);
             this.txtPassWord.TabIndex = 2;
             this.txtPassWord.UseSystemPasswordChar = true;
+            this.txtPassWord.TextChanged += new System.EventHandler(this.txtPassWord_TextChanged);
             // 
             // txtUserName
             // 
@@ -195,6 +201,7 @@
             this.txtUserName.SelectedText = "";
             this.txtUserName.Size = new System.Drawing.Size(209, 29);
             this.txtUserName.TabIndex = 1;
+            this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
             // 
             // guna2PictureBox1
             // 
@@ -209,6 +216,7 @@
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
             // guna2DragControl1
             // 
@@ -218,6 +226,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.guna2Panel1.Controls.Add(this.btnDangKy);
             this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.gunathoat);
@@ -234,6 +243,28 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(363, 475);
             this.guna2Panel1.TabIndex = 7;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+            // 
+            // btnDangKy
+            // 
+            this.btnDangKy.BackColor = System.Drawing.Color.Transparent;
+            this.btnDangKy.BorderRadius = 8;
+            this.btnDangKy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangKy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangKy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDangKy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDangKy.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(153)))), ((int)(((byte)(149)))));
+            this.btnDangKy.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDangKy.ForeColor = System.Drawing.Color.White;
+            this.btnDangKy.HoverState.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDangKy.Location = new System.Drawing.Point(127, 385);
+            this.btnDangKy.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDangKy.Name = "btnDangKy";
+            this.btnDangKy.Size = new System.Drawing.Size(105, 31);
+            this.btnDangKy.TabIndex = 10;
+            this.btnDangKy.Text = "Đăng Ký";
+            this.btnDangKy.UseTransparentBackground = true;
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
             // frmDN
             // 
@@ -267,5 +298,6 @@
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Button btnDangKy;
     }
 }
