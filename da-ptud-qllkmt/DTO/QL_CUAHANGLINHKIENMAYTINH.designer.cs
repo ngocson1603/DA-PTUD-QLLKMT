@@ -63,6 +63,18 @@ namespace DTO
     partial void InsertChiTietHoaDon(ChiTietHoaDon instance);
     partial void UpdateChiTietHoaDon(ChiTietHoaDon instance);
     partial void DeleteChiTietHoaDon(ChiTietHoaDon instance);
+    partial void InsertTenMayTinh(TenMayTinh instance);
+    partial void UpdateTenMayTinh(TenMayTinh instance);
+    partial void DeleteTenMayTinh(TenMayTinh instance);
+    partial void InsertTinhTrangOne(TinhTrangOne instance);
+    partial void UpdateTinhTrangOne(TinhTrangOne instance);
+    partial void DeleteTinhTrangOne(TinhTrangOne instance);
+    partial void InsertTinhTrangTwo(TinhTrangTwo instance);
+    partial void UpdateTinhTrangTwo(TinhTrangTwo instance);
+    partial void DeleteTinhTrangTwo(TinhTrangTwo instance);
+    partial void InsertTinhTrangThree(TinhTrangThree instance);
+    partial void UpdateTinhTrangThree(TinhTrangThree instance);
+    partial void DeleteTinhTrangThree(TinhTrangThree instance);
     #endregion
 		
 		public QL_CUAHANGLINHKIENMAYTINHDataContext() : 
@@ -183,19 +195,91 @@ namespace DTO
 			}
 		}
 		
-		public System.Data.Linq.Table<View_GioHang> View_GioHangs
-		{
-			get
-			{
-				return this.GetTable<View_GioHang>();
-			}
-		}
-		
 		public System.Data.Linq.Table<View_GioHang1> View_GioHang1s
 		{
 			get
 			{
 				return this.GetTable<View_GioHang1>();
+			}
+		}
+		
+		public System.Data.Linq.Table<KetQua> KetQuas
+		{
+			get
+			{
+				return this.GetTable<KetQua>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TenMayTinh> TenMayTinhs
+		{
+			get
+			{
+				return this.GetTable<TenMayTinh>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TinhTrangOne> TinhTrangOnes
+		{
+			get
+			{
+				return this.GetTable<TinhTrangOne>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TinhTrangTwo> TinhTrangTwos
+		{
+			get
+			{
+				return this.GetTable<TinhTrangTwo>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TinhTrangThree> TinhTrangThrees
+		{
+			get
+			{
+				return this.GetTable<TinhTrangThree>();
+			}
+		}
+		
+		public System.Data.Linq.Table<View_Anh> View_Anhs
+		{
+			get
+			{
+				return this.GetTable<View_Anh>();
+			}
+		}
+		
+		public System.Data.Linq.Table<View_TinhTrangTwo> View_TinhTrangTwos
+		{
+			get
+			{
+				return this.GetTable<View_TinhTrangTwo>();
+			}
+		}
+		
+		public System.Data.Linq.Table<View_TinhTrangThree> View_TinhTrangThrees
+		{
+			get
+			{
+				return this.GetTable<View_TinhTrangThree>();
+			}
+		}
+		
+		public System.Data.Linq.Table<View_Kq> View_Kqs
+		{
+			get
+			{
+				return this.GetTable<View_Kq>();
+			}
+		}
+		
+		public System.Data.Linq.Table<View_GioHang> View_GioHangs
+		{
+			get
+			{
+				return this.GetTable<View_GioHang>();
 			}
 		}
 	}
@@ -2698,7 +2782,7 @@ namespace DTO
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.View_GioHang")]
-	public partial class View_GioHang
+	public partial class View_GioHang1
 	{
 		
 		private int _MaHoaDon;
@@ -2717,7 +2801,7 @@ namespace DTO
 		
 		private string _Image;
 		
-		public View_GioHang()
+		public View_GioHang1()
 		{
 		}
 		
@@ -2850,8 +2934,886 @@ namespace DTO
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KetQua")]
+	public partial class KetQua
+	{
+		
+		private string _TenTinhTrangOne;
+		
+		private string _TenTinhTrangTwo;
+		
+		private string _TenTinhTrangThree;
+		
+		private string _KetQua1;
+		
+		public KetQua()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTinhTrangOne", DbType="NVarChar(100)")]
+		public string TenTinhTrangOne
+		{
+			get
+			{
+				return this._TenTinhTrangOne;
+			}
+			set
+			{
+				if ((this._TenTinhTrangOne != value))
+				{
+					this._TenTinhTrangOne = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTinhTrangTwo", DbType="NVarChar(100)")]
+		public string TenTinhTrangTwo
+		{
+			get
+			{
+				return this._TenTinhTrangTwo;
+			}
+			set
+			{
+				if ((this._TenTinhTrangTwo != value))
+				{
+					this._TenTinhTrangTwo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTinhTrangThree", DbType="NVarChar(100)")]
+		public string TenTinhTrangThree
+		{
+			get
+			{
+				return this._TenTinhTrangThree;
+			}
+			set
+			{
+				if ((this._TenTinhTrangThree != value))
+				{
+					this._TenTinhTrangThree = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="KetQua", Storage="_KetQua1", DbType="NVarChar(100)")]
+		public string KetQua1
+		{
+			get
+			{
+				return this._KetQua1;
+			}
+			set
+			{
+				if ((this._KetQua1 != value))
+				{
+					this._KetQua1 = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TenMayTinh")]
+	public partial class TenMayTinh : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _TenMay;
+		
+		private EntitySet<TinhTrangOne> _TinhTrangOnes;
+		
+		private EntitySet<TinhTrangTwo> _TinhTrangTwos;
+		
+		private EntitySet<TinhTrangThree> _TinhTrangThrees;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTenMayChanging(string value);
+    partial void OnTenMayChanged();
+    #endregion
+		
+		public TenMayTinh()
+		{
+			this._TinhTrangOnes = new EntitySet<TinhTrangOne>(new Action<TinhTrangOne>(this.attach_TinhTrangOnes), new Action<TinhTrangOne>(this.detach_TinhTrangOnes));
+			this._TinhTrangTwos = new EntitySet<TinhTrangTwo>(new Action<TinhTrangTwo>(this.attach_TinhTrangTwos), new Action<TinhTrangTwo>(this.detach_TinhTrangTwos));
+			this._TinhTrangThrees = new EntitySet<TinhTrangThree>(new Action<TinhTrangThree>(this.attach_TinhTrangThrees), new Action<TinhTrangThree>(this.detach_TinhTrangThrees));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenMay", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string TenMay
+		{
+			get
+			{
+				return this._TenMay;
+			}
+			set
+			{
+				if ((this._TenMay != value))
+				{
+					this.OnTenMayChanging(value);
+					this.SendPropertyChanging();
+					this._TenMay = value;
+					this.SendPropertyChanged("TenMay");
+					this.OnTenMayChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TenMayTinh_TinhTrangOne", Storage="_TinhTrangOnes", ThisKey="TenMay", OtherKey="TenMay")]
+		public EntitySet<TinhTrangOne> TinhTrangOnes
+		{
+			get
+			{
+				return this._TinhTrangOnes;
+			}
+			set
+			{
+				this._TinhTrangOnes.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TenMayTinh_TinhTrangTwo", Storage="_TinhTrangTwos", ThisKey="TenMay", OtherKey="TenMay")]
+		public EntitySet<TinhTrangTwo> TinhTrangTwos
+		{
+			get
+			{
+				return this._TinhTrangTwos;
+			}
+			set
+			{
+				this._TinhTrangTwos.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TenMayTinh_TinhTrangThree", Storage="_TinhTrangThrees", ThisKey="TenMay", OtherKey="TenMay")]
+		public EntitySet<TinhTrangThree> TinhTrangThrees
+		{
+			get
+			{
+				return this._TinhTrangThrees;
+			}
+			set
+			{
+				this._TinhTrangThrees.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_TinhTrangOnes(TinhTrangOne entity)
+		{
+			this.SendPropertyChanging();
+			entity.TenMayTinh = this;
+		}
+		
+		private void detach_TinhTrangOnes(TinhTrangOne entity)
+		{
+			this.SendPropertyChanging();
+			entity.TenMayTinh = null;
+		}
+		
+		private void attach_TinhTrangTwos(TinhTrangTwo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TenMayTinh = this;
+		}
+		
+		private void detach_TinhTrangTwos(TinhTrangTwo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TenMayTinh = null;
+		}
+		
+		private void attach_TinhTrangThrees(TinhTrangThree entity)
+		{
+			this.SendPropertyChanging();
+			entity.TenMayTinh = this;
+		}
+		
+		private void detach_TinhTrangThrees(TinhTrangThree entity)
+		{
+			this.SendPropertyChanging();
+			entity.TenMayTinh = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TinhTrangOne")]
+	public partial class TinhTrangOne : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _TenTinhTrangOne;
+		
+		private string _TenMay;
+		
+		private EntityRef<TenMayTinh> _TenMayTinh;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTenTinhTrangOneChanging(string value);
+    partial void OnTenTinhTrangOneChanged();
+    partial void OnTenMayChanging(string value);
+    partial void OnTenMayChanged();
+    #endregion
+		
+		public TinhTrangOne()
+		{
+			this._TenMayTinh = default(EntityRef<TenMayTinh>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTinhTrangOne", DbType="NVarChar(100) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string TenTinhTrangOne
+		{
+			get
+			{
+				return this._TenTinhTrangOne;
+			}
+			set
+			{
+				if ((this._TenTinhTrangOne != value))
+				{
+					this.OnTenTinhTrangOneChanging(value);
+					this.SendPropertyChanging();
+					this._TenTinhTrangOne = value;
+					this.SendPropertyChanged("TenTinhTrangOne");
+					this.OnTenTinhTrangOneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenMay", DbType="NVarChar(50)")]
+		public string TenMay
+		{
+			get
+			{
+				return this._TenMay;
+			}
+			set
+			{
+				if ((this._TenMay != value))
+				{
+					if (this._TenMayTinh.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnTenMayChanging(value);
+					this.SendPropertyChanging();
+					this._TenMay = value;
+					this.SendPropertyChanged("TenMay");
+					this.OnTenMayChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TenMayTinh_TinhTrangOne", Storage="_TenMayTinh", ThisKey="TenMay", OtherKey="TenMay", IsForeignKey=true)]
+		public TenMayTinh TenMayTinh
+		{
+			get
+			{
+				return this._TenMayTinh.Entity;
+			}
+			set
+			{
+				TenMayTinh previousValue = this._TenMayTinh.Entity;
+				if (((previousValue != value) 
+							|| (this._TenMayTinh.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TenMayTinh.Entity = null;
+						previousValue.TinhTrangOnes.Remove(this);
+					}
+					this._TenMayTinh.Entity = value;
+					if ((value != null))
+					{
+						value.TinhTrangOnes.Add(this);
+						this._TenMay = value.TenMay;
+					}
+					else
+					{
+						this._TenMay = default(string);
+					}
+					this.SendPropertyChanged("TenMayTinh");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TinhTrangTwo")]
+	public partial class TinhTrangTwo : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _TenTinhTrangTwo;
+		
+		private string _TenMay;
+		
+		private EntityRef<TenMayTinh> _TenMayTinh;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTenTinhTrangTwoChanging(string value);
+    partial void OnTenTinhTrangTwoChanged();
+    partial void OnTenMayChanging(string value);
+    partial void OnTenMayChanged();
+    #endregion
+		
+		public TinhTrangTwo()
+		{
+			this._TenMayTinh = default(EntityRef<TenMayTinh>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTinhTrangTwo", DbType="NVarChar(100) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string TenTinhTrangTwo
+		{
+			get
+			{
+				return this._TenTinhTrangTwo;
+			}
+			set
+			{
+				if ((this._TenTinhTrangTwo != value))
+				{
+					this.OnTenTinhTrangTwoChanging(value);
+					this.SendPropertyChanging();
+					this._TenTinhTrangTwo = value;
+					this.SendPropertyChanged("TenTinhTrangTwo");
+					this.OnTenTinhTrangTwoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenMay", DbType="NVarChar(50)")]
+		public string TenMay
+		{
+			get
+			{
+				return this._TenMay;
+			}
+			set
+			{
+				if ((this._TenMay != value))
+				{
+					if (this._TenMayTinh.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnTenMayChanging(value);
+					this.SendPropertyChanging();
+					this._TenMay = value;
+					this.SendPropertyChanged("TenMay");
+					this.OnTenMayChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TenMayTinh_TinhTrangTwo", Storage="_TenMayTinh", ThisKey="TenMay", OtherKey="TenMay", IsForeignKey=true)]
+		public TenMayTinh TenMayTinh
+		{
+			get
+			{
+				return this._TenMayTinh.Entity;
+			}
+			set
+			{
+				TenMayTinh previousValue = this._TenMayTinh.Entity;
+				if (((previousValue != value) 
+							|| (this._TenMayTinh.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TenMayTinh.Entity = null;
+						previousValue.TinhTrangTwos.Remove(this);
+					}
+					this._TenMayTinh.Entity = value;
+					if ((value != null))
+					{
+						value.TinhTrangTwos.Add(this);
+						this._TenMay = value.TenMay;
+					}
+					else
+					{
+						this._TenMay = default(string);
+					}
+					this.SendPropertyChanged("TenMayTinh");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TinhTrangThree")]
+	public partial class TinhTrangThree : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _TenTinhTrangThree;
+		
+		private string _TenMay;
+		
+		private EntityRef<TenMayTinh> _TenMayTinh;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTenTinhTrangThreeChanging(string value);
+    partial void OnTenTinhTrangThreeChanged();
+    partial void OnTenMayChanging(string value);
+    partial void OnTenMayChanged();
+    #endregion
+		
+		public TinhTrangThree()
+		{
+			this._TenMayTinh = default(EntityRef<TenMayTinh>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTinhTrangThree", DbType="NVarChar(100) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string TenTinhTrangThree
+		{
+			get
+			{
+				return this._TenTinhTrangThree;
+			}
+			set
+			{
+				if ((this._TenTinhTrangThree != value))
+				{
+					this.OnTenTinhTrangThreeChanging(value);
+					this.SendPropertyChanging();
+					this._TenTinhTrangThree = value;
+					this.SendPropertyChanged("TenTinhTrangThree");
+					this.OnTenTinhTrangThreeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenMay", DbType="NVarChar(50)")]
+		public string TenMay
+		{
+			get
+			{
+				return this._TenMay;
+			}
+			set
+			{
+				if ((this._TenMay != value))
+				{
+					if (this._TenMayTinh.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnTenMayChanging(value);
+					this.SendPropertyChanging();
+					this._TenMay = value;
+					this.SendPropertyChanged("TenMay");
+					this.OnTenMayChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TenMayTinh_TinhTrangThree", Storage="_TenMayTinh", ThisKey="TenMay", OtherKey="TenMay", IsForeignKey=true)]
+		public TenMayTinh TenMayTinh
+		{
+			get
+			{
+				return this._TenMayTinh.Entity;
+			}
+			set
+			{
+				TenMayTinh previousValue = this._TenMayTinh.Entity;
+				if (((previousValue != value) 
+							|| (this._TenMayTinh.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TenMayTinh.Entity = null;
+						previousValue.TinhTrangThrees.Remove(this);
+					}
+					this._TenMayTinh.Entity = value;
+					if ((value != null))
+					{
+						value.TinhTrangThrees.Add(this);
+						this._TenMay = value.TenMay;
+					}
+					else
+					{
+						this._TenMay = default(string);
+					}
+					this.SendPropertyChanged("TenMayTinh");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.View_Anh")]
+	public partial class View_Anh
+	{
+		
+		private string _KetQua;
+		
+		private string _Anh;
+		
+		public View_Anh()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KetQua", DbType="NVarChar(100)")]
+		public string KetQua
+		{
+			get
+			{
+				return this._KetQua;
+			}
+			set
+			{
+				if ((this._KetQua != value))
+				{
+					this._KetQua = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Anh", DbType="NVarChar(100)")]
+		public string Anh
+		{
+			get
+			{
+				return this._Anh;
+			}
+			set
+			{
+				if ((this._Anh != value))
+				{
+					this._Anh = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.View_TinhTrangTwo")]
+	public partial class View_TinhTrangTwo
+	{
+		
+		private string _TenTinhTrangOne;
+		
+		private string _TenMay;
+		
+		private string _TenTinhTrangTwo;
+		
+		public View_TinhTrangTwo()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTinhTrangOne", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string TenTinhTrangOne
+		{
+			get
+			{
+				return this._TenTinhTrangOne;
+			}
+			set
+			{
+				if ((this._TenTinhTrangOne != value))
+				{
+					this._TenTinhTrangOne = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenMay", DbType="NVarChar(50)")]
+		public string TenMay
+		{
+			get
+			{
+				return this._TenMay;
+			}
+			set
+			{
+				if ((this._TenMay != value))
+				{
+					this._TenMay = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTinhTrangTwo", DbType="NVarChar(100)")]
+		public string TenTinhTrangTwo
+		{
+			get
+			{
+				return this._TenTinhTrangTwo;
+			}
+			set
+			{
+				if ((this._TenTinhTrangTwo != value))
+				{
+					this._TenTinhTrangTwo = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.View_TinhTrangThree")]
+	public partial class View_TinhTrangThree
+	{
+		
+		private string _TenMay;
+		
+		private string _TenTinhTrangOne;
+		
+		private string _TenTinhTrangTwo;
+		
+		private string _TenTinhTrangThree;
+		
+		public View_TinhTrangThree()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenMay", DbType="NVarChar(50)")]
+		public string TenMay
+		{
+			get
+			{
+				return this._TenMay;
+			}
+			set
+			{
+				if ((this._TenMay != value))
+				{
+					this._TenMay = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTinhTrangOne", DbType="NVarChar(100)")]
+		public string TenTinhTrangOne
+		{
+			get
+			{
+				return this._TenTinhTrangOne;
+			}
+			set
+			{
+				if ((this._TenTinhTrangOne != value))
+				{
+					this._TenTinhTrangOne = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTinhTrangTwo", DbType="NVarChar(100)")]
+		public string TenTinhTrangTwo
+		{
+			get
+			{
+				return this._TenTinhTrangTwo;
+			}
+			set
+			{
+				if ((this._TenTinhTrangTwo != value))
+				{
+					this._TenTinhTrangTwo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTinhTrangThree", DbType="NVarChar(100)")]
+		public string TenTinhTrangThree
+		{
+			get
+			{
+				return this._TenTinhTrangThree;
+			}
+			set
+			{
+				if ((this._TenTinhTrangThree != value))
+				{
+					this._TenTinhTrangThree = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.View_Kq")]
+	public partial class View_Kq
+	{
+		
+		private string _TenTinhTrangOne;
+		
+		private string _TenTinhTrangTwo;
+		
+		private string _TenTinhTrangThree;
+		
+		private string _KetQua;
+		
+		public View_Kq()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTinhTrangOne", DbType="NVarChar(100)")]
+		public string TenTinhTrangOne
+		{
+			get
+			{
+				return this._TenTinhTrangOne;
+			}
+			set
+			{
+				if ((this._TenTinhTrangOne != value))
+				{
+					this._TenTinhTrangOne = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTinhTrangTwo", DbType="NVarChar(100)")]
+		public string TenTinhTrangTwo
+		{
+			get
+			{
+				return this._TenTinhTrangTwo;
+			}
+			set
+			{
+				if ((this._TenTinhTrangTwo != value))
+				{
+					this._TenTinhTrangTwo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTinhTrangThree", DbType="NVarChar(100)")]
+		public string TenTinhTrangThree
+		{
+			get
+			{
+				return this._TenTinhTrangThree;
+			}
+			set
+			{
+				if ((this._TenTinhTrangThree != value))
+				{
+					this._TenTinhTrangThree = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KetQua", DbType="NVarChar(100)")]
+		public string KetQua
+		{
+			get
+			{
+				return this._KetQua;
+			}
+			set
+			{
+				if ((this._KetQua != value))
+				{
+					this._KetQua = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.View_GioHang")]
-	public partial class View_GioHang1
+	public partial class View_GioHang
 	{
 		
 		private int _MaHoaDon;
@@ -2870,7 +3832,7 @@ namespace DTO
 		
 		private string _Image;
 		
-		public View_GioHang1()
+		public View_GioHang()
 		{
 		}
 		

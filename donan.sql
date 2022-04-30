@@ -91,6 +91,33 @@ CREATE TABLE [dbo].[Users](
 	CONSTRAINT PK_TaiKhoan PRIMARY KEY (TenDangNhap)
 )
 
+CREATE TABLE [dbo].[TenMayTinh](
+	[TenMay] nvarchar(50),
+	CONSTRAINT PK_TenMay PRIMARY KEY(TenMay))
+
+CREATE TABLE [dbo].[TinhTrangOne](
+	[TenTinhTrangOne] [nvarchar](100),
+	[TenMay] nvarchar(50),
+	CONSTRAINT PK_TT1 PRIMARY KEY(TenTinhTrangOne))
+
+CREATE TABLE [dbo].[TinhTrangTwo](
+	[TenTinhTrangTwo] [nvarchar](100),
+	[TenMay] nvarchar(50),
+	CONSTRAINT PK_TT2 PRIMARY KEY(TenTinhTrangTwo))
+
+CREATE TABLE [dbo].[TinhTrangThree](
+	[TenTinhTrangThree] [nvarchar](100),
+	[TenMay] nvarchar(50),
+	CONSTRAINT PK_TT3 PRIMARY KEY(TenTinhTrangThree))
+
+CREATE TABLE [dbo].[KetQua](
+	[TenTinhTrangOne] [nvarchar](100),
+	[TenTinhTrangTwo] [nvarchar](100),
+	[TenTinhTrangThree] [nvarchar](100),
+	[KetQua] [nvarchar](100),
+	[Anh] [nvarchar](100)
+)
+
 --KHOÁ NGOẠI
 ALTER TABLE [dbo].[SanPham]
 ADD CONSTRAINT FK_SP_NCC FOREIGN KEY(MaNhaPhanPhoi) REFERENCES [dbo].[NhaPhanPhoi](MaNhaPhanPhoi)
@@ -114,11 +141,22 @@ ALTER TABLE [dbo].[ChiTietHoaDon]
 ADD CONSTRAINT FK_CT_HOADON_User FOREIGN KEY(Gmail) REFERENCES [dbo].[KhachHang](Gmail)
 ALTER TABLE [dbo].[Users]
 ADD CONSTRAINT FK_User FOREIGN KEY(MaNhanVien) REFERENCES [dbo].[NhanVien](MaNhanVien)
+ALTER TABLE [dbo].[TinhTrangOne]
+ADD CONSTRAINT FK_TTTM1 FOREIGN KEY(TenMay) REFERENCES [dbo].[TenMayTinh](TenMay)
+ALTER TABLE [dbo].[TinhTrangTwo]
+ADD CONSTRAINT FK_TTTM2 FOREIGN KEY(TenMay) REFERENCES [dbo].[TenMayTinh](TenMay)
+ALTER TABLE [dbo].[TinhTrangThree]
+ADD CONSTRAINT FK_TTTM3 FOREIGN KEY(TenMay) REFERENCES [dbo].[TenMayTinh](TenMay)
+
+ALTER TABLE [dbo].[KetQua]
+ADD CONSTRAINT FK_TinhTrang1 FOREIGN KEY(TenTinhTrangOne) REFERENCES [dbo].[TinhTrangOne](TenTinhTrangOne)
+ALTER TABLE [dbo].[KetQua]
+ADD CONSTRAINT FK_TinhTrang2 FOREIGN KEY(TenTinhTrangTwo) REFERENCES [dbo].[TinhTrangTwo](TenTinhTrangTwo)
+ALTER TABLE [dbo].[KetQua]
+ADD CONSTRAINT FK_TinhTrang3 FOREIGN KEY(TenTinhTrangThree) REFERENCES [dbo].[TinhTrangThree](TenTinhTrangThree)
 -----------------------RẰNG BUỘC--------------------------------------------
 ALTER TABLE [dbo].[ChiTietPhieuNhap]
 ADD CONSTRAINT CK_PN CHECK(SoLuong > 0)
-ALTER TABLE [dbo].[DotKhuyenMai]
-ADD CONSTRAINT CK_NGAY CHECK(NgayBD<NgayKT)
 ALTER TABLE [dbo].[SanPham]
 ADD CONSTRAINT CK_GIA CHECK(GiaBan > 0)
 ALTER TABLE [dbo].[KhachHang]
@@ -146,50 +184,6 @@ BEGIN
 	UPDATE SanPham
 	SET TonKho = TonKho + (SELECT SoLuong FROM inserted)
 	WHERE MaSanPham=(SELECT MaSanPham FROM inserted)
-END
---ngày nhập phải trước ngày hiện tại--
-CREATE TRIGGER KT_NGAYNHAP ON PHIEUNHAP
-FOR INSERT, UPDATE
-AS
-	DECLARE @MAPN int,@NGAYNHAP DATE
-	IF NOT EXISTS (SELECT * FROM deleted)
-	BEGIN
-		SELECT @MAPN = MaPhieuNhap,@NGAYNHAP = NgayNhap
-		FROM inserted
-		WHERE MaPhieuNhap = @MAPN
-		IF(@NGAYNHAP>GETDATE())
-		BEGIN
-			RAISERROR (N'Ngày nhập phải trước ngày hiện tại',16,1)
-			ROLLBACK
-			RETURN
-		END
-		IF DATEDIFF(DD,@NGAYNHAP,GETDATE()) > 30
-		BEGIN
-			RAISERROR (N'Ngày hiện tại - ngày nhập <= 30 ngày',16,1)
-			ROLLBACK
-			RETURN
-		END
-	END
-	ELSE
-	BEGIN
-		IF UPDATE(NgayNhap)
-		BEGIN
-			SELECT @MAPN = MaPhieuNhap,@NGAYNHAP = NgayNhap
-			FROM inserted
-			WHERE MaPhieuNhap = @MAPN
-			IF(@NGAYNHAP>GETDATE())
-		BEGIN
-			RAISERROR (N'Ngày nhập phải trước ngày hiện tại',16,1)
-			ROLLBACK
-			RETURN
-		END
-		IF DATEDIFF(DD,@NGAYNHAP,GETDATE()) > 30
-		BEGIN
-			RAISERROR (N'Ngày hiện tại - ngày nhập <= 30 ngày',16,1)
-			ROLLBACK
-			RETURN
-		END
-	END
 END
 --------------------tính tiền
 create trigger cntien on [dbo].[ChiTietHoaDon]
@@ -320,3 +314,26 @@ INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [SoLuong], [TongT
 INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon],[MaNhanVien]) VALUES (2, 2,'sonlaso1119@gmail.com', 6,  1890000, NULL, '15/3/2021',2)
 INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon],[MaNhanVien]) VALUES (3, 3,'sonlaso1119@gmail.com', 8,  1890000, NULL, '23/3/2021',3)
 SET IDENTITY_INSERT [ChiTietHoaDon] OFF
+
+INSERT [dbo].[TenMayTinh] ([TenMay]) VALUES (N'Lap Top')
+INSERT [dbo].[TenMayTinh] ([TenMay]) VALUES (N'PC')
+
+INSERT [dbo].[TinhTrangOne] ([TenTinhTrangOne],[TenMay]) VALUES (N'Laptop không vào nguồn',N'Lap Top')
+INSERT [dbo].[TinhTrangOne] ([TenTinhTrangOne],[TenMay]) VALUES (N'Máy tính thường xuyên bị đơ',N'Lap Top')
+INSERT [dbo].[TinhTrangOne] ([TenTinhTrangOne],[TenMay]) VALUES (N'ổ đĩa chứa quá nhiều dữ liệu',N'Lap Top')
+INSERT [dbo].[TinhTrangOne] ([TenTinhTrangOne],[TenMay]) VALUES (N'Máy tính tự bật lên khi đã shutdown',N'Lap Top')
+
+INSERT [dbo].[TinhTrangTwo] ([TenTinhTrangTwo],[TenMay]) VALUES (N'Bật nguồn không lên gì',N'Lap Top')
+INSERT [dbo].[TinhTrangTwo] ([TenTinhTrangTwo],[TenMay]) VALUES (N'laptop phát ra âm thanh ồn',N'Lap Top')
+INSERT [dbo].[TinhTrangTwo] ([TenTinhTrangTwo],[TenMay]) VALUES (N'ổ đĩa bị lỗi',N'Lap Top')
+INSERT [dbo].[TinhTrangTwo] ([TenTinhTrangTwo],[TenMay]) VALUES (N'Máy tỏa nhiệt lớn, đôi lúc tắt đột ngột sau đó mở không lên nguồn',N'Lap Top')
+
+INSERT [dbo].[TinhTrangThree] ([TenTinhTrangThree],[TenMay]) VALUES (N'Bật nguồn nhưng ngắt nguồn',N'Lap Top')
+INSERT [dbo].[TinhTrangThree] ([TenTinhTrangThree],[TenMay]) VALUES (N'Ổ cứng báo lỗi “Hard disk Corrupted”',N'Lap Top')
+INSERT [dbo].[TinhTrangThree] ([TenTinhTrangThree],[TenMay]) VALUES (N'bị virus hoặc sử dụng các phần mềm độc hại',N'Lap Top')
+
+INSERT [dbo].[KetQua] ([TenTinhTrangOne],[TenTinhTrangTwo],[TenTinhTrangThree],[KetQua],[Anh]) VALUES (N'Laptop không vào nguồn',N'Bật nguồn không lên gì',N'Bật nguồn nhưng ngắt nguồn',N'Lỗi Nguồn',N'loinguon.png')
+INSERT [dbo].[KetQua] ([TenTinhTrangOne],[TenTinhTrangTwo],[TenTinhTrangThree],[KetQua],[Anh]) VALUES (N'Máy tính tự bật lên khi đã shutdown',N'Bật nguồn không lên gì',N'Bật nguồn nhưng ngắt nguồn',N'Lỗi Nguồn',N'loinguon.png')
+INSERT [dbo].[KetQua] ([TenTinhTrangOne],[TenTinhTrangTwo],[TenTinhTrangThree],[KetQua],[Anh]) VALUES (N'Máy tính tự bật lên khi đã shutdown',N'Máy tỏa nhiệt lớn, đôi lúc tắt đột ngột sau đó mở không lên nguồn',N'Bật nguồn nhưng ngắt nguồn',N'Lỗi Nguồn',N'loinguon.png')
+INSERT [dbo].[KetQua] ([TenTinhTrangOne],[TenTinhTrangTwo],[TenTinhTrangThree],[KetQua],[Anh]) VALUES (N'Máy tính thường xuyên bị đơ',N'laptop phát ra âm thanh ồn',N'Ổ cứng báo lỗi “Hard disk Corrupted”',N'Lỗi ổ cứng',N'loiocung.png')
+INSERT [dbo].[KetQua] ([TenTinhTrangOne],[TenTinhTrangTwo],[TenTinhTrangThree],[KetQua],[Anh]) VALUES (N'ổ đĩa chứa quá nhiều dữ liệu',N'ổ đĩa bị lỗi',N'bị virus hoặc sử dụng các phần mềm độc hại',N'Ổ đĩa chạy chậm',N'odiacham.png')

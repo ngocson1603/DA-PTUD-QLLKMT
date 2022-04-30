@@ -121,8 +121,8 @@
       <Association Name="KhachHang_ChiTietHoaDon" Member="KhachHang" ThisKey="Gmail" OtherKey="Gmail" Type="KhachHang" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.View_GioHang" Member="View_GioHangs">
-    <Type Name="View_GioHang">
+  <Table Name="dbo.View_GioHang" Member="View_GioHang1s">
+    <Type Name="View_GioHang1">
       <Column Name="MaHoaDon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="MaSanPham" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Gmail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
@@ -133,8 +133,80 @@
       <Column Name="Image" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.View_GioHang" Member="View_GioHang1s">
-    <Type Name="View_GioHang1">
+  <Table Name="dbo.KetQua" Member="KetQuas">
+    <Type Name="KetQua">
+      <Column Name="TenTinhTrangOne" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TenTinhTrangTwo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TenTinhTrangThree" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KetQua" Member="KetQua1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="TinhTrangOne_KetQua" Member="TinhTrangOne" ThisKey="TenTinhTrangOne" OtherKey="TenTinhTrangOne" Type="TinhTrangOne" IsForeignKey="true" />
+      <Association Name="TinhTrangTwo_KetQua" Member="TinhTrangTwo" ThisKey="TenTinhTrangTwo" OtherKey="TenTinhTrangTwo" Type="TinhTrangTwo" IsForeignKey="true" />
+      <Association Name="TinhTrangThree_KetQua" Member="TinhTrangThree" ThisKey="TenTinhTrangThree" OtherKey="TenTinhTrangThree" Type="TinhTrangThree" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TenMayTinh" Member="TenMayTinhs">
+    <Type Name="TenMayTinh">
+      <Column Name="TenMay" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="TenMayTinh_TinhTrangOne" Member="TinhTrangOnes" ThisKey="TenMay" OtherKey="TenMay" Type="TinhTrangOne" />
+      <Association Name="TenMayTinh_TinhTrangTwo" Member="TinhTrangTwos" ThisKey="TenMay" OtherKey="TenMay" Type="TinhTrangTwo" />
+      <Association Name="TenMayTinh_TinhTrangThree" Member="TinhTrangThrees" ThisKey="TenMay" OtherKey="TenMay" Type="TinhTrangThree" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TinhTrangOne" Member="TinhTrangOnes">
+    <Type Name="TinhTrangOne">
+      <Column Name="TenTinhTrangOne" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenMay" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TinhTrangOne_KetQua" Member="KetQuas" ThisKey="TenTinhTrangOne" OtherKey="TenTinhTrangOne" Type="KetQua" />
+      <Association Name="TenMayTinh_TinhTrangOne" Member="TenMayTinh" ThisKey="TenMay" OtherKey="TenMay" Type="TenMayTinh" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TinhTrangTwo" Member="TinhTrangTwos">
+    <Type Name="TinhTrangTwo">
+      <Column Name="TenTinhTrangTwo" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenMay" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TinhTrangTwo_KetQua" Member="KetQuas" ThisKey="TenTinhTrangTwo" OtherKey="TenTinhTrangTwo" Type="KetQua" />
+      <Association Name="TenMayTinh_TinhTrangTwo" Member="TenMayTinh" ThisKey="TenMay" OtherKey="TenMay" Type="TenMayTinh" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TinhTrangThree" Member="TinhTrangThrees">
+    <Type Name="TinhTrangThree">
+      <Column Name="TenTinhTrangThree" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenMay" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TinhTrangThree_KetQua" Member="KetQuas" ThisKey="TenTinhTrangThree" OtherKey="TenTinhTrangThree" Type="KetQua" />
+      <Association Name="TenMayTinh_TinhTrangThree" Member="TenMayTinh" ThisKey="TenMay" OtherKey="TenMay" Type="TenMayTinh" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_Anh" Member="View_Anhs">
+    <Type Name="View_Anh">
+      <Column Name="KetQua" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Anh" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_TinhTrangTwo" Member="View_TinhTrangTwos">
+    <Type Name="View_TinhTrangTwo">
+      <Column Name="TenTinhTrangOne" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TenMay" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TenTinhTrangTwo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_TinhTrangThree" Member="View_TinhTrangThrees">
+    <Type Name="View_TinhTrangThree">
+      <Column Name="TenMay" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TenTinhTrangOne" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TenTinhTrangTwo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TenTinhTrangThree" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_Kq" Member="View_Kqs">
+    <Type Name="View_Kq">
+      <Column Name="TenTinhTrangOne" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TenTinhTrangTwo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TenTinhTrangThree" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KetQua" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_GioHang" Member="View_GioHangs">
+    <Type Name="View_GioHang">
       <Column Name="MaHoaDon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="MaSanPham" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Gmail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
