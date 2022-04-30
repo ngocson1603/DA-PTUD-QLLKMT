@@ -78,6 +78,7 @@ namespace GUI
             this.guna2Button1.Size = new System.Drawing.Size(427, 19);
             this.guna2Button1.TabIndex = 0;
             this.guna2Button1.Text = "Tổng mua hàng tháng này";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // guna2Button2
             // 
@@ -94,20 +95,22 @@ namespace GUI
             this.guna2Button2.Size = new System.Drawing.Size(428, 19);
             this.guna2Button2.TabIndex = 1;
             this.guna2Button2.Text = "Tổng số tiền đã mua";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
+            chartArea1.Name = "DanhThu1";
             this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(3, 28);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
+            series1.ChartArea = "DanhThu1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "DoanhThu1";
             series1.YValuesPerPoint = 2;
             this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(427, 357);
@@ -126,7 +129,7 @@ namespace GUI
             series2.ChartArea = "ChartTongMua";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series2.Legend = "Legend1";
-            series2.Name = "Series1";
+            series2.Name = "VNĐ";
             series2.YValuesPerPoint = 2;
             this.chart2.Series.Add(series2);
             this.chart2.Size = new System.Drawing.Size(428, 357);
