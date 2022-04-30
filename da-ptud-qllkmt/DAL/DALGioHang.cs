@@ -20,6 +20,12 @@ namespace DAL
             return qllk.View_GioHangs.Where(t => t.Gmail.Equals(tenkh)).Select(t => t).ToList();
         }
 
+        public List<SanPham> loadTenSP(int masp)
+        {
+            var tensp = from lk in qllk.SanPhams where lk.MaSanPham == masp select lk;
+            return tensp.ToList();
+        }
+
         public bool themGioHang(ChiTietHoaDon cthd)
         {
             try

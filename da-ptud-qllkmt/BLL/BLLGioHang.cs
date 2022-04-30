@@ -30,5 +30,10 @@ namespace BLL
         {
             return dalgiohang.loadGioHang(tenkh);
         }
+
+        public List<SanPham> loadTenSP(int masp)
+        {
+            return dalgiohang.loadTenSP(masp);
+        }
     }
 }

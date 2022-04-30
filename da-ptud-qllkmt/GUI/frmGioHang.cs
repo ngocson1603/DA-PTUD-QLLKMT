@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using BLL;
+using GUI.XuLy;
 
 namespace GUI
 {
@@ -22,12 +23,12 @@ namespace GUI
         }
 
         private void frmGioHang_Load(object sender, EventArgs e)
-        { 
+        {
             dataGridView1.DataSource = bllgiohang.loadGioHang(frmDN.taikhoan);
             txtMaSP.Text = UserControls.detailProduct.ma;
             txtGiaTien.Text = UserControls.detailProduct.gia;
             txtTK.Text = frmDN.taikhoan;
-            
+
             dataGridView1.Columns[7].Visible = false;
             tinhTien();
         }
@@ -79,20 +80,27 @@ namespace GUI
                 pictureBox1.Image = GetImg(direct, pictureBox1.Width, pictureBox1.Height);
 
                 guna2Button2.Enabled = true;
+                guna2Button3.Enabled = true;
+
+                int a = int.Parse(txtMaSP.Text);
+                cboten.DataSource = bllgiohang.loadTenSP(a);
+                cboten.DisplayMember = "TenSanPham";
+                cboten.ValueMember = "TenSanPham";
+                cboten.SelectedIndex = 0;
             }
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             dateTimeNgay.Text = DateTime.Now.ToString();
-            
+
             int a = int.Parse(txtGiaTien.Text);
-            if(a == 0)
+            if (a == 0)
             {
                 MessageBox.Show("Vui lòng chọn sản phẩm ở trang Mua Hàng");
                 return;
             }
-            else 
+            else
             {
                 int sl = int.Parse(cboSoLuong.SelectedItem.ToString());
                 int gia = int.Parse(txtGiaTien.Text);
@@ -147,6 +155,26 @@ namespace GUI
                     return;
                 }
             }
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            WordExport we = new WordExport();
+            string ngay = DateTime.Now.Day.ToString();
+            string thang = DateTime.Now.Month.ToString();
+            string nam = DateTime.Now.Year.ToString();
+            string ma = textBox2.Text.ToString();
+            string ngayt = dateTimeNgay.Value.Day.ToString();
+            string thangt = dateTimeNgay.Value.Month.ToString();
+            string namt = dateTimeNgay.Value.Year.ToString();
+
+            string tensp = cboten.SelectedValue.ToString();
+            string sl = cboSoLuong.Text.ToString();
+            string gia = txtGiaTien.Text.ToString();
+            string tongtien = txtTongTien.Text.ToString();
+
+            we.QuyetDinhKhenThuong(ngay, thang, nam, ma, ngayt,thangt,namt, tensp, sl, gia, tongtien);
+            guna2Button3.Enabled = false;
         }
     }
 }
