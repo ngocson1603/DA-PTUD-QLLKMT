@@ -11,7 +11,8 @@ namespace GUI.XuLy
     public class loadProduct
     {
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.QL_CUAHANGLINHKIENMAYTINH);
-        DataSet ds_SinhVien = new DataSet();
+        DataSet ds_SP = new DataSet();
+        DataSet ds_SPTen = new DataSet();
         public loadProduct()
         {
             LoadSP();
@@ -23,20 +24,21 @@ namespace GUI.XuLy
 
             SqlDataAdapter ds_sv = new SqlDataAdapter(caulenh, conn);
 
-            ds_sv.Fill(ds_SinhVien, "SanPham");
+            ds_sv.Fill(ds_SP, "SanPham");
             DataColumn[] key = new DataColumn[1];
 
-            key[0] = ds_SinhVien.Tables["SanPham"].Columns[0];
+            key[0] = ds_SP.Tables["SanPham"].Columns[0];
 
-            ds_SinhVien.Tables["SanPham"].PrimaryKey = key;
+            ds_SP.Tables["SanPham"].PrimaryKey = key;
         }
 
 
 
         public DataTable LoadDLSP()
         {
-            return ds_SinhVien.Tables["SanPham"];
+            return ds_SP.Tables["SanPham"];
         }
+
 
         public void LoadSPDetail()
         {
@@ -44,19 +46,19 @@ namespace GUI.XuLy
 
             SqlDataAdapter ds_sv = new SqlDataAdapter(caulenh, conn);
 
-            ds_sv.Fill(ds_SinhVien, "SanPhamDetail");
+            ds_sv.Fill(ds_SP, "SanPhamDetail");
             DataColumn[] key = new DataColumn[1];
 
-            key[0] = ds_SinhVien.Tables["SanPhamDetail"].Columns[0];
+            key[0] = ds_SP.Tables["SanPhamDetail"].Columns[0];
 
-            ds_SinhVien.Tables["SanPhamDetail"].PrimaryKey = key;
+            ds_SP.Tables["SanPhamDetail"].PrimaryKey = key;
         }
 
 
 
         public DataTable LoadDLSPDetail()
         {
-            return ds_SinhVien.Tables["SanPhamDetail"];
+            return ds_SP.Tables["SanPhamDetail"];
         }
     }
 }

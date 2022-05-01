@@ -353,6 +353,7 @@
       <DependentUpon>listProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="XuLy\Constants.cs" />
+    <Compile Include="XuLy\ExcelExport.cs" />
     <Compile Include="XuLy\FileCommon.cs" />
     <Compile Include="XuLy\Global.cs" />
     <Compile Include="XuLy\loadProduct.cs" />

@@ -282,6 +282,14 @@ namespace DTO
 				return this.GetTable<View_GioHang>();
 			}
 		}
+		
+		public System.Data.Linq.Table<View_BieuMauGio> View_BieuMauGios
+		{
+			get
+			{
+				return this.GetTable<View_BieuMauGio>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ChiTietPhieuNhap")]
@@ -3960,6 +3968,141 @@ namespace DTO
 				if ((this._Image != value))
 				{
 					this._Image = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.View_BieuMauGio")]
+	public partial class View_BieuMauGio
+	{
+		
+		private string _TenSanPham;
+		
+		private System.Nullable<int> _SoLuong;
+		
+		private System.Nullable<int> _TongTien;
+		
+		private System.Nullable<decimal> _TongTienHoaDon;
+		
+		private System.Nullable<System.DateTime> _NgayLapHoaDon;
+		
+		private string _Gmail;
+		
+		private string _STT;
+		
+		public View_BieuMauGio()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSanPham", DbType="NVarChar(200)")]
+		public string TenSanPham
+		{
+			get
+			{
+				return this._TenSanPham;
+			}
+			set
+			{
+				if ((this._TenSanPham != value))
+				{
+					this._TenSanPham = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuong", DbType="Int")]
+		public System.Nullable<int> SoLuong
+		{
+			get
+			{
+				return this._SoLuong;
+			}
+			set
+			{
+				if ((this._SoLuong != value))
+				{
+					this._SoLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongTien", DbType="Int")]
+		public System.Nullable<int> TongTien
+		{
+			get
+			{
+				return this._TongTien;
+			}
+			set
+			{
+				if ((this._TongTien != value))
+				{
+					this._TongTien = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongTienHoaDon", DbType="Money")]
+		public System.Nullable<decimal> TongTienHoaDon
+		{
+			get
+			{
+				return this._TongTienHoaDon;
+			}
+			set
+			{
+				if ((this._TongTienHoaDon != value))
+				{
+					this._TongTienHoaDon = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayLapHoaDon", DbType="Date")]
+		public System.Nullable<System.DateTime> NgayLapHoaDon
+		{
+			get
+			{
+				return this._NgayLapHoaDon;
+			}
+			set
+			{
+				if ((this._NgayLapHoaDon != value))
+				{
+					this._NgayLapHoaDon = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gmail", DbType="NVarChar(50)")]
+		public string Gmail
+		{
+			get
+			{
+				return this._Gmail;
+			}
+			set
+			{
+				if ((this._Gmail != value))
+				{
+					this._Gmail = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STT", CanBeNull=false)]
+		public string STT
+		{
+			get
+			{
+				return this._STT;
+			}
+			set
+			{
+				if ((this._STT != value))
+				{
+					this._STT = value;
 				}
 			}
 		}

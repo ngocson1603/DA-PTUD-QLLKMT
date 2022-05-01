@@ -176,5 +176,42 @@ namespace GUI
             we.QuyetDinhKhenThuong(ngay, thang, nam, ma, ngayt,thangt,namt, tensp, sl, gia, tongtien);
             guna2Button3.Enabled = false;
         }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            ExcelExport ex = new ExcelExport();
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("khong co du lieu de xuat");
+                return;
+            }
+
+            List<View_BieuMauGio> pListKhoa = new List<View_BieuMauGio>();
+
+            foreach (DataGridViewRow item in dataGridView1.Rows)
+            {
+                View_BieuMauGio i = new View_BieuMauGio();
+                i.TenSanPham = item.Cells[0].Value.ToString();
+                i.SoLuong = int.Parse(item.Cells[1].Value.ToString());
+                i.TongTien = int.Parse(item.Cells[2].Value.ToString());
+                i.TongTienHoaDon = int.Parse(item.Cells[3].Value.ToString());
+                i.NgayLapHoaDon = DateTime.Parse(item.Cells[4].Value.ToString());
+                i.Gmail = item.Cells[5].Value.ToString();
+                i.STT = item.Cells[6].Value.ToString();
+                pListKhoa.Add(i);
+            }
+
+
+            string path = string.Empty;
+
+            ex.ExportKhoa(pListKhoa, ref path, false);
+
+            DialogResult r = MessageBox.Show("ban co muon mo file khong", "thong bao", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (!string.IsNullOrEmpty(path) && r == DialogResult.Yes)
+            {
+                System.Diagnostics.Process.Start(path);
+            }
+        }
     }
 }

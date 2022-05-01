@@ -38,7 +38,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.cboSoLuong = new System.Windows.Forms.ComboBox();
             this.dateTimeNgay = new System.Windows.Forms.DateTimePicker();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -48,6 +48,7 @@
             this.txtTK = new System.Windows.Forms.TextBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cboten = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -158,7 +159,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Controls.Add(this.guna2Button3, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.guna2Button4, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.cboSoLuong, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dateTimeNgay, 5, 0);
@@ -175,6 +176,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label5, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.guna2Button1, 4, 2);
             this.tableLayoutPanel1.Controls.Add(this.guna2Button2, 5, 2);
+            this.tableLayoutPanel1.Controls.Add(this.guna2Button3, 4, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -186,27 +188,29 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1080, 198);
             this.tableLayoutPanel1.TabIndex = 11;
             // 
-            // guna2Button3
+            // guna2Button4
             // 
-            this.guna2Button3.AutoRoundedCorners = true;
-            this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.BorderRadius = 21;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.Enabled = false;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Location = new System.Drawing.Point(719, 69);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.ShadowDecoration.BorderRadius = 26;
-            this.guna2Button3.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2Button3.ShadowDecoration.Enabled = true;
-            this.guna2Button3.Size = new System.Drawing.Size(111, 45);
-            this.guna2Button3.TabIndex = 21;
-            this.guna2Button3.Text = "In hóa đơn";
-            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
+            this.guna2Button4.AutoRoundedCorners = true;
+            this.guna2Button4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button4.BorderRadius = 21;
+            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button4.ForeColor = System.Drawing.Color.White;
+            this.guna2Button4.HoverState.BorderColor = System.Drawing.Color.Silver;
+            this.guna2Button4.HoverState.FillColor = System.Drawing.Color.Silver;
+            this.guna2Button4.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2Button4.Location = new System.Drawing.Point(898, 69);
+            this.guna2Button4.Name = "guna2Button4";
+            this.guna2Button4.ShadowDecoration.BorderRadius = 26;
+            this.guna2Button4.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2Button4.ShadowDecoration.Enabled = true;
+            this.guna2Button4.Size = new System.Drawing.Size(111, 45);
+            this.guna2Button4.TabIndex = 20;
+            this.guna2Button4.Text = "Xuất Excel";
+            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
             // cboSoLuong
             // 
@@ -345,6 +349,28 @@
             this.guna2Button2.Text = "Hủy đơn";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
+            // guna2Button3
+            // 
+            this.guna2Button3.AutoRoundedCorners = true;
+            this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button3.BorderRadius = 21;
+            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button3.Enabled = false;
+            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button3.ForeColor = System.Drawing.Color.White;
+            this.guna2Button3.Location = new System.Drawing.Point(719, 69);
+            this.guna2Button3.Name = "guna2Button3";
+            this.guna2Button3.ShadowDecoration.BorderRadius = 26;
+            this.guna2Button3.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2Button3.ShadowDecoration.Enabled = true;
+            this.guna2Button3.Size = new System.Drawing.Size(111, 45);
+            this.guna2Button3.TabIndex = 21;
+            this.guna2Button3.Text = "In hóa đơn";
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.cboten);
@@ -432,5 +458,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private System.Windows.Forms.ComboBox cboten;
+        private Guna.UI2.WinForms.Guna2Button guna2Button4;
     }
 }

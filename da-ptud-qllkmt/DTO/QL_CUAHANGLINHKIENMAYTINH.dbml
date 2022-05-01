@@ -217,4 +217,15 @@
       <Column Name="Image" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.View_BieuMauGio" Member="View_BieuMauGios">
+    <Type Name="View_BieuMauGio">
+      <Column Name="TenSanPham" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TongTien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TongTienHoaDon" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="NgayLapHoaDon" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Gmail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Member="STT" Type="System.String" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>

@@ -15,6 +15,7 @@ namespace GUI
     {
         XuLy.loadProduct lsp = new XuLy.loadProduct();
         List<productList> dsSP = new List<productList>();
+        public static string ten;
         public frmProductList()
         {
             InitializeComponent();
