@@ -245,12 +245,6 @@
     <Compile Include="frmDN.Designer.cs">
       <DependentUpon>frmDN.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDoiMK.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDoiMK.Designer.cs">
-      <DependentUpon>frmDoiMK.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmGiaoDien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -356,6 +350,7 @@
       <DependentUpon>listProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="XuLy\Constants.cs" />
+    <Compile Include="XuLy\DangNhap.cs" />
     <Compile Include="XuLy\ExcelExport.cs" />
     <Compile Include="XuLy\FileCommon.cs" />
     <Compile Include="XuLy\Global.cs" />

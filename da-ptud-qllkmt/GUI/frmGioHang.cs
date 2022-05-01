@@ -17,6 +17,7 @@ namespace GUI
     {
         Helper hp = new Helper();
         BLLGioHang bllgiohang = new BLLGioHang();
+        public static string taikhoan;
         public frmGioHang()
         {
             InitializeComponent();
@@ -180,6 +181,7 @@ namespace GUI
         private void guna2Button4_Click(object sender, EventArgs e)
         {
             dataExcel.DataSource = bllgiohang.loadBieuMauGio(frmDN.taikhoan);
+            taikhoan = txtTK.Text;
             ExcelExport ex = new ExcelExport();
             if (dataGridView1.Rows.Count == 0)
             {

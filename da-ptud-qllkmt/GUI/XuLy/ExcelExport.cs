@@ -526,6 +526,9 @@ namespace GUI.XuLy
                 pReplacer.Add("%Ngay", day);
                 pReplacer.Add("%Thang", month);
                 pReplacer.Add("%Nam", Year);
+                string ten = frmTrangChu.tenkhach;
+                pReplacer.Add("%TenNguoiLap", ten);
+                pReplacer.Add("%TaiKhoan", frmGioHang.taikhoan);
             }
         }
 

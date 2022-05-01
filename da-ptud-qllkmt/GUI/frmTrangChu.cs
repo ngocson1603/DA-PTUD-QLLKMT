@@ -9,42 +9,33 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
 using BLL;
+using GUI.XuLy;
+using System.Data.SqlClient;
 
 namespace GUI
 {
     public partial class frmTrangChu : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        BLLDangKy blldangky = new BLLDangKy();
         Helper hp = new Helper();
+        loadProduct xl = new loadProduct();
+        public static string tenkhach;
         public frmTrangChu()
         {
+            xl.load();
             InitializeComponent();
             pnltrang = panel1;
-            txtChao.Caption += "Xin chào : " + frmDN.taikhoan;
+
+            txtChao.Caption = tenkhach;
         }
 
         public static Panel pnltrang;
 
         public Form currentchildform;
-        public void motrangcon(Form trangcon)
-        {
-            if (currentchildform != null)
-            {
-                currentchildform.Close();
-
-            }
-            currentchildform = trangcon;
-            trangcon.TopLevel = false;
-            trangcon.FormBorderStyle = FormBorderStyle.None;
-            trangcon.Dock = DockStyle.Fill;
-            panel1.Controls.Add(trangcon);
-            panel1.Tag = trangcon;
-            trangcon.BringToFront();
-            trangcon.Show();
-        }
 
         private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DialogResult a = MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Asterisk);
+            DialogResult a = MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
             if (a == DialogResult.Yes)
             {
                 Close();
@@ -53,7 +44,7 @@ namespace GUI
 
         private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DialogResult a = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất không?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Asterisk);
+            DialogResult a = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
             if (a == DialogResult.Yes)
             {
                 Close();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.XuLy;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace GUI
 {
     public partial class frmDN : Form
     {
+        DangNhap dn = new DangNhap();
         public frmDN()
         {
             InitializeComponent();
@@ -22,18 +24,47 @@ namespace GUI
 
         private void gunardangnhap_Click(object sender, EventArgs e)
         {
+            int dem = 0;
+            
+            int a = dn.dangNhap(txtUserName.Text,txtPassWord.Text);
             taikhoan = txtUserName.Text;
-            splashScreenManager1.ShowWaitForm();
-            Thread.Sleep(1000);
-            splashScreenManager1.CloseWaitForm();
-            frmTrangChu frm = new frmTrangChu();
-            frm.Show();
-            this.Hide();
+            if (txtUserName.Text.Length == 0 || txtPassWord.Text.Length == 0)
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+            }
+            else if (a == 3)
+            {
+                splashScreenManager1.ShowWaitForm();
+                Thread.Sleep(1000);
+                splashScreenManager1.CloseWaitForm();
+                frmTrangChu frm = new frmTrangChu();
+                frm.Show();
+                this.Hide();
+            }
+            else if (a == 1)
+            {
+                splashScreenManager1.ShowWaitForm();
+                Thread.Sleep(1000);
+                splashScreenManager1.CloseWaitForm();
+                frmTrangChuDanhChoNhanVien frm = new frmTrangChuDanhChoNhanVien();
+                frm.Show();
+                this.Hide();
+            }
+            else
+            {
+                dem++;
+                MessageBox.Show("Đăng nhập thất bại,mời bạn nhập lại");
+                if (dem == 3)
+                {
+                    MessageBox.Show("Bạn đã nhập sai 3 lần");
+                    Application.Exit();
+                }
+            }
         }
 
         private void gunathoat_Click(object sender, EventArgs e)
         {
-            DialogResult a = MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Asterisk);
+            DialogResult a = MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
             if (a == DialogResult.Yes)
             {
 

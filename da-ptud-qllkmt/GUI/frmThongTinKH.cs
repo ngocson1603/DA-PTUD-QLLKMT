@@ -15,6 +15,7 @@ namespace GUI
     public partial class frmThongTinKH : Form
     {
         BLLDangKy blldangky = new BLLDangKy();
+        public static string hoten;
         public frmThongTinKH()
         {
             InitializeComponent();
@@ -53,7 +54,7 @@ namespace GUI
                 txtDiaChi.Text = diachi;
                 txtSoDienThoai.Text = sdt;
             }
-            
+            hoten = txtHoTen.Text;
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)

@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GUI.XuLy
 {
@@ -17,7 +18,30 @@ namespace GUI.XuLy
         {
             LoadSP();
             LoadSPDetail();
+            load();
         }
+
+        public void load()
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "select TenKhachHang from KhachHang where Gmail='" + frmDN.taikhoan + "'";
+                cmd.Connection = conn;
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    frmTrangChu.tenkhach = rdr.GetString(0);
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         public void LoadSP()
         {
             string caulenh = "select Image,TenSanPham from SanPham";
@@ -59,6 +83,37 @@ namespace GUI.XuLy
         public DataTable LoadDLSPDetail()
         {
             return ds_SP.Tables["SanPhamDetail"];
+        }
+        //ket noi sql
+        public void Mo()
+        {
+            if (conn.State != ConnectionState.Open)
+            {
+                conn.Open();
+            }
+        }
+        public void Dong()
+        {
+            if (conn.State != ConnectionState.Closed)
+            {
+                conn.Close();
+            }
+
+        }
+        public object ExcuteScalar(string sql)
+        {
+            SqlCommand comm = new SqlCommand(sql, conn);
+            Mo();
+            object ketqua = comm.ExecuteScalar();
+            Dong();
+            return ketqua;
+        }
+
+        public void exitForm()
+        {
+            DialogResult dr = MessageBox.Show("Bạn có muốn thoát?", "Exit", MessageBoxButtons.YesNo);
+            if (dr == System.Windows.Forms.DialogResult.Yes)
+                Application.Exit();
         }
     }
 }
