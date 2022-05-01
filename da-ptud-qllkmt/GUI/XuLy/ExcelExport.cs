@@ -520,6 +520,12 @@ namespace GUI.XuLy
                 string ngay = "Ngày " + currentDate.Day + " tháng " + currentDate.Month + " năm " + currentDate.Year;
                 pReplacer.Add("%NgayThangNam", ngay);
                 pReplacer.Add("%TongSo", "100");
+                string day = currentDate.Day.ToString();
+                string month = currentDate.Month.ToString();
+                string Year = currentDate.Year.ToString();
+                pReplacer.Add("%Ngay", day);
+                pReplacer.Add("%Thang", month);
+                pReplacer.Add("%Nam", Year);
             }
         }
 

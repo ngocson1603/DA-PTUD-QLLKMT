@@ -51,15 +51,15 @@
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataExcel = new System.Windows.Forms.DataGridView();
-            this.cboten = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongTienHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayLapHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cboten = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -409,35 +409,6 @@
             this.dataExcel.TabIndex = 11;
             this.dataExcel.Visible = false;
             // 
-            // cboten
-            // 
-            this.cboten.FormattingEnabled = true;
-            this.cboten.Location = new System.Drawing.Point(45, 18);
-            this.cboten.Name = "cboten";
-            this.cboten.Size = new System.Drawing.Size(121, 21);
-            this.cboten.TabIndex = 10;
-            this.cboten.Visible = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 56);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1080, 425);
-            this.dataGridView1.TabIndex = 12;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Location = new System.Drawing.Point(723, 56);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(357, 425);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            // 
             // TenSanPham
             // 
             this.TenSanPham.DataPropertyName = "TenSanPham";
@@ -473,6 +444,35 @@
             this.Gmail.DataPropertyName = "Gmail";
             this.Gmail.HeaderText = "Column6";
             this.Gmail.Name = "Gmail";
+            // 
+            // cboten
+            // 
+            this.cboten.FormattingEnabled = true;
+            this.cboten.Location = new System.Drawing.Point(45, 18);
+            this.cboten.Name = "cboten";
+            this.cboten.Size = new System.Drawing.Size(121, 21);
+            this.cboten.TabIndex = 10;
+            this.cboten.Visible = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 56);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1080, 425);
+            this.dataGridView1.TabIndex = 12;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox1.Location = new System.Drawing.Point(723, 56);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(357, 425);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
             // 
             // frmGioHang
             // 

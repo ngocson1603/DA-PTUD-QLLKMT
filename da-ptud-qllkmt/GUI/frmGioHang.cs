@@ -197,7 +197,6 @@ namespace GUI
                 i.TongTien = int.Parse(item.Cells[2].Value.ToString());
                 i.TongTienHoaDon = int.Parse(item.Cells[3].Value.ToString());
                 i.NgayLapHoaDon = DateTime.Parse(item.Cells[4].Value.ToString());
-                i.Gmail = item.Cells[5].Value.ToString();
 
                 pListKhoa.Add(i);
             }
