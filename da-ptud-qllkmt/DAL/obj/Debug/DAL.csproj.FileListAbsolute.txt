@@ -5,6 +5,6 @@ C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\DAL\obj\Debug\DAL.pdb
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\DAL\bin\Debug\DTO.dll
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\DAL\bin\Debug\DTO.pdb
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\DAL\bin\Debug\DTO.dll.config
+C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\DAL\obj\Debug\DAL.csproj.CopyComplete
-C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache

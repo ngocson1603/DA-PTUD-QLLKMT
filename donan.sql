@@ -78,10 +78,11 @@ CREATE TABLE [dbo].[ChiTietHoaDon](
 	[Gmail] nvarchar(50),
 	[SoLuong] [int],
 	[TongTien] int,
-	[TongTienHoaDon] [money],
+	[TongTienHoaDon] int,
 	[NgayLapHoaDon] [date],
 	[MaNhanVien] int, 
 	CONSTRAINT PK_CTHOADON PRIMARY KEY(MaHoaDon))
+
 
 CREATE TABLE [dbo].[Users](
 	[TenDangNhap] [varchar](50) NOT NULL,

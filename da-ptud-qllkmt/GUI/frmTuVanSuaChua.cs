@@ -40,6 +40,11 @@ namespace GUI
             cboTT3.DataSource = blltuvan.LoadTinhTrang3(cboTT1.SelectedValue.ToString(), cboTT2.SelectedValue.ToString());
             cboTT3.DisplayMember = "TenTinhTrangThree";
             cboTT3.ValueMember = "TenTinhTrangThree";
+
+            if (cboTT3.Text.Length > 0)
+            {
+                guna2Button1.Enabled = true;
+            }
         }
         private void cboTenMay_SelectedIndexChanged(object sender, EventArgs e)
         {

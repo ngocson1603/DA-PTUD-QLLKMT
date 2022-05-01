@@ -50,12 +50,20 @@
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dataExcel = new System.Windows.Forms.DataGridView();
             this.cboten = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.TenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TongTienHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayLapHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataExcel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -373,6 +381,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.dataExcel);
             this.panel2.Controls.Add(this.cboten);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -380,6 +389,25 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1080, 56);
             this.panel2.TabIndex = 11;
+            // 
+            // dataExcel
+            // 
+            this.dataExcel.AllowUserToAddRows = false;
+            this.dataExcel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataExcel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataExcel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TenSanPham,
+            this.SoLuong,
+            this.TongTien,
+            this.TongTienHoaDon,
+            this.NgayLapHoaDon,
+            this.Gmail});
+            this.dataExcel.GridColor = System.Drawing.SystemColors.Control;
+            this.dataExcel.Location = new System.Drawing.Point(45, 18);
+            this.dataExcel.Name = "dataExcel";
+            this.dataExcel.Size = new System.Drawing.Size(41, 21);
+            this.dataExcel.TabIndex = 11;
+            this.dataExcel.Visible = false;
             // 
             // cboten
             // 
@@ -392,6 +420,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 56);
@@ -408,6 +437,42 @@
             this.pictureBox1.Size = new System.Drawing.Size(357, 425);
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
+            // 
+            // TenSanPham
+            // 
+            this.TenSanPham.DataPropertyName = "TenSanPham";
+            this.TenSanPham.HeaderText = "Column1";
+            this.TenSanPham.Name = "TenSanPham";
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "Column2";
+            this.SoLuong.Name = "SoLuong";
+            // 
+            // TongTien
+            // 
+            this.TongTien.DataPropertyName = "TongTien";
+            this.TongTien.HeaderText = "Column3";
+            this.TongTien.Name = "TongTien";
+            // 
+            // TongTienHoaDon
+            // 
+            this.TongTienHoaDon.DataPropertyName = "TongTienHoaDon";
+            this.TongTienHoaDon.HeaderText = "Column4";
+            this.TongTienHoaDon.Name = "TongTienHoaDon";
+            // 
+            // NgayLapHoaDon
+            // 
+            this.NgayLapHoaDon.DataPropertyName = "NgayLapHoaDon";
+            this.NgayLapHoaDon.HeaderText = "Column5";
+            this.NgayLapHoaDon.Name = "NgayLapHoaDon";
+            // 
+            // Gmail
+            // 
+            this.Gmail.DataPropertyName = "Gmail";
+            this.Gmail.HeaderText = "Column6";
+            this.Gmail.Name = "Gmail";
             // 
             // frmGioHang
             // 
@@ -426,6 +491,7 @@
             this.tableLayoutPanel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataExcel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -459,5 +525,12 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private System.Windows.Forms.ComboBox cboten;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private System.Windows.Forms.DataGridView dataExcel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSanPham;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TongTienHoaDon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayLapHoaDon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gmail;
     }
 }

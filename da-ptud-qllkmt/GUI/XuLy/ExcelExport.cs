@@ -344,7 +344,7 @@ namespace GUI.XuLy
         public const string T_KeHoachTuyenDung = "KeHoachTD";
         // Khai báo trùng với tên đặt trong file cần điền dữ liệu ra
         public const string T_BieuMau = "BieuMau";
-        public const string T_DanhMucKhoa = "DanhMucKhoa";
+        public const string T_DanhMucKhoa = "BieuMauMua";
         #endregion
 
         #region ---- Variables ----
@@ -570,6 +570,7 @@ namespace GUI.XuLy
 
 
             // End template
+
             markProcessor.ApplyMarkers(UnknownVariableAction.ReplaceBlank);
 
             // Delete temporary row
@@ -875,12 +876,12 @@ namespace GUI.XuLy
                 #region ---- Lấy file report----
                 case T_BieuMau:
 
-                    arrByte = File.ReadAllBytes("BieuMau.xls").ToArray();
+                    arrByte = File.ReadAllBytes("BieuMau.xlsx").ToArray();
                     break;
 
                 case T_DanhMucKhoa:
 
-                    arrByte = File.ReadAllBytes("DanhMucKhoa.xls").ToArray();
+                    arrByte = File.ReadAllBytes("BieuMauMua.xlsx").ToArray();
                     break;
                     #endregion
             }
@@ -967,7 +968,7 @@ namespace GUI.XuLy
                 return false;
             }
 
-            // Set the So thu tu
+            //Set the So thu tu
             for (int i = 1; i <= dataSource.Count; i++)
             {
                 dataSource[i - 1].STT = i.ToString();
@@ -982,7 +983,7 @@ namespace GUI.XuLy
 
             BuildReplacerCurrentDate(ref replacer);
 
-            return OutSimpleReport(dataSource, replacer, "BieuMau", isPrintPreview, ref fileName);
+            return OutSimpleReport(dataSource, replacer, "BieuMauMua", isPrintPreview, ref fileName);
         }
 
 

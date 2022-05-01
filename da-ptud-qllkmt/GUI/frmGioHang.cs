@@ -179,6 +179,7 @@ namespace GUI
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
+            dataExcel.DataSource = bllgiohang.loadBieuMauGio(frmDN.taikhoan);
             ExcelExport ex = new ExcelExport();
             if (dataGridView1.Rows.Count == 0)
             {
@@ -188,7 +189,7 @@ namespace GUI
 
             List<View_BieuMauGio> pListKhoa = new List<View_BieuMauGio>();
 
-            foreach (DataGridViewRow item in dataGridView1.Rows)
+            foreach (DataGridViewRow item in dataExcel.Rows)
             {
                 View_BieuMauGio i = new View_BieuMauGio();
                 i.TenSanPham = item.Cells[0].Value.ToString();
@@ -197,7 +198,7 @@ namespace GUI
                 i.TongTienHoaDon = int.Parse(item.Cells[3].Value.ToString());
                 i.NgayLapHoaDon = DateTime.Parse(item.Cells[4].Value.ToString());
                 i.Gmail = item.Cells[5].Value.ToString();
-                i.STT = item.Cells[6].Value.ToString();
+
                 pListKhoa.Add(i);
             }
 

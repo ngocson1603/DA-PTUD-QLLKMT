@@ -20,6 +20,16 @@ namespace DAL
             return qllk.View_GioHangs.Where(t => t.Gmail.Equals(tenkh)).Select(t => t).ToList();
         }
 
+        public List<View_BieuMauGio> loadBieuMauGio(string tenkh)
+        {
+            return qllk.View_BieuMauGios.Where(t => t.Gmail.Equals(tenkh)).Select(t => t).ToList();
+        }
+
+        public List<ChiTietHoaDon> loadBieuMau(string tenkh)
+        {
+            return qllk.ChiTietHoaDons.Where(t => t.Gmail.Equals(tenkh)).Select(t => t).ToList();
+        }
+
         public List<SanPham> loadTenSP(int masp)
         {
             var tensp = from lk in qllk.SanPhams where lk.MaSanPham == masp select lk;

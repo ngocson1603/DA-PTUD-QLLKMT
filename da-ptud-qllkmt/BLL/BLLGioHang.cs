@@ -31,6 +31,16 @@ namespace BLL
             return dalgiohang.loadGioHang(tenkh);
         }
 
+        public List<View_BieuMauGio> loadBieuMauGio(string tenkh)
+        {
+            return dalgiohang.loadBieuMauGio(tenkh);
+        }
+
+        public List<ChiTietHoaDon> loadBieuMau(string tenkh)
+        {
+            return dalgiohang.loadBieuMau(tenkh);
+        }
+
         public List<SanPham> loadTenSP(int masp)
         {
             return dalgiohang.loadTenSP(masp);
