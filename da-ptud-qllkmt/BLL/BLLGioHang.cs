@@ -31,6 +31,11 @@ namespace BLL
             return dalgiohang.loadGioHang(tenkh);
         }
 
+        public List<View_GioHang> loadGioHangAPI(string tenkh)
+        {
+            return dalgiohang.GetWatchListGioHang(tenkh);
+        }
+
         public List<View_BieuMauGio> loadBieuMauGio(string tenkh)
         {
             return dalgiohang.loadBieuMauGio(tenkh);

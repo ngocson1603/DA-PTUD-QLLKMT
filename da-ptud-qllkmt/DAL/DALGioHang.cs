@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
@@ -9,6 +10,7 @@ namespace DAL
 {
     public class DALGioHang
     {
+        private ApiService _apiService = new ApiService();
         QL_CUAHANGLINHKIENMAYTINHDataContext qllk = new QL_CUAHANGLINHKIENMAYTINHDataContext();
         public DALGioHang()
         {
@@ -23,6 +25,16 @@ namespace DAL
         public List<View_BieuMauGio> loadBieuMauGio(string tenkh)
         {
             return qllk.View_BieuMauGios.Where(t => t.Gmail.Equals(tenkh)).Select(t => t).ToList();
+        }
+
+        public List<View_GioHang> GetWatchListGioHang(string ma)
+        {
+            var response = _apiService.GetResponse(string.Format("api/GioHang/{0}", ma));
+            if (response.IsSuccessStatusCode)
+            {
+                return response.Content.ReadAsAsync<List<View_GioHang>>().Result;
+            }
+            return null;
         }
 
         public List<ChiTietHoaDon> loadBieuMau(string tenkh)

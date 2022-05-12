@@ -25,7 +25,7 @@ namespace GUI
 
         private void frmGioHang_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = bllgiohang.loadGioHang(frmDN.taikhoan);
+            dataGridView1.DataSource = bllgiohang.loadGioHangAPI(frmDN.taikhoan);
             txtMaSP.Text = UserControls.detailProduct.ma;
             txtGiaTien.Text = UserControls.detailProduct.gia;
             txtTK.Text = frmDN.taikhoan;
@@ -120,7 +120,7 @@ namespace GUI
                 if (bllgiohang.themGioHang(cthd))
                 {
                     MessageBox.Show("Mua hàng thành công");
-                    dataGridView1.DataSource = bllgiohang.loadGioHang(frmDN.taikhoan);
+                    dataGridView1.DataSource = bllgiohang.loadGioHangAPI(frmDN.taikhoan);
                 }
                 else
                 {
@@ -146,7 +146,7 @@ namespace GUI
                 if (bllgiohang.xoaGioHang(a))
                 {
                     MessageBox.Show("Hủy đơn thành công");
-                    dataGridView1.DataSource = bllgiohang.loadGioHang(frmDN.taikhoan);
+                    dataGridView1.DataSource = bllgiohang.loadGioHangAPI(frmDN.taikhoan);
                     guna2Button2.Enabled = false;
                 }
                 else
