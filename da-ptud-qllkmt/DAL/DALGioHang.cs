@@ -57,7 +57,7 @@ namespace DAL
             var tensp = from lk in qllk.SanPhams where lk.MaSanPham == masp select lk;
             return tensp.ToList();
         }
-        public bool PostGioHang(ChiTietHoaDon pCT)
+        public bool PostGioHang(ThemGioHang pCT)
         {
             var response = _apiService.PostResponse("api/GioHang/", pCT);
             if (response == null)

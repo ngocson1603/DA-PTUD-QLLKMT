@@ -15,7 +15,7 @@ namespace BLL
         {
 
         }
-        public bool postGioHang(ChiTietHoaDon cthd)
+        public bool postGioHang(ThemGioHang cthd)
         {
             return dalgiohang.PostGioHang(cthd);
         }

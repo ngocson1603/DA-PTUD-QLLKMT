@@ -107,7 +107,7 @@ namespace GUI
                 int gia = int.Parse(txtGiaTien.Text);
                 int kq = sl * gia;
                 txtTongTien.Text = kq.ToString();
-                ChiTietHoaDon cthd = new ChiTietHoaDon()
+                ThemGioHang cthd = new ThemGioHang()
                 {
                     MaSanPham = int.Parse(txtMaSP.Text),
                     Gmail = txtTK.Text,
