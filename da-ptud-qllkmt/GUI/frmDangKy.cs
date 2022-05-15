@@ -61,7 +61,7 @@ namespace GUI
                     SDT = txtSoDienThoai.Text
                 };
 
-                if (blldangky.dangKy(kh))
+                if (blldangky.themKhachHang(kh))
                 {
                     MessageBox.Show("Đăng ký thành công");
                 }

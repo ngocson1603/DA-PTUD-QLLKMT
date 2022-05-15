@@ -28,7 +28,7 @@ namespace GUI
 
         void initdb()
         {
-            List<KhachHang> list = blldangky.loadThongTin(frmDN.taikhoan);
+            List<KhachHang> list = blldangky.loadKhachHangAPI(frmDN.taikhoan);
             foreach (KhachHang kh in list)
             {
                 string user = kh.Gmail.ToString();
@@ -59,6 +59,7 @@ namespace GUI
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
+            
             int ngay = int.Parse(DateTime.Now.Year.ToString());
             int ngaysinh = int.Parse(dateTimeNgay.Value.Year.ToString());
             int kq = ngay - ngaysinh;
@@ -76,7 +77,19 @@ namespace GUI
                 MessageBox.Show("Khách hàng chưa đủ 18");
                 return;
             }
-            if(blldangky.suaThongTin(txtUserName.Text,txtPassWord.Text,txtHoTen.Text,dateTimeNgay.Text,gioitinh,txtDiaChi.Text,txtSoDienThoai.Text)){
+            //if(blldangky.suaThongTin(txtUserName.Text,txtPassWord.Text,txtHoTen.Text,dateTimeNgay.Text,gioitinh,txtDiaChi.Text,txtSoDienThoai.Text)){
+            //    MessageBox.Show("Sửa thông tin thành công");
+            //}
+            KhachHang kh = new KhachHang();
+            kh.Gmail = txtUserName.Text;
+            kh.Pass = txtPassWord.Text;
+            kh.TenKhachHang = txtHoTen.Text;
+            kh.Ngaysinh = DateTime.Parse(dateTimeNgay.Text);
+            kh.GioiTinh = gioitinh;
+            kh.DiaChi = txtDiaChi.Text;
+            kh.SDT = txtSoDienThoai.Text;
+            if (blldangky.suaKhachHang(kh,txtUserName.Text))
+            {
                 MessageBox.Show("Sửa thông tin thành công");
             }
             else

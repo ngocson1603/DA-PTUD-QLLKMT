@@ -18,14 +18,29 @@ namespace BLL
             return daldangky.loadThongTin(user);
         }
 
-        public bool dangKy(KhachHang kh)
+        public List<KhachHang> loadKhachHangAPI(string tenkh)
         {
-            return daldangky.dangKy(kh);
+            return daldangky.GetWatchInfoKH(tenkh);
         }
 
-        public bool suaThongTin(string user, string pass, string tenkh, string ngays, string gioitinh, string diachi, string sdt)
+        //public bool dangKy(KhachHang kh)
+        //{
+        //    return daldangky.dangKy(kh);
+        //}
+
+        public bool suaKhachHang(KhachHang kh,string ten)
         {
-            return daldangky.suaThongTin( user,  pass,  tenkh,  ngays,  gioitinh,  diachi,  sdt);
+            return daldangky.PutKhachHang(kh,ten);
         }
+
+        public bool themKhachHang(KhachHang kh)
+        {
+            return daldangky.PostDangKy(kh);
+        }
+
+        //public bool suaThongTin(string user, string pass, string tenkh, string ngays, string gioitinh, string diachi, string sdt)
+        //{
+        //    return daldangky.suaThongTin( user,  pass,  tenkh,  ngays,  gioitinh,  diachi,  sdt);
+        //}
     }
 }

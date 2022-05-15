@@ -117,7 +117,7 @@ namespace GUI
                     NgayLapHoaDon = dateTimeNgay.Value
                 };
 
-                if (bllgiohang.themGioHang(cthd))
+                if (bllgiohang.postGioHang(cthd))
                 {
                     MessageBox.Show("Mua hàng thành công");
                     dataGridView1.DataSource = bllgiohang.loadGioHangAPI(frmDN.taikhoan);
@@ -143,7 +143,7 @@ namespace GUI
             }
             else
             {
-                if (bllgiohang.xoaGioHang(a))
+                if (bllgiohang.deleteGioHang(a))
                 {
                     MessageBox.Show("Hủy đơn thành công");
                     dataGridView1.DataSource = bllgiohang.loadGioHangAPI(frmDN.taikhoan);
@@ -180,7 +180,7 @@ namespace GUI
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-            dataExcel.DataSource = bllgiohang.loadBieuMauGio(frmDN.taikhoan);
+            dataExcel.DataSource = bllgiohang.loadBieuMauGioHangAPI(frmDN.taikhoan);
             taikhoan = txtTK.Text;
             ExcelExport ex = new ExcelExport();
             if (dataGridView1.Rows.Count == 0)

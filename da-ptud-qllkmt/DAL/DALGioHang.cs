@@ -37,6 +37,16 @@ namespace DAL
             return null;
         }
 
+        public List<View_BieuMauGio> GetWatchListBieuMauGioHang(string ma)
+        {
+            var response = _apiService.GetResponse(string.Format("api/BieuMauGio/{0}", ma));
+            if (response.IsSuccessStatusCode)
+            {
+                return response.Content.ReadAsAsync<List<View_BieuMauGio>>().Result;
+            }
+            return null;
+        }
+
         public List<ChiTietHoaDon> loadBieuMau(string tenkh)
         {
             return qllk.ChiTietHoaDons.Where(t => t.Gmail.Equals(tenkh)).Select(t => t).ToList();
@@ -47,7 +57,22 @@ namespace DAL
             var tensp = from lk in qllk.SanPhams where lk.MaSanPham == masp select lk;
             return tensp.ToList();
         }
-
+        public bool PostGioHang(ChiTietHoaDon pCT)
+        {
+            var response = _apiService.PostResponse("api/GioHang/", pCT);
+            if (response == null)
+                return false;
+            else
+                return true;
+        }
+        public bool DeleteGio(int ma)
+        {
+            var response = _apiService.DeleteResponse(string.Format("api/GioHang/{0}", ma));
+            if (response == null)
+                return false;
+            else
+                return true;
+        }
         public bool themGioHang(ChiTietHoaDon cthd)
         {
             try
@@ -62,19 +87,19 @@ namespace DAL
             }
         }
 
-        public bool xoaGioHang(int ma)
-        {
-            ChiTietHoaDon cthd = qllk.ChiTietHoaDons.Where(t => t.MaHoaDon == ma).FirstOrDefault();
-            try
-            {
-                qllk.ChiTietHoaDons.DeleteOnSubmit(cthd);
-                qllk.SubmitChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
+        //public bool xoaGioHang(int ma)
+        //{
+        //    ChiTietHoaDon cthd = qllk.ChiTietHoaDons.Where(t => t.MaHoaDon == ma).FirstOrDefault();
+        //    try
+        //    {
+        //        qllk.ChiTietHoaDons.DeleteOnSubmit(cthd);
+        //        qllk.SubmitChanges();
+        //        return true;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return false;
+        //    }
+        //}
     }
 }
