@@ -74,15 +74,22 @@ CREATE TABLE [dbo].[KhachHang](
 
 CREATE TABLE [dbo].[ChiTietHoaDon](
 	[MaHoaDon] int IDENTITY(1,1), 
-	[MaSanPham] int,
 	[Gmail] nvarchar(50),
-	[SoLuong] [int],
-	[TongTien] int,
-	[TongTienHoaDon] int,
 	[NgayLapHoaDon] [date],
 	[MaNhanVien] int, 
 	CONSTRAINT PK_CTHOADON PRIMARY KEY(MaHoaDon))
 
+CREATE TABLE [dbo].[ChiTietHoaDonSanPham](
+	[MaHoaDon] int, 
+	tensp nvarchar(100),
+	tenloai nvarchar(100),
+	tenhang nvarchar(100),
+	giaban int,
+	tonkho int,
+	hinh nvarchar(100),
+	MaSanPham int
+
+	CONSTRAINT pk_chitiethoadonsp PRIMARY KEY(MaHoaDon,MaSanPham))
 
 CREATE TABLE [dbo].[Users](
 	[TenDangNhap] [varchar](50) NOT NULL,
@@ -122,6 +129,8 @@ CREATE TABLE [dbo].[KetQua](
 --KHOÁ NGOẠI
 ALTER TABLE [dbo].[SanPham]
 ADD CONSTRAINT FK_SP_NCC FOREIGN KEY(MaNhaPhanPhoi) REFERENCES [dbo].[NhaPhanPhoi](MaNhaPhanPhoi)
+ALTER TABLE [dbo].[ChiTietHoaDonSanPham]
+ADD CONSTRAINT FK_cthdsp FOREIGN KEY(MaHoaDon) REFERENCES [dbo].[ChiTietHoaDon](MaHoaDon)
 ALTER TABLE [dbo].[SanPham]
 ADD CONSTRAINT FK_SP_LH FOREIGN KEY(LoaiSanPham) REFERENCES [dbo].[LoaiSanPham](MaLoaiSanPham)
 ALTER TABLE [dbo].[SanPham]
@@ -311,9 +320,9 @@ INSERT [dbo].[KhachHang] ([Gmail], [Pass], [TenKhachHang], [Ngaysinh], [GioiTinh
 INSERT [dbo].[KhachHang] ([Gmail], [Pass], [TenKhachHang], [Ngaysinh], [GioiTinh], [DiaChi], [SDT]) VALUES ('sonlaso111119@gmail.com','123',N'NGUYỄN MINH TRUNG HIẾU','12/6/2001',N'Nam',N'BÌNH DƯƠNG ',0902114326)
 
 SET IDENTITY_INSERT [ChiTietHoaDon] ON
-INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon],[MaNhanVien]) VALUES (1, 1,'sonlaso1119@gmail.com', 5, 7890000, NULL, '12/3/2021',1)
-INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon],[MaNhanVien]) VALUES (2, 2,'sonlaso1119@gmail.com', 6,  1890000, NULL, '15/3/2021',2)
-INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham],[Gmail], [SoLuong], [TongTien], [TongTienHoaDon], [NgayLapHoaDon],[MaNhanVien]) VALUES (3, 3,'sonlaso1119@gmail.com', 8,  1890000, NULL, '23/3/2021',3)
+INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [Gmail], [NgayLapHoaDon],[MaNhanVien]) VALUES (1,'sonlaso1119@gmail.com','12/3/2021',1)
+INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [Gmail], [NgayLapHoaDon],[MaNhanVien]) VALUES (2,'sonlaso1119@gmail.com','15/3/2021',2)
+INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [Gmail], [NgayLapHoaDon],[MaNhanVien]) VALUES (3,'sonlaso1119@gmail.com','23/3/2021',3)
 SET IDENTITY_INSERT [ChiTietHoaDon] OFF
 
 INSERT [dbo].[TenMayTinh] ([TenMay]) VALUES (N'Lap Top')
