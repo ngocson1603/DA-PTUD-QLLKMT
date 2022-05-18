@@ -36,7 +36,7 @@ CREATE TABLE [dbo].[PhieuNhap](
 	[MaPhieuNhap] int IDENTITY(1,1), 
 	[MaNhanVien] int, 
 	[MaNhaPhanPhoi] int,
-	[TongTien] [money],
+	[TongTien] int,
 	[NgayNhap] [date],
 	CONSTRAINT PK_PN PRIMARY KEY(MaPhieuNhap))
 
@@ -59,7 +59,7 @@ CREATE TABLE [dbo].[ChiTietPhieuNhap](
 	[MaPhieuNhap] int,
 	[MaSanPham] int,
 	[SoLuong] [int],
-	[TienNhap] [money],
+	[TienNhap] int,
 	CONSTRAINT PK_CTPN PRIMARY KEY(MaPhieuNhap,MaSanPham))
 
 CREATE TABLE [dbo].[KhachHang](
