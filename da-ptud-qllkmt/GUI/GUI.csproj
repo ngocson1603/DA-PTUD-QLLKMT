@@ -250,6 +250,12 @@
     <Compile Include="frmBanSanPham.Designer.cs">
       <DependentUpon>frmBanSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChiTietGio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChiTietGio.Designer.cs">
+      <DependentUpon>frmChiTietGio.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDangKy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -381,6 +387,9 @@
     <Compile Include="XuLy\WordExport.cs" />
     <EmbeddedResource Include="frmBanSanPham.resx">
       <DependentUpon>frmBanSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChiTietGio.resx">
+      <DependentUpon>frmChiTietGio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangKy.resx">
       <DependentUpon>frmDangKy.cs</DependentUpon>

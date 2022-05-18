@@ -85,7 +85,7 @@ CREATE TABLE [dbo].[ChiTietHoaDonSanPham](
 	tenloai nvarchar(100),
 	tenhang nvarchar(100),
 	giaban int,
-	tonkho int,
+	soluong int,
 	hinh nvarchar(100),
 	MaSanPham int
 
