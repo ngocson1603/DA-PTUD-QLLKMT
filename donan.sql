@@ -145,7 +145,7 @@ ALTER TABLE [dbo].[ChiTietPhieuNhap]
 ADD CONSTRAINT FK_CTPN_PN FOREIGN KEY(MaPhieuNhap) REFERENCES [dbo].[PhieuNhap](MaPhieuNhap)
 ALTER TABLE [dbo].[ChiTietPhieuNhap]
 ADD CONSTRAINT FK_CTPN_SP FOREIGN KEY(MaSanPham) REFERENCES [dbo].[SanPham](MaSanPham)
-ALTER TABLE [dbo].[ChiTietHoaDon]
+ALTER TABLE [dbo].[ChiTietHoaDonSanPham]
 ADD CONSTRAINT FK_CT_HOADON_SANPHAM FOREIGN KEY(MaSanPham) REFERENCES [dbo].[SanPham](MaSanPham)
 ALTER TABLE [dbo].[ChiTietHoaDon]
 ADD CONSTRAINT FK_CT_HOADON_User FOREIGN KEY(Gmail) REFERENCES [dbo].[KhachHang](Gmail)
