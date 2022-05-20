@@ -33,20 +33,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.cboSoLuong = new System.Windows.Forms.ComboBox();
             this.dateTimeNgay = new System.Windows.Forms.DateTimePicker();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.txtTongTien = new System.Windows.Forms.TextBox();
             this.txtMaSP = new System.Windows.Forms.TextBox();
             this.txtGiaTien = new System.Windows.Forms.TextBox();
             this.txtTK = new System.Windows.Forms.TextBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -58,14 +54,17 @@
             this.NgayLapHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboten = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtTongTien = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtSL = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataExcel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -118,16 +117,6 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Giá tiền";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Location = new System.Drawing.Point(361, 132);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(173, 66);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Tổng tiền";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -168,7 +157,6 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.Controls.Add(this.guna2Button4, 5, 1);
-            this.tableLayoutPanel1.Controls.Add(this.cboSoLuong, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dateTimeNgay, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
@@ -182,9 +170,9 @@
             this.tableLayoutPanel1.Controls.Add(this.label6, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.label4, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label5, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.guna2Button1, 4, 2);
             this.tableLayoutPanel1.Controls.Add(this.guna2Button2, 5, 2);
             this.tableLayoutPanel1.Controls.Add(this.guna2Button3, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtSL, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -220,46 +208,6 @@
             this.guna2Button4.Text = "Xuất Excel";
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
-            // cboSoLuong
-            // 
-            this.cboSoLuong.FormattingEnabled = true;
-            this.cboSoLuong.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30"});
-            this.cboSoLuong.Location = new System.Drawing.Point(540, 3);
-            this.cboSoLuong.Name = "cboSoLuong";
-            this.cboSoLuong.Size = new System.Drawing.Size(61, 21);
-            this.cboSoLuong.TabIndex = 11;
-            this.cboSoLuong.SelectedIndexChanged += new System.EventHandler(this.cboSoLuong_SelectedIndexChanged);
-            // 
             // dateTimeNgay
             // 
             this.dateTimeNgay.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -277,15 +225,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(173, 20);
             this.textBox2.TabIndex = 9;
-            // 
-            // txtTongTien
-            // 
-            this.txtTongTien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTongTien.Enabled = false;
-            this.txtTongTien.Location = new System.Drawing.Point(540, 135);
-            this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new System.Drawing.Size(173, 20);
-            this.txtTongTien.TabIndex = 14;
             // 
             // txtMaSP
             // 
@@ -313,27 +252,6 @@
             this.txtTK.Name = "txtTK";
             this.txtTK.Size = new System.Drawing.Size(173, 20);
             this.txtTK.TabIndex = 11;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.AutoRoundedCorners = true;
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderRadius = 21;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(719, 135);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.BorderRadius = 26;
-            this.guna2Button1.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2Button1.ShadowDecoration.Enabled = true;
-            this.guna2Button1.Size = new System.Drawing.Size(111, 45);
-            this.guna2Button1.TabIndex = 19;
-            this.guna2Button1.Text = "Mua";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // guna2Button2
             // 
@@ -454,17 +372,6 @@
             this.cboten.TabIndex = 10;
             this.cboten.Visible = false;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 56);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1080, 425);
-            this.dataGridView1.TabIndex = 12;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
@@ -474,13 +381,52 @@
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
+            // txtTongTien
+            // 
+            this.txtTongTien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTongTien.Enabled = false;
+            this.txtTongTien.Location = new System.Drawing.Point(540, 135);
+            this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.Size = new System.Drawing.Size(173, 20);
+            this.txtTongTien.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Location = new System.Drawing.Point(361, 132);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(173, 66);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Tổng tiền";
+            // 
+            // txtSL
+            // 
+            this.txtSL.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSL.Enabled = false;
+            this.txtSL.Location = new System.Drawing.Point(540, 3);
+            this.txtSL.Name = "txtSL";
+            this.txtSL.Size = new System.Drawing.Size(173, 20);
+            this.txtSL.TabIndex = 22;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 56);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(723, 425);
+            this.dataGridView1.TabIndex = 14;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
             // frmGioHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1080, 679);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmGioHang";
@@ -492,8 +438,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataExcel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -505,7 +451,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel1;
@@ -513,14 +458,10 @@
         private System.Windows.Forms.TextBox txtMaSP;
         private System.Windows.Forms.TextBox txtTK;
         private System.Windows.Forms.TextBox txtGiaTien;
-        private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.DateTimePicker dateTimeNgay;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.ComboBox cboSoLuong;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private System.Windows.Forms.ComboBox cboten;
@@ -532,5 +473,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTienHoaDon;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayLapHoaDon;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gmail;
+        private System.Windows.Forms.TextBox txtTongTien;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtSL;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

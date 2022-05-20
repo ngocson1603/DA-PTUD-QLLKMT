@@ -50,39 +50,5 @@ namespace DAL
             else
                 return true;
         }
-
-        //public bool dangKy(KhachHang kh)
-        //{
-        //    try
-        //    {
-        //        qllk.KhachHangs.InsertOnSubmit(kh);
-        //        qllk.SubmitChanges();
-        //        return true;
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return false;
-        //    }
-        //}
-
-        //public bool suaThongTin(string user, string pass, string tenkh,string ngays,string gioitinh,string diachi,string sdt)
-        //{
-        //    try
-        //    {
-        //        KhachHang kh = qllk.KhachHangs.Where(t => t.Gmail == user).FirstOrDefault();
-        //        kh.Pass = pass;
-        //        kh.TenKhachHang = tenkh;
-        //        kh.Ngaysinh = DateTime.Parse(ngays);
-        //        kh.GioiTinh = gioitinh;
-        //        kh.DiaChi = diachi;
-        //        kh.SDT = sdt;
-        //        qllk.SubmitChanges();
-        //        return true;
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return false;
-        //    }
-        //}
     }
 }

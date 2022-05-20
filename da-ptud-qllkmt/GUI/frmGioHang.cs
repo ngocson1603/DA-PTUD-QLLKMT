@@ -26,37 +26,17 @@ namespace GUI
         private void frmGioHang_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = bllgiohang.loadGioHangAPI(frmDN.taikhoan);
-            txtMaSP.Text = UserControls.detailProduct.ma;
-            txtGiaTien.Text = UserControls.detailProduct.gia;
-            txtTK.Text = frmDN.taikhoan;
+            dataGridView1.Columns[6].Visible = false;
 
-            dataGridView1.Columns[7].Visible = false;
-            tinhTien();
+            dataGridView1.CurrentCell = dataGridView1[1, 0];
         }
 
         public void tinhTien()
         {
-            cboSoLuong.SelectedIndex = 0;
-            int sl = int.Parse(cboSoLuong.SelectedItem.ToString());
+            int sl = int.Parse(txtSL.Text);
             int gia = int.Parse(txtGiaTien.Text);
             int kq = sl * gia;
             txtTongTien.Text = kq.ToString();
-        }
-
-        private void cboSoLuong_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int a = 0;
-            if (txtGiaTien.Text.Equals(string.Empty))
-            {
-                txtGiaTien.Text = a.ToString();
-            }
-            else
-            {
-                int gia = int.Parse(txtGiaTien.Text);
-                int sl = int.Parse(cboSoLuong.SelectedItem.ToString());
-                int kq = sl * gia;
-                txtTongTien.Text = kq.ToString();
-            }
         }
 
         public Image GetImg(string direct, int w, int h)
@@ -72,13 +52,14 @@ namespace GUI
                 textBox2.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 txtMaSP.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 txtTK.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                cboSoLuong.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                txtSL.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                 txtGiaTien.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                txtTongTien.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                dateTimeNgay.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                dateTimeNgay.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
 
-                string direct = hp.Directory() + dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                string direct = hp.Directory() + dataGridView1.CurrentRow.Cells[6].Value.ToString();
                 pictureBox1.Image = GetImg(direct, pictureBox1.Width, pictureBox1.Height);
+
+                tinhTien();
 
                 guna2Button2.Enabled = true;
                 guna2Button3.Enabled = true;
@@ -93,41 +74,6 @@ namespace GUI
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            dateTimeNgay.Text = DateTime.Now.ToString();
-
-            int a = int.Parse(txtGiaTien.Text);
-            if (a == 0)
-            {
-                MessageBox.Show("Vui lòng chọn sản phẩm ở trang Mua Hàng");
-                return;
-            }
-            else
-            {
-                int sl = int.Parse(cboSoLuong.SelectedItem.ToString());
-                int gia = int.Parse(txtGiaTien.Text);
-                int kq = sl * gia;
-                txtTongTien.Text = kq.ToString();
-                ThemGioHang cthd = new ThemGioHang()
-                {
-                    MaSanPham = int.Parse(txtMaSP.Text),
-                    Gmail = txtTK.Text,
-                    SoLuong = int.Parse(cboSoLuong.SelectedItem.ToString()),
-                    TongTien = int.Parse(txtGiaTien.Text),
-                    TongTienHoaDon = int.Parse(txtTongTien.Text),
-                    NgayLapHoaDon = dateTimeNgay.Value
-                };
-
-                if (bllgiohang.postGioHang(cthd))
-                {
-                    MessageBox.Show("Mua hàng thành công");
-                    dataGridView1.DataSource = bllgiohang.loadGioHangAPI(frmDN.taikhoan);
-                }
-                else
-                {
-                    MessageBox.Show("Mua hàng thất bại");
-                    return;
-                }
-            }
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -143,8 +89,9 @@ namespace GUI
             }
             else
             {
-                if (bllgiohang.deleteGioHang(a))
+                if (bllgiohang.deleteGioHangCTHD(a))
                 {
+                    bllgiohang.deleteGioHang(a);
                     MessageBox.Show("Hủy đơn thành công");
                     dataGridView1.DataSource = bllgiohang.loadGioHangAPI(frmDN.taikhoan);
                     guna2Button2.Enabled = false;
@@ -170,7 +117,7 @@ namespace GUI
             string namt = dateTimeNgay.Value.Year.ToString();
 
             string tensp = cboten.SelectedValue.ToString();
-            string sl = cboSoLuong.Text.ToString();
+            string sl = txtSL.Text.ToString();
             string gia = txtGiaTien.Text.ToString();
             string tongtien = txtTongTien.Text.ToString();
 
@@ -194,11 +141,10 @@ namespace GUI
             foreach (DataGridViewRow item in dataExcel.Rows)
             {
                 View_BieuMauGio i = new View_BieuMauGio();
-                i.TenSanPham = item.Cells[0].Value.ToString();
-                i.SoLuong = int.Parse(item.Cells[1].Value.ToString());
-                i.TongTien = int.Parse(item.Cells[2].Value.ToString());
-                i.TongTienHoaDon = int.Parse(item.Cells[3].Value.ToString());
-                i.NgayLapHoaDon = DateTime.Parse(item.Cells[4].Value.ToString());
+                i.tensp = item.Cells[0].Value.ToString();
+                i.soluong = int.Parse(item.Cells[1].Value.ToString());
+                i.giaban = int.Parse(item.Cells[2].Value.ToString());
+                i.NgayLapHoaDon = DateTime.Parse(item.Cells[3].Value.ToString());
 
                 pListKhoa.Add(i);
             }

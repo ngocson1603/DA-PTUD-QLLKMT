@@ -40,6 +40,7 @@
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.txtChao = new DevExpress.XtraBars.BarButtonItem();
             this.txtTen = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -58,7 +59,6 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.panel1 = new System.Windows.Forms.Panel();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
@@ -141,7 +141,7 @@
             // 
             // barButtonItem7
             // 
-            this.barButtonItem7.Caption = "Giỏ hàng";
+            this.barButtonItem7.Caption = "Hóa đơn";
             this.barButtonItem7.Id = 9;
             this.barButtonItem7.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.LargeGlyph")));
             this.barButtonItem7.Name = "barButtonItem7";
@@ -173,6 +173,14 @@
             this.txtTen.Caption = "Xin chào: ";
             this.txtTen.Id = 22;
             this.txtTen.Name = "txtTen";
+            // 
+            // barButtonItem10
+            // 
+            this.barButtonItem10.Caption = "Giỏ hàng";
+            this.barButtonItem10.Id = 23;
+            this.barButtonItem10.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.LargeGlyph")));
+            this.barButtonItem10.Name = "barButtonItem10";
+            this.barButtonItem10.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem10_ItemClick);
             // 
             // ribbonPageCategory1
             // 
@@ -289,13 +297,6 @@
             // 
             this.barButtonItem2.Id = 19;
             this.barButtonItem2.Name = "barButtonItem2";
-            // 
-            // barButtonItem10
-            // 
-            this.barButtonItem10.Caption = "Giỏ";
-            this.barButtonItem10.Id = 23;
-            this.barButtonItem10.Name = "barButtonItem10";
-            this.barButtonItem10.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem10_ItemClick);
             // 
             // frmTrangChu
             // 

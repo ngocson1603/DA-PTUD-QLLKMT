@@ -23,11 +23,6 @@ namespace BLL
             return daldangky.GetWatchInfoKH(tenkh);
         }
 
-        //public bool dangKy(KhachHang kh)
-        //{
-        //    return daldangky.dangKy(kh);
-        //}
-
         public bool suaKhachHang(KhachHang kh,string ten)
         {
             return daldangky.PutKhachHang(kh,ten);
@@ -37,10 +32,5 @@ namespace BLL
         {
             return daldangky.PostDangKy(kh);
         }
-
-        //public bool suaThongTin(string user, string pass, string tenkh, string ngays, string gioitinh, string diachi, string sdt)
-        //{
-        //    return daldangky.suaThongTin( user,  pass,  tenkh,  ngays,  gioitinh,  diachi,  sdt);
-        //}
     }
 }

@@ -8,33 +8,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
+using BLL;
 
 namespace GUI
 {
     public partial class frmChiTietGio : Form
     {
         Helper hp = new Helper();
-        XuLy.loadProduct xl = new XuLy.loadProduct();
+        BLLGioHang bllgiohang = new BLLGioHang();
         public frmChiTietGio()
         {
             InitializeComponent();
         }
-        public static string a;
+        public static string b;
         private void frmChiTietGio_Load(object sender, EventArgs e)
         {
-            dataGridView2.DataSource = xl.LoadDLSPtangdan();
-            if (dataGridView2.Rows.Count > 0)
-            {
-                dataGridView2.CurrentCell = dataGridView2[1, 0];
-                a = dataGridView2.CurrentRow.Cells[0].Value.ToString();
-            }
-
             if (dataGridView1.Rows.Count > 0)
             {
                 dataGridView1.CurrentCell = dataGridView1[1, 0];
                 string direct = hp.Directory() + dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 pictureBox1.Image = GetImg(direct, pictureBox1.Width, pictureBox1.Height);
             }
+            txtTK.Text = frmDN.taikhoan;
+        }
+
+        public void loaddulieu()
+        {
+            dataGridView2.DataSource = bllgiohang.loadHDAPI();
+            int soa = dataGridView2.Rows.Count;
+            dataGridView2.CurrentCell = dataGridView2[1, soa - 1];
+            b = dataGridView2.CurrentRow.Cells[0].Value.ToString();
         }
         List<String> load = new List<String>();
         DataTable dt = new DataTable();
@@ -72,6 +76,46 @@ namespace GUI
             {
                 string direct = hp.Directory() + dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 pictureBox1.Image = GetImg(direct, pictureBox1.Width, pictureBox1.Height);
+            }
+        }
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            int a = 0;
+            if (dataGridView1.Rows.Count > 0)
+            {
+                ThemGioHang cthdsp = new ThemGioHang()
+                {
+                    Gmail = txtTK.Text,
+                    NgayLapHoaDon = dateTimePicker1.Value
+                };
+
+                if (bllgiohang.postGioHang(cthdsp))
+                {
+                    loaddulieu();
+                    textBox1.Text = b;
+                    for (int x = 0; x < load.Count; x = x + 7)
+                    {
+                        ThemCTHD cthd = new ThemCTHD()
+                        {
+                            MaHoaDon = int.Parse(b.ToString()),
+                            tensp = dataGridView1.Rows[a].Cells[0].Value.ToString(),
+                            tenloai = dataGridView1.Rows[a].Cells[1].Value.ToString(),
+                            tenhang = dataGridView1.Rows[a].Cells[2].Value.ToString(),
+                            giaban = int.Parse(dataGridView1.Rows[a].Cells[3].Value.ToString()),
+                            soluong = int.Parse(dataGridView1.Rows[a].Cells[4].Value.ToString()),
+                            hinh = dataGridView1.Rows[a].Cells[5].Value.ToString(),
+                            MaSanPham = int.Parse(dataGridView1.Rows[a].Cells[6].Value.ToString()),
+                        };
+                        a++;
+                        bllgiohang.postGioHangCTHD(cthd);
+                    }
+                    MessageBox.Show("Mua hàng thành công");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm");
+                return;
             }
         }
     }

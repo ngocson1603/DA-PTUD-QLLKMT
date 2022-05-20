@@ -19,28 +19,6 @@ namespace GUI.XuLy
             LoadSP();
             LoadSPDetail();
             load();
-            LoadSPtangdan();
-        }
-
-        public void LoadSPtangdan()
-        {
-            string caulenh = "select * from ChiTietHoaDon ORDER BY MaHoaDon DESC;";
-
-            SqlDataAdapter ds_sv = new SqlDataAdapter(caulenh, conn);
-
-            ds_sv.Fill(ds_SP, "SanPhamtd");
-            DataColumn[] key = new DataColumn[1];
-
-            key[0] = ds_SP.Tables["SanPhamtd"].Columns[0];
-
-            ds_SP.Tables["SanPhamtd"].PrimaryKey = key;
-        }
-
-
-
-        public DataTable LoadDLSPtangdan()
-        {
-            return ds_SP.Tables["SanPhamtd"];
         }
 
         public void load()

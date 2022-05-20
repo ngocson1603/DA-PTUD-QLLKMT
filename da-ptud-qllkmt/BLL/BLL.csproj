@@ -48,7 +48,6 @@
   <ItemGroup>
     <Compile Include="BLLDangKy.cs" />
     <Compile Include="BLLGioHang.cs" />
-    <Compile Include="BLLTuVan.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

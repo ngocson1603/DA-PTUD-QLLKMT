@@ -17,19 +17,14 @@ namespace DAL
 
         }
 
-        public List<View_GioHang> loadGioHang(string tenkh)
-        {
-            return qllk.View_GioHangs.Where(t => t.Gmail.Equals(tenkh)).Select(t => t).ToList();
-        }
-
-        public List<View_BieuMauGio> loadBieuMauGio(string tenkh)
-        {
-            return qllk.View_BieuMauGios.Where(t => t.Gmail.Equals(tenkh)).Select(t => t).ToList();
-        }
+        //public List<View_BieuMauGio> loadBieuMauGio(string tenkh)
+        //{
+        //    return qllk.View_BieuMauGios.Where(t => t.Gmail.Equals(tenkh)).Select(t => t).ToList();
+        //}
 
         public List<View_GioHang> GetWatchListGioHang(string ma)
         {
-            var response = _apiService.GetResponse(string.Format("api/GioHang/{0}", ma));
+            var response = _apiService.GetResponse(string.Format("api/HoaDon/{0}", ma));
             if (response.IsSuccessStatusCode)
             {
                 return response.Content.ReadAsAsync<List<View_GioHang>>().Result;
@@ -46,6 +41,17 @@ namespace DAL
             }
             return null;
         }
+
+        public List<View_CTHD> GetWatchListGioHangSP()
+        {
+            var response = _apiService.GetResponse("api/GioHang/");
+            if (response.IsSuccessStatusCode)
+            {
+                return response.Content.ReadAsAsync<List<View_CTHD>>().Result;
+            }
+            return null;
+        }
+
 
         public List<ChiTietHoaDon> loadBieuMau(string tenkh)
         {
@@ -65,9 +71,26 @@ namespace DAL
             else
                 return true;
         }
+        public bool PostChiTietHD(ThemCTHD pCT)
+        {
+            var response = _apiService.PostResponse("api/ChiTietHoaDonSP/", pCT);
+            if (response == null)
+                return false;
+            else
+                return true;
+        }
         public bool DeleteGio(int ma)
         {
             var response = _apiService.DeleteResponse(string.Format("api/GioHang/{0}", ma));
+            if (response == null)
+                return false;
+            else
+                return true;
+        }
+
+        public bool DeleteCTHD(int ma)
+        {
+            var response = _apiService.DeleteResponse(string.Format("api/ChiTietHoaDonSP/{0}", ma));
             if (response == null)
                 return false;
             else

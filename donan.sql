@@ -99,33 +99,6 @@ CREATE TABLE [dbo].[Users](
 	CONSTRAINT PK_TaiKhoan PRIMARY KEY (TenDangNhap)
 )
 
-CREATE TABLE [dbo].[TenMayTinh](
-	[TenMay] nvarchar(50),
-	CONSTRAINT PK_TenMay PRIMARY KEY(TenMay))
-
-CREATE TABLE [dbo].[TinhTrangOne](
-	[TenTinhTrangOne] [nvarchar](100),
-	[TenMay] nvarchar(50),
-	CONSTRAINT PK_TT1 PRIMARY KEY(TenTinhTrangOne))
-
-CREATE TABLE [dbo].[TinhTrangTwo](
-	[TenTinhTrangTwo] [nvarchar](100),
-	[TenMay] nvarchar(50),
-	CONSTRAINT PK_TT2 PRIMARY KEY(TenTinhTrangTwo))
-
-CREATE TABLE [dbo].[TinhTrangThree](
-	[TenTinhTrangThree] [nvarchar](100),
-	[TenMay] nvarchar(50),
-	CONSTRAINT PK_TT3 PRIMARY KEY(TenTinhTrangThree))
-
-CREATE TABLE [dbo].[KetQua](
-	[TenTinhTrangOne] [nvarchar](100),
-	[TenTinhTrangTwo] [nvarchar](100),
-	[TenTinhTrangThree] [nvarchar](100),
-	[KetQua] [nvarchar](100),
-	[Anh] [nvarchar](100)
-)
-
 --KHOÁ NGOẠI
 ALTER TABLE [dbo].[SanPham]
 ADD CONSTRAINT FK_SP_NCC FOREIGN KEY(MaNhaPhanPhoi) REFERENCES [dbo].[NhaPhanPhoi](MaNhaPhanPhoi)
@@ -151,19 +124,7 @@ ALTER TABLE [dbo].[ChiTietHoaDon]
 ADD CONSTRAINT FK_CT_HOADON_User FOREIGN KEY(Gmail) REFERENCES [dbo].[KhachHang](Gmail)
 ALTER TABLE [dbo].[Users]
 ADD CONSTRAINT FK_User FOREIGN KEY(MaNhanVien) REFERENCES [dbo].[NhanVien](MaNhanVien)
-ALTER TABLE [dbo].[TinhTrangOne]
-ADD CONSTRAINT FK_TTTM1 FOREIGN KEY(TenMay) REFERENCES [dbo].[TenMayTinh](TenMay)
-ALTER TABLE [dbo].[TinhTrangTwo]
-ADD CONSTRAINT FK_TTTM2 FOREIGN KEY(TenMay) REFERENCES [dbo].[TenMayTinh](TenMay)
-ALTER TABLE [dbo].[TinhTrangThree]
-ADD CONSTRAINT FK_TTTM3 FOREIGN KEY(TenMay) REFERENCES [dbo].[TenMayTinh](TenMay)
 
-ALTER TABLE [dbo].[KetQua]
-ADD CONSTRAINT FK_TinhTrang1 FOREIGN KEY(TenTinhTrangOne) REFERENCES [dbo].[TinhTrangOne](TenTinhTrangOne)
-ALTER TABLE [dbo].[KetQua]
-ADD CONSTRAINT FK_TinhTrang2 FOREIGN KEY(TenTinhTrangTwo) REFERENCES [dbo].[TinhTrangTwo](TenTinhTrangTwo)
-ALTER TABLE [dbo].[KetQua]
-ADD CONSTRAINT FK_TinhTrang3 FOREIGN KEY(TenTinhTrangThree) REFERENCES [dbo].[TinhTrangThree](TenTinhTrangThree)
 -----------------------RẰNG BUỘC--------------------------------------------
 ALTER TABLE [dbo].[ChiTietPhieuNhap]
 ADD CONSTRAINT CK_PN CHECK(SoLuong > 0)
@@ -321,29 +282,4 @@ INSERT [dbo].[KhachHang] ([Gmail], [Pass], [TenKhachHang], [Ngaysinh], [GioiTinh
 
 SET IDENTITY_INSERT [ChiTietHoaDon] ON
 INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [Gmail], [NgayLapHoaDon],[MaNhanVien]) VALUES (1,'sonlaso1119@gmail.com','12/3/2021',1)
-INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [Gmail], [NgayLapHoaDon],[MaNhanVien]) VALUES (2,'sonlaso1119@gmail.com','15/3/2021',2)
-INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [Gmail], [NgayLapHoaDon],[MaNhanVien]) VALUES (3,'sonlaso1119@gmail.com','23/3/2021',3)
 SET IDENTITY_INSERT [ChiTietHoaDon] OFF
-
-INSERT [dbo].[TenMayTinh] ([TenMay]) VALUES (N'Lap Top')
-INSERT [dbo].[TenMayTinh] ([TenMay]) VALUES (N'PC')
-
-INSERT [dbo].[TinhTrangOne] ([TenTinhTrangOne],[TenMay]) VALUES (N'Laptop không vào nguồn',N'Lap Top')
-INSERT [dbo].[TinhTrangOne] ([TenTinhTrangOne],[TenMay]) VALUES (N'Máy tính thường xuyên bị đơ',N'Lap Top')
-INSERT [dbo].[TinhTrangOne] ([TenTinhTrangOne],[TenMay]) VALUES (N'ổ đĩa chứa quá nhiều dữ liệu',N'Lap Top')
-INSERT [dbo].[TinhTrangOne] ([TenTinhTrangOne],[TenMay]) VALUES (N'Máy tính tự bật lên khi đã shutdown',N'Lap Top')
-
-INSERT [dbo].[TinhTrangTwo] ([TenTinhTrangTwo],[TenMay]) VALUES (N'Bật nguồn không lên gì',N'Lap Top')
-INSERT [dbo].[TinhTrangTwo] ([TenTinhTrangTwo],[TenMay]) VALUES (N'laptop phát ra âm thanh ồn',N'Lap Top')
-INSERT [dbo].[TinhTrangTwo] ([TenTinhTrangTwo],[TenMay]) VALUES (N'ổ đĩa bị lỗi',N'Lap Top')
-INSERT [dbo].[TinhTrangTwo] ([TenTinhTrangTwo],[TenMay]) VALUES (N'Máy tỏa nhiệt lớn, đôi lúc tắt đột ngột sau đó mở không lên nguồn',N'Lap Top')
-
-INSERT [dbo].[TinhTrangThree] ([TenTinhTrangThree],[TenMay]) VALUES (N'Bật nguồn nhưng ngắt nguồn',N'Lap Top')
-INSERT [dbo].[TinhTrangThree] ([TenTinhTrangThree],[TenMay]) VALUES (N'Ổ cứng báo lỗi “Hard disk Corrupted”',N'Lap Top')
-INSERT [dbo].[TinhTrangThree] ([TenTinhTrangThree],[TenMay]) VALUES (N'bị virus hoặc sử dụng các phần mềm độc hại',N'Lap Top')
-
-INSERT [dbo].[KetQua] ([TenTinhTrangOne],[TenTinhTrangTwo],[TenTinhTrangThree],[KetQua],[Anh]) VALUES (N'Laptop không vào nguồn',N'Bật nguồn không lên gì',N'Bật nguồn nhưng ngắt nguồn',N'Lỗi Nguồn',N'loinguon.png')
-INSERT [dbo].[KetQua] ([TenTinhTrangOne],[TenTinhTrangTwo],[TenTinhTrangThree],[KetQua],[Anh]) VALUES (N'Máy tính tự bật lên khi đã shutdown',N'Bật nguồn không lên gì',N'Bật nguồn nhưng ngắt nguồn',N'Lỗi Nguồn',N'loinguon.png')
-INSERT [dbo].[KetQua] ([TenTinhTrangOne],[TenTinhTrangTwo],[TenTinhTrangThree],[KetQua],[Anh]) VALUES (N'Máy tính tự bật lên khi đã shutdown',N'Máy tỏa nhiệt lớn, đôi lúc tắt đột ngột sau đó mở không lên nguồn',N'Bật nguồn nhưng ngắt nguồn',N'Lỗi Nguồn',N'loinguon.png')
-INSERT [dbo].[KetQua] ([TenTinhTrangOne],[TenTinhTrangTwo],[TenTinhTrangThree],[KetQua],[Anh]) VALUES (N'Máy tính thường xuyên bị đơ',N'laptop phát ra âm thanh ồn',N'Ổ cứng báo lỗi “Hard disk Corrupted”',N'Lỗi ổ cứng',N'loiocung.png')
-INSERT [dbo].[KetQua] ([TenTinhTrangOne],[TenTinhTrangTwo],[TenTinhTrangThree],[KetQua],[Anh]) VALUES (N'ổ đĩa chứa quá nhiều dữ liệu',N'ổ đĩa bị lỗi',N'bị virus hoặc sử dụng các phần mềm độc hại',N'Ổ đĩa chạy chậm',N'odiacham.png')

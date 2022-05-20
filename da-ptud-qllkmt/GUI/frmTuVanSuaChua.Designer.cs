@@ -102,7 +102,6 @@ namespace GUI
             this.cboTT2.Name = "cboTT2";
             this.cboTT2.Size = new System.Drawing.Size(571, 36);
             this.cboTT2.TabIndex = 1;
-            this.cboTT2.SelectedIndexChanged += new System.EventHandler(this.cboTT2_SelectedIndexChanged);
             // 
             // cboTT1
             // 
@@ -121,7 +120,6 @@ namespace GUI
             this.cboTT1.Name = "cboTT1";
             this.cboTT1.Size = new System.Drawing.Size(571, 36);
             this.cboTT1.TabIndex = 0;
-            this.cboTT1.SelectedIndexChanged += new System.EventHandler(this.cboTT1_SelectedIndexChanged);
             // 
             // guna2GroupBox2
             // 
@@ -182,7 +180,6 @@ namespace GUI
             this.cboTenMay.Name = "cboTenMay";
             this.cboTenMay.Size = new System.Drawing.Size(313, 36);
             this.cboTenMay.TabIndex = 5;
-            this.cboTenMay.SelectedIndexChanged += new System.EventHandler(this.cboTenMay_SelectedIndexChanged);
             // 
             // guna2Button1
             // 
@@ -200,7 +197,6 @@ namespace GUI
             this.guna2Button1.Size = new System.Drawing.Size(127, 24);
             this.guna2Button1.TabIndex = 6;
             this.guna2Button1.Text = "Xác nhận";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // guna2Button2
             // 
@@ -217,7 +213,6 @@ namespace GUI
             this.guna2Button2.Size = new System.Drawing.Size(127, 24);
             this.guna2Button2.TabIndex = 7;
             this.guna2Button2.Text = "Thoát";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // txtAnh
             // 
@@ -266,7 +261,6 @@ namespace GUI
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmTuVanSuaChua";
             this.Text = "frmTuVanSuaChua";
-            this.Load += new System.EventHandler(this.frmTuVanSuaChua_Load);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
