@@ -68,6 +68,7 @@
     </Compile>
     <Compile Include="ThemCTHD.cs" />
     <Compile Include="ThemGioHang.cs" />
+    <Compile Include="ThemSanPham.cs" />
     <Compile Include="View_BieuMauGio.cs" />
   </ItemGroup>
   <ItemGroup>

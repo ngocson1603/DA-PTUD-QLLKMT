@@ -55,32 +55,35 @@ namespace GUI.UserControls
         public static string loai = "";
         public static string hang = "";
         public static string tensp = "";
-        public static string tonkho = "";
+        public static int tonkho;
         public static string anh = "";
-        public static List<String> lstsp = new List<string>();
-        public List<String> lst = new List<string>();
+        public static BindingList<ThemSanPham> lstsp = new BindingList<ThemSanPham>();
 
         private void gunaMua_Click(object sender, EventArgs e)
         {
-            int b = 1;
             ma = label8.Text;
             gia = lblGiaBan.Text;
             loai = lblTenLoai.Text;
             hang = lblTenHang.Text;
             tensp = lblTenSanPham.Text;
-            tonkho = b.ToString();
+            tonkho = 1;
             anh = a;
 
-            MessageBox.Show("Vui lòng kiểm tra trong phần giỏ hàng");
+            if(lstsp.Any(n=>n.ma == ma))
+            {
+                MessageBox.Show("Vui lòng kiểm tra trong phần giỏ hàng");
+                var item = lstsp.SingleOrDefault(x=>x.ma == ma);
+                item.soluong++;
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng kiểm tra trong phần giỏ hàng");
 
-            lst.Add(tensp);
-            lst.Add(loai);
-            lst.Add(hang);
-            lst.Add(gia);
-            lst.Add(tonkho);
-            lst.Add(anh);
-            lst.Add(ma);
-            lstsp.AddRange(lst);
+                ThemSanPham sp = new ThemSanPham(tensp, loai, hang, gia, tonkho, anh, ma);
+                lstsp.Add(sp);
+            }
+
+            
         }
     }
 }

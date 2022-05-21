@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using BLL;
+using GUI.UserControls;
 
 namespace GUI
 {
@@ -17,7 +18,7 @@ namespace GUI
     {
         Helper hp = new Helper();
         BLLGioHang bllgiohang = new BLLGioHang();
-
+        public static int kq;
         public frmChiTietGio()
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace GUI
 
                 dataGridView1.Columns[5].Visible = false;
             }
+            
             txtTK.Text = frmDN.taikhoan;
         }
 
@@ -43,30 +45,31 @@ namespace GUI
             dataGridView2.CurrentCell = dataGridView2[1, soa - 1];
             b = dataGridView2.CurrentRow.Cells[0].Value.ToString();
         }
-        List<String> load = new List<String>();
-        DataTable dt = new DataTable();
-        public void loaddata(List<String> loadsp)
+        public void loaddata(BindingList<ThemSanPham> loadsp)
         {
-            load = loadsp;
-            dt.Columns.Add("Tên sản phẩm");
-            dt.Columns.Add("Loại");
-            dt.Columns.Add("Hãng");
-            dt.Columns.Add("Giá");
-            dt.Columns.Add("Nhập vào số lượng");
-            dt.Columns.Add("Hinh");
-            dt.Columns.Add("Mã sản phẩm");
-            dt.Columns[0].ReadOnly = true;
-            dt.Columns[1].ReadOnly = true;
-            dt.Columns[2].ReadOnly = true;
-            dt.Columns[3].ReadOnly = true;
-            dt.Columns[5].ReadOnly = true;
-            dt.Columns[6].ReadOnly = true;
-            for (int x = 0; x < loadsp.Count; x = x + 7)
-            {
-                dt.Rows.Add(load[x], load[x + 1], load[x + 2], load[x + 3], load[x + 4], load[x + 5], load[x + 6]);
+            //load = loadsp;
+            //dt.Columns.Add("Tên sản phẩm");
+            //dt.Columns.Add("Loại");
+            //dt.Columns.Add("Hãng");
+            //dt.Columns.Add("Giá");
+            //dt.Columns.Add("Nhập vào số lượng");
+            //dt.Columns.Add("Hinh");
+            //dt.Columns.Add("Mã sản phẩm");
+            //for (int x = 0; x < loadsp.Count; x = x + 7)
+            //{
+            //    dt.Rows.Add(load[x], load[x + 1], load[x + 2], load[x + 3], load[x + 4], load[x + 5], load[x + 6]);
 
-                dataGridView1.DataSource = dt;
-            }
+            //    dataGridView1.DataSource = dt;
+            //}
+            dataGridView1.DataSource = loadsp;
+
+            dataGridView1.Columns[0].ReadOnly = true;
+            dataGridView1.Columns[1].ReadOnly = true;
+            dataGridView1.Columns[2].ReadOnly = true;
+            dataGridView1.Columns[3].ReadOnly = true;
+            dataGridView1.Columns[4].ReadOnly = true;
+            dataGridView1.Columns[5].ReadOnly = true;
+            dataGridView1.Columns[6].ReadOnly = true;
         }
         public Image GetImg(string direct, int w, int h)
         {
@@ -77,14 +80,19 @@ namespace GUI
         {
             if (e.RowIndex >= 0)
             {
-                int kq = int.Parse(dataGridView1.CurrentRow.Cells[3].Value.ToString()) * int.Parse(dataGridView1.CurrentRow.Cells[4].Value.ToString());
+                //int? soa = int.Parse(dataGridView1.CurrentRow.Cells[4].Value.ToString());
+                //if (soa == null)
+                //{
+                //    dataGridView1.CurrentRow.Cells[4].Value = 0;
+                //}
+                kq = int.Parse(dataGridView1.CurrentRow.Cells[3].Value.ToString()) * int.Parse(dataGridView1.CurrentRow.Cells[4].Value.ToString());
                 txtTongTien.Text = kq.ToString();
                 string direct = hp.Directory() + dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 pictureBox1.Image = GetImg(direct, pictureBox1.Width, pictureBox1.Height);
-
                 button1.Enabled = true;
             }
         }
+
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
             int a = 0;
@@ -100,7 +108,7 @@ namespace GUI
                 {
                     loaddulieu();
                     textBox1.Text = b;
-                    for (int x = 0; x < load.Count; x = x + 7)
+                    for (int x = 0; x < dataGridView1.Rows.Count; x++)
                     {
                         ThemCTHD cthd = new ThemCTHD()
                         {
@@ -126,13 +134,42 @@ namespace GUI
                 return;
             }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            int row = dataGridView1.CurrentCell.RowIndex;
-            dataGridView1.Rows.RemoveAt(row);
+            detailProduct.lstsp.RemoveAt(dataGridView1.CurrentCell.RowIndex);
+        }
 
-            button1.Enabled = false;
+        private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            e.Control.KeyPress -= new KeyPressEventHandler(Column1_KeyPress);
+            if (dataGridView1.CurrentCell.ColumnIndex == 4) //Desired Column
+            {
+                TextBox tb = e.Control as TextBox;
+                if (tb != null)
+                {
+                    tb.KeyPress += new KeyPressEventHandler(Column1_KeyPress);
+                }
+                else if (tb == null)
+                {
+                    MessageBox.Show("Vui lòng nhập số lượng sản phẩm");
+                }
+            }
+        }
+
+        private void Column1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // allowed only numeric value  ex.10
+            //if (!char.IsControl(e.KeyChar)
+            //    && !char.IsDigit(e.KeyChar))
+            //{
+            //    e.Handled = true;
+            //}
+
+            // allowed numeric and one dot  ex. 10.23
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

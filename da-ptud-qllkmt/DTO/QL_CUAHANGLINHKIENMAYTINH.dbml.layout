@@ -89,7 +89,7 @@
         <classShapeMoniker Id="0be528bf-63e6-42d6-a038-c37979fe80d2" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.88544840494792); (3.19791666666667 : 4.88544840494792 : JumpStart); (3.36458333333333 : 4.88544840494792 : JumpEnd); (3.5 : 4.88544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 4.88544840494792); (3.5 : 4.88544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QL_CUAHANGLINHKIENMAYTINHDataContext/NhaPhanPhoi/NhaPhanPhoi_PhieuNhap" />
       <nodes>
         <classShapeMoniker Id="449f1bc1-0e82-4242-8f28-43a4a0d24f63" />
@@ -103,28 +103,28 @@
         <classShapeMoniker Id="96b1a0a2-e131-4815-880a-f2c4aeab9fc1" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 1.03125); (6.59375 : 1.03125); (6.59375 : 4.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 0.90625); (6.59375 : 0.90625); (6.59375 : 4.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_CUAHANGLINHKIENMAYTINHDataContext/SanPham/SanPham_ChiTietPhieuNhap" />
       <nodes>
         <classShapeMoniker Id="2cf99bd7-9cb8-41b0-a9cb-fe9b0e909b2d" />
         <classShapeMoniker Id="0be528bf-63e6-42d6-a038-c37979fe80d2" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.47199625651042); (3.04166666666667 : 2.47199625651042 : JumpStart); (3.36458333333333 : 2.47199625651042 : JumpEnd); (3.5 : 2.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 2.47199625651042); (3.5 : 2.47199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QL_CUAHANGLINHKIENMAYTINHDataContext/HangSanXuat/HangSanXuat_SanPham" />
       <nodes>
         <classShapeMoniker Id="4e21257c-47fe-475f-8f9b-11aa81979ec2" />
         <classShapeMoniker Id="2cf99bd7-9cb8-41b0-a9cb-fe9b0e909b2d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 6.78214495227364); (3.06607443490112 : 6.46607051737252 : JumpStart); (3.18392556509888 : 6.34821938717476 : JumpEnd); (3.28125 : 6.25089495227364); (3.28125 : 1.57974612825521); (3.5 : 1.57974612825521)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 6.78214495227364); (3.28125 : 6.25089495227364); (3.28125 : 1.57974612825521); (3.5 : 1.57974612825521)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QL_CUAHANGLINHKIENMAYTINHDataContext/LoaiSanPham/LoaiSanPham_SanPham" />
       <nodes>
         <classShapeMoniker Id="fb41108d-9265-4e18-b970-f39a8c3721e0" />
         <classShapeMoniker Id="2cf99bd7-9cb8-41b0-a9cb-fe9b0e909b2d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4); (3.125 : 3.625); (3.125 : 2.02587119238281); (3.19791666666667 : 2.02587119238281 : JumpStart); (3.36458333333333 : 2.02587119238281 : JumpEnd); (3.5 : 2.02587119238281)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4); (3.125 : 3.625); (3.125 : 2.02587119238281); (3.5 : 2.02587119238281)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QL_CUAHANGLINHKIENMAYTINHDataContext/NhaPhanPhoi/NhaPhanPhoi_SanPham" />
       <nodes>
         <classShapeMoniker Id="449f1bc1-0e82-4242-8f28-43a4a0d24f63" />
@@ -150,20 +150,20 @@
         <elementListCompartment Id="b0e74bf2-7a84-4b7b-9e2e-6b37abf40ba7" absoluteBounds="7.3900000000000006, 7.7100000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="596b2afe-7456-44bc-8c27-6d11fcade61a" absoluteBounds="7, 1.375, 2, 2.5401025390625">
+    <classShape Id="596b2afe-7456-44bc-8c27-6d11fcade61a" absoluteBounds="7, 1.125, 2, 2.5401025390625">
       <DataClassMoniker Name="/QL_CUAHANGLINHKIENMAYTINHDataContext/ChiTietHoaDonSanPham" />
       <nestedChildShapes>
-        <elementListCompartment Id="44f76309-d85d-4af0-bb57-2bd87dfb63ae" absoluteBounds="7.015, 1.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="44f76309-d85d-4af0-bb57-2bd87dfb63ae" absoluteBounds="7.015, 1.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.5 : 2.23640055338542); (6.51041666666667 : 2.23640055338542 : JumpStart); (6.67708333333333 : 2.23640055338542 : JumpEnd); (7 : 2.23640055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 2.11140055338542); (6.51041666666667 : 2.11140055338542 : JumpStart); (6.67708333333333 : 2.11140055338542 : JumpEnd); (7 : 2.11140055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_CUAHANGLINHKIENMAYTINHDataContext/SanPham/SanPham_ChiTietHoaDonSanPham" />
       <nodes>
         <classShapeMoniker Id="2cf99bd7-9cb8-41b0-a9cb-fe9b0e909b2d" />
         <classShapeMoniker Id="596b2afe-7456-44bc-8c27-6d11fcade61a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 9.9999995); (7.125 : 9.9999995); (7.125 : 6.32859537760417); (8.5 : 6.32859537760417); (8.5 : 4.2901025390625); (8 : 4.2901025390625); (8 : 3.9151025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 9.9999995); (7.125 : 9.9999995); (7.125 : 6.32859537760417); (8.5 : 6.32859537760417); (8.5 : 4.0401025390625); (8 : 4.0401025390625); (8 : 3.6651025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_CUAHANGLINHKIENMAYTINHDataContext/ChiTietHoaDon/ChiTietHoaDon_ChiTietHoaDonSanPham" />
       <nodes>
         <classShapeMoniker Id="da93c7cd-4f05-4893-99a4-3c633f8aa64a" />
