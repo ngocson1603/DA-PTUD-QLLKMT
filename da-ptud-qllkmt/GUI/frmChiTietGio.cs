@@ -81,6 +81,8 @@ namespace GUI
                 txtTongTien.Text = kq.ToString();
                 string direct = hp.Directory() + dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 pictureBox1.Image = GetImg(direct, pictureBox1.Width, pictureBox1.Height);
+
+                button1.Enabled = true;
             }
         }
         private void btnThanhToan_Click(object sender, EventArgs e)
@@ -123,6 +125,14 @@ namespace GUI
                 MessageBox.Show("Vui lòng chọn sản phẩm");
                 return;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int row = dataGridView1.CurrentCell.RowIndex;
+            dataGridView1.Rows.RemoveAt(row);
+
+            button1.Enabled = false;
         }
     }
 }
