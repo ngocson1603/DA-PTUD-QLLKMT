@@ -27,7 +27,7 @@ namespace GUI
             chart1.ChartAreas[0].AxisX.LabelStyle.Format = "dd-MM";
             DataSet ds = new DataSet();
             conn.Open();
-            SqlDataAdapter adapt = new SqlDataAdapter("select SanPham.TenSanPham as Ten,sum(TongTienHoaDon) as SL from ChiTietHoaDon,SanPham where ChiTietHoaDon.MaSanPham=SanPham.MaSanPham and Month(NgayLapHoaDon) = '" + DateTime.Now.Month.ToString() + "'and Gmail = '" + frmDN.taikhoan + "' group by SanPham.TenSanPham", conn);
+            SqlDataAdapter adapt = new SqlDataAdapter("select tensp as Ten,sum(soluong*giaban) as SL from ChiTietHoaDon,ChiTietHoaDonSanPham where ChiTietHoaDon.MaHoaDon = ChiTietHoaDonSanPham.MaHoaDon and Month(NgayLapHoaDon) = '" + DateTime.Now.Month.ToString() + "'and Gmail = '" + frmDN.taikhoan + "' group by tensp", conn);
 
             adapt.Fill(ds);
             chart1.DataSource = ds;
@@ -46,7 +46,7 @@ namespace GUI
             chart2.ChartAreas[0].AxisX.LabelStyle.Format = "dd-MM";
             DataSet ds = new DataSet();
             conn.Open();
-            SqlDataAdapter adapt = new SqlDataAdapter("select SanPham.TenSanPham as Ten,sum(TongTienHoaDon) as SL from ChiTietHoaDon,SanPham where ChiTietHoaDon.MaSanPham=SanPham.MaSanPham and Gmail = '" + frmDN.taikhoan + "' group by SanPham.TenSanPham", conn);
+            SqlDataAdapter adapt = new SqlDataAdapter("select tensp as Ten,sum(soluong*giaban) as SL from ChiTietHoaDon,ChiTietHoaDonSanPham where ChiTietHoaDon.MaHoaDon = ChiTietHoaDonSanPham.MaHoaDon and Gmail = '" + frmDN.taikhoan + "' group by tensp", conn);
 
             adapt.Fill(ds);
             chart2.DataSource = ds;

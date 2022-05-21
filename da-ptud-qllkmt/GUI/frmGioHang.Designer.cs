@@ -40,24 +40,18 @@
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.dateTimeNgay = new System.Windows.Forms.DateTimePicker();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTongTien = new System.Windows.Forms.TextBox();
             this.txtMaSP = new System.Windows.Forms.TextBox();
             this.txtGiaTien = new System.Windows.Forms.TextBox();
             this.txtTK = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.txtSL = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataExcel = new System.Windows.Forms.DataGridView();
-            this.TenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TongTienHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayLapHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboten = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtTongTien = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtSL = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -226,6 +220,15 @@
             this.textBox2.Size = new System.Drawing.Size(173, 20);
             this.textBox2.TabIndex = 9;
             // 
+            // txtTongTien
+            // 
+            this.txtTongTien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTongTien.Enabled = false;
+            this.txtTongTien.Location = new System.Drawing.Point(540, 135);
+            this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.Size = new System.Drawing.Size(173, 20);
+            this.txtTongTien.TabIndex = 14;
+            // 
             // txtMaSP
             // 
             this.txtMaSP.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -252,6 +255,16 @@
             this.txtTK.Name = "txtTK";
             this.txtTK.Size = new System.Drawing.Size(173, 20);
             this.txtTK.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Location = new System.Drawing.Point(361, 132);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(173, 66);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Tổng tiền";
             // 
             // guna2Button2
             // 
@@ -297,6 +310,15 @@
             this.guna2Button3.Text = "In hóa đơn";
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
+            // txtSL
+            // 
+            this.txtSL.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSL.Enabled = false;
+            this.txtSL.Location = new System.Drawing.Point(540, 3);
+            this.txtSL.Name = "txtSL";
+            this.txtSL.Size = new System.Drawing.Size(173, 20);
+            this.txtSL.TabIndex = 22;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dataExcel);
@@ -313,62 +335,19 @@
             this.dataExcel.AllowUserToAddRows = false;
             this.dataExcel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataExcel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataExcel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TenSanPham,
-            this.SoLuong,
-            this.TongTien,
-            this.TongTienHoaDon,
-            this.NgayLapHoaDon,
-            this.Gmail});
             this.dataExcel.GridColor = System.Drawing.SystemColors.Control;
-            this.dataExcel.Location = new System.Drawing.Point(45, 18);
+            this.dataExcel.Location = new System.Drawing.Point(34, 29);
             this.dataExcel.Name = "dataExcel";
-            this.dataExcel.Size = new System.Drawing.Size(41, 21);
+            this.dataExcel.Size = new System.Drawing.Size(10, 10);
             this.dataExcel.TabIndex = 11;
             this.dataExcel.Visible = false;
-            // 
-            // TenSanPham
-            // 
-            this.TenSanPham.DataPropertyName = "TenSanPham";
-            this.TenSanPham.HeaderText = "Column1";
-            this.TenSanPham.Name = "TenSanPham";
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "Column2";
-            this.SoLuong.Name = "SoLuong";
-            // 
-            // TongTien
-            // 
-            this.TongTien.DataPropertyName = "TongTien";
-            this.TongTien.HeaderText = "Column3";
-            this.TongTien.Name = "TongTien";
-            // 
-            // TongTienHoaDon
-            // 
-            this.TongTienHoaDon.DataPropertyName = "TongTienHoaDon";
-            this.TongTienHoaDon.HeaderText = "Column4";
-            this.TongTienHoaDon.Name = "TongTienHoaDon";
-            // 
-            // NgayLapHoaDon
-            // 
-            this.NgayLapHoaDon.DataPropertyName = "NgayLapHoaDon";
-            this.NgayLapHoaDon.HeaderText = "Column5";
-            this.NgayLapHoaDon.Name = "NgayLapHoaDon";
-            // 
-            // Gmail
-            // 
-            this.Gmail.DataPropertyName = "Gmail";
-            this.Gmail.HeaderText = "Column6";
-            this.Gmail.Name = "Gmail";
             // 
             // cboten
             // 
             this.cboten.FormattingEnabled = true;
-            this.cboten.Location = new System.Drawing.Point(45, 18);
+            this.cboten.Location = new System.Drawing.Point(34, 21);
             this.cboten.Name = "cboten";
-            this.cboten.Size = new System.Drawing.Size(121, 21);
+            this.cboten.Size = new System.Drawing.Size(45, 21);
             this.cboten.TabIndex = 10;
             this.cboten.Visible = false;
             // 
@@ -380,34 +359,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(357, 425);
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
-            // 
-            // txtTongTien
-            // 
-            this.txtTongTien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTongTien.Enabled = false;
-            this.txtTongTien.Location = new System.Drawing.Point(540, 135);
-            this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new System.Drawing.Size(173, 20);
-            this.txtTongTien.TabIndex = 14;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Location = new System.Drawing.Point(361, 132);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(173, 66);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Tổng tiền";
-            // 
-            // txtSL
-            // 
-            this.txtSL.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSL.Enabled = false;
-            this.txtSL.Location = new System.Drawing.Point(540, 3);
-            this.txtSL.Name = "txtSL";
-            this.txtSL.Size = new System.Drawing.Size(173, 20);
-            this.txtSL.TabIndex = 22;
             // 
             // dataGridView1
             // 
@@ -467,12 +418,6 @@
         private System.Windows.Forms.ComboBox cboten;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private System.Windows.Forms.DataGridView dataExcel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenSanPham;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TongTienHoaDon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayLapHoaDon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Gmail;
         private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtSL;

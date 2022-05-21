@@ -32,9 +32,9 @@ namespace DAL
             return null;
         }
 
-        public List<View_BieuMauGio> GetWatchListBieuMauGioHang(string ma)
+        public List<View_BieuMauGio> GetWatchListBieuMauGioHang(string ma,int mahd)
         {
-            var response = _apiService.GetResponse(string.Format("api/BieuMauGio/{0}", ma));
+            var response = _apiService.GetResponse(string.Format("api/BieuMauGio/{0}/{1}", ma,mahd));
             if (response.IsSuccessStatusCode)
             {
                 return response.Content.ReadAsAsync<List<View_BieuMauGio>>().Result;

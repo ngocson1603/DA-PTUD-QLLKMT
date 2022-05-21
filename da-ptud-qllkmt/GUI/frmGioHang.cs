@@ -27,8 +27,8 @@ namespace GUI
         {
             dataGridView1.DataSource = bllgiohang.loadGioHangAPI(frmDN.taikhoan);
             dataGridView1.Columns[6].Visible = false;
-
-            dataGridView1.CurrentCell = dataGridView1[1, 0];
+            guna2Button4.Enabled = false;
+            //dataGridView1.CurrentCell = dataGridView1[1, 0];
         }
 
         public void tinhTien()
@@ -63,6 +63,7 @@ namespace GUI
 
                 guna2Button2.Enabled = true;
                 guna2Button3.Enabled = true;
+                guna2Button4.Enabled = true;
 
                 int a = int.Parse(txtMaSP.Text);
                 cboten.DataSource = bllgiohang.loadTenSP(a);
@@ -124,10 +125,10 @@ namespace GUI
             we.QuyetDinhKhenThuong(ngay, thang, nam, ma, ngayt,thangt,namt, tensp, sl, gia, tongtien);
             guna2Button3.Enabled = false;
         }
-
+        public static int? tongtien = 0;
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-            dataExcel.DataSource = bllgiohang.loadBieuMauGioHangAPI(frmDN.taikhoan);
+            dataExcel.DataSource = bllgiohang.loadBieuMauGioHangAPI(frmDN.taikhoan,int.Parse(textBox2.Text));
             taikhoan = txtTK.Text;
             ExcelExport ex = new ExcelExport();
             if (dataGridView1.Rows.Count == 0)
@@ -135,19 +136,26 @@ namespace GUI
                 MessageBox.Show("khong co du lieu de xuat");
                 return;
             }
+            int a = 0;
+            for (int x = 0; x < dataExcel.Rows.Count; x++)
+            {
+                tongtien += int.Parse(dataExcel.Rows[a].Cells[1].Value.ToString()) * int.Parse(dataExcel.Rows[a].Cells[2].Value.ToString());
+                a++;
+            }
 
             List<View_BieuMauGio> pListKhoa = new List<View_BieuMauGio>();
 
-            foreach (DataGridViewRow item in dataExcel.Rows)
-            {
-                View_BieuMauGio i = new View_BieuMauGio();
-                i.tensp = item.Cells[0].Value.ToString();
-                i.soluong = int.Parse(item.Cells[1].Value.ToString());
-                i.giaban = int.Parse(item.Cells[2].Value.ToString());
-                i.NgayLapHoaDon = DateTime.Parse(item.Cells[3].Value.ToString());
+                foreach (DataGridViewRow item in dataExcel.Rows)
+                {
+                    View_BieuMauGio i = new View_BieuMauGio();
+                    i.tensp = item.Cells[0].Value.ToString();
+                    i.soluong = int.Parse(item.Cells[1].Value.ToString());
+                    i.giaban = int.Parse(item.Cells[2].Value.ToString());
+                    i.NgayLapHoaDon = DateTime.Parse(item.Cells[3].Value.ToString());
+                    i.TongTien = int.Parse(item.Cells[6].Value.ToString());
 
-                pListKhoa.Add(i);
-            }
+                    pListKhoa.Add(i);
+                }
 
 
             string path = string.Empty;
@@ -160,6 +168,8 @@ namespace GUI
             {
                 System.Diagnostics.Process.Start(path);
             }
+
+            guna2Button4.Enabled = false;
         }
     }
 }

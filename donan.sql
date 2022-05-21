@@ -86,6 +86,7 @@ CREATE TABLE [dbo].[ChiTietHoaDonSanPham](
 	tenhang nvarchar(100),
 	giaban int,
 	soluong int,
+	TongTien int,
 	hinh nvarchar(100),
 	MaSanPham int
 
@@ -280,6 +281,6 @@ INSERT [dbo].[KhachHang] ([Gmail], [Pass], [TenKhachHang], [Ngaysinh], [GioiTinh
 INSERT [dbo].[KhachHang] ([Gmail], [Pass], [TenKhachHang], [Ngaysinh], [GioiTinh], [DiaChi], [SDT]) VALUES ('sonlaso11119@gmail.com','123',N'NGUYỄN NGỌC SƠN','16/3/2001',N'Nam',N'LONG AN ',0906533337)
 INSERT [dbo].[KhachHang] ([Gmail], [Pass], [TenKhachHang], [Ngaysinh], [GioiTinh], [DiaChi], [SDT]) VALUES ('sonlaso111119@gmail.com','123',N'NGUYỄN MINH TRUNG HIẾU','12/6/2001',N'Nam',N'BÌNH DƯƠNG ',0902114326)
 
-SET IDENTITY_INSERT [ChiTietHoaDon] ON
-INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [Gmail], [NgayLapHoaDon],[MaNhanVien]) VALUES (1,'sonlaso1119@gmail.com','12/3/2021',1)
-SET IDENTITY_INSERT [ChiTietHoaDon] OFF
+--SET IDENTITY_INSERT [ChiTietHoaDon] ON
+--INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [Gmail], [NgayLapHoaDon],[MaNhanVien]) VALUES (1,'sonlaso1119@gmail.com','12/3/2021',1)
+--SET IDENTITY_INSERT [ChiTietHoaDon] OFF

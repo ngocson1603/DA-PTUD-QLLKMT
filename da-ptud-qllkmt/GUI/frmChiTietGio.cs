@@ -17,6 +17,7 @@ namespace GUI
     {
         Helper hp = new Helper();
         BLLGioHang bllgiohang = new BLLGioHang();
+
         public frmChiTietGio()
         {
             InitializeComponent();
@@ -29,6 +30,8 @@ namespace GUI
                 dataGridView1.CurrentCell = dataGridView1[1, 0];
                 string direct = hp.Directory() + dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 pictureBox1.Image = GetImg(direct, pictureBox1.Width, pictureBox1.Height);
+
+                dataGridView1.Columns[5].Visible = false;
             }
             txtTK.Text = frmDN.taikhoan;
         }
@@ -45,13 +48,13 @@ namespace GUI
         public void loaddata(List<String> loadsp)
         {
             load = loadsp;
-            dt.Columns.Add("TenSP");
-            dt.Columns.Add("TenLoai");
-            dt.Columns.Add("TenHang");
-            dt.Columns.Add("GiaBan");
-            dt.Columns.Add("SoLuong");
+            dt.Columns.Add("Tên sản phẩm");
+            dt.Columns.Add("Loại");
+            dt.Columns.Add("Hãng");
+            dt.Columns.Add("Giá");
+            dt.Columns.Add("Nhập vào số lượng");
             dt.Columns.Add("Hinh");
-            dt.Columns.Add("MaSP");
+            dt.Columns.Add("Mã sản phẩm");
             dt.Columns[0].ReadOnly = true;
             dt.Columns[1].ReadOnly = true;
             dt.Columns[2].ReadOnly = true;
@@ -74,6 +77,8 @@ namespace GUI
         {
             if (e.RowIndex >= 0)
             {
+                int kq = int.Parse(dataGridView1.CurrentRow.Cells[3].Value.ToString()) * int.Parse(dataGridView1.CurrentRow.Cells[4].Value.ToString());
+                txtTongTien.Text = kq.ToString();
                 string direct = hp.Directory() + dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 pictureBox1.Image = GetImg(direct, pictureBox1.Width, pictureBox1.Height);
             }
@@ -103,6 +108,7 @@ namespace GUI
                             tenhang = dataGridView1.Rows[a].Cells[2].Value.ToString(),
                             giaban = int.Parse(dataGridView1.Rows[a].Cells[3].Value.ToString()),
                             soluong = int.Parse(dataGridView1.Rows[a].Cells[4].Value.ToString()),
+                            TongTien = int.Parse(dataGridView1.Rows[a].Cells[3].Value.ToString()) * int.Parse(dataGridView1.Rows[a].Cells[4].Value.ToString()),
                             hinh = dataGridView1.Rows[a].Cells[5].Value.ToString(),
                             MaSanPham = int.Parse(dataGridView1.Rows[a].Cells[6].Value.ToString()),
                         };

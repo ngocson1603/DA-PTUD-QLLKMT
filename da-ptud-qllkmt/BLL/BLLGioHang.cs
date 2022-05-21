@@ -52,9 +52,9 @@ namespace BLL
             return dalgiohang.GetWatchListGioHangSP();
         }
 
-        public List<View_BieuMauGio> loadBieuMauGioHangAPI(string tenkh)
+        public List<View_BieuMauGio> loadBieuMauGioHangAPI(string tenkh,int ma)
         {
-            return dalgiohang.GetWatchListBieuMauGioHang(tenkh);
+            return dalgiohang.GetWatchListBieuMauGioHang(tenkh,ma);
         }
 
         public List<ChiTietHoaDon> loadBieuMau(string tenkh)

@@ -529,6 +529,8 @@ namespace GUI.XuLy
                 string ten = frmTrangChu.tenkhach;
                 pReplacer.Add("%TenNguoiLap", ten);
                 pReplacer.Add("%TaiKhoan", frmGioHang.taikhoan);
+
+                pReplacer.Add("%TongTien", string.Format("{0}",frmGioHang.tongtien));
             }
         }
 
@@ -984,7 +986,7 @@ namespace GUI.XuLy
             }
 
 
-            //  string tongSo = dataSource.Sum(t => t.SoLuong).Value.ToString();
+             // string tongSo = dataSource.Sum(t => t.SoLuong).Value.ToString();
             // Create replacer
             Dictionary<string, string> replacer = new Dictionary<string, string>();
 
