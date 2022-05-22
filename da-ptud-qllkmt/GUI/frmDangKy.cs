@@ -48,6 +48,11 @@ namespace GUI
                 MessageBox.Show("Khách hàng chưa đủ 18");
                 return;
             }
+            if (blldangky.kiemtratontai(txtUserName.Text))
+            {
+                MessageBox.Show("Tài khoản này đã được đăng ký");
+                return;
+            }
             else
             {
                 KhachHang kh = new KhachHang()

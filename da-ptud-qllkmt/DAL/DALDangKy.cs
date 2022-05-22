@@ -50,5 +50,10 @@ namespace DAL
             else
                 return true;
         }
+
+        public bool Kiemtratontai(string gmail)
+        {
+            return qllk.KhachHangs.Where(t => t.Gmail == gmail).FirstOrDefault() != null;
+        }
     }
 }

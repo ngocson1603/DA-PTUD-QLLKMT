@@ -27,7 +27,10 @@ namespace BLL
         {
             return daldangky.PutKhachHang(kh,ten);
         }
-
+        public bool kiemtratontai(string gmail)
+        {
+            return daldangky.Kiemtratontai(gmail);
+        }
         public bool themKhachHang(KhachHang kh)
         {
             return daldangky.PostDangKy(kh);
