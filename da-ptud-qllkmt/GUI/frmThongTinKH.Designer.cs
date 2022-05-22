@@ -48,6 +48,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtPassWord = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -220,7 +222,7 @@
             this.btnDangKy.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDangKy.ForeColor = System.Drawing.Color.White;
             this.btnDangKy.HoverState.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDangKy.Location = new System.Drawing.Point(434, 352);
+            this.btnDangKy.Location = new System.Drawing.Point(722, 352);
             this.btnDangKy.Margin = new System.Windows.Forms.Padding(2);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.Size = new System.Drawing.Size(129, 31);
@@ -349,7 +351,6 @@
             this.tableLayoutPanel1.Controls.Add(this.txtUserName, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtHoTen, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.dateTimeNgay, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.btnDangKy, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.txtSoDienThoai, 4, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtDiaChi, 4, 2);
             this.tableLayoutPanel1.Controls.Add(this.rdoNu, 5, 1);
@@ -360,6 +361,9 @@
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.guna2PictureBox1, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtPassWord, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btnDangKy, 5, 4);
+            this.tableLayoutPanel1.Controls.Add(this.guna2TextBox1, 4, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 3, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -404,6 +408,44 @@
             this.txtPassWord.Size = new System.Drawing.Size(133, 29);
             this.txtPassWord.TabIndex = 45;
             // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(153)))), ((int)(((byte)(149)))));
+            this.guna2TextBox1.BorderRadius = 6;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.Enabled = false;
+            this.guna2TextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Location = new System.Drawing.Point(578, 352);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PasswordChar = '\0';
+            this.guna2TextBox1.PlaceholderText = "";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.Size = new System.Drawing.Size(133, 29);
+            this.guna2TextBox1.TabIndex = 46;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(434, 350);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(140, 71);
+            this.label8.TabIndex = 47;
+            this.label8.Text = "Mã Khách Hàng:";
+            // 
             // frmThongTinKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,5 +485,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2TextBox txtPassWord;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private System.Windows.Forms.Label label8;
     }
 }
