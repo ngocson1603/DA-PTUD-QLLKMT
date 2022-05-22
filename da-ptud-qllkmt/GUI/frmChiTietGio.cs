@@ -80,11 +80,6 @@ namespace GUI
         {
             if (e.RowIndex >= 0)
             {
-                //int? soa = int.Parse(dataGridView1.CurrentRow.Cells[4].Value.ToString());
-                //if (soa == null)
-                //{
-                //    dataGridView1.CurrentRow.Cells[4].Value = 0;
-                //}
                 kq = int.Parse(dataGridView1.CurrentRow.Cells[3].Value.ToString()) * int.Parse(dataGridView1.CurrentRow.Cells[4].Value.ToString());
                 txtTongTien.Text = kq.ToString();
                 string direct = hp.Directory() + dataGridView1.CurrentRow.Cells[5].Value.ToString();
@@ -123,7 +118,15 @@ namespace GUI
                             MaSanPham = int.Parse(dataGridView1.Rows[a].Cells[6].Value.ToString()),
                         };
                         a++;
-                        bllgiohang.postGioHangCTHD(cthd);
+                        if (bllgiohang.postGioHangCTHD(cthd))
+                        {
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Mua hàng không thành công");
+                            break;
+                        }
                     }
                     MessageBox.Show("Mua hàng thành công");
                 }

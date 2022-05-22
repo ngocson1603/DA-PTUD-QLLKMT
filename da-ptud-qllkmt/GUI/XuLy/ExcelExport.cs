@@ -531,6 +531,7 @@ namespace GUI.XuLy
                 pReplacer.Add("%TaiKhoan", frmGioHang.taikhoan);
 
                 pReplacer.Add("%TongTien", string.Format("{0}",frmGioHang.tongtien));
+                pReplacer.Add("%MaDonHang", string.Format("{0}",frmGioHang.mahd));
             }
         }
 

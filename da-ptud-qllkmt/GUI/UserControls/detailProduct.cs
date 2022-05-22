@@ -26,6 +26,7 @@ namespace GUI.UserControls
             return (Image)(new Bitmap(i, new Size(w, h)));
         }
         public static string a;
+        public static int soluongton;
         public void AddProducts(detailProducts s)
         {
             lblTenSanPham.Text = s.TenSP.ToString();
@@ -33,6 +34,7 @@ namespace GUI.UserControls
             lblTenHang.Text = s.TenHang.ToString();
             lblGiaBan.Text = s.GiaBan.ToString();
             lblTonkho.Text = s.TonKho.ToString();
+            soluongton = s.TonKho;
             string direct = hp.Directory() + s.Hinh;
             a = s.Hinh;
             pictureDetailSP.Image = GetImg(direct, pictureDetailSP.Width, pictureDetailSP.Height);       
@@ -73,7 +75,16 @@ namespace GUI.UserControls
             {
                 MessageBox.Show("Vui lòng kiểm tra trong phần giỏ hàng");
                 var item = lstsp.SingleOrDefault(x=>x.ma == ma);
-                item.soluong++;
+                
+                if(item.soluong == soluongton-1)
+                {
+                    MessageBox.Show("Hiện tại số lượng sản phẩm tại cửa hàng không còn đủ");
+                    return;
+                }
+                else
+                {
+                    item.soluong++;
+                }
             }
             else
             {

@@ -139,6 +139,47 @@ ALTER TABLE [dbo].[SanPham]
 ADD CONSTRAINT UNI_TENSP UNIQUE(TenSanPham)
 ALTER TABLE [dbo].[Users]
 ADD CONSTRAINT UNI_TENND UNIQUE(TenDangNhap)
+
+
+--tự động giảm khi tạo hóa đơn
+go
+CREATE TRIGGER SOLUONG2
+ON ChiTietHoaDonSanPham for insert
+as
+begin
+		DECLARE @SOLUONGGIAM INT;
+		SELECT @SOLUONGGIAM = SanPham.TonKho FROM SanPham, inserted WHERE inserted.MaSanPham = SanPham.MaSanPham
+		IF(@SOLUONGGIAM < 1)
+		BEGIN
+			RAISERROR(N'HIỆN TẠI MẶT HÀNG KHÔNG ĐỦ SỐ LƯỢNG',16,1)
+		END
+		ELSE
+		BEGIN
+		UPDATE SanPham
+		SET TonKho = TonKho - (SELECT soluong FROM inserted) FROM inserted,SanPham WHERE inserted.MaSanPham =SanPham.MaSanPham
+		END
+end
+
+go
+CREATE TRIGGER SOLUONG3
+ON ChiTietHoaDonSanPham for delete
+as
+begin
+  BEGIN
+  UPDATE SanPham
+  SET TonKho = TonKho + (SELECT soluong FROM deleted) FROM deleted,SanPham WHERE deleted.MaSanPham =SanPham.MaSanPham
+  END
+end
+
+Go
+CREATE TRIGGER SOLuongPN ON [dbo].[ChiTietPhieuNhap]
+FOR delete
+AS
+BEGIN
+	UPDATE SanPham
+	SET TonKho = TonKho - (SELECT SoLuong FROM deleted)
+	WHERE MaSanPham=(SELECT MaSanPham FROM deleted)
+END
 ------update tiềnpn------
 Go
 CREATE TRIGGER TONGTIENPN ON [dbo].[ChiTietPhieuNhap]
@@ -156,60 +197,6 @@ BEGIN
 	UPDATE SanPham
 	SET TonKho = TonKho + (SELECT SoLuong FROM inserted)
 	WHERE MaSanPham=(SELECT MaSanPham FROM inserted)
-END
---------------------tính tiền
-create trigger cntien on [dbo].[ChiTietHoaDon]
-for insert
-as
-begin
-	declare @mahd int,@masp int,@gmail nvarchar(50),@sl int,@ngaydat date, @tiensp money,@tongtien money
-	set @mahd=(select MaHoaDon from inserted)
-	set @masp=(select MaSanPham from inserted)
-	set @gmail=(select Gmail from inserted)
-	set @sl=(select SoLuong from inserted)
-	set @ngaydat=(select NgayLapHoaDon from inserted)
-	set @tiensp=(select GiaBan from SanPham where MaSanPham=@masp)
-	update [dbo].[ChiTietHoaDon]
-	set TongTien=@tiensp where MaSanPham=@masp
-end
---tự động giảm khi tạo hóa đơn
-go
-CREATE TRIGGER SOLUONG2
-ON ChiTietHoaDon for insert
-as
-begin
-		DECLARE @SOLUONGGIAM INT;
-		SELECT @SOLUONGGIAM = SanPham.TonKho FROM SanPham, inserted WHERE inserted.MaSanPham = SanPham.MaSanPham
-		IF(@SOLUONGGIAM < 0)
-		BEGIN
-			RAISERROR(N'HIỆN TẠI MẶT HÀNG KHÔNG ĐỦ SỐ LƯỢNG',16,1)
-		END
-		ELSE
-		BEGIN
-		UPDATE SanPham
-		SET TonKho = TonKho - (SELECT SoLuong FROM inserted) FROM inserted,SanPham WHERE inserted.MaSanPham =SanPham.MaSanPham
-		END
-end
-
-go
-CREATE TRIGGER SOLUONG3
-ON ChiTietHoaDon for delete
-as
-begin
-  BEGIN
-  UPDATE SanPham
-  SET TonKho = TonKho + (SELECT SoLuong FROM deleted) FROM deleted,SanPham WHERE deleted.MaSanPham =SanPham.MaSanPham
-  END
-end
-
-Go
-CREATE TRIGGER SOLuongPN ON [dbo].[ChiTietPhieuNhap]
-FOR delete
-AS
-BEGIN
-	UPDATE SanPham
-	SET TonKho = TonKho - (SELECT SoLuong FROM deleted)
-	WHERE MaSanPham=(SELECT MaSanPham FROM deleted)
 END
 --------------------------------------------------------------------------------------------
 SET DATEFORMAT DMY

@@ -126,10 +126,12 @@ namespace GUI
             guna2Button3.Enabled = false;
         }
         public static int? tongtien = 0;
+        public static int mahd;
         private void guna2Button4_Click(object sender, EventArgs e)
         {
             dataExcel.DataSource = bllgiohang.loadBieuMauGioHangAPI(frmDN.taikhoan,int.Parse(textBox2.Text));
             taikhoan = txtTK.Text;
+            mahd = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
             ExcelExport ex = new ExcelExport();
             if (dataGridView1.Rows.Count == 0)
             {
