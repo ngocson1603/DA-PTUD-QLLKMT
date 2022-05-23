@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DALDangKy.cs" />
+    <Compile Include="DALDangNhap.cs" />
     <Compile Include="DALGioHang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

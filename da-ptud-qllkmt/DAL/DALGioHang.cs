@@ -32,7 +32,7 @@ namespace DAL
             return null;
         }
 
-        public List<View_BieuMauGio> GetWatchListBieuMauGioHang(string ma,int mahd)
+        public List<View_BieuMauGio> GetWatchListBieuMauGioHang(int ma,int mahd)
         {
             var response = _apiService.GetResponse(string.Format("api/BieuMauGio/{0}/{1}", ma,mahd));
             if (response.IsSuccessStatusCode)
@@ -52,17 +52,17 @@ namespace DAL
             return null;
         }
 
-
-        public List<ChiTietHoaDon> loadBieuMau(string tenkh)
+        public string loadTenSP(int masp)
         {
-            return qllk.ChiTietHoaDons.Where(t => t.Gmail.Equals(tenkh)).Select(t => t).ToList();
+            var tensp = (from lk in qllk.SanPhams where lk.MaSanPham == masp select lk.TenSanPham).FirstOrDefault();
+            return tensp.ToString();
         }
-
-        public List<SanPham> loadTenSP(int masp)
+        public string loadMaKH(string taik)
         {
-            var tensp = from lk in qllk.SanPhams where lk.MaSanPham == masp select lk;
-            return tensp.ToList();
+            var makh = (from p in qllk.KhachHangs where p.Gmail == taik select p.MaKH).FirstOrDefault();
+            return makh.ToString();
         }
+        
         public bool PostGioHang(ThemGioHang pCT)
         {
             var response = _apiService.PostResponse("api/GioHang/", pCT);

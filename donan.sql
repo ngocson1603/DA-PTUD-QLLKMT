@@ -23,7 +23,6 @@ CREATE TABLE [dbo].[NhaPhanPhoi](
 
 CREATE TABLE [dbo].[SanPham](
 	[MaSanPham] int IDENTITY(1,1), 
-	[MaNhaPhanPhoi] int,
 	[TenSanPham] [nvarchar](200),
 	[LoaiSanPham] int,
 	[HangSanXuat] int,
@@ -63,6 +62,7 @@ CREATE TABLE [dbo].[ChiTietPhieuNhap](
 	CONSTRAINT PK_CTPN PRIMARY KEY(MaPhieuNhap,MaSanPham))
 
 CREATE TABLE [dbo].[KhachHang](
+	MaKH int IDENTITY(1,1), 
 	[Gmail] [nvarchar](50),
 	[Pass] [nvarchar](50),
 	[TenKhachHang] [nvarchar](50),
@@ -70,25 +70,21 @@ CREATE TABLE [dbo].[KhachHang](
 	[GioiTinh] [nvarchar](10),
 	[DiaChi] [nvarchar](50),
 	[SDT] [varchar](11),
-	CONSTRAINT PK_KHACHHANG PRIMARY KEY(Gmail))
+	CONSTRAINT PK_KHACHHANG PRIMARY KEY(MaKH))
 
-CREATE TABLE [dbo].[ChiTietHoaDon](
+CREATE TABLE [dbo].[HoaDon](
 	[MaHoaDon] int IDENTITY(1,1), 
-	[Gmail] nvarchar(50),
+	MaKH int,
 	[NgayLapHoaDon] [date],
 	[MaNhanVien] int, 
 	CONSTRAINT PK_CTHOADON PRIMARY KEY(MaHoaDon))
 
-CREATE TABLE [dbo].[ChiTietHoaDonSanPham](
+CREATE TABLE [dbo].[ChiTietHoaDon](
 	[MaHoaDon] int, 
-	tensp nvarchar(100),
-	tenloai nvarchar(100),
-	tenhang nvarchar(100),
+	MaSanPham int,
 	giaban int,
 	soluong int,
 	TongTien int,
-	hinh nvarchar(100),
-	MaSanPham int
 
 	CONSTRAINT pk_chitiethoadonsp PRIMARY KEY(MaHoaDon,MaSanPham))
 
@@ -101,10 +97,8 @@ CREATE TABLE [dbo].[Users](
 )
 
 --KHOÁ NGOẠI
-ALTER TABLE [dbo].[SanPham]
-ADD CONSTRAINT FK_SP_NCC FOREIGN KEY(MaNhaPhanPhoi) REFERENCES [dbo].[NhaPhanPhoi](MaNhaPhanPhoi)
-ALTER TABLE [dbo].[ChiTietHoaDonSanPham]
-ADD CONSTRAINT FK_cthdsp FOREIGN KEY(MaHoaDon) REFERENCES [dbo].[ChiTietHoaDon](MaHoaDon)
+ALTER TABLE [dbo].[ChiTietHoaDon]
+ADD CONSTRAINT FK_cthdsp FOREIGN KEY(MaHoaDon) REFERENCES [dbo].[HoaDon](MaHoaDon)
 ALTER TABLE [dbo].[SanPham]
 ADD CONSTRAINT FK_SP_LH FOREIGN KEY(LoaiSanPham) REFERENCES [dbo].[LoaiSanPham](MaLoaiSanPham)
 ALTER TABLE [dbo].[SanPham]
@@ -119,10 +113,10 @@ ALTER TABLE [dbo].[ChiTietPhieuNhap]
 ADD CONSTRAINT FK_CTPN_PN FOREIGN KEY(MaPhieuNhap) REFERENCES [dbo].[PhieuNhap](MaPhieuNhap)
 ALTER TABLE [dbo].[ChiTietPhieuNhap]
 ADD CONSTRAINT FK_CTPN_SP FOREIGN KEY(MaSanPham) REFERENCES [dbo].[SanPham](MaSanPham)
-ALTER TABLE [dbo].[ChiTietHoaDonSanPham]
-ADD CONSTRAINT FK_CT_HOADON_SANPHAM FOREIGN KEY(MaSanPham) REFERENCES [dbo].[SanPham](MaSanPham)
 ALTER TABLE [dbo].[ChiTietHoaDon]
-ADD CONSTRAINT FK_CT_HOADON_User FOREIGN KEY(Gmail) REFERENCES [dbo].[KhachHang](Gmail)
+ADD CONSTRAINT FK_CT_HOADON_SANPHAM FOREIGN KEY(MaSanPham) REFERENCES [dbo].[SanPham](MaSanPham)
+ALTER TABLE [dbo].[HoaDon]
+ADD CONSTRAINT FK_CT_HOADON_User FOREIGN KEY(MaKH) REFERENCES [dbo].[KhachHang](MaKH)
 ALTER TABLE [dbo].[Users]
 ADD CONSTRAINT FK_User FOREIGN KEY(MaNhanVien) REFERENCES [dbo].[NhanVien](MaNhanVien)
 
@@ -140,11 +134,10 @@ ADD CONSTRAINT UNI_TENSP UNIQUE(TenSanPham)
 ALTER TABLE [dbo].[Users]
 ADD CONSTRAINT UNI_TENND UNIQUE(TenDangNhap)
 
-
 --tự động giảm khi tạo hóa đơn
 go
 CREATE TRIGGER SOLUONG2
-ON ChiTietHoaDonSanPham for insert
+ON ChiTietHoaDon for insert
 as
 begin
 		DECLARE @SOLUONGGIAM INT;
@@ -162,7 +155,7 @@ end
 
 go
 CREATE TRIGGER SOLUONG3
-ON ChiTietHoaDonSanPham for delete
+ON ChiTietHoaDon for delete
 as
 begin
   BEGIN
@@ -246,12 +239,12 @@ INSERT [dbo].[Users] ([TenDangNhap], [Password],[MaNhanVien], [Quyen]) VALUES (N
 INSERT [dbo].[Users] ([TenDangNhap], [Password],[MaNhanVien], [Quyen]) VALUES (N'huy', N'huy',2, 0)
 
 SET IDENTITY_INSERT [SanPham] ON
-INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (1, 1,N'Ban phim co AKKO', 10, 1, 1590000, 34,'ban-phim-co-akko-3108-v2-world-tour-tokyo.jpg')
-INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (2, 2,N'Ban phim co Asus', 10, 6, 1590000, 100,'akko-3108-ds-matcha-red-bean-01.jpg')
-INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (3, 3,N'Nguon GIGABYTE P1000GM', 8, 7, 4290000, 10,'PSU_GG_GP-P1000GM-5.jpg')
-INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (4, 3,N'Intel Core i5 12600KF', 1, 3, 7990000, 10,'intelcorei5-12600k.jpg')
-INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (5, 3,N'Laptop gaming Acer Predator Helios', 7, 5, 41990000, 10,'62709_laptop_acer_gaming_predator_helios_500_12.jpg')
-INSERT [dbo].[SanPham] ([MaSanPham], [MaNhaPhanPhoi],[TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (6, 3,N'Chuot Akko AG325', 3, 1, 490000, 10,'akkoag325pink.jpg')
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (1, N'Ban phim co AKKO', 10, 1, 1590000, 34,'ban-phim-co-akko-3108-v2-world-tour-tokyo.jpg')
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (2, N'Ban phim co Asus', 10, 6, 1590000, 100,'akko-3108-ds-matcha-red-bean-01.jpg')
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (3, N'Nguon GIGABYTE P1000GM', 8, 7, 4290000, 10,'PSU_GG_GP-P1000GM-5.jpg')
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (4, N'Intel Core i5 12600KF', 1, 3, 7990000, 10,'intelcorei5-12600k.jpg')
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (5, N'Laptop gaming Acer Predator Helios', 7, 5, 41990000, 10,'62709_laptop_acer_gaming_predator_helios_500_12.jpg')
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (6, N'Chuot Akko AG325', 3, 1, 490000, 10,'akkoag325pink.jpg')
 SET IDENTITY_INSERT [SanPham] OFF
 
 SET IDENTITY_INSERT [PhieuNhap] ON
@@ -264,10 +257,14 @@ INSERT [dbo].[ChiTietPhieuNhap] ([MaPhieuNhap], [MaSanPham], [SoLuong], [TienNha
 INSERT [dbo].[ChiTietPhieuNhap] ([MaPhieuNhap], [MaSanPham], [SoLuong], [TienNhap]) VALUES (2, 2, 43, 1590000.0000)
 INSERT [dbo].[ChiTietPhieuNhap] ([MaPhieuNhap], [MaSanPham], [SoLuong], [TienNhap]) VALUES (3, 3, 1, 1590000.0000)
 
-INSERT [dbo].[KhachHang] ([Gmail], [Pass], [TenKhachHang], [Ngaysinh], [GioiTinh], [DiaChi], [SDT]) VALUES ('sonlaso1119@gmail.com','123',N'ĐỖ GIA HUY','25/1/2001',N'Nam',N'BÌNH TÂN TPHCM',0903714326)
-INSERT [dbo].[KhachHang] ([Gmail], [Pass], [TenKhachHang], [Ngaysinh], [GioiTinh], [DiaChi], [SDT]) VALUES ('sonlaso11119@gmail.com','123',N'NGUYỄN NGỌC SƠN','16/3/2001',N'Nam',N'LONG AN ',0906533337)
-INSERT [dbo].[KhachHang] ([Gmail], [Pass], [TenKhachHang], [Ngaysinh], [GioiTinh], [DiaChi], [SDT]) VALUES ('sonlaso111119@gmail.com','123',N'NGUYỄN MINH TRUNG HIẾU','12/6/2001',N'Nam',N'BÌNH DƯƠNG ',0902114326)
+SET IDENTITY_INSERT [KhachHang] ON
+INSERT [dbo].[KhachHang] ([MaKH],[Gmail], [Pass], [TenKhachHang], [Ngaysinh], [GioiTinh], [DiaChi], [SDT]) VALUES (1,'sonlaso1119@gmail.com','123',N'ĐỖ GIA HUY','25/1/2001',N'Nam',N'BÌNH TÂN TPHCM',0903714326)
+INSERT [dbo].[KhachHang] ([MaKH],[Gmail], [Pass], [TenKhachHang], [Ngaysinh], [GioiTinh], [DiaChi], [SDT]) VALUES (2,'sonlaso11119@gmail.com','123',N'NGUYỄN NGỌC SƠN','16/3/2001',N'Nam',N'LONG AN ',0906533337)
+INSERT [dbo].[KhachHang] ([MaKH],[Gmail], [Pass], [TenKhachHang], [Ngaysinh], [GioiTinh], [DiaChi], [SDT]) VALUES (3,'sonlaso111119@gmail.com','123',N'NGUYỄN MINH TRUNG HIẾU','12/6/2001',N'Nam',N'BÌNH DƯƠNG ',0902114326)
+SET IDENTITY_INSERT [KhachHang] OFF
 
---SET IDENTITY_INSERT [ChiTietHoaDon] ON
---INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [Gmail], [NgayLapHoaDon],[MaNhanVien]) VALUES (1,'sonlaso1119@gmail.com','12/3/2021',1)
---SET IDENTITY_INSERT [ChiTietHoaDon] OFF
+SET IDENTITY_INSERT [HoaDon] ON
+INSERT [dbo].[HoaDon] ([MaHoaDon], [MaKH], [NgayLapHoaDon],[MaNhanVien]) VALUES (1,1,'23/05/2022',1)
+SET IDENTITY_INSERT [HoaDon] OFF
+
+INSERT [dbo].[ChiTietHoaDon] ([MaHoaDon], [MaSanPham], [giaban],[soluong],[TongTien]) VALUES (1,1,1590000,1,1590000)

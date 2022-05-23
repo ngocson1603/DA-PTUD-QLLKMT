@@ -9,7 +9,7 @@ namespace DTO
     public class ThemGioHang
     {
         public int MaHoaDon { get; set; }
-        public string Gmail { get; set; }
+        public int MaKH { get; set; }
         public DateTime NgayLapHoaDon { get; set; }
         public int MaNhanVien { get; set; }
     }

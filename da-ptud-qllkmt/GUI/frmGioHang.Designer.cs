@@ -50,7 +50,6 @@
             this.txtSL = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataExcel = new System.Windows.Forms.DataGridView();
-            this.cboten = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
@@ -89,7 +88,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(173, 66);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Tài khoản";
+            this.label3.Text = "Mã khách hàng";
             // 
             // label4
             // 
@@ -322,7 +321,6 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.dataExcel);
-            this.panel2.Controls.Add(this.cboten);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -341,15 +339,6 @@
             this.dataExcel.Size = new System.Drawing.Size(10, 10);
             this.dataExcel.TabIndex = 11;
             this.dataExcel.Visible = false;
-            // 
-            // cboten
-            // 
-            this.cboten.FormattingEnabled = true;
-            this.cboten.Location = new System.Drawing.Point(34, 21);
-            this.cboten.Name = "cboten";
-            this.cboten.Size = new System.Drawing.Size(45, 21);
-            this.cboten.TabIndex = 10;
-            this.cboten.Visible = false;
             // 
             // pictureBox1
             // 
@@ -415,7 +404,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private System.Windows.Forms.ComboBox cboten;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private System.Windows.Forms.DataGridView dataExcel;
         private System.Windows.Forms.TextBox txtTongTien;

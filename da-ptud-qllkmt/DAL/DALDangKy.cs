@@ -16,10 +16,10 @@ namespace DAL
 
         }
 
-        public List<KhachHang> loadThongTin(string user)
-        {
-            return qllk.KhachHangs.Where(t => t.Gmail.Equals(user)).Select(t => t).ToList();
-        }
+        //public List<KhachHang> loadThongTin(string user)
+        //{
+        //    return qllk.KhachHangs.Where(t => t.Gmail.Equals(user)).Select(t => t).ToList();
+        //}
 
         private ApiService _apiService = new ApiService();
 
@@ -33,7 +33,7 @@ namespace DAL
             return null;
         }
 
-        public bool PutKhachHang(KhachHang pKH, string ten)
+        public bool PutKhachHang(KhachHang pKH, int ten)
         {
             var response = _apiService.PutResponse(string.Format("api/KhachHang/{0}", ten), pKH);
             if (response == null)

@@ -38,6 +38,7 @@ namespace GUI
                 string gioitinh = kh.GioiTinh.ToString();
                 string diachi = kh.DiaChi.ToString();
                 string sdt = kh.SDT.ToString();
+                int ma = kh.MaKH;
 
                 txtUserName.Text = user;
                 txtPassWord.Text = pass;
@@ -53,6 +54,7 @@ namespace GUI
                 }
                 txtDiaChi.Text = diachi;
                 txtSoDienThoai.Text = sdt;
+                txtMa.Text = ma.ToString();
             }
             hoten = txtHoTen.Text;
         }
@@ -88,7 +90,7 @@ namespace GUI
             kh.GioiTinh = gioitinh;
             kh.DiaChi = txtDiaChi.Text;
             kh.SDT = txtSoDienThoai.Text;
-            if (blldangky.suaKhachHang(kh,txtUserName.Text))
+            if (blldangky.suaKhachHang(kh,int.Parse(txtMa.Text)))
             {
                 MessageBox.Show("Sửa thông tin thành công");
             }

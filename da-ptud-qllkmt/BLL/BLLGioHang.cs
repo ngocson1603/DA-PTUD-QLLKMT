@@ -52,19 +52,19 @@ namespace BLL
             return dalgiohang.GetWatchListGioHangSP();
         }
 
-        public List<View_BieuMauGio> loadBieuMauGioHangAPI(string tenkh,int ma)
+        public List<View_BieuMauGio> loadBieuMauGioHangAPI(int tenkh,int ma)
         {
             return dalgiohang.GetWatchListBieuMauGioHang(tenkh,ma);
         }
 
-        public List<ChiTietHoaDon> loadBieuMau(string tenkh)
-        {
-            return dalgiohang.loadBieuMau(tenkh);
-        }
-
-        public List<SanPham> loadTenSP(int masp)
+        public string loadTenSP(int masp)
         {
             return dalgiohang.loadTenSP(masp);
+        }
+
+        public string loadMaKH(string taik)
+        {
+            return dalgiohang.loadMaKH(taik);
         }
     }
 }

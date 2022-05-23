@@ -18,6 +18,7 @@ namespace GUI
     {
         Helper hp = new Helper();
         BLLGioHang bllgiohang = new BLLGioHang();
+        QL_CUAHANGLINHKIENMAYTINHDataContext qllk = new QL_CUAHANGLINHKIENMAYTINHDataContext();
         public static int kq;
         public frmChiTietGio()
         {
@@ -34,8 +35,10 @@ namespace GUI
 
                 dataGridView1.Columns[5].Visible = false;
             }
-            
+            dataGridView1.Columns[5].Visible = false;
             txtTK.Text = frmDN.taikhoan;
+
+            txtMaKH.Text = bllgiohang.loadMaKH(frmDN.taikhoan);
         }
 
         public void loaddulieu()
@@ -95,7 +98,7 @@ namespace GUI
             {
                 ThemGioHang cthdsp = new ThemGioHang()
                 {
-                    Gmail = txtTK.Text,
+                    MaKH = int.Parse(txtMaKH.Text),
                     NgayLapHoaDon = dateTimePicker1.Value
                 };
 
@@ -108,14 +111,11 @@ namespace GUI
                         ThemCTHD cthd = new ThemCTHD()
                         {
                             MaHoaDon = int.Parse(b.ToString()),
-                            tensp = dataGridView1.Rows[a].Cells[0].Value.ToString(),
-                            tenloai = dataGridView1.Rows[a].Cells[1].Value.ToString(),
-                            tenhang = dataGridView1.Rows[a].Cells[2].Value.ToString(),
+                            MaSanPham = int.Parse(dataGridView1.Rows[a].Cells[6].Value.ToString()),
                             giaban = int.Parse(dataGridView1.Rows[a].Cells[3].Value.ToString()),
                             soluong = int.Parse(dataGridView1.Rows[a].Cells[4].Value.ToString()),
                             TongTien = int.Parse(dataGridView1.Rows[a].Cells[3].Value.ToString()) * int.Parse(dataGridView1.Rows[a].Cells[4].Value.ToString()),
-                            hinh = dataGridView1.Rows[a].Cells[5].Value.ToString(),
-                            MaSanPham = int.Parse(dataGridView1.Rows[a].Cells[6].Value.ToString()),
+                            
                         };
                         a++;
                         if (bllgiohang.postGioHangCTHD(cthd))

@@ -36,6 +36,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtMaKH = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,9 +45,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtMaKH = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -129,7 +128,6 @@
             // groupBox1
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.groupBox1, 2);
-            this.groupBox1.Controls.Add(this.listBox1);
             this.groupBox1.Controls.Add(this.txtMaKH);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.button1);
@@ -149,6 +147,23 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mua hàng";
+            // 
+            // txtMaKH
+            // 
+            this.txtMaKH.Enabled = false;
+            this.txtMaKH.Location = new System.Drawing.Point(90, 101);
+            this.txtMaKH.Name = "txtMaKH";
+            this.txtMaKH.Size = new System.Drawing.Size(137, 20);
+            this.txtMaKH.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 104);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(85, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Mã Khách Hàng";
             // 
             // button1
             // 
@@ -226,32 +241,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(978, 508);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
-            // txtMaKH
-            // 
-            this.txtMaKH.Enabled = false;
-            this.txtMaKH.Location = new System.Drawing.Point(90, 101);
-            this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(137, 20);
-            this.txtMaKH.TabIndex = 14;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 104);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Mã Khách Hàng";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(629, 126);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(10, 4);
-            this.listBox1.TabIndex = 15;
-            this.listBox1.Visible = false;
-            // 
             // frmChiTietGio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,7 +277,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox txtMaKH;
         private System.Windows.Forms.Label label5;
     }

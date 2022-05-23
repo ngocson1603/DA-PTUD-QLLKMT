@@ -528,10 +528,11 @@ namespace GUI.XuLy
                 pReplacer.Add("%Nam", Year);
                 string ten = frmTrangChu.tenkhach;
                 pReplacer.Add("%TenNguoiLap", ten);
-                pReplacer.Add("%TaiKhoan", frmGioHang.taikhoan);
+                pReplacer.Add("%TaiKhoan", frmDN.taikhoan);
 
                 pReplacer.Add("%TongTien", string.Format("{0}",frmGioHang.tongtien));
                 pReplacer.Add("%MaDonHang", string.Format("{0}",frmGioHang.mahd));
+                pReplacer.Add("%MaKhachHang", string.Format("{0}", frmGioHang.makh));
             }
         }
 

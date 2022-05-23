@@ -48,7 +48,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtPassWord = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtMa = new Guna.UI2.WinForms.Guna2TextBox();
             this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -362,7 +362,7 @@
             this.tableLayoutPanel1.Controls.Add(this.guna2PictureBox1, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtPassWord, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnDangKy, 5, 4);
-            this.tableLayoutPanel1.Controls.Add(this.guna2TextBox1, 4, 4);
+            this.tableLayoutPanel1.Controls.Add(this.txtMa, 4, 4);
             this.tableLayoutPanel1.Controls.Add(this.label8, 3, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -408,29 +408,29 @@
             this.txtPassWord.Size = new System.Drawing.Size(133, 29);
             this.txtPassWord.TabIndex = 45;
             // 
-            // guna2TextBox1
+            // txtMa
             // 
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(153)))), ((int)(((byte)(149)))));
-            this.guna2TextBox1.BorderRadius = 6;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.Enabled = false;
-            this.guna2TextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(578, 352);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(133, 29);
-            this.guna2TextBox1.TabIndex = 46;
+            this.txtMa.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(153)))), ((int)(((byte)(149)))));
+            this.txtMa.BorderRadius = 6;
+            this.txtMa.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMa.DefaultText = "";
+            this.txtMa.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMa.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMa.Enabled = false;
+            this.txtMa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
+            this.txtMa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtMa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMa.Location = new System.Drawing.Point(578, 352);
+            this.txtMa.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMa.Name = "txtMa";
+            this.txtMa.PasswordChar = '\0';
+            this.txtMa.PlaceholderText = "";
+            this.txtMa.SelectedText = "";
+            this.txtMa.Size = new System.Drawing.Size(133, 29);
+            this.txtMa.TabIndex = 46;
             // 
             // label8
             // 
@@ -485,7 +485,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2TextBox txtPassWord;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtMa;
         private System.Windows.Forms.Label label8;
     }
 }

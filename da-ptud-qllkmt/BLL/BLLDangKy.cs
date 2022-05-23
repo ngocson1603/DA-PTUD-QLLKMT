@@ -13,17 +13,17 @@ namespace BLL
         DALDangKy daldangky = new DALDangKy();
         public BLLDangKy() { }
 
-        public List<KhachHang> loadThongTin(string user)
-        {
-            return daldangky.loadThongTin(user);
-        }
+        //public List<KhachHang> loadThongTin(string user)
+        //{
+        //    return daldangky.loadThongTin(user);
+        //}
 
         public List<KhachHang> loadKhachHangAPI(string tenkh)
         {
             return daldangky.GetWatchInfoKH(tenkh);
         }
 
-        public bool suaKhachHang(KhachHang kh,string ten)
+        public bool suaKhachHang(KhachHang kh,int ten)
         {
             return daldangky.PutKhachHang(kh,ten);
         }

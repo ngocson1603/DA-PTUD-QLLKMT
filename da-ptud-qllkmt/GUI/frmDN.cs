@@ -9,19 +9,22 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
+using DTO;
 
 namespace GUI
 {
     public partial class frmDN : Form
     {
         DangNhap dn = new DangNhap();
+        BLLDangNhap blldn = new BLLDangNhap();
         public frmDN()
         {
             InitializeComponent();
         }
 
         public static string taikhoan = "";
-
+        
         private void gunardangnhap_Click(object sender, EventArgs e)
         {
             int dem = 0;
@@ -32,7 +35,36 @@ namespace GUI
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
             }
-            else if (a == 3)
+            //else if (a == 3)
+            //{
+            //    splashScreenManager1.ShowWaitForm();
+            //    Thread.Sleep(1000);
+            //    splashScreenManager1.CloseWaitForm();
+            //    frmTrangChu frm = new frmTrangChu();
+            //    frm.Show();
+            //    this.Hide();
+            //}
+            //else if (a == 1)
+            //{
+            //    splashScreenManager1.ShowWaitForm();
+            //    Thread.Sleep(1000);
+            //    splashScreenManager1.CloseWaitForm();
+            //    frmTrangChuDanhChoNhanVien frm = new frmTrangChuDanhChoNhanVien();
+            //    frm.Show();
+            //    this.Hide();
+            //}
+            //else
+            //{
+            //    dem++;
+            //    MessageBox.Show("Đăng nhập thất bại,mời bạn nhập lại");
+            //    if (dem == 3)
+            //    {
+            //        MessageBox.Show("Bạn đã nhập sai 3 lần");
+            //        Application.Exit();
+            //    }
+            //}
+
+            else if (blldn.kiemtrakh(txtUserName.Text, txtPassWord.Text))
             {
                 splashScreenManager1.ShowWaitForm();
                 Thread.Sleep(1000);
@@ -41,7 +73,7 @@ namespace GUI
                 frm.Show();
                 this.Hide();
             }
-            else if (a == 1)
+            else if (blldn.kiemtranv(txtUserName.Text, txtPassWord.Text))
             {
                 splashScreenManager1.ShowWaitForm();
                 Thread.Sleep(1000);
