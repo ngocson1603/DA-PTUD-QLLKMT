@@ -143,7 +143,7 @@
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 592);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1440, 244);
             this.panel1.TabIndex = 10;
@@ -176,7 +176,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txtSL, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -201,7 +201,7 @@
             this.guna2Button4.HoverState.FillColor = System.Drawing.Color.Silver;
             this.guna2Button4.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.guna2Button4.Location = new System.Drawing.Point(1199, 85);
-            this.guna2Button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button4.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.ShadowDecoration.BorderRadius = 26;
             this.guna2Button4.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -216,7 +216,7 @@
             this.dateTimeNgay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimeNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimeNgay.Location = new System.Drawing.Point(1199, 4);
-            this.dateTimeNgay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimeNgay.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimeNgay.Name = "dateTimeNgay";
             this.dateTimeNgay.Size = new System.Drawing.Size(237, 22);
             this.dateTimeNgay.TabIndex = 16;
@@ -226,7 +226,7 @@
             this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(243, 4);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(231, 22);
             this.textBox2.TabIndex = 9;
@@ -236,7 +236,7 @@
             this.txtTongTien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTongTien.Enabled = false;
             this.txtTongTien.Location = new System.Drawing.Point(721, 166);
-            this.txtTongTien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTongTien.Margin = new System.Windows.Forms.Padding(4);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.Size = new System.Drawing.Size(231, 22);
             this.txtTongTien.TabIndex = 14;
@@ -246,7 +246,7 @@
             this.txtMaSP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMaSP.Enabled = false;
             this.txtMaSP.Location = new System.Drawing.Point(243, 85);
-            this.txtMaSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaSP.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaSP.Name = "txtMaSP";
             this.txtMaSP.Size = new System.Drawing.Size(231, 22);
             this.txtMaSP.TabIndex = 10;
@@ -256,7 +256,7 @@
             this.txtGiaTien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtGiaTien.Enabled = false;
             this.txtGiaTien.Location = new System.Drawing.Point(721, 85);
-            this.txtGiaTien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGiaTien.Margin = new System.Windows.Forms.Padding(4);
             this.txtGiaTien.Name = "txtGiaTien";
             this.txtGiaTien.Size = new System.Drawing.Size(231, 22);
             this.txtGiaTien.TabIndex = 13;
@@ -266,7 +266,7 @@
             this.txtTK.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTK.Enabled = false;
             this.txtTK.Location = new System.Drawing.Point(243, 166);
-            this.txtTK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTK.Margin = new System.Windows.Forms.Padding(4);
             this.txtTK.Name = "txtTK";
             this.txtTK.Size = new System.Drawing.Size(231, 22);
             this.txtTK.TabIndex = 11;
@@ -295,7 +295,7 @@
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.Location = new System.Drawing.Point(1199, 166);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.BorderRadius = 26;
             this.guna2Button2.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -318,7 +318,7 @@
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
             this.guna2Button3.Location = new System.Drawing.Point(960, 85);
-            this.guna2Button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.ShadowDecoration.BorderRadius = 26;
             this.guna2Button3.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -333,7 +333,7 @@
             this.txtSL.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSL.Enabled = false;
             this.txtSL.Location = new System.Drawing.Point(721, 4);
-            this.txtSL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSL.Margin = new System.Windows.Forms.Padding(4);
             this.txtSL.Name = "txtSL";
             this.txtSL.Size = new System.Drawing.Size(231, 22);
             this.txtSL.TabIndex = 22;
@@ -344,7 +344,7 @@
             this.panel2.Controls.Add(this.label9);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1440, 69);
             this.panel2.TabIndex = 11;
@@ -356,7 +356,7 @@
             this.dataExcel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataExcel.GridColor = System.Drawing.SystemColors.Control;
             this.dataExcel.Location = new System.Drawing.Point(45, 36);
-            this.dataExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataExcel.Margin = new System.Windows.Forms.Padding(4);
             this.dataExcel.Name = "dataExcel";
             this.dataExcel.Size = new System.Drawing.Size(13, 12);
             this.dataExcel.TabIndex = 11;
@@ -368,7 +368,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 69);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(964, 523);
             this.dataGridView1.TabIndex = 14;
@@ -393,7 +393,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmGioHang";
             this.Text = "frmGioHang";
             this.Load += new System.EventHandler(this.frmGioHang_Load);

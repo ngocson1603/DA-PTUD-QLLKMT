@@ -95,6 +95,40 @@ CREATE TABLE [dbo].[Users](
 	[Quyen] [bit],
 	CONSTRAINT PK_TaiKhoan PRIMARY KEY (TenDangNhap)
 )
+CREATE VIEW View_KH AS
+SELECT        MaKH, Gmail, Pass, TenKhachHang, Ngaysinh, GioiTinh, DiaChi, SDT
+FROM            dbo.KhachHang
+
+CREATE VIEW View_CTHDSP AS
+SELECT        MaHoaDon, MaSanPham, giaban, soluong, TongTien
+FROM            dbo.ChiTietHoaDon
+
+CREATE VIEW View_CTHD AS
+SELECT        MaHoaDon, MaKH, NgayLapHoaDon, MaNhanVien
+FROM            dbo.HoaDon
+
+CREATE VIEW View_BieuMauGio AS
+SELECT        dbo.SanPham.TenSanPham, dbo.ChiTietHoaDon.soluong, dbo.ChiTietHoaDon.giaban, dbo.HoaDon.NgayLapHoaDon, dbo.ChiTietHoaDon.MaHoaDon, dbo.ChiTietHoaDon.TongTien, dbo.KhachHang.MaKH
+FROM            dbo.ChiTietHoaDon INNER JOIN
+                         dbo.HoaDon ON dbo.ChiTietHoaDon.MaHoaDon = dbo.HoaDon.MaHoaDon INNER JOIN
+                         dbo.SanPham ON dbo.ChiTietHoaDon.MaSanPham = dbo.SanPham.MaSanPham INNER JOIN
+                         dbo.KhachHang ON dbo.HoaDon.MaKH = dbo.KhachHang.MaKH
+
+CREATE VIEW View_GioHang AS
+SELECT        dbo.ChiTietHoaDon.MaHoaDon, dbo.ChiTietHoaDon.MaSanPham, dbo.KhachHang.MaKH, dbo.SanPham.TenSanPham, dbo.LoaiSanPham.TenLoaiSanPham, dbo.ChiTietHoaDon.soluong, dbo.ChiTietHoaDon.giaban, 
+                         dbo.HoaDon.NgayLapHoaDon, dbo.SanPham.Image
+FROM            dbo.ChiTietHoaDon INNER JOIN
+                         dbo.HoaDon ON dbo.ChiTietHoaDon.MaHoaDon = dbo.HoaDon.MaHoaDon INNER JOIN
+                         dbo.SanPham ON dbo.ChiTietHoaDon.MaSanPham = dbo.SanPham.MaSanPham INNER JOIN
+                         dbo.KhachHang ON dbo.HoaDon.MaKH = dbo.KhachHang.MaKH INNER JOIN
+                         dbo.LoaiSanPham ON dbo.SanPham.LoaiSanPham = dbo.LoaiSanPham.MaLoaiSanPham
+
+
+
+CREATE VIEW View_SanPham AS
+SELECT MaSanPham, TenSanPham, LoaiSanPham, HangSanXuat, GiaBan, TonKho, Image
+FROM     dbo.SanPham
+
 
 --KHOÁ NGOẠI
 ALTER TABLE [dbo].[ChiTietHoaDon]

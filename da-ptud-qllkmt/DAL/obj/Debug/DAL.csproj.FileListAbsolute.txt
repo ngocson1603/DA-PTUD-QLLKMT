@@ -14,4 +14,3 @@ C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\DAL\bin\Debug\System.Net.Ht
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\DAL\bin\Debug\System.Net.Http.WebRequest.dll
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\DAL\bin\Debug\System.Net.Http.xml
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\DAL\bin\Debug\System.Net.Http.WebRequest.xml
-C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

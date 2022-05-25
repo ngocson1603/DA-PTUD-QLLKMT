@@ -66,6 +66,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QL_CUAHANGLINHKIENMAYTINH.dbml</DependentUpon>
     </Compile>
+    <Compile Include="QuanLySanPham.cs" />
     <Compile Include="ThemCTHD.cs" />
     <Compile Include="ThemGioHang.cs" />
     <Compile Include="ThemSanPham.cs" />
