@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiService.cs" />
+    <Compile Include="CL_Loaihienthi.cs" />
     <Compile Include="detailProducts.cs" />
     <Compile Include="productList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,6 +67,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QL_CUAHANGLINHKIENMAYTINH.dbml</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyHoaDon.cs" />
+    <Compile Include="QuanLyNhanVien.cs" />
     <Compile Include="QuanLySanPham.cs" />
     <Compile Include="ThemCTHD.cs" />
     <Compile Include="ThemGioHang.cs" />

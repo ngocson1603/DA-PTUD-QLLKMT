@@ -52,6 +52,18 @@ namespace DAL
             return null;
         }
 
+
+        // LOAD CHI TIET HOA DON 
+        public List<View_CTHDSP> GetWatchListCTHDSP()
+        {
+            var response = _apiService.GetResponse("api/ChiTietHoaDonSP/");
+            if (response.IsSuccessStatusCode)
+            {
+                return response.Content.ReadAsAsync<List<View_CTHDSP>>().Result;
+            }
+            return null;
+        }
+
         public string loadTenSP(int masp)
         {
             var tensp = (from lk in qllk.SanPhams where lk.MaSanPham == masp select lk.TenSanPham).FirstOrDefault();
@@ -96,6 +108,17 @@ namespace DAL
             else
                 return true;
         }
+
+        public bool PutCTHD(ThemCTHD pKH, int ten)
+        {
+            var response = _apiService.PutResponse(string.Format("api/ChiTietHoaDonSP/{0}", ten), pKH);
+            if (response == null)
+                return false;
+            else
+                return true;
+        }
+
+
         public bool themGioHang(ChiTietHoaDon cthd)
         {
             try

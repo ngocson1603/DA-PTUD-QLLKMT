@@ -2,7 +2,6 @@ C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.pdb
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmBanSanPham.resources
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmDetailProduct.resources
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmDN.resources
-C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmHienThiSanPham.resources
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmKhachHang.resources
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmLichSuMuaBan.resources
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmNhapLinhKien.resources
@@ -120,3 +119,5 @@ C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.csprojRes
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmChiTietGio.resources
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.Test.resources
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmQuanLySP.resources
+C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmNhanVien.resources
+C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmHienThiSP.resources

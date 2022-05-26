@@ -69,7 +69,9 @@
     <Compile Include="DALDangKy.cs" />
     <Compile Include="DALDangNhap.cs" />
     <Compile Include="DALGioHang.cs" />
+    <Compile Include="DALHoaDon.cs" />
     <Compile Include="DALKhachHang.cs" />
+    <Compile Include="DALNhanVien.cs" />
     <Compile Include="DALSanPham.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

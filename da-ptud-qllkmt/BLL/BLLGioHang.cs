@@ -37,10 +37,23 @@ namespace BLL
         }
 
 
+
+
+        public bool SuaCTHD(ThemCTHD cthd, int ten)
+        {
+            return dalgiohang.PutCTHD(cthd,ten);
+        }
+
         //public List<View_GioHang> loadGioHang(string tenkh)
         //{
         //    return dalgiohang.loadGioHang(tenkh);
         //}
+
+        public List<View_CTHDSP> loadChiTietHoaDon()
+        {
+            return dalgiohang.GetWatchListCTHDSP();
+        }
+
 
         public List<View_GioHang> loadGioHangAPI(string tenkh)
         {

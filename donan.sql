@@ -129,6 +129,13 @@ CREATE VIEW View_SanPham AS
 SELECT MaSanPham, TenSanPham, LoaiSanPham, HangSanXuat, GiaBan, TonKho, Image
 FROM     dbo.SanPham
 
+CREATE VIEW View_NhanVien AS
+SELECT MaNhanVien, TenNhanVien, NgaySinh, GioiTinh, NgayVaoLam, ChucVu, DiaChi, SoDT
+FROM     dbo.NhanVien
+
+CREATE VIEW View_HoaDon AS
+SELECT MaHoaDon, MaKH, NgayLapHoaDon, MaNhanVien
+FROM     dbo.HoaDon
 
 --KHOÁ NGOẠI
 ALTER TABLE [dbo].[ChiTietHoaDon]

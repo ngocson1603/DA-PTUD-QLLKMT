@@ -62,7 +62,7 @@ namespace GUI
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2GroupBox1.Location = new System.Drawing.Point(4, 59);
-            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(844, 638);
             this.guna2GroupBox1.TabIndex = 0;
@@ -82,7 +82,7 @@ namespace GUI
             this.cboTT3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboTT3.ItemHeight = 30;
             this.cboTT3.Location = new System.Drawing.Point(31, 450);
-            this.cboTT3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboTT3.Margin = new System.Windows.Forms.Padding(4);
             this.cboTT3.Name = "cboTT3";
             this.cboTT3.Size = new System.Drawing.Size(761, 36);
             this.cboTT3.TabIndex = 2;
@@ -101,7 +101,7 @@ namespace GUI
             this.cboTT2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboTT2.ItemHeight = 30;
             this.cboTT2.Location = new System.Drawing.Point(31, 289);
-            this.cboTT2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboTT2.Margin = new System.Windows.Forms.Padding(4);
             this.cboTT2.Name = "cboTT2";
             this.cboTT2.Size = new System.Drawing.Size(761, 36);
             this.cboTT2.TabIndex = 1;
@@ -120,7 +120,7 @@ namespace GUI
             this.cboTT1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboTT1.ItemHeight = 30;
             this.cboTT1.Location = new System.Drawing.Point(31, 165);
-            this.cboTT1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboTT1.Margin = new System.Windows.Forms.Padding(4);
             this.cboTT1.Name = "cboTT1";
             this.cboTT1.Size = new System.Drawing.Size(761, 36);
             this.cboTT1.TabIndex = 0;
@@ -134,7 +134,7 @@ namespace GUI
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2GroupBox2.Location = new System.Drawing.Point(856, 59);
-            this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.Size = new System.Drawing.Size(845, 638);
             this.guna2GroupBox2.TabIndex = 1;
@@ -146,7 +146,7 @@ namespace GUI
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 45;
             this.listBox1.Location = new System.Drawing.Point(31, 54);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(779, 49);
             this.listBox1.TabIndex = 2;
@@ -154,7 +154,7 @@ namespace GUI
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(31, 112);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(780, 523);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -185,7 +185,7 @@ namespace GUI
             this.cboTenMay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboTenMay.ItemHeight = 30;
             this.cboTenMay.Location = new System.Drawing.Point(430, 4);
-            this.cboTenMay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboTenMay.Margin = new System.Windows.Forms.Padding(4);
             this.cboTenMay.Name = "cboTenMay";
             this.cboTenMay.Size = new System.Drawing.Size(418, 36);
             this.cboTenMay.TabIndex = 5;
@@ -202,7 +202,7 @@ namespace GUI
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.guna2Button1.Location = new System.Drawing.Point(856, 705);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(169, 29);
             this.guna2Button1.TabIndex = 6;
@@ -219,7 +219,7 @@ namespace GUI
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.guna2Button2.Location = new System.Drawing.Point(1282, 705);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(169, 29);
             this.guna2Button2.TabIndex = 7;
@@ -230,7 +230,7 @@ namespace GUI
             this.txtAnh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnh.FormattingEnabled = true;
             this.txtAnh.Location = new System.Drawing.Point(856, 4);
-            this.txtAnh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAnh.Margin = new System.Windows.Forms.Padding(4);
             this.txtAnh.Name = "txtAnh";
             this.txtAnh.Size = new System.Drawing.Size(418, 24);
             this.txtAnh.TabIndex = 8;
@@ -252,7 +252,7 @@ namespace GUI
             this.tableLayoutPanel1.Controls.Add(this.cboTenMay, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
@@ -273,7 +273,7 @@ namespace GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1705, 738);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmTuVanSuaChua";
             this.Text = "frmTuVanSuaChua";
             this.guna2GroupBox1.ResumeLayout(false);
