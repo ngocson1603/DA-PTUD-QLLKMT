@@ -13,6 +13,7 @@ namespace GUI
 {
     public partial class frmBanSanPham : Form
     {
+        QL_CUAHANGLINHKIENMAYTINHDataContext qllk = new QL_CUAHANGLINHKIENMAYTINHDataContext();
         BLLHoaDon bllhoadon = new BLLHoaDon();
         BLLGioHang bllgio = new BLLGioHang();
         
@@ -29,6 +30,11 @@ namespace GUI
 
             dgv_Chitiethoadon.DataSource = bllgio.loadChiTietHoaDon();
 
+
+            comboBox1.DataSource = bllgio.loadSanPham();
+            comboBox1.DisplayMember = "MaSanPham";
+            comboBox1.ValueMember = "MaSanPham";
+            comboBox1.SelectedIndex = 0;
         }
 
         private void dgv_HoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -114,7 +120,7 @@ namespace GUI
             ThemCTHD cthd = new ThemCTHD()
             {
                 MaHoaDon = int.Parse(txt_MaHDCTHD.Text),
-                MaSanPham = int.Parse(txt_MaSanPham.Text),
+                MaSanPham = int.Parse(comboBox1.Text),
                 giaban = int.Parse(txt_GiaBan.Text),
                 soluong = int.Parse(txt_SoLuong.Text),
                 TongTien = int.Parse(txt_SoLuong.Text) * int.Parse(txt_GiaBan.Text),
@@ -139,7 +145,7 @@ namespace GUI
             {
                 DataGridViewRow row = this.dgv_Chitiethoadon.Rows[e.RowIndex];
                 txt_MaHDCTHD.Text = row.Cells[0].Value.ToString();
-                txt_MaSanPham.Text = row.Cells[1].Value.ToString();
+                comboBox1.Text = row.Cells[1].Value.ToString();
                 txt_GiaBan.Text = row.Cells[2].Value.ToString();
                 txt_SoLuong.Text = row.Cells[3].Value.ToString();
                 txt_TongTien.Text = row.Cells[4].Value.ToString();
@@ -162,29 +168,39 @@ namespace GUI
             }
 
         }
+        
 
-        private void btn_SuaCTHD_Click(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ThemCTHD cthd = new ThemCTHD()
-            {
-                MaHoaDon = int.Parse(txt_MaHDCTHD.Text),
-                MaSanPham = int.Parse(txt_MaSanPham.Text),
-                giaban = int.Parse(txt_GiaBan.Text),
-                soluong = int.Parse(txt_SoLuong.Text),
-                TongTien = int.Parse(txt_SoLuong.Text) * int.Parse(txt_GiaBan.Text),
+            var tensp = from lk in qllk.SanPhams where lk.MaSanPham == int.Parse(comboBox1.Text) select lk.GiaBan;
 
-            };
-
-            if (bllgio.SuaCTHD(cthd, int.Parse(txt_MaHDCTHD.Text)))
-            {
-                MessageBox.Show("Sửa chi tiết hóa đơn thành công");
-                dgv_Chitiethoadon.DataSource = bllgio.loadChiTietHoaDon();
-            }
-            else
-            {
-                MessageBox.Show("Sửa chi tiết hóa đơn thất bại ");
-
-            }
+            listBox1.DataSource = tensp;
+            txt_GiaBan.Text = listBox1.Text;
+            
         }
+
+        //private void btn_SuaCTHD_Click(object sender, EventArgs e)
+        //{
+        //    ThemCTHD cthd = new ThemCTHD()
+        //    {
+        //        //MaHoaDon = int.Parse(txt_MaHDCTHD.Text),
+        //        MaSanPham = int.Parse(txt_MaSanPham.Text),
+        //        giaban = int.Parse(txt_GiaBan.Text),
+        //        soluong = int.Parse(txt_SoLuong.Text),
+        //        TongTien = int.Parse(txt_SoLuong.Text) * int.Parse(txt_GiaBan.Text),
+
+        //    };
+
+        //    if (bllgio.SuaCTHD(cthd, int.Parse(txt_MaHDCTHD.Text)))
+        //    {
+        //        MessageBox.Show("Sửa chi tiết hóa đơn thành công");
+        //        dgv_Chitiethoadon.DataSource = bllgio.loadChiTietHoaDon();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Sửa chi tiết hóa đơn thất bại ");
+
+        //    }
+        //}
     }
 }

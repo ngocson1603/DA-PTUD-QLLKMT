@@ -53,7 +53,10 @@ namespace BLL
         {
             return dalgiohang.GetWatchListCTHDSP();
         }
-
+        public List<View_SanPham> loadSanPham()
+        {
+            return dalgiohang.loadTenSanPham();
+        }
 
         public List<View_GioHang> loadGioHangAPI(string tenkh)
         {
@@ -74,7 +77,10 @@ namespace BLL
         {
             return dalgiohang.loadTenSP(masp);
         }
-
+        public string loadGiaSP(int masp)
+        {
+            return dalgiohang.loadGiaSP(masp);
+        }
         public string loadMaKH(string taik)
         {
             return dalgiohang.loadMaKH(taik);

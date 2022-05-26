@@ -69,6 +69,15 @@ namespace DAL
             var tensp = (from lk in qllk.SanPhams where lk.MaSanPham == masp select lk.TenSanPham).FirstOrDefault();
             return tensp.ToString();
         }
+        public string loadGiaSP(int masp)
+        {
+            var tensp = from lk in qllk.SanPhams where lk.MaSanPham == masp select lk.GiaBan;
+            return tensp.ToString();
+        }
+        public List<View_SanPham> loadTenSanPham()
+        {
+            return qllk.View_SanPhams.Select(t=>t).ToList();
+        }
         public string loadMaKH(string taik)
         {
             var makh = (from p in qllk.KhachHangs where p.Gmail == taik select p.MaKH).FirstOrDefault();

@@ -137,6 +137,14 @@ CREATE VIEW View_HoaDon AS
 SELECT MaHoaDon, MaKH, NgayLapHoaDon, MaNhanVien
 FROM     dbo.HoaDon
 
+CREATE VIEW View_PhieuNhap AS
+SELECT        MaPhieuNhap, MaNhanVien, MaNhaPhanPhoi, TongTien, NgayNhap
+FROM            dbo.PhieuNhap
+
+CREATE VIEW View_CTPhieuNhap AS
+SELECT        MaPhieuNhap, MaSanPham, SoLuong, TienNhap
+FROM            dbo.ChiTietPhieuNhap
+
 --KHOÁ NGOẠI
 ALTER TABLE [dbo].[ChiTietHoaDon]
 ADD CONSTRAINT FK_cthdsp FOREIGN KEY(MaHoaDon) REFERENCES [dbo].[HoaDon](MaHoaDon)

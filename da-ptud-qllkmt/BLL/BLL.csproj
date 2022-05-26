@@ -52,6 +52,7 @@
     <Compile Include="BLLHoaDon.cs" />
     <Compile Include="BLLKhachHang.cs" />
     <Compile Include="BLLNhanVien.cs" />
+    <Compile Include="BLLPhieuNhap.cs" />
     <Compile Include="BLLSanPham.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

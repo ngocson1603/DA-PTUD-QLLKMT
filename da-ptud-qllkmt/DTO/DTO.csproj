@@ -71,7 +71,9 @@
     <Compile Include="QuanLyNhanVien.cs" />
     <Compile Include="QuanLySanPham.cs" />
     <Compile Include="ThemCTHD.cs" />
+    <Compile Include="ThemCTPN.cs" />
     <Compile Include="ThemGioHang.cs" />
+    <Compile Include="ThemPhieuNhap.cs" />
     <Compile Include="ThemSanPham.cs" />
     <Compile Include="View_BieuMauGio.cs" />
   </ItemGroup>
