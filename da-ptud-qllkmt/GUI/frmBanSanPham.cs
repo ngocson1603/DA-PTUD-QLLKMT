@@ -16,7 +16,8 @@ namespace GUI
         QL_CUAHANGLINHKIENMAYTINHDataContext qllk = new QL_CUAHANGLINHKIENMAYTINHDataContext();
         BLLHoaDon bllhoadon = new BLLHoaDon();
         BLLGioHang bllgio = new BLLGioHang();
-        
+        BLLKhachHang bllkh = new BLLKhachHang();
+        Helper hp = new Helper();
         public frmBanSanPham()
         {
             InitializeComponent();
@@ -25,15 +26,12 @@ namespace GUI
         private void frmBanSanPham_Load(object sender, EventArgs e)
         {
             dgv_HoaDon.DataSource = bllhoadon.LoadHoaDon();
+            loaddata(frmQuanLySP.lstsp);
 
-
-
-            dgv_Chitiethoadon.DataSource = bllgio.loadChiTietHoaDon();
-
-
-            comboBox1.DataSource = bllgio.loadSanPham();
-            comboBox1.DisplayMember = "MaSanPham";
-            comboBox1.ValueMember = "MaSanPham";
+            txt_MaNV.Text = frmTrangChuDanhChoNhanVien.manv;
+            comboBox1.DataSource = bllkh.loadmakh();
+            comboBox1.DisplayMember = "MaKH";
+            comboBox1.ValueMember = "MaKH";
             comboBox1.SelectedIndex = 0;
         }
 
@@ -43,7 +41,7 @@ namespace GUI
             {
                 DataGridViewRow row = this.dgv_HoaDon.Rows[e.RowIndex];
                 txt_MaHoaDon.Text = row.Cells[0].Value.ToString();
-                txt_Makh.Text = row.Cells[1].Value.ToString();
+                comboBox1.Text = row.Cells[1].Value.ToString();
 
                 //txt_TongTien.Text = row.Cells[3].Value.ToString();
                 dateTimePicker1.Text = dgv_HoaDon.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -54,40 +52,60 @@ namespace GUI
 
         private void btn_ThemHD_Click(object sender, EventArgs e)
         {
+            int a = 0;
             QuanLyHoaDon cthdsp = new QuanLyHoaDon()
                 {
-                    MaHoaDon=  int.Parse(txt_MaNV.Text),
-                    MaKH = int.Parse(txt_MaHoaDon.Text),
+                    MaKH = int.Parse(comboBox1.Text),
                     NgayLapHoaDon = dateTimePicker1.Value,
                     MaNhanVien = int.Parse(txt_MaNV.Text)
                 };
 
             if (bllhoadon.postHD(cthdsp))
                 {
-                    MessageBox.Show("Thêm hóa đơn thành công");
-                    dgv_HoaDon.DataSource = bllhoadon.LoadHoaDon();
+                    dgv_HoaDon.DataSource = bllhoadon.LoadHoaDonNV(int.Parse(txt_MaNV.Text));
+                    int so = dgv_HoaDon.RowCount;
+                    dgv_HoaDon.CurrentCell = dgv_HoaDon[1, so-1];
+                    txt_MaHoaDon.Text = dgv_HoaDon.CurrentRow.Cells[0].Value.ToString();
+                    for (int x = 0; x < dgv_Chitiethoadon.Rows.Count; x++)
+                    {
+                        ThemCTHD cthd = new ThemCTHD()
+                        {
+                            MaHoaDon = int.Parse(txt_MaHoaDon.Text),
+                            MaSanPham = int.Parse(dgv_Chitiethoadon.Rows[a].Cells[6].Value.ToString()),
+                            giaban = int.Parse(dgv_Chitiethoadon.Rows[a].Cells[3].Value.ToString()),
+                            soluong = int.Parse(dgv_Chitiethoadon.Rows[a].Cells[4].Value.ToString()),
+                            TongTien = int.Parse(dgv_Chitiethoadon.Rows[a].Cells[3].Value.ToString()) * int.Parse(dgv_Chitiethoadon.Rows[a].Cells[4].Value.ToString()),
 
-                }
-                else
-                {
-                    MessageBox.Show("Thêm thất bại");
-                }
+                        };
+                        a++;
+                        if (bllgio.postGioHangCTHD(cthd))
+                        {
 
-          
+                        }
+                        else
+                        {
+                            MessageBox.Show("Mua hàng không thành công");
+                            break;
+                        }
+                    }
+                    MessageBox.Show("Mua hàng thành công");
+                }
         }
 
         private void btn_XoaHD_Click(object sender, EventArgs e)
         {
-            if (bllgio.deleteGioHangCTHD(int.Parse(txt_MaHDCTHD.Text)))
-            {
-                MessageBox.Show("Xóa thành công");
-                dgv_HoaDon.DataSource = bllhoadon.LoadHoaDon();
-            }
-            else
-            {
-                MessageBox.Show("Xóa thất bại");
-                return;
-            }
+            if (bllgio.deleteGioHangCTHD(int.Parse(txt_MaHoaDon.Text)))
+               
+                {
+                    bllgio.deleteGioHang(int.Parse(txt_MaHoaDon.Text));
+                    MessageBox.Show("Xóa thành công");
+                    dgv_HoaDon.DataSource = bllhoadon.LoadHoaDon();
+                }
+                else
+                {
+                    MessageBox.Show("Xóa thất bại");
+                    return;
+                }
 
         }
 
@@ -97,7 +115,7 @@ namespace GUI
             {
 
                 //MaHoaDon = int.Parse(txt_MaNV.Text),
-                MaKH = int.Parse(txt_MaHoaDon.Text),
+                MaKH = int.Parse(comboBox1.Text),
                 NgayLapHoaDon = dateTimePicker1.Value,
                 MaNhanVien = int.Parse(txt_MaNV.Text) 
             };
@@ -105,7 +123,7 @@ namespace GUI
             if (bllhoadon.putHD(kh, int.Parse(txt_MaHoaDon.Text)))
             {
                 MessageBox.Show(" Sửa thành công");
-                dgv_HoaDon.DataSource = bllhoadon.LoadHoaDon();
+                dgv_HoaDon.DataSource = bllhoadon.LoadHoaDonNV(int.Parse(txt_MaNV.Text));
             }
             else
             {
@@ -115,92 +133,40 @@ namespace GUI
 
         }
 
-        private void btn_ThemCTHD_Click(object sender, EventArgs e)
+        public static int kq;
+        public Image GetImg(string direct, int w, int h)
         {
-            ThemCTHD cthd = new ThemCTHD()
-            {
-                MaHoaDon = int.Parse(txt_MaHDCTHD.Text),
-                MaSanPham = int.Parse(comboBox1.Text),
-                giaban = int.Parse(txt_GiaBan.Text),
-                soluong = int.Parse(txt_SoLuong.Text),
-                TongTien = int.Parse(txt_SoLuong.Text) * int.Parse(txt_GiaBan.Text),
-
-            };
-            
-            if (bllgio.postGioHangCTHD(cthd))
-            {
-                MessageBox.Show("Thêm chi tiết hóa đơn thành công");
-                dgv_Chitiethoadon.DataSource = bllgio.loadChiTietHoaDon();
-            }
-            else
-            {
-                MessageBox.Show("Thêm chi tiết hóa đơn thất bại ");
-               
-            }
+            Image i = Image.FromFile(direct);
+            return (Image)(new Bitmap(i, new Size(w, h)));
         }
-
         private void dgv_Chitiethoadon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = this.dgv_Chitiethoadon.Rows[e.RowIndex];
-                txt_MaHDCTHD.Text = row.Cells[0].Value.ToString();
-                comboBox1.Text = row.Cells[1].Value.ToString();
-                txt_GiaBan.Text = row.Cells[2].Value.ToString();
-                txt_SoLuong.Text = row.Cells[3].Value.ToString();
-                txt_TongTien.Text = row.Cells[4].Value.ToString();
-
-
+                kq = int.Parse(dgv_Chitiethoadon.CurrentRow.Cells[3].Value.ToString()) * int.Parse(dgv_Chitiethoadon.CurrentRow.Cells[4].Value.ToString());
+                txt_TongTien.Text = kq.ToString();
+                string direct = hp.Directory() + dgv_Chitiethoadon.CurrentRow.Cells[5].Value.ToString();
+                pictureBox1.Image = GetImg(direct, pictureBox1.Width, pictureBox1.Height);
             }
         }
-
-        private void btn_XoaCTHD_Click(object sender, EventArgs e)
+        public void loaddata(BindingList<ThemSanPham> loadsp)
         {
-            if (bllgio.deleteGioHang(int.Parse(txt_MaHDCTHD.Text)))
-            {
-                MessageBox.Show("Xóa thành công");
-                dgv_Chitiethoadon.DataSource = bllgio.loadChiTietHoaDon();
-            }
-            else
-            {
-                MessageBox.Show("Xóa thất bại");
-                return;
-            }
+            dgv_Chitiethoadon.DataSource = loadsp;
 
+            dgv_Chitiethoadon.Columns[0].ReadOnly = true;
+            dgv_Chitiethoadon.Columns[1].ReadOnly = true;
+            dgv_Chitiethoadon.Columns[2].ReadOnly = true;
+            dgv_Chitiethoadon.Columns[3].ReadOnly = true;
+            dgv_Chitiethoadon.Columns[4].ReadOnly = true;
+            dgv_Chitiethoadon.Columns[5].ReadOnly = true;
+            dgv_Chitiethoadon.Columns[6].ReadOnly = true;
         }
-        
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            var tensp = from lk in qllk.SanPhams where lk.MaSanPham == int.Parse(comboBox1.Text) select lk.GiaBan;
-
-            listBox1.DataSource = tensp;
-            txt_GiaBan.Text = listBox1.Text;
-            
+            frmQuanLySP frm = new frmQuanLySP();
+            frm.ShowDialog();
+            frm.toolStripButton1.Enabled = true;
         }
-
-        //private void btn_SuaCTHD_Click(object sender, EventArgs e)
-        //{
-        //    ThemCTHD cthd = new ThemCTHD()
-        //    {
-        //        //MaHoaDon = int.Parse(txt_MaHDCTHD.Text),
-        //        MaSanPham = int.Parse(txt_MaSanPham.Text),
-        //        giaban = int.Parse(txt_GiaBan.Text),
-        //        soluong = int.Parse(txt_SoLuong.Text),
-        //        TongTien = int.Parse(txt_SoLuong.Text) * int.Parse(txt_GiaBan.Text),
-
-        //    };
-
-        //    if (bllgio.SuaCTHD(cthd, int.Parse(txt_MaHDCTHD.Text)))
-        //    {
-        //        MessageBox.Show("Sửa chi tiết hóa đơn thành công");
-        //        dgv_Chitiethoadon.DataSource = bllgio.loadChiTietHoaDon();
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Sửa chi tiết hóa đơn thất bại ");
-
-        //    }
-        //}
     }
 }

@@ -304,6 +304,12 @@
     <Compile Include="frmLichSuMuaBan.Designer.cs">
       <DependentUpon>frmLichSuMuaBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLSPHSX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLSPHSX.Designer.cs">
+      <DependentUpon>frmLSPHSX.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -420,6 +426,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLichSuMuaBan.resx">
       <DependentUpon>frmLichSuMuaBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLSPHSX.resx">
+      <DependentUpon>frmLSPHSX.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>

@@ -23,5 +23,15 @@ namespace BLL
         {
             return daldangnhap.Kiemtradangnhapnhanvien(gmail, pass);
         }
+
+        public string loadmanv(string gmail)
+        {
+            return daldangnhap.loadmanv(gmail);
+        }
+
+        public string loadtentheoma(string ma)
+        {
+            return daldangnhap.loadtentheoma(ma);
+        }
     }
 }

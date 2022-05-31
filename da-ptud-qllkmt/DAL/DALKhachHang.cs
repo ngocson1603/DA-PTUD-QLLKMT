@@ -16,15 +16,20 @@ namespace DAL
         {
 
         }
-
-
+        public List<KhachHang> loadmakh()
+        {
+            return qllk.KhachHangs.Select(t => t).ToList();
+        }
+        
         public List<KhachHang> LoadKhachHang()
         {
             return qllk.KhachHangs.Select(t => t).ToList<KhachHang>();
         }
-
-
-
+        public int loadmakhtheotk(string taik)
+        {
+            var makh = (from p in qllk.KhachHangs where p.Gmail == taik select p.MaKH).FirstOrDefault();
+            return makh;
+        }
         public List<KhachHang> GetDanhSachKhachHang()
         {
             var response = _apiService.GetResponse(string.Format("api/KhachHang/"));

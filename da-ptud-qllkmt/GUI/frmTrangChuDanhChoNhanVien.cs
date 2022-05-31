@@ -14,16 +14,19 @@ namespace GUI
     public partial class frmTrangChuDanhChoNhanVien : Form
     {
         Helper hp = new Helper();
+        BLLDangNhap blldn = new BLLDangNhap();
         public frmTrangChuDanhChoNhanVien()
         {
             InitializeComponent();
+
         }
         public static Panel pnltrang;
-
+        public static string manv;
         private void hiệnThịSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
             hp.motrangcon(new frmHienThiSP(), panel1);
+            panel1.Controls.Add(statusBar1);
         }
 
         private void frmTrangChuDanhChoNhanVien_Load(object sender, EventArgs e)
@@ -31,6 +34,27 @@ namespace GUI
             panel1.Controls.Clear();
             hp.motrangcon(new frmHienThiSP(), panel1);
             pnltrang = panel1;
+
+            string ma = blldn.loadmanv(frmDN.taikhoan);
+            manv = ma;
+            string ten = blldn.loadtentheoma(ma);
+
+            statusBar1.Text = "Xin Chào : " + ten;
+            panel1.Controls.Add(statusBar1);
+        }
+
+        private void testToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            hp.motrangcon(new frmNhapLinhKien(), panel1);
+            panel1.Controls.Add(statusBar1);
+        }
+
+        private void quảnLýSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            hp.motrangcon(new frmBanSanPham(), panel1);
+            panel1.Controls.Add(statusBar1);
         }
     }
 }

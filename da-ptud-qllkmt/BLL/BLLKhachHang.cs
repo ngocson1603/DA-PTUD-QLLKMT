@@ -25,7 +25,10 @@ namespace BLL
         {
             return dalkhachhang.GetDanhSachKhachHang();
         }
-
+        public List<KhachHang> loadmakh()
+        {
+            return dalkhachhang.loadmakh();
+        }
         public bool ThemKH(KhachHang kh)
         {
             return dalkhachhang.PostKhachHang(kh);
@@ -44,7 +47,10 @@ namespace BLL
             return dalkhachhang.Kiemtratontai(gmail);
         }
 
-
+        public int loadmakh(string gmail)
+        {
+            return dalkhachhang.loadmakhtheotk(gmail);
+        }
 
     }
 

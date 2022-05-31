@@ -22,5 +22,16 @@ namespace DAL
         {
             return qllk.Users.Where(t => t.TenDangNhap == tendn && t.Password == pass).FirstOrDefault() != null;
         }
+        public string loadmanv(string manv)
+        {
+            var manv1 = (from lk in qllk.Users where lk.TenDangNhap == manv select lk.MaNhanVien).FirstOrDefault();
+            return manv1.ToString();
+        }
+
+        public string loadtentheoma(string manv)
+        {
+            var tennv = (from lk in qllk.NhanViens where lk.MaNhanVien == int.Parse(manv) select lk.TenNhanVien).FirstOrDefault();
+            return tennv.ToString();
+        }
     }
 }

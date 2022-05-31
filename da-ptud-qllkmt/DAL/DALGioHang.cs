@@ -74,6 +74,17 @@ namespace DAL
             var tensp = from lk in qllk.SanPhams where lk.MaSanPham == masp select lk.GiaBan;
             return tensp.ToString();
         }
+        public int loadMaCuoiCung()
+        {
+            return qllk.HoaDons.OrderByDescending(t => t.MaHoaDon).First().MaHoaDon;
+        }
+        public int loadMaCuoiCungTheoNV(int manv)
+        {
+            //var mahd = (from p in qllk.HoaDons where p.MaNhanVien == manv && p.NgayLapHoaDon == ngaylap select p.MaHoaDon).FirstOrDefault();
+            //return mahd;
+
+            return qllk.HoaDons.OrderByDescending(t => t.MaHoaDon).Where(t=>t.MaNhanVien == manv).First().MaHoaDon;
+        }
         public List<View_SanPham> loadTenSanPham()
         {
             return qllk.View_SanPhams.Select(t=>t).ToList();

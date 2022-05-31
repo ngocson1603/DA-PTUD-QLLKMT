@@ -75,9 +75,10 @@ CREATE TABLE [dbo].[KhachHang](
 CREATE TABLE [dbo].[HoaDon](
 	[MaHoaDon] int IDENTITY(1,1), 
 	MaKH int,
-	[NgayLapHoaDon] [date],
+	[NgayLapHoaDon] date,
 	[MaNhanVien] int, 
 	CONSTRAINT PK_CTHOADON PRIMARY KEY(MaHoaDon))
+
 
 CREATE TABLE [dbo].[ChiTietHoaDon](
 	[MaHoaDon] int, 
@@ -145,6 +146,17 @@ CREATE VIEW View_CTPhieuNhap AS
 SELECT        MaPhieuNhap, MaSanPham, SoLuong, TienNhap
 FROM            dbo.ChiTietPhieuNhap
 
+CREATE VIEW View_LSP AS
+SELECT        MaLoaiSanPham, TenLoaiSanPham
+FROM            dbo.LoaiSanPham
+
+CREATE VIEW View_HSX AS
+SELECT        MaHangSanXuat, TenHangSanXuat
+FROM            dbo.HangSanXuat
+
+CREATE VIEW View_NPP AS
+SELECT        MaNhaPhanPhoi, TenNhaPhanPhoi, DiaChi, SDT, Email
+FROM            dbo.NhaPhanPhoi
 --KHOÁ NGOẠI
 ALTER TABLE [dbo].[ChiTietHoaDon]
 ADD CONSTRAINT FK_cthdsp FOREIGN KEY(MaHoaDon) REFERENCES [dbo].[HoaDon](MaHoaDon)

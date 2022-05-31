@@ -15,7 +15,9 @@ namespace GUI
     public partial class frmThongTinKH : Form
     {
         BLLDangKy blldangky = new BLLDangKy();
+        BLLKhachHang bllkh = new BLLKhachHang();
         public static string hoten;
+        public static int ma;
         public frmThongTinKH()
         {
             InitializeComponent();
@@ -24,6 +26,7 @@ namespace GUI
         private void frmThongTinKH_Load(object sender, EventArgs e)
         {
             initdb();
+            int ma = bllkh.loadmakh()
         }
 
         void initdb()

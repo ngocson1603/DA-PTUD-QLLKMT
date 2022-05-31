@@ -85,5 +85,13 @@ namespace BLL
         {
             return dalgiohang.loadMaKH(taik);
         }
+        public int loadMaCuoiCung()
+        {
+            return dalgiohang.loadMaCuoiCung();
+        }
+        public int loadMaCuoiCungNV(int ma)
+        {
+            return dalgiohang.loadMaCuoiCungTheoNV(ma);
+        }
     }
 }

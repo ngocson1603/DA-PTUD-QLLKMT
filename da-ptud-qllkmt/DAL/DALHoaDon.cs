@@ -32,6 +32,15 @@ namespace DAL
             }
             return null;
         }
+        public List<View_HoaDon> GetWatchListHDNV(int ma)
+        {
+            var response = _apiService.GetResponse(string.Format("api/LoadHDNV/{0}", ma));
+            if (response.IsSuccessStatusCode)
+            {
+                return response.Content.ReadAsAsync<List<View_HoaDon>>().Result;
+            }
+            return null;
+        }
         public bool PostHD(QuanLyHoaDon pKH)
         {
             var response = _apiService.PostResponse("api/HD/", pKH);

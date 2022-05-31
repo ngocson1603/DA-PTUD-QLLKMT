@@ -24,6 +24,7 @@ namespace GUI
         }
 
         public static string taikhoan = "";
+        public static string pass = "";
         
         private void gunardangnhap_Click(object sender, EventArgs e)
         {
@@ -31,6 +32,7 @@ namespace GUI
             
             int a = dn.dangNhap(txtUserName.Text,txtPassWord.Text);
             taikhoan = txtUserName.Text;
+            pass = txtPassWord.Text;
             if (txtUserName.Text.Length == 0 || txtPassWord.Text.Length == 0)
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");

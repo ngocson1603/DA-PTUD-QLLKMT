@@ -24,7 +24,6 @@ namespace GUI
         {
             InitializeComponent();
         }
-        public static string b;
         private void frmChiTietGio_Load(object sender, EventArgs e)
         {
             if (dataGridView1.Rows.Count > 0)
@@ -39,14 +38,6 @@ namespace GUI
             txtTK.Text = frmDN.taikhoan;
 
             txtMaKH.Text = bllgiohang.loadMaKH(frmDN.taikhoan);
-        }
-
-        public void loaddulieu()
-        {
-            dataGridView2.DataSource = bllgiohang.loadHDAPI();
-            int soa = dataGridView2.Rows.Count;
-            dataGridView2.CurrentCell = dataGridView2[1, soa - 1];
-            b = dataGridView2.CurrentRow.Cells[0].Value.ToString();
         }
         public void loaddata(BindingList<ThemSanPham> loadsp)
         {
@@ -101,16 +92,16 @@ namespace GUI
                     MaKH = int.Parse(txtMaKH.Text),
                     NgayLapHoaDon = dateTimePicker1.Value
                 };
-
+                
                 if (bllgiohang.postGioHang(cthdsp))
                 {
-                    loaddulieu();
-                    textBox1.Text = b;
+                    int macuoicung = bllgiohang.loadMaCuoiCung();
+                    textBox1.Text = macuoicung.ToString();
                     for (int x = 0; x < dataGridView1.Rows.Count; x++)
                     {
                         ThemCTHD cthd = new ThemCTHD()
                         {
-                            MaHoaDon = int.Parse(b.ToString()),
+                            MaHoaDon = macuoicung,
                             MaSanPham = int.Parse(dataGridView1.Rows[a].Cells[6].Value.ToString()),
                             giaban = int.Parse(dataGridView1.Rows[a].Cells[3].Value.ToString()),
                             soluong = int.Parse(dataGridView1.Rows[a].Cells[4].Value.ToString()),

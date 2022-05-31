@@ -112,6 +112,7 @@ namespace GUI
 
                 btn_Xoa.Enabled = true;
                 btn_Sua.Enabled = true;
+                toolStripButton1.Enabled = true;
             }
         }
         public Image GetImg(string direct, int w, int h)
@@ -184,6 +185,45 @@ namespace GUI
         private void btn_Dong_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void frmQuanLySP_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            toolStripButton1.Enabled = false;
+        }
+        public static BindingList<ThemSanPham> lstsp = new BindingList<ThemSanPham>();
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            int so = 1;
+            string ma = txt_MaSP.Text;
+            int tonkho = so;
+            string tensp = txt_TenSP.Text;
+            string loai = txt_LoaiSP.Text;
+            string hang = txt_HangSX.Text;
+            string gia = txt_GiaBan.Text;
+            string anh = txt_Image.Text;
+            if (lstsp.Any(n => n.ma == ma))
+            {
+                MessageBox.Show("Đã thêm");
+                var item = lstsp.SingleOrDefault(x => x.ma == ma);
+
+                if (item.soluong == int.Parse(txt_TonKho.Text) - 1)
+                {
+                    MessageBox.Show("Hiện tại số lượng sản phẩm tại cửa hàng không còn đủ");
+                    return;
+                }
+                else
+                {
+                    item.soluong++;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Đã thêm");
+
+                ThemSanPham sp = new ThemSanPham(tensp, loai, hang, gia, tonkho, anh, ma);
+                lstsp.Add(sp);
+            }
         }
 
 
