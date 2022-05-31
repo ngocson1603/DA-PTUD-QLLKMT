@@ -51,7 +51,7 @@ namespace GUI
                 splashScreenManager1.ShowWaitForm();
                 Thread.Sleep(1000);
                 splashScreenManager1.CloseWaitForm();
-                frmTrangChuDanhChoNhanVien frm = new frmTrangChuDanhChoNhanVien();
+                frmTrangChuNhanVien frm = new frmTrangChuNhanVien();
                 frm.Show();
                 this.Hide();
             }
@@ -60,7 +60,7 @@ namespace GUI
                 splashScreenManager1.ShowWaitForm();
                 Thread.Sleep(1000);
                 splashScreenManager1.CloseWaitForm();
-                frmTrangChuDanhChoNhanVien frm = new frmTrangChuDanhChoNhanVien();
+                frmTrangChuNhanVien frm = new frmTrangChuNhanVien();
                 frm.Show();
                 this.Hide();
             }

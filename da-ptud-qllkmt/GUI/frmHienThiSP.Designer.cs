@@ -61,7 +61,6 @@
             this.btnNhapvao.Text = "Nhập vào";
             this.btnNhapvao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNhapvao.UseVisualStyleBackColor = true;
-            this.btnNhapvao.Click += new System.EventHandler(this.btnNhapvao_Click);
             // 
             // btnBanra
             // 
@@ -74,7 +73,6 @@
             this.btnBanra.Text = "Bán ra";
             this.btnBanra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBanra.UseVisualStyleBackColor = true;
-            this.btnBanra.Click += new System.EventHandler(this.btnBanra_Click);
             // 
             // dgv_hienthi
             // 

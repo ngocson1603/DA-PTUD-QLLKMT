@@ -298,12 +298,6 @@
     <Compile Include="frmKhachHang.Designer.cs">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLichSuMuaBan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmLichSuMuaBan.Designer.cs">
-      <DependentUpon>frmLichSuMuaBan.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLSPHSX.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -340,12 +334,6 @@
     <Compile Include="frmQuanLySP.Designer.cs">
       <DependentUpon>frmQuanLySP.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThongKe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmThongKe.Designer.cs">
-      <DependentUpon>frmThongKe.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmThongKeMuaHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -364,11 +352,11 @@
     <Compile Include="frmTrangChu.Designer.cs">
       <DependentUpon>frmTrangChu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTrangChuDanhChoNhanVien.cs">
+    <Compile Include="frmTrangChuNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTrangChuDanhChoNhanVien.Designer.cs">
-      <DependentUpon>frmTrangChuDanhChoNhanVien.cs</DependentUpon>
+    <Compile Include="frmTrangChuNhanVien.Designer.cs">
+      <DependentUpon>frmTrangChuNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTuVanSuaChua.cs">
       <SubType>Form</SubType>
@@ -431,9 +419,6 @@
     <EmbeddedResource Include="frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLichSuMuaBan.resx">
-      <DependentUpon>frmLichSuMuaBan.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmLSPHSX.resx">
       <DependentUpon>frmLSPHSX.cs</DependentUpon>
     </EmbeddedResource>
@@ -452,9 +437,6 @@
     <EmbeddedResource Include="frmQuanLySP.resx">
       <DependentUpon>frmQuanLySP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThongKe.resx">
-      <DependentUpon>frmThongKe.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmThongKeMuaHang.resx">
       <DependentUpon>frmThongKeMuaHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -464,8 +446,8 @@
     <EmbeddedResource Include="frmTrangChu.resx">
       <DependentUpon>frmTrangChu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTrangChuDanhChoNhanVien.resx">
-      <DependentUpon>frmTrangChuDanhChoNhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="frmTrangChuNhanVien.resx">
+      <DependentUpon>frmTrangChuNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTuVanSuaChua.resx">
       <DependentUpon>frmTuVanSuaChua.cs</DependentUpon>
@@ -575,6 +557,36 @@
     <Content Include="Images\ban-phim-co-akko-3108-v2-world-tour-tokyo.jpg" />
     <Content Include="Images\intelcorei5-12600k.jpg" />
     <Content Include="Images\PSU_GG_GP-P1000GM-5.jpg" />
+    <None Include="Resources\giphy.gif" />
+    <None Include="Resources\trash-can_1153122.ico" />
+    <None Include="Resources\addcthd.ico" />
+    <None Include="Resources\editcthd.ico" />
+    <None Include="Resources\themhd1.ico" />
+    <None Include="Resources\sell1.ico" />
+    <None Include="Resources\Home-80_icon-icons.com_57317.ico" />
+    <None Include="Resources\4014665-fix-fixing-phone-repair-tool-wrench_112887.ico" />
+    <None Include="Resources\trash-can_1153121.ico" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\bar-chart.png" />
+    <None Include="Resources\shopping-list.png" />
+    <None Include="Resources\value %281%29.png" />
+    <None Include="Resources\value.png" />
+    <None Include="Resources\shopping-cart %281%29.png" />
+    <None Include="Resources\3706888-assembly-control-fix-setting_108715.png" />
+    <None Include="Resources\delete_delete_deleteusers_delete_male_user_maleclient_2348.png" />
+    <None Include="Resources\addusergroup_1251.png" />
+    <None Include="Resources\man_avatar_user_account_confirm_approve_complete_icon_1531511.png" />
+    <None Include="Resources\man_avatar_user_account_confirm_approve_complete_icon_153151.png" />
+    <None Include="Resources\sell.ico" />
+    <None Include="Resources\export_icon-icons.com_52383.ico" />
+    <None Include="Resources\edithd.ico" />
+    <None Include="Resources\trash-can_115312.ico" />
+    <None Include="Resources\themhd.ico" />
+    <None Include="Resources\log-out_icon-icons.com_50106.png" />
+    <None Include="Resources\flat-style-circle-delete-trash_icon-icons.com_66945.png" />
+    <None Include="Resources\3709743-assistance-fix-problem-service-trouble_108085.png" />
+    <None Include="Resources\business_application_addmale_useradd_insert_add_user_client_2312.png" />
+    <None Include="Resources\actions_edit_clear_15784.png" />
     <None Include="Resources\right.png" />
     <None Include="Resources\left.png" />
   </ItemGroup>

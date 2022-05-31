@@ -49,9 +49,9 @@ namespace BLL
         //    return dalgiohang.loadGioHang(tenkh);
         //}
 
-        public List<View_CTHDSP> loadChiTietHoaDon()
+        public List<View_CTHDSP> loadChiTietHoaDon(int ma)
         {
-            return dalgiohang.GetWatchListCTHDSP();
+            return dalgiohang.GetWatchListCTHDSP(ma);
         }
         public List<View_SanPham> loadSanPham()
         {

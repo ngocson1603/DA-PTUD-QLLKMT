@@ -3,12 +3,9 @@ C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmBanSan
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmDetailProduct.resources
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmDN.resources
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmKhachHang.resources
-C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmLichSuMuaBan.resources
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmNhapLinhKien.resources
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmProductList.resources
-C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmThongKe.resources
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmTrangChu.resources
-C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmTrangChuDanhChoNhanVien.resources
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.LoadForm.resources
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.Properties.Resources.resources
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.UserControls.detailProduct.resources
@@ -122,3 +119,4 @@ C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmNhanVi
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmHienThiSP.resources
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmLSPHSX.resources
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmNPP.resources
+C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmTrangChuNhanVien.resources

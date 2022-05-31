@@ -35,14 +35,16 @@ namespace GUI
         private void frmBanSanPham_Load(object sender, EventArgs e)
         {
             Refresh();
-            dgv_HoaDon.DataSource = bllhoadon.LoadHoaDonNV(int.Parse(frmTrangChuDanhChoNhanVien.manv));
+            dgv_HoaDon.DataSource = bllhoadon.LoadHoaDonNV(int.Parse(frmTrangChuNhanVien.manv));
             loaddata(frmQuanLySP.lstsp);
 
-            txt_MaNV.Text = frmTrangChuDanhChoNhanVien.manv;
+            txt_MaNV.Text = frmTrangChuNhanVien.manv;
             comboBox1.DataSource = bllkh.loadmakh();
             comboBox1.DisplayMember = "MaKH";
             comboBox1.ValueMember = "MaKH";
             comboBox1.SelectedIndex = 0;
+
+            guna2Button3.Enabled = true;
         }
 
         private void dgv_HoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -58,6 +60,10 @@ namespace GUI
                 txt_MaNV.Text = row.Cells[3].Value.ToString();
 
                 btn_Xuat.Enabled = true;
+
+
+                
+                dgv_chitiet.DataSource = bllgio.loadChiTietHoaDon(int.Parse(row.Cells[0].Value.ToString()));
 
             }
         }
@@ -179,8 +185,6 @@ namespace GUI
         {
             
 
-            frmQuanLySP frm = new frmQuanLySP();
-            frm.ShowDialog();
             
         }
 
@@ -232,6 +236,12 @@ namespace GUI
             }
 
             btn_Xuat.Enabled = false;
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            frmQuanLySP frm = new frmQuanLySP();
+            frm.ShowDialog();
         }
     }
 }

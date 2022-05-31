@@ -28,10 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKhachHang));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btn_ThemKH = new System.Windows.Forms.ToolStripButton();
-            this.btn_XoaKH = new System.Windows.Forms.ToolStripButton();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.rbtnNu = new System.Windows.Forms.RadioButton();
             this.rbtnNam = new System.Windows.Forms.RadioButton();
@@ -44,6 +41,8 @@
             this.dateTimeNgaysinhkhachhang = new System.Windows.Forms.DateTimePicker();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_Sdt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -55,9 +54,9 @@
             this.txt_Diachi = new System.Windows.Forms.TextBox();
             this.txt_Gmail = new System.Windows.Forms.TextBox();
             this.txtMakh = new System.Windows.Forms.TextBox();
+            this.btn_ThemKH = new System.Windows.Forms.ToolStripButton();
+            this.btn_XoaKH = new System.Windows.Forms.ToolStripButton();
             this.btn_SuaKH = new System.Windows.Forms.ToolStripButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_Sdt = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -76,27 +75,9 @@
             this.btn_SuaKH});
             this.toolStrip1.Location = new System.Drawing.Point(4, 19);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(411, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(490, 27);
             this.toolStrip1.TabIndex = 36;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // btn_ThemKH
-            // 
-            this.btn_ThemKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn_ThemKH.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_ThemKH.Name = "btn_ThemKH";
-            this.btn_ThemKH.Size = new System.Drawing.Size(134, 24);
-            this.btn_ThemKH.Text = "Thêm Khách Hàng";
-            this.btn_ThemKH.Click += new System.EventHandler(this.btn_ThemKH_Click);
-            // 
-            // btn_XoaKH
-            // 
-            this.btn_XoaKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_XoaKH.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_XoaKH.Name = "btn_XoaKH";
-            this.btn_XoaKH.Size = new System.Drawing.Size(123, 24);
-            this.btn_XoaKH.Text = "Xóa Khách Hàng";
-            this.btn_XoaKH.Click += new System.EventHandler(this.btn_XoaKH_Click);
             // 
             // groupBox6
             // 
@@ -231,7 +212,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.groupBox4.BackColor = System.Drawing.Color.DarkTurquoise;
             this.groupBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Controls.Add(this.txt_Sdt);
@@ -263,6 +244,29 @@
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Quản lý khách hàng";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label1.Location = new System.Drawing.Point(553, 187);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 17);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "SĐT";
+            // 
+            // txt_Sdt
+            // 
+            this.txt_Sdt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_Sdt.Location = new System.Drawing.Point(633, 182);
+            this.txt_Sdt.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Sdt.Name = "txt_Sdt";
+            this.txt_Sdt.Size = new System.Drawing.Size(229, 22);
+            this.txt_Sdt.TabIndex = 37;
             // 
             // label2
             // 
@@ -380,38 +384,35 @@
             this.txtMakh.Size = new System.Drawing.Size(240, 22);
             this.txtMakh.TabIndex = 0;
             // 
+            // btn_ThemKH
+            // 
+            this.btn_ThemKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_ThemKH.Image = global::GUI.Properties.Resources.addusergroup_1251;
+            this.btn_ThemKH.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_ThemKH.Name = "btn_ThemKH";
+            this.btn_ThemKH.Size = new System.Drawing.Size(154, 24);
+            this.btn_ThemKH.Text = "Thêm Khách Hàng";
+            this.btn_ThemKH.Click += new System.EventHandler(this.btn_ThemKH_Click);
+            // 
+            // btn_XoaKH
+            // 
+            this.btn_XoaKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_XoaKH.Image = global::GUI.Properties.Resources.delete_delete_deleteusers_delete_male_user_maleclient_2348;
+            this.btn_XoaKH.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_XoaKH.Name = "btn_XoaKH";
+            this.btn_XoaKH.Size = new System.Drawing.Size(143, 24);
+            this.btn_XoaKH.Text = "Xóa Khách Hàng";
+            this.btn_XoaKH.Click += new System.EventHandler(this.btn_XoaKH_Click);
+            // 
             // btn_SuaKH
             // 
             this.btn_SuaKH.ForeColor = System.Drawing.Color.LightPink;
-            this.btn_SuaKH.Image = ((System.Drawing.Image)(resources.GetObject("btn_SuaKH.Image")));
+            this.btn_SuaKH.Image = global::GUI.Properties.Resources._3706888_assembly_control_fix_setting_108715;
             this.btn_SuaKH.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_SuaKH.Name = "btn_SuaKH";
             this.btn_SuaKH.Size = new System.Drawing.Size(142, 24);
             this.btn_SuaKH.Text = "Sửa Khách Hàng";
             this.btn_SuaKH.Click += new System.EventHandler(this.btn_SuaKH_Click);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(553, 187);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 17);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "SĐT";
-            // 
-            // txt_Sdt
-            // 
-            this.txt_Sdt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Sdt.Location = new System.Drawing.Point(633, 182);
-            this.txt_Sdt.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_Sdt.Name = "txt_Sdt";
-            this.txt_Sdt.Size = new System.Drawing.Size(229, 22);
-            this.txt_Sdt.TabIndex = 37;
             // 
             // frmKhachHang
             // 

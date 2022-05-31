@@ -54,9 +54,10 @@ namespace DAL
 
 
         // LOAD CHI TIET HOA DON 
-        public List<View_CTHDSP> GetWatchListCTHDSP()
+        public List<View_CTHDSP> GetWatchListCTHDSP(int ma)
         {
-            var response = _apiService.GetResponse("api/ChiTietHoaDonSP/");
+            var response = _apiService.GetResponse(string.Format("api/ChiTietHoaDonSP/{0}", ma));
+
             if (response.IsSuccessStatusCode)
             {
                 return response.Content.ReadAsAsync<List<View_CTHDSP>>().Result;
@@ -167,5 +168,9 @@ namespace DAL
         //        return false;
         //    }
         //}
+
+       
+
+        
     }
 }
