@@ -33,5 +33,9 @@ namespace BLL
         {
             return daldangnhap.loadtentheoma(ma);
         }
+        public string loadtentheomakh(string ma)
+        {
+            return daldangnhap.loadtentheomakh(ma);
+        }
     }
 }

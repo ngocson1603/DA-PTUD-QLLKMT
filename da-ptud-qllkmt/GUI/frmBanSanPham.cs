@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using DTO;
+using GUI.XuLy;
 namespace GUI
 {
     public partial class frmBanSanPham : Form
@@ -17,7 +18,15 @@ namespace GUI
         BLLHoaDon bllhoadon = new BLLHoaDon();
         BLLGioHang bllgio = new BLLGioHang();
         BLLKhachHang bllkh = new BLLKhachHang();
+        BLLDangNhap blldn = new BLLDangNhap();
+
         Helper hp = new Helper();
+        public static string taikhoan;
+        public static int mahd;
+        public static int tongtien;
+        public static int manv;
+        public static string ten;
+        public static string tennv;
         public frmBanSanPham()
         {
             InitializeComponent();
@@ -46,6 +55,8 @@ namespace GUI
                 //txt_TongTien.Text = row.Cells[3].Value.ToString();
                 dateTimePicker1.Text = dgv_HoaDon.Rows[e.RowIndex].Cells[2].Value.ToString();
                 txt_MaNV.Text = row.Cells[3].Value.ToString();
+
+                btn_Xuat.Enabled = true;
 
             }
         }
@@ -171,7 +182,52 @@ namespace GUI
 
         private void btn_Xuat_Click(object sender, EventArgs e)
         {
+            ten = blldn.loadtentheomakh(comboBox1.Text);
+            tennv = blldn.loadtentheoma(txt_MaNV.Text);
 
+            dataExcel.DataSource = bllgio.loadBieuMauGioHangAPI(int.Parse(comboBox1.Text),int.Parse(txt_MaHoaDon.Text));
+            taikhoan = comboBox1.Text;
+            mahd = int.Parse(dgv_HoaDon.CurrentRow.Cells[0].Value.ToString());
+            ExcelExportNV ex = new ExcelExportNV();
+            if (dgv_HoaDon.Rows.Count == 0)
+            {
+                MessageBox.Show("khong co du lieu de xuat");
+                return;
+            }
+            int a = 0;
+            for (int x = 0; x < dataExcel.Rows.Count; x++)
+            {
+                tongtien += int.Parse(dataExcel.Rows[a].Cells[1].Value.ToString()) * int.Parse(dataExcel.Rows[a].Cells[2].Value.ToString());
+                a++;
+            }
+            manv = int.Parse(txt_MaNV.Text);
+            List<View_BieuMauGio> pListKhoa = new List<View_BieuMauGio>();
+
+                foreach (DataGridViewRow item in dataExcel.Rows)
+                {
+                    View_BieuMauGio i = new View_BieuMauGio();
+                    i.TenSanPham = item.Cells[0].Value.ToString();
+                    i.soluong = int.Parse(item.Cells[1].Value.ToString());
+                    i.giaban = int.Parse(item.Cells[2].Value.ToString());
+                    i.NgayLapHoaDon = DateTime.Parse(item.Cells[3].Value.ToString());
+                    i.TongTien = int.Parse(item.Cells[5].Value.ToString());
+
+                    pListKhoa.Add(i);
+                }
+
+
+            string path = string.Empty;
+
+            ex.ExportKhoa(pListKhoa, ref path, false);
+
+            DialogResult r = MessageBox.Show("ban co muon mo file khong", "thong bao", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (!string.IsNullOrEmpty(path) && r == DialogResult.Yes)
+            {
+                System.Diagnostics.Process.Start(path);
+            }
+
+            btn_Xuat.Enabled = false;
         }
     }
 }

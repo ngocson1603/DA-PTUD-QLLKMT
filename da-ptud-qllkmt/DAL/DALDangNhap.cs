@@ -33,5 +33,10 @@ namespace DAL
             var tennv = (from lk in qllk.NhanViens where lk.MaNhanVien == int.Parse(manv) select lk.TenNhanVien).FirstOrDefault();
             return tennv.ToString();
         }
+        public string loadtentheomakh(string makh)
+        {
+            var tennv = (from lk in qllk.KhachHangs where lk.MaKH == int.Parse(makh) select lk.TenKhachHang).FirstOrDefault();
+            return tennv.ToString();
+        }
     }
 }

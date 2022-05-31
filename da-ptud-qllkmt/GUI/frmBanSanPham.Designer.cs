@@ -86,6 +86,7 @@
             // 
             // btn_Xuat
             // 
+            this.btn_Xuat.Enabled = false;
             this.btn_Xuat.Image = ((System.Drawing.Image)(resources.GetObject("btn_Xuat.Image")));
             this.btn_Xuat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_Xuat.Name = "btn_Xuat";
