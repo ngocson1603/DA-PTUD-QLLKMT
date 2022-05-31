@@ -35,6 +35,8 @@
             this.btn_Xuat = new System.Windows.Forms.ToolStripButton();
             this.dataExcel = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txt_TongTien = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,8 +52,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataExcel)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Chitiethoadon)).BeginInit();
@@ -91,6 +91,7 @@
             this.btn_Xuat.Name = "btn_Xuat";
             this.btn_Xuat.Size = new System.Drawing.Size(105, 24);
             this.btn_Xuat.Text = "Xuất Hóa Đơn";
+            this.btn_Xuat.Click += new System.EventHandler(this.btn_Xuat_Click);
             // 
             // dataExcel
             // 
@@ -125,6 +126,23 @@
             this.groupBox1.TabIndex = 97;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hóa Đơn";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(84, 68);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(87, 21);
+            this.comboBox1.TabIndex = 102;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(178, 66);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(27, 23);
+            this.button2.TabIndex = 101;
+            this.button2.Text = "...";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -276,23 +294,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(395, 171);
             this.pictureBox1.TabIndex = 102;
             this.pictureBox1.TabStop = false;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(178, 66);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(27, 23);
-            this.button2.TabIndex = 101;
-            this.button2.Text = "...";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(84, 68);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(87, 21);
-            this.comboBox1.TabIndex = 102;
             // 
             // frmBanSanPham
             // 

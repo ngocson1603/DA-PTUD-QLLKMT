@@ -168,5 +168,10 @@ namespace GUI
             frm.ShowDialog();
             frm.toolStripButton1.Enabled = true;
         }
+
+        private void btn_Xuat_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
