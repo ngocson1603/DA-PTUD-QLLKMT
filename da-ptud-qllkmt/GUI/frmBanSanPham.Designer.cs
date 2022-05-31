@@ -254,10 +254,10 @@
             // 
             this.dgv_HoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_HoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_HoaDon.Location = new System.Drawing.Point(0, 232);
+            this.dgv_HoaDon.Location = new System.Drawing.Point(4, 232);
             this.dgv_HoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_HoaDon.Name = "dgv_HoaDon";
-            this.dgv_HoaDon.Size = new System.Drawing.Size(857, 154);
+            this.dgv_HoaDon.Size = new System.Drawing.Size(853, 154);
             this.dgv_HoaDon.TabIndex = 95;
             this.dgv_HoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_HoaDon_CellClick);
             // 

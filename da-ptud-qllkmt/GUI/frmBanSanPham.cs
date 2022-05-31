@@ -34,7 +34,8 @@ namespace GUI
 
         private void frmBanSanPham_Load(object sender, EventArgs e)
         {
-            dgv_HoaDon.DataSource = bllhoadon.LoadHoaDon();
+            Refresh();
+            dgv_HoaDon.DataSource = bllhoadon.LoadHoaDonNV(int.Parse(frmTrangChuDanhChoNhanVien.manv));
             loaddata(frmQuanLySP.lstsp);
 
             txt_MaNV.Text = frmTrangChuDanhChoNhanVien.manv;
@@ -63,6 +64,7 @@ namespace GUI
 
         private void btn_ThemHD_Click(object sender, EventArgs e)
         {
+            loaddata(frmQuanLySP.lstsp);
             int a = 0;
             QuanLyHoaDon cthdsp = new QuanLyHoaDon()
                 {
@@ -175,9 +177,11 @@ namespace GUI
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            
+
             frmQuanLySP frm = new frmQuanLySP();
             frm.ShowDialog();
-            frm.toolStripButton1.Enabled = true;
+            
         }
 
         private void btn_Xuat_Click(object sender, EventArgs e)

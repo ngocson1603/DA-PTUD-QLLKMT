@@ -184,15 +184,31 @@ namespace GUI
 
         private void btn_Dong_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
         }
 
-        private void frmQuanLySP_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            toolStripButton1.Enabled = false;
-        }
         public static BindingList<ThemSanPham> lstsp = new BindingList<ThemSanPham>();
-        private void toolStripButton1_Click(object sender, EventArgs e)
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string a = textBox1.Text;
+            if (a.Length > 0)
+            {
+                var orders = (from s in qllk.SanPhams where s.TenSanPham.Contains(a.ToString()) select s).ToList();
+                dgv_QLLK.DataSource = orders;
+
+            }
+            else if (textBox1.Text.Length == 0)
+            {
+                dgv_QLLK.DataSource = bllsanpham.LoadSanPham();
+            }
+            else
+            {
+                dgv_QLLK.DataSource = bllsanpham.LoadSanPham();
+            }
+        }
+
+        private void toolStripButton1_Click_1(object sender, EventArgs e)
         {
             int so = 1;
             string ma = txt_MaSP.Text;
@@ -224,28 +240,12 @@ namespace GUI
                 ThemSanPham sp = new ThemSanPham(tensp, loai, hang, gia, tonkho, anh, ma);
                 lstsp.Add(sp);
             }
+            //toolStripButton1.Enabled = false;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void frmQuanLySP_FormClosed(object sender, FormClosedEventArgs e)
         {
-            string a = textBox1.Text;
-            if (a.Length > 0)
-            {
-                var orders = (from s in qllk.SanPhams where s.TenSanPham.Contains(a.ToString()) select s).ToList();
-                dgv_QLLK.DataSource = orders;
-
-            }
-            else if (textBox1.Text.Length == 0)
-            {
-                dgv_QLLK.DataSource = bllsanpham.LoadSanPham();
-            }
-            else
-            {
-                dgv_QLLK.DataSource = bllsanpham.LoadSanPham();
-            }
+            toolStripButton1.Enabled = false;
         }
-
-
-
     }
 }
