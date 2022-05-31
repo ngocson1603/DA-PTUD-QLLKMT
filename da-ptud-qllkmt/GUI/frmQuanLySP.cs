@@ -16,7 +16,7 @@ namespace GUI
     {
         Helper hp = new Helper();
         BLLSanPham bllsanpham = new BLLSanPham();
-
+        QL_CUAHANGLINHKIENMAYTINHDataContext qllk = new QL_CUAHANGLINHKIENMAYTINHDataContext();
         public frmQuanLySP()
         {
             InitializeComponent();
@@ -223,6 +223,25 @@ namespace GUI
 
                 ThemSanPham sp = new ThemSanPham(tensp, loai, hang, gia, tonkho, anh, ma);
                 lstsp.Add(sp);
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string a = textBox1.Text;
+            if (a.Length > 0)
+            {
+                var orders = (from s in qllk.SanPhams where s.TenSanPham.Contains(a.ToString()) select s).ToList();
+                dgv_QLLK.DataSource = orders;
+
+            }
+            else if (textBox1.Text.Length == 0)
+            {
+                dgv_QLLK.DataSource = bllsanpham.LoadSanPham();
+            }
+            else
+            {
+                dgv_QLLK.DataSource = bllsanpham.LoadSanPham();
             }
         }
 

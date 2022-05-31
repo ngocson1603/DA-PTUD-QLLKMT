@@ -71,7 +71,9 @@
     <Compile Include="DALGioHang.cs" />
     <Compile Include="DALHoaDon.cs" />
     <Compile Include="DALKhachHang.cs" />
+    <Compile Include="DALLSPHSX.cs" />
     <Compile Include="DALNhanVien.cs" />
+    <Compile Include="DALNPP.cs" />
     <Compile Include="DALPhieuNhap.cs" />
     <Compile Include="DALSanPham.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

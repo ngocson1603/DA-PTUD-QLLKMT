@@ -23,7 +23,7 @@ namespace DAL
 
         private ApiService _apiService = new ApiService();
 
-        public List<KhachHang> GetWatchInfoKH(string ma)
+        public List<KhachHang> GetWatchInfoKH(int ma)
         {
             var response = _apiService.GetResponse(string.Format("api/KhachHang/{0}", ma));
             if (response.IsSuccessStatusCode)

@@ -18,7 +18,7 @@ namespace BLL
         //    return daldangky.loadThongTin(user);
         //}
 
-        public List<KhachHang> loadKhachHangAPI(string tenkh)
+        public List<KhachHang> loadKhachHangAPI(int tenkh)
         {
             return daldangky.GetWatchInfoKH(tenkh);
         }

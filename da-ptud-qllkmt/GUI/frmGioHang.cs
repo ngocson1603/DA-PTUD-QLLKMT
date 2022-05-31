@@ -79,29 +79,32 @@ namespace GUI
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            int ngay = int.Parse(DateTime.Now.Day.ToString());
-            int ngaymua = int.Parse(dateTimeNgay.Value.Day.ToString());
-            int kq = ngay - ngaymua;
-            int a = int.Parse(textBox2.Text);
-            if (kq > 2)
+            if (MessageBox.Show("Bạn có muốn hủy đơn không!", "Hủy Đơn", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) == DialogResult.OK)
             {
-                MessageBox.Show("Đã mua 2 ngày không thể hủy đơn");
-                return;
-            }
-            else
-            {
-                if (bllgiohang.deleteGioHangCTHD(a))
+                int ngay = int.Parse(DateTime.Now.Day.ToString());
+                int ngaymua = int.Parse(dateTimeNgay.Value.Day.ToString());
+                int kq = ngay - ngaymua;
+                int a = int.Parse(textBox2.Text);
+                if (kq > 2)
                 {
-                    bllgiohang.deleteGioHang(a);
-                    MessageBox.Show("Hủy đơn thành công");
-                    dataGridView1.DataSource = bllgiohang.loadGioHangAPI(frmDN.taikhoan);
-                    guna2Button2.Enabled = false;
+                    MessageBox.Show("Đã mua 2 ngày không thể hủy đơn");
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show("Hủy đơn thất bại");
-                    guna2Button2.Enabled = false;
-                    return;
+                    if (bllgiohang.deleteGioHangCTHD(a))
+                    {
+                        bllgiohang.deleteGioHang(a);
+                        MessageBox.Show("Hủy đơn thành công");
+                        dataGridView1.DataSource = bllgiohang.loadGioHangAPI(frmDN.taikhoan);
+                        guna2Button2.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hủy đơn thất bại");
+                        guna2Button2.Enabled = false;
+                        return;
+                    }
                 }
             }
         }

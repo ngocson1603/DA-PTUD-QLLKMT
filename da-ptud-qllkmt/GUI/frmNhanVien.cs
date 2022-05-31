@@ -89,17 +89,11 @@ namespace GUI
                 MessageBox.Show("Khách hàng chưa đủ 18");
                 return;
             }
-            if (bllnhanvien.kiemtratontai(int.Parse(txtManv.Text)))
-            {
-                MessageBox.Show("Nhân viên này đã được đăng ký");
-                return;
-            }
             else
             {
                 QuanLyNhanVien  nv= new QuanLyNhanVien()
                 {
                     
-                    //MaNhanVien = txtManv.Text,
                     TenNhanVien =txtHotennv.Text,
                     NgaySinh = dateTimeNgaysinhnv.Value,
                     GioiTinh = a,
@@ -125,69 +119,69 @@ namespace GUI
 
         private void btn_SuaNV_Click(object sender, EventArgs e)
         {
-            string a = "Nam";
-            if (rbtnNunv.Checked == true)
+            if (MessageBox.Show("Bạn có muốn sửa không!", "Sửa", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) == DialogResult.OK)
             {
-                a = "Nữ";
-            }
-            int ngay = int.Parse(DateTime.Now.Year.ToString());
-            int ngaysinh = int.Parse(dateTimeNgaysinhnv.Value.Year.ToString());
-            int kq = ngay - ngaysinh;
-            if (txtHotennv.Text == string.Empty || txtchuvu.Text == string.Empty || txtDiachinv.Text == string.Empty || txtDienthoainv.Text == string.Empty)
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
-                return;
-            }
-            if (kq < 18)
-            {
-                MessageBox.Show("Nhân viên chưa đủ 18");
-                return;
-            }
-            //if (bllnhanvien.kiemtratontai(int.Parse(txtManv.Text)))
-            //{
-            //    MessageBox.Show("Nhân viên này đã được đăng ký");
-            //    return;
-            //}
-            else
-            {
-                QuanLyNhanVien nv = new QuanLyNhanVien()
+                string a = "Nam";
+                if (rbtnNunv.Checked == true)
                 {
-
-                    //MaNhanVien = txtManv.Text,
-                    TenNhanVien = txtHotennv.Text,
-                    NgaySinh = dateTimeNgaysinhnv.Value,
-                    GioiTinh = a,
-                    NgayVaoLam = dateTime_Ngayvaolam.Value,
-                    ChucVu = int.Parse(txtchuvu.Text),
-                    DiaChi = txtDiachinv.Text,
-                    SoDT = txtDienthoainv.Text
-                };
-
-                if (bllnhanvien.suaNV(nv, int.Parse(txtManv.Text)))
+                    a = "Nữ";
+                }
+                int ngay = int.Parse(DateTime.Now.Year.ToString());
+                int ngaysinh = int.Parse(dateTimeNgaysinhnv.Value.Year.ToString());
+                int kq = ngay - ngaysinh;
+                if (txtHotennv.Text == string.Empty || txtchuvu.Text == string.Empty || txtDiachinv.Text == string.Empty || txtDienthoainv.Text == string.Empty)
                 {
-                    MessageBox.Show("Sửa thành công");
-                    dgv_NhanVien.DataSource = bllnhanvien.loaddanhsachNhanVien();
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                    return;
+                }
+                if (kq < 18)
+                {
+                    MessageBox.Show("Nhân viên chưa đủ 18");
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show("Sửa thất bại");
-                    return;
+                    QuanLyNhanVien nv = new QuanLyNhanVien()
+                    {
+
+                        //MaNhanVien = txtManv.Text,
+                        TenNhanVien = txtHotennv.Text,
+                        NgaySinh = dateTimeNgaysinhnv.Value,
+                        GioiTinh = a,
+                        NgayVaoLam = dateTime_Ngayvaolam.Value,
+                        ChucVu = int.Parse(txtchuvu.Text),
+                        DiaChi = txtDiachinv.Text,
+                        SoDT = txtDienthoainv.Text
+                    };
+
+                    if (bllnhanvien.suaNV(nv, int.Parse(txtManv.Text)))
+                    {
+                        MessageBox.Show("Sửa thành công");
+                        dgv_NhanVien.DataSource = bllnhanvien.loaddanhsachNhanVien();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa thất bại");
+                        return;
+                    }
                 }
             }
         }
 
         private void btn_XoaNV_Click(object sender, EventArgs e)
         {
-
-            if (bllnhanvien.deleteNV(int.Parse(txtManv.Text)))
+            if (MessageBox.Show("Bạn có muốn xóa không!", "Xóa", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) == DialogResult.OK)
             {
-                MessageBox.Show("Xóa thành công");
-                dgv_NhanVien.DataSource = bllnhanvien.loaddanhsachNhanVien();
-            }
-            else
-            {
-                MessageBox.Show("Xóa thất bại");
-                return;
+                if (bllnhanvien.deleteNV(int.Parse(txtManv.Text)))
+                {
+                    MessageBox.Show("Xóa thành công");
+                    dgv_NhanVien.DataSource = bllnhanvien.loaddanhsachNhanVien();
+                }
+                else
+                {
+                    MessageBox.Show("Xóa thất bại");
+                    return;
+                }
             }
         }
     }

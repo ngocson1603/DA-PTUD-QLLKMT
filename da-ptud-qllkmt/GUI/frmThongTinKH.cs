@@ -17,7 +17,7 @@ namespace GUI
         BLLDangKy blldangky = new BLLDangKy();
         BLLKhachHang bllkh = new BLLKhachHang();
         public static string hoten;
-        public static int ma;
+        public static int makh;
         public frmThongTinKH()
         {
             InitializeComponent();
@@ -25,13 +25,14 @@ namespace GUI
 
         private void frmThongTinKH_Load(object sender, EventArgs e)
         {
+            makh = bllkh.loadmakh(frmDN.taikhoan);
             initdb();
-            int ma = bllkh.loadmakh()
+            
         }
 
         void initdb()
         {
-            List<KhachHang> list = blldangky.loadKhachHangAPI(frmDN.taikhoan);
+            List<KhachHang> list = blldangky.loadKhachHangAPI(makh);
             foreach (KhachHang kh in list)
             {
                 string user = kh.Gmail.ToString();
@@ -79,7 +80,7 @@ namespace GUI
             }
             if (kq < 18)
             {
-                MessageBox.Show("Khách hàng chưa đủ 18");
+                MessageBox.Show("Tuổi phải lớn hơn 18", "Khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             //if(blldangky.suaThongTin(txtUserName.Text,txtPassWord.Text,txtHoTen.Text,dateTimeNgay.Text,gioitinh,txtDiaChi.Text,txtSoDienThoai.Text)){

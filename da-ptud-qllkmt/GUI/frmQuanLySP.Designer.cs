@@ -40,7 +40,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_TenSP = new System.Windows.Forms.TextBox();
             this.txt_HangSX = new System.Windows.Forms.TextBox();
-            this.txt_MaNPP = new System.Windows.Forms.TextBox();
             this.lblhoten = new System.Windows.Forms.Label();
             this.lblmalop = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,14 +48,17 @@
             this.btn_Dong = new System.Windows.Forms.ToolStripButton();
             this.btn_Sua = new System.Windows.Forms.ToolStripButton();
             this.btn_Xoa = new System.Windows.Forms.ToolStripButton();
-            this.lblmsv = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btn_Them = new System.Windows.Forms.ToolStripButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_Them = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_QLLK)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_Image
@@ -78,7 +80,7 @@
             // 
             // btn
             // 
-            this.btn.Location = new System.Drawing.Point(401, 206);
+            this.btn.Location = new System.Drawing.Point(410, 234);
             this.btn.Margin = new System.Windows.Forms.Padding(2);
             this.btn.Name = "btn";
             this.btn.Size = new System.Drawing.Size(120, 31);
@@ -89,7 +91,7 @@
             // 
             // txt_TonKho
             // 
-            this.txt_TonKho.Location = new System.Drawing.Point(129, 183);
+            this.txt_TonKho.Location = new System.Drawing.Point(129, 136);
             this.txt_TonKho.Name = "txt_TonKho";
             this.txt_TonKho.Size = new System.Drawing.Size(121, 20);
             this.txt_TonKho.TabIndex = 78;
@@ -97,7 +99,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(32, 183);
+            this.label5.Location = new System.Drawing.Point(32, 139);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 13);
             this.label5.TabIndex = 77;
@@ -119,6 +121,7 @@
             // 
             // txt_MaSP
             // 
+            this.txt_MaSP.Enabled = false;
             this.txt_MaSP.Location = new System.Drawing.Point(129, 53);
             this.txt_MaSP.Name = "txt_MaSP";
             this.txt_MaSP.Size = new System.Drawing.Size(121, 20);
@@ -127,7 +130,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 134);
+            this.label1.Location = new System.Drawing.Point(32, 101);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 13);
@@ -136,7 +139,7 @@
             // 
             // txt_TenSP
             // 
-            this.txt_TenSP.Location = new System.Drawing.Point(129, 134);
+            this.txt_TenSP.Location = new System.Drawing.Point(129, 94);
             this.txt_TenSP.Margin = new System.Windows.Forms.Padding(2);
             this.txt_TenSP.Name = "txt_TenSP";
             this.txt_TenSP.Size = new System.Drawing.Size(121, 20);
@@ -148,13 +151,6 @@
             this.txt_HangSX.Name = "txt_HangSX";
             this.txt_HangSX.Size = new System.Drawing.Size(121, 20);
             this.txt_HangSX.TabIndex = 71;
-            // 
-            // txt_MaNPP
-            // 
-            this.txt_MaNPP.Location = new System.Drawing.Point(129, 92);
-            this.txt_MaNPP.Name = "txt_MaNPP";
-            this.txt_MaNPP.Size = new System.Drawing.Size(121, 20);
-            this.txt_MaNPP.TabIndex = 70;
             // 
             // lblhoten
             // 
@@ -231,15 +227,6 @@
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
-            // lblmsv
-            // 
-            this.lblmsv.AutoSize = true;
-            this.lblmsv.Location = new System.Drawing.Point(32, 94);
-            this.lblmsv.Name = "lblmsv";
-            this.lblmsv.Size = new System.Drawing.Size(93, 13);
-            this.lblmsv.TabIndex = 66;
-            this.lblmsv.Text = "Mã nhà phân phối";
-            // 
             // toolStrip1
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -255,15 +242,6 @@
             this.toolStrip1.TabIndex = 64;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // btn_Them
-            // 
-            this.btn_Them.Image = global::GUI.Properties.Resources.timkiem;
-            this.btn_Them.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(61, 24);
-            this.btn_Them.Text = "Thêm";
-            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(534, 24);
@@ -273,6 +251,15 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 79;
             this.pictureBox1.TabStop = false;
+            // 
+            // btn_Them
+            // 
+            this.btn_Them.Image = global::GUI.Properties.Resources.timkiem;
+            this.btn_Them.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Them.Name = "btn_Them";
+            this.btn_Them.Size = new System.Drawing.Size(61, 24);
+            this.btn_Them.Text = "Thêm";
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // toolStripButton1
             // 
@@ -284,11 +271,40 @@
             this.toolStripButton1.Size = new System.Drawing.Size(95, 24);
             this.toolStripButton1.Text = "Chọn sản phẩm";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(12, 218);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(384, 62);
+            this.groupBox1.TabIndex = 83;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tìm sản phẩm";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(121, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Nhập vào tên sản phẩm";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(133, 27);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(245, 20);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // frmQuanLySP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 648);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txt_Image);
             this.Controls.Add(this.lbl_image);
             this.Controls.Add(this.btn);
@@ -301,13 +317,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_TenSP);
             this.Controls.Add(this.txt_HangSX);
-            this.Controls.Add(this.txt_MaNPP);
             this.Controls.Add(this.lblhoten);
             this.Controls.Add(this.lblmalop);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblmakhoa);
             this.Controls.Add(this.dgv_QLLK);
-            this.Controls.Add(this.lblmsv);
             this.Controls.Add(this.toolStrip1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmQuanLySP";
@@ -317,6 +331,8 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,7 +352,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_TenSP;
         private System.Windows.Forms.TextBox txt_HangSX;
-        private System.Windows.Forms.TextBox txt_MaNPP;
         private System.Windows.Forms.Label lblhoten;
         private System.Windows.Forms.Label lblmalop;
         private System.Windows.Forms.Label label3;
@@ -346,8 +361,10 @@
         private System.Windows.Forms.ToolStripButton btn_Sua;
         private System.Windows.Forms.ToolStripButton btn_Xoa;
         private System.Windows.Forms.ToolStripButton btn_Them;
-        private System.Windows.Forms.Label lblmsv;
         private System.Windows.Forms.ToolStrip toolStrip1;
         public System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -120,3 +120,5 @@ C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmChiTie
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmQuanLySP.resources
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmNhanVien.resources
 C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmHienThiSP.resources
+C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmLSPHSX.resources
+C:\Users\Admin\Desktop\DA-PTUD-QLLKMT\da-ptud-qllkmt\GUI\obj\Debug\GUI.frmNPP.resources

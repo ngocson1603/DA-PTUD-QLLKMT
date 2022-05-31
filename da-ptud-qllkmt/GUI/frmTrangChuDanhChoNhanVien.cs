@@ -56,5 +56,50 @@ namespace GUI
             hp.motrangcon(new frmBanSanPham(), panel1);
             panel1.Controls.Add(statusBar1);
         }
+
+        private void quảnLýHãngLoàiSXToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            hp.motrangcon(new frmLSPHSX(), panel1);
+            panel1.Controls.Add(statusBar1);
+        }
+
+        private void quảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void quảnLýKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            hp.motrangcon(new frmKhachHang(), panel1);
+            panel1.Controls.Add(statusBar1);
+        }
+
+        private void quảnLýNhânSựToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            hp.motrangcon(new frmNhanVien(), panel1);
+            panel1.Controls.Add(statusBar1);
+        }
+
+        private void quảnLýNhàPhânPhốiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            hp.motrangcon(new frmNPP(), panel1);
+            panel1.Controls.Add(statusBar1);
+        }
+
+        private void thôngKêSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nhậpSảnPhảmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            hp.motrangcon(new frmQuanLySP(), panel1);
+            panel1.Controls.Add(statusBar1);
+        }
     }
 }

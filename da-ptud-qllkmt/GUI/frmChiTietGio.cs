@@ -84,48 +84,51 @@ namespace GUI
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            int a = 0;
-            if (dataGridView1.Rows.Count > 0)
+            if (MessageBox.Show("Bạn có muốn thanh toán không!", "Thanh Toán", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) == DialogResult.OK)
             {
-                ThemGioHang cthdsp = new ThemGioHang()
+                int a = 0;
+                if (dataGridView1.Rows.Count > 0)
                 {
-                    MaKH = int.Parse(txtMaKH.Text),
-                    NgayLapHoaDon = dateTimePicker1.Value
-                };
-                
-                if (bllgiohang.postGioHang(cthdsp))
-                {
-                    int macuoicung = bllgiohang.loadMaCuoiCung();
-                    textBox1.Text = macuoicung.ToString();
-                    for (int x = 0; x < dataGridView1.Rows.Count; x++)
+                    ThemGioHang cthdsp = new ThemGioHang()
                     {
-                        ThemCTHD cthd = new ThemCTHD()
-                        {
-                            MaHoaDon = macuoicung,
-                            MaSanPham = int.Parse(dataGridView1.Rows[a].Cells[6].Value.ToString()),
-                            giaban = int.Parse(dataGridView1.Rows[a].Cells[3].Value.ToString()),
-                            soluong = int.Parse(dataGridView1.Rows[a].Cells[4].Value.ToString()),
-                            TongTien = int.Parse(dataGridView1.Rows[a].Cells[3].Value.ToString()) * int.Parse(dataGridView1.Rows[a].Cells[4].Value.ToString()),
-                            
-                        };
-                        a++;
-                        if (bllgiohang.postGioHangCTHD(cthd))
-                        {
+                        MaKH = int.Parse(txtMaKH.Text),
+                        NgayLapHoaDon = dateTimePicker1.Value
+                    };
 
-                        }
-                        else
+                    if (bllgiohang.postGioHang(cthdsp))
+                    {
+                        int macuoicung = bllgiohang.loadMaCuoiCung();
+                        textBox1.Text = macuoicung.ToString();
+                        for (int x = 0; x < dataGridView1.Rows.Count; x++)
                         {
-                            MessageBox.Show("Mua hàng không thành công");
-                            break;
+                            ThemCTHD cthd = new ThemCTHD()
+                            {
+                                MaHoaDon = macuoicung,
+                                MaSanPham = int.Parse(dataGridView1.Rows[a].Cells[6].Value.ToString()),
+                                giaban = int.Parse(dataGridView1.Rows[a].Cells[3].Value.ToString()),
+                                soluong = int.Parse(dataGridView1.Rows[a].Cells[4].Value.ToString()),
+                                TongTien = int.Parse(dataGridView1.Rows[a].Cells[3].Value.ToString()) * int.Parse(dataGridView1.Rows[a].Cells[4].Value.ToString()),
+
+                            };
+                            a++;
+                            if (bllgiohang.postGioHangCTHD(cthd))
+                            {
+                                detailProduct.lstsp.Clear();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Mua hàng không thành công");
+                                break;
+                            }
                         }
+                        MessageBox.Show("Mua hàng thành công");
                     }
-                    MessageBox.Show("Mua hàng thành công");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn sản phẩm");
-                return;
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn sản phẩm");
+                    return;
+                }
             }
         }
         private void button1_Click(object sender, EventArgs e)

@@ -106,69 +106,75 @@ namespace GUI
 
         private void btn_XoaKH_Click(object sender, EventArgs e)
         {
-            if (bllkhachhang.deleteKH(int.Parse(txtMakh.Text)))
+            if (MessageBox.Show("Bạn có muốn xóa không!", "Xóa", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) == DialogResult.OK)
             {
-                MessageBox.Show("Xóa thành công");
-                dgvKhachhang.DataSource = bllkhachhang.loaddanhsachKhachHang();
-            }
-            else
-            {
-                MessageBox.Show("Xóa thất bại");
-                return;
+                if (bllkhachhang.deleteKH(int.Parse(txtMakh.Text)))
+                {
+                    MessageBox.Show("Xóa thành công");
+                    dgvKhachhang.DataSource = bllkhachhang.loaddanhsachKhachHang();
+                }
+                else
+                {
+                    MessageBox.Show("Xóa thất bại");
+                    return;
+                }
             }
 
         }
 
         private void btn_SuaKH_Click(object sender, EventArgs e)
         {
-            string a = "Nam";
-            if (rbtnNu.Checked == true)
+            if (MessageBox.Show("Bạn có muốn sửa không!", "Sửa", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) == DialogResult.OK)
             {
-                a = "Nữ";
-            }
-            int ngay = int.Parse(DateTime.Now.Year.ToString());
-            int ngaysinh = int.Parse(dateTimeNgaysinhkhachhang.Value.Year.ToString());
-            int kq = ngay - ngaysinh;
-            if (txtMakh.Text == string.Empty || txt_Pass.Text == string.Empty || txtHotenkh.Text == string.Empty || txt_Diachi.Text == string.Empty || txt_Sdt.Text == string.Empty)
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
-                return;
-            }
-            if (kq < 18)
-            {
-                MessageBox.Show("Khách hàng chưa đủ 18");
-                return;
-            }
-            if (bllkhachhang.kiemtratontai(txt_Gmail.Text))
-            {
-                MessageBox.Show("Tài khoản này đã được đăng ký");
-                return;
-            }
-            else
-            {
-                KhachHang kh = new KhachHang()
+                string a = "Nam";
+                if (rbtnNu.Checked == true)
                 {
-
-
-                    //MaKH = int.Parse(txtMakh.Text),
-                    Gmail = txt_Gmail.Text,
-                    Pass = txt_Pass.Text,
-                    TenKhachHang = txtHotenkh.Text,
-                    Ngaysinh = dateTimeNgaysinhkhachhang.Value,
-                    GioiTinh = a,
-                    DiaChi = txt_Diachi.Text,
-                    SDT = txt_Sdt.Text
-                };
-
-                if (bllkhachhang.suaKH(kh, int.Parse(txtMakh.Text)))
+                    a = "Nữ";
+                }
+                int ngay = int.Parse(DateTime.Now.Year.ToString());
+                int ngaysinh = int.Parse(dateTimeNgaysinhkhachhang.Value.Year.ToString());
+                int kq = ngay - ngaysinh;
+                if (txtMakh.Text == string.Empty || txt_Pass.Text == string.Empty || txtHotenkh.Text == string.Empty || txt_Diachi.Text == string.Empty || txt_Sdt.Text == string.Empty)
                 {
-                    MessageBox.Show(" Sửa thành công");
-                    dgvKhachhang.DataSource = bllkhachhang.loaddanhsachKhachHang();
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                    return;
+                }
+                if (kq < 18)
+                {
+                    MessageBox.Show("Khách hàng chưa đủ 18");
+                    return;
+                }
+                if (bllkhachhang.kiemtratontai(txt_Gmail.Text))
+                {
+                    MessageBox.Show("Tài khoản này đã được đăng ký");
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show("Sửa thất bại");
-                    return;
+                    KhachHang kh = new KhachHang()
+                    {
+
+
+                        //MaKH = int.Parse(txtMakh.Text),
+                        Gmail = txt_Gmail.Text,
+                        Pass = txt_Pass.Text,
+                        TenKhachHang = txtHotenkh.Text,
+                        Ngaysinh = dateTimeNgaysinhkhachhang.Value,
+                        GioiTinh = a,
+                        DiaChi = txt_Diachi.Text,
+                        SDT = txt_Sdt.Text
+                    };
+
+                    if (bllkhachhang.suaKH(kh, int.Parse(txtMakh.Text)))
+                    {
+                        MessageBox.Show(" Sửa thành công");
+                        dgvKhachhang.DataSource = bllkhachhang.loaddanhsachKhachHang();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa thất bại");
+                        return;
+                    }
                 }
             }
 

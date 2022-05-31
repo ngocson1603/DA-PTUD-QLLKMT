@@ -51,7 +51,9 @@
     <Compile Include="BLLGioHang.cs" />
     <Compile Include="BLLHoaDon.cs" />
     <Compile Include="BLLKhachHang.cs" />
+    <Compile Include="BLLLSPHSX.cs" />
     <Compile Include="BLLNhanVien.cs" />
+    <Compile Include="BLLNPP.cs" />
     <Compile Include="BLLPhieuNhap.cs" />
     <Compile Include="BLLSanPham.cs" />
     <Compile Include="Helper.cs" />
