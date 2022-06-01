@@ -244,9 +244,30 @@ namespace GUI
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            frmQuanLySP frm = new frmQuanLySP();
-            frm.Show();
-            frm.toolStripButton1.Visible = true;
+            Form fsf = Application.OpenForms["frmQuanLySP"];
+
+            if (fsf != null)
+            {
+                return;
+            }
+            else
+            {
+                frmQuanLySP frm = new frmQuanLySP();
+                frm.Show();
+                frm.TopMost = true;
+                frm.toolStripButton1.Visible = true;
+                frm.txt_GiaBan.Enabled = false;
+                frm.txt_HangSX.Enabled = false;
+                frm.txt_Image.Enabled = false;
+                frm.txt_LoaiSP.Enabled = false;
+                frm.txt_MaSP.Enabled = false;
+                frm.txt_TenSP.Enabled = false;
+                frm.txt_TonKho.Enabled = false;
+                frm.btn_Sua.Visible = false;
+                frm.btn_Them.Visible = false;
+                frm.btn_Xoa.Visible = false;
+                frm.btn.Enabled = false;
+            }
         }
     }
 }

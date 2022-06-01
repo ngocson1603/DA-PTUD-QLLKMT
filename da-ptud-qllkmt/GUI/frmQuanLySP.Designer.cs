@@ -70,7 +70,7 @@
             // lbl_image
             // 
             this.lbl_image.AutoSize = true;
-            this.lbl_image.BackColor = System.Drawing.SystemColors.Control;
+            this.lbl_image.BackColor = System.Drawing.Color.MediumTurquoise;
             this.lbl_image.Location = new System.Drawing.Point(317, 183);
             this.lbl_image.Name = "lbl_image";
             this.lbl_image.Size = new System.Drawing.Size(36, 13);
@@ -80,7 +80,7 @@
             // btn
             // 
             this.btn.Location = new System.Drawing.Point(401, 206);
-            this.btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn.Margin = new System.Windows.Forms.Padding(2);
             this.btn.Name = "btn";
             this.btn.Size = new System.Drawing.Size(120, 31);
             this.btn.TabIndex = 80;
@@ -139,7 +139,7 @@
             // txt_TenSP
             // 
             this.txt_TenSP.Location = new System.Drawing.Point(129, 94);
-            this.txt_TenSP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_TenSP.Margin = new System.Windows.Forms.Padding(2);
             this.txt_TenSP.Name = "txt_TenSP";
             this.txt_TenSP.Size = new System.Drawing.Size(121, 20);
             this.txt_TenSP.TabIndex = 72;
@@ -154,7 +154,7 @@
             // lblhoten
             // 
             this.lblhoten.AutoSize = true;
-            this.lblhoten.BackColor = System.Drawing.SystemColors.Control;
+            this.lblhoten.BackColor = System.Drawing.Color.MediumTurquoise;
             this.lblhoten.Location = new System.Drawing.Point(317, 136);
             this.lblhoten.Name = "lblhoten";
             this.lblhoten.Size = new System.Drawing.Size(45, 13);
@@ -193,7 +193,7 @@
             this.dgv_QLLK.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_QLLK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_QLLK.Location = new System.Drawing.Point(9, 284);
-            this.dgv_QLLK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_QLLK.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_QLLK.Name = "dgv_QLLK";
             this.dgv_QLLK.RowTemplate.Height = 24;
             this.dgv_QLLK.Size = new System.Drawing.Size(907, 273);
@@ -297,7 +297,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(534, 24);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(364, 256);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -329,7 +329,7 @@
             this.Controls.Add(this.lblmakhoa);
             this.Controls.Add(this.dgv_QLLK);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmQuanLySP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmQuanLySP";
@@ -348,31 +348,31 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txt_Image;
         private System.Windows.Forms.Label lbl_image;
-        private System.Windows.Forms.Button btn;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txt_TonKho;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_GiaBan;
-        private System.Windows.Forms.TextBox txt_LoaiSP;
-        private System.Windows.Forms.TextBox txt_MaSP;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_TenSP;
-        private System.Windows.Forms.TextBox txt_HangSX;
         private System.Windows.Forms.Label lblhoten;
         private System.Windows.Forms.Label lblmalop;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblmakhoa;
         private System.Windows.Forms.DataGridView dgv_QLLK;
         private System.Windows.Forms.ToolStripButton btn_Dong;
-        private System.Windows.Forms.ToolStripButton btn_Sua;
-        private System.Windows.Forms.ToolStripButton btn_Xoa;
-        private System.Windows.Forms.ToolStripButton btn_Them;
         private System.Windows.Forms.ToolStrip toolStrip1;
         public System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox txt_Image;
+        public System.Windows.Forms.Button btn;
+        public System.Windows.Forms.TextBox txt_TonKho;
+        public System.Windows.Forms.TextBox txt_GiaBan;
+        public System.Windows.Forms.TextBox txt_LoaiSP;
+        public System.Windows.Forms.TextBox txt_MaSP;
+        public System.Windows.Forms.TextBox txt_TenSP;
+        public System.Windows.Forms.TextBox txt_HangSX;
+        public System.Windows.Forms.ToolStripButton btn_Sua;
+        public System.Windows.Forms.ToolStripButton btn_Xoa;
+        public System.Windows.Forms.ToolStripButton btn_Them;
     }
 }
