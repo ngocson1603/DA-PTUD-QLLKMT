@@ -37,6 +37,10 @@ namespace GUI
             Refresh();
             dgv_HoaDon.DataSource = bllhoadon.LoadHoaDonNV(int.Parse(frmTrangChuNhanVien.manv));
             loaddata(frmQuanLySP.lstsp);
+            if (dgv_Chitiethoadon.Rows.Count >= 0)
+            {
+                dgv_Chitiethoadon.Columns[5].Visible = false;
+            }
 
             txt_MaNV.Text = frmTrangChuNhanVien.manv;
             comboBox1.DataSource = bllkh.loadmakh();
@@ -241,7 +245,8 @@ namespace GUI
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             frmQuanLySP frm = new frmQuanLySP();
-            frm.ShowDialog();
+            frm.Show();
+            frm.toolStripButton1.Visible = true;
         }
     }
 }
