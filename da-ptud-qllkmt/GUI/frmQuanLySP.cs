@@ -113,6 +113,7 @@ namespace GUI
                 btn_Xoa.Enabled = true;
                 btn_Sua.Enabled = true;
                 toolStripButton1.Enabled = true;
+                btn_nhapvao.Enabled = true;
             }
         }
         public Image GetImg(string direct, int w, int h)
@@ -186,9 +187,11 @@ namespace GUI
         {
             this.Close();
         }
-
+        //ban
         public static BindingList<ThemSanPham> lstsp = new BindingList<ThemSanPham>();
 
+        //nhap
+        public static BindingList<ThemSanPham> lstnhap = new BindingList<ThemSanPham>();
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             string a = textBox1.Text;
@@ -239,6 +242,7 @@ namespace GUI
 
                 ThemSanPham sp = new ThemSanPham(tensp, loai, hang, gia, tonkho, anh, ma);
                 lstsp.Add(sp);
+                
             }
             //toolStripButton1.Enabled = false;
         }
@@ -247,5 +251,24 @@ namespace GUI
         {
             toolStripButton1.Enabled = false;
         }
+
+        private void btn_nhapvao_Click(object sender, EventArgs e)
+        {
+            
+            string ma = txt_MaSP.Text;
+            
+            string tensp = txt_TenSP.Text;
+            string loai = txt_LoaiSP.Text;
+            string hang = txt_HangSX.Text;
+            string gia = txt_GiaBan.Text;
+            string anh = txt_Image.Text;
+           
+                MessageBox.Show("Đã thêm");
+                ThemSanPham sp = new ThemSanPham(tensp, loai, hang, gia, anh, ma);
+                lstnhap.Add(sp);
+
+        }
+
+        
     }
 }

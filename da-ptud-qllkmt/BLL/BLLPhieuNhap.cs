@@ -25,7 +25,15 @@ namespace BLL
             return dalphieunhap.GetDanhSachCTPN();
         }
 
+        public List<View_PhieuNhap> LoadPhieuNhap(int ma)
+        {
+            return dalphieunhap.GetWatchListPNNV(ma);
+        }
 
+        public List<View_CTPhieuNhap> LoadCTPhieuNhap(int ma)
+        {
+            return dalphieunhap.GetWatchListCTPNNV(ma);
+        }
         // them xoa sua pn
 
         public bool postPN(ThemPhieuNhap cthd)

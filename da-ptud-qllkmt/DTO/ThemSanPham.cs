@@ -26,5 +26,16 @@ namespace DTO
             this.anh = anh;
             this.ma = ma;
         }
+
+        public ThemSanPham(string tensp, string loai, string hang, string gia, string anh, string ma)
+        {
+            this.tensp = tensp;
+            this.loai = loai;
+            this.hang = hang;
+            
+            this.gia = gia;
+            this.anh = anh;
+            this.ma = ma;
+        }
     }
 }

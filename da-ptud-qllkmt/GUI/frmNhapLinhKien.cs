@@ -15,7 +15,7 @@ namespace GUI
     public partial class frmNhapLinhKien : Form
     {
         BLLPhieuNhap bllpn = new BLLPhieuNhap();
-
+        
         public frmNhapLinhKien()
         {
             InitializeComponent();
@@ -23,8 +23,17 @@ namespace GUI
 
         private void frmNhapLinhKien_Load(object sender, EventArgs e)
         {
-            dgv_PhieuNhap.DataSource = bllpn.LoadPN();
-            dgv_ChiTietPhieuNhap.DataSource = bllpn.LoadCTPN();
+            //dgv_PhieuNhap.DataSource = bllpn.LoadPN();
+            //dgv_ChiTietPhieuNhap.DataSource = bllpn.LoadCTPN();
+            dgv_PhieuNhap.DataSource = bllpn.LoadPhieuNhap(int.Parse(frmTrangChuNhanVien.manv));
+            loaddata(frmQuanLySP.lstnhap);
+            if (dgv_Chitiethoadon.Rows.Count >= 0)
+            {
+                dgv_Chitiethoadon.Columns[5].Visible = false;
+            }
+            txt_MaNhanVien.Text = frmTrangChuNhanVien.manv;
+
+
         }
 
         private void btn_ThemPN_Click(object sender, EventArgs e)
@@ -33,7 +42,7 @@ namespace GUI
             {
                 //MaPhieuNhap = int.Parse(txt_MaPhieuNhap.Text),
                 MaNhanVien = int.Parse(txt_MaNhanVien.Text),
-                MaNhaPhanPhoi = int.Parse(comboBox2.Text),
+                MaNhaPhanPhoi = int.Parse(cbb_npp.Text),
                 TongTien = int.Parse(txt_TongTien.Text),
                 NgayNhap = dateTimePicker1.Value
             };
@@ -69,7 +78,7 @@ namespace GUI
             {
                 MaPhieuNhap = int.Parse(txt_MaPhieuNhap.Text),
                 MaNhanVien = int.Parse(txt_MaNhanVien.Text),
-                MaNhaPhanPhoi = int.Parse(comboBox2.Text),
+                MaNhaPhanPhoi = int.Parse(cbb_npp.Text),
                 TongTien = int.Parse(txt_TongTien.Text),
                 NgayNhap = dateTimePicker1.Value
             };
@@ -119,5 +128,73 @@ namespace GUI
                 return;
             }
         }
+
+
+
+        public void loaddata(BindingList<ThemSanPham> loadsp)
+        {
+            dgv_Chitiethoadon.DataSource = loadsp;
+
+            //dgv_Chitiethoadon.Columns[0].ReadOnly = true;
+            //dgv_Chitiethoadon.Columns[1].ReadOnly = true;
+            //dgv_Chitiethoadon.Columns[2].ReadOnly = true;
+            //dgv_Chitiethoadon.Columns[3].ReadOnly = true;
+            //dgv_Chitiethoadon.Columns[5].ReadOnly = true;
+            //dgv_Chitiethoadon.Columns[6].ReadOnly = true;
+        }
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            Form fsf = Application.OpenForms["frmQuanLySP"];
+
+            if (fsf != null)
+            {
+                return;
+            }
+            else
+            {
+                frmQuanLySP frm = new frmQuanLySP();
+                frm.Show();
+                frm.TopMost = true;
+                frm.btn_nhapvao.Visible = true;
+                frm.txt_GiaBan.Enabled = false;
+                frm.txt_HangSX.Enabled = false;
+                frm.txt_Image.Enabled = false;
+                frm.txt_LoaiSP.Enabled = false;
+                frm.txt_MaSP.Enabled = false;
+                frm.txt_TenSP.Enabled = false;
+                frm.txt_TonKho.Enabled = false;
+                frm.btn_Sua.Visible = false;
+                frm.btn_Them.Visible = false;
+                frm.btn_Xoa.Visible = false;
+                frm.btn.Enabled = false;
+            }
+        }
+
+        private void dgv_Chitiethoadon_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
+        }
+
+        private void dgv_PhieuNhap_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv_PhieuNhap.Rows[e.RowIndex];
+                txt_MaPhieuNhap.Text = row.Cells[0].Value.ToString();
+                cbb_npp.Text = row.Cells[1].Value.ToString();
+                txt_MaNhanVien.Text = row.Cells[2].Value.ToString();
+                txt_TongTien.Text = row.Cells[3].Value.ToString();
+                dateTimePicker1.Text = dgv_PhieuNhap.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+                dgv_ChiTietPhieuNhap.DataSource = bllpn.LoadCTPhieuNhap(int.Parse(row.Cells[0].Value.ToString()));
+
+            }
+
+           
+        }
+
+
+
+
     }
 }

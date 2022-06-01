@@ -76,5 +76,27 @@ namespace DAL
             else
                 return true;
         }
+
+
+
+        public List<View_PhieuNhap> GetWatchListPNNV(int ma)
+        {
+            var response = _apiService.GetResponse(string.Format("api/PhieuNhap/{0}", ma));
+            if (response.IsSuccessStatusCode)
+            {
+                return response.Content.ReadAsAsync<List<View_PhieuNhap>>().Result;
+            }
+            return null;
+        }
+
+        public List<View_CTPhieuNhap> GetWatchListCTPNNV(int ma)
+        {
+            var response = _apiService.GetResponse(string.Format("api/CTPN/{0}", ma));
+            if (response.IsSuccessStatusCode)
+            {
+                return response.Content.ReadAsAsync<List<View_CTPhieuNhap>>().Result;
+            }
+            return null;
+        }
     }
 }
