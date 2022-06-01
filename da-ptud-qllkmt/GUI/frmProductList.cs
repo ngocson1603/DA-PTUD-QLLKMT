@@ -46,7 +46,7 @@ namespace GUI
             {
 
                 UserControls.listProduct u = new UserControls.listProduct();
-                u.BackColor = System.Drawing.Color.Khaki;
+                u.BackColor = System.Drawing.Color.White;
                 u.Location = new System.Drawing.Point(1, -1 + y);
                 u.Name = "userControlDb " + u;
                 u.Size = new System.Drawing.Size(374, 250);

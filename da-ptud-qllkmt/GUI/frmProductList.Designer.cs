@@ -37,7 +37,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Khaki;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel2.SetColumnSpan(this.flowLayoutPanel1, 6);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 38);

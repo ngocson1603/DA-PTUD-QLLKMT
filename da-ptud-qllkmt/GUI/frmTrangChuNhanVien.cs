@@ -129,7 +129,6 @@ namespace GUI
             string ten = blldn.loadtentheoma(ma);
 
             lblxinchao.Text = "Xin Chào : " + ten;
-            panel2.Controls.Add(lblxinchao);
         }
     }
 }
