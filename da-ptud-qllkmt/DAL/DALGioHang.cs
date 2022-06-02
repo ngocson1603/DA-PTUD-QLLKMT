@@ -112,6 +112,8 @@ namespace DAL
             else
                 return true;
         }
+
+
         public bool DeleteGio(int ma)
         {
             var response = _apiService.DeleteResponse(string.Format("api/GioHang/{0}", ma));

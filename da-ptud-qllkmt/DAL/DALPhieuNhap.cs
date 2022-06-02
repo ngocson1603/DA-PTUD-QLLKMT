@@ -59,6 +59,9 @@ namespace DAL
             }
             return null;
         }
+
+
+        //ctpn nhan vien
         public bool PostCTPN(ThemCTPN pKH)
         {
             var response = _apiService.PostResponse("api/CTPN/", pKH);
@@ -98,5 +101,16 @@ namespace DAL
             }
             return null;
         }
+
+        public List<View_PhieuNhap> GetWatchListPhieuNhapNV(int ma)
+        {
+            var response = _apiService.GetResponse(string.Format("api/LoadPNNV/{0}", ma));
+            if (response.IsSuccessStatusCode)
+            {
+                return response.Content.ReadAsAsync<List<View_PhieuNhap>>().Result;
+            }
+            return null;
+        }
+
     }
 }

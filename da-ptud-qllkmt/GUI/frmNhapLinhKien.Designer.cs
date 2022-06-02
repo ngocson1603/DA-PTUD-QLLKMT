@@ -37,7 +37,7 @@
             this.txt_Soluong = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbb_MaSP = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.cbb_npp = new System.Windows.Forms.ComboBox();
@@ -67,7 +67,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
@@ -142,7 +142,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.cbb_MaSP);
             this.groupBox2.Controls.Add(this.txt_TienNhap);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txt_MaCTPN);
@@ -160,14 +160,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi Tiết Phiếu Nhập";
             // 
-            // comboBox1
+            // cbb_MaSP
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(188, 71);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 24);
-            this.comboBox1.TabIndex = 80;
+            this.cbb_MaSP.FormattingEnabled = true;
+            this.cbb_MaSP.Location = new System.Drawing.Point(188, 71);
+            this.cbb_MaSP.Margin = new System.Windows.Forms.Padding(4);
+            this.cbb_MaSP.Name = "cbb_MaSP";
+            this.cbb_MaSP.Size = new System.Drawing.Size(160, 24);
+            this.cbb_MaSP.TabIndex = 80;
             // 
             // groupBox1
             // 
@@ -226,6 +226,7 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(427, 71);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -401,6 +402,7 @@
             this.dgv_ChiTietPhieuNhap.Name = "dgv_ChiTietPhieuNhap";
             this.dgv_ChiTietPhieuNhap.Size = new System.Drawing.Size(475, 211);
             this.dgv_ChiTietPhieuNhap.TabIndex = 82;
+            this.dgv_ChiTietPhieuNhap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ChiTietPhieuNhap_CellClick);
             // 
             // label2
             // 
@@ -443,6 +445,7 @@
             // 
             // dgv_Chitiethoadon
             // 
+            this.dgv_Chitiethoadon.AllowUserToDeleteRows = false;
             this.dgv_Chitiethoadon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Chitiethoadon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Chitiethoadon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -490,51 +493,8 @@
             // 
             this.Column5.DataPropertyName = "soluong";
             this.Column5.HeaderText = "Số Lượng";
-            this.Column5.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31",
-            "32",
-            "33",
-            "34",
-            "35",
-            "36",
-            "37",
-            "38",
-            "39",
-            "40"});
             this.Column5.Name = "Column5";
             this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Column6
             // 
@@ -610,7 +570,7 @@
         private System.Windows.Forms.ToolStripButton btn_SuaPN;
         private System.Windows.Forms.DataGridView dgv_ChiTietPhieuNhap;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbb_MaSP;
         private System.Windows.Forms.ComboBox cbb_npp;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -619,7 +579,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
 

@@ -34,6 +34,12 @@ namespace BLL
         {
             return dalphieunhap.GetWatchListCTPNNV(ma);
         }
+
+
+        public List<View_PhieuNhap> LoadPhieuNhapNV(int ma)
+        {
+            return dalphieunhap.GetWatchListPhieuNhapNV(ma);
+        }
         // them xoa sua pn
 
         public bool postPN(ThemPhieuNhap cthd)
@@ -55,6 +61,8 @@ namespace BLL
         {
             return dalphieunhap.PostCTPN(cthd);
         }
+
+
         public bool deleteCTPN(int ma)
         {
             return dalphieunhap.DeleteCTPN(ma);

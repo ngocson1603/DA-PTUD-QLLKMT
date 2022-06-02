@@ -15,7 +15,8 @@ namespace GUI
     public partial class frmNhapLinhKien : Form
     {
         BLLPhieuNhap bllpn = new BLLPhieuNhap();
-        
+        BLLGioHang bllgio = new BLLGioHang();
+        BLLNPP bllnpp = new BLLNPP();
         public frmNhapLinhKien()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace GUI
         {
             //dgv_PhieuNhap.DataSource = bllpn.LoadPN();
             //dgv_ChiTietPhieuNhap.DataSource = bllpn.LoadCTPN();
-            dgv_PhieuNhap.DataSource = bllpn.LoadPhieuNhap(int.Parse(frmTrangChuNhanVien.manv));
+            dgv_PhieuNhap.DataSource = bllpn.LoadPhieuNhapNV(int.Parse(frmTrangChuNhanVien.manv));
             loaddata(frmQuanLySP.lstnhap);
             if (dgv_Chitiethoadon.Rows.Count >= 0)
             {
@@ -34,36 +35,103 @@ namespace GUI
             txt_MaNhanVien.Text = frmTrangChuNhanVien.manv;
 
 
+            cbb_npp.DataSource = bllnpp.loadnpp();
+            cbb_npp.DisplayMember = "MaNhaPhanPhoi";
+            cbb_npp.ValueMember = "MaNhaPhanPhoi";
+
+
         }
 
         private void btn_ThemPN_Click(object sender, EventArgs e)
         {
+            //ThemPhieuNhap cthdsp = new ThemPhieuNhap()
+            //{
+            //    //MaPhieuNhap = int.Parse(txt_MaPhieuNhap.Text),
+            //    MaNhanVien = int.Parse(txt_MaNhanVien.Text),
+            //    MaNhaPhanPhoi = int.Parse(cbb_npp.Text),
+            //    TongTien = int.Parse(txt_TongTien.Text),
+            //    NgayNhap = dateTimePicker1.Value
+            //};
+
+            //if (bllpn.postPN(cthdsp))
+            //{
+            //    MessageBox.Show("Thêm thành công");
+            //    dgv_PhieuNhap.DataSource = bllpn.LoadPN();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Thêm thất bại");
+            //}
+            loaddata(frmQuanLySP.lstnhap);
+
+            int a = 0;
             ThemPhieuNhap cthdsp = new ThemPhieuNhap()
             {
-                //MaPhieuNhap = int.Parse(txt_MaPhieuNhap.Text),
                 MaNhanVien = int.Parse(txt_MaNhanVien.Text),
                 MaNhaPhanPhoi = int.Parse(cbb_npp.Text),
-                TongTien = int.Parse(txt_TongTien.Text),
+                //TongTien = int.Parse(txt_TongTien.Text),
                 NgayNhap = dateTimePicker1.Value
             };
 
             if (bllpn.postPN(cthdsp))
             {
-                MessageBox.Show("Thêm thành công");
-                dgv_PhieuNhap.DataSource = bllpn.LoadPN();
+                dgv_PhieuNhap.DataSource = bllpn.LoadPhieuNhapNV(int.Parse(txt_MaNhanVien.Text));
+                int so = dgv_PhieuNhap.RowCount;
+                dgv_PhieuNhap.CurrentCell = dgv_PhieuNhap[1, so - 1];
+                txt_MaPhieuNhap.Text = dgv_PhieuNhap.CurrentRow.Cells[0].Value.ToString();
+                for (int x = 0; x < dgv_Chitiethoadon.Rows.Count; x++)
+                {
+                    ThemCTPN cthd = new ThemCTPN()
+                    {
+                        MaPhieuNhap = int.Parse(txt_MaPhieuNhap.Text),
+                        MaSanPham = int.Parse(dgv_Chitiethoadon.Rows[a].Cells[6].Value.ToString()),
+                        SoLuong = int.Parse(dgv_Chitiethoadon.Rows[a].Cells[4].Value.ToString()),
+                        TienNhap = int.Parse(dgv_Chitiethoadon.Rows[a].Cells[3].Value.ToString())
+
+                    };
+                    a++;
+                    if (bllpn.postCTPN(cthd))
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nhập hàng không thành công");
+                        break;
+                    }
+                }
+                MessageBox.Show("Nhập hàng thành công");
+                dgv_PhieuNhap.DataSource = bllpn.LoadPhieuNhapNV(int.Parse(txt_MaNhanVien.Text));
             }
-            else
-            {
-                MessageBox.Show("Thêm thất bại");
-            }
+
+
+            frmQuanLySP.lstnhap.Clear();
+
+
         }
+
+
+
 
         private void btn_XoaPN_Click(object sender, EventArgs e)
         {
-            if (bllpn.deletePN(int.Parse(txt_MaPhieuNhap.Text)))
+            //if (bllpn.deletePN(int.Parse(txt_MaPhieuNhap.Text)))
+            //{
+            //    MessageBox.Show("Xóa thành công");
+            //    dgv_PhieuNhap.DataSource = bllpn.LoadPN();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Xóa thất bại");
+            //    return;
+            //}
+
+
+            if (bllpn.deleteCTPN(int.Parse(txt_MaPhieuNhap.Text)))
             {
+                bllpn.deletePN(int.Parse(txt_MaPhieuNhap.Text));
                 MessageBox.Show("Xóa thành công");
-                dgv_PhieuNhap.DataSource = bllpn.LoadPN();
+                dgv_PhieuNhap.DataSource = bllpn.LoadPhieuNhapNV(int.Parse(txt_MaNhanVien.Text));
             }
             else
             {
@@ -74,24 +142,45 @@ namespace GUI
 
         private void btn_SuaPN_Click(object sender, EventArgs e)
         {
-            ThemPhieuNhap cthdsp = new ThemPhieuNhap()
+            //PhieuNhap cthdsp = new PhieuNhap()
+            //{
+            //    MaPhieuNhap = int.Parse(txt_MaPhieuNhap.Text),
+            //    MaNhanVien = int.Parse(txt_MaNhanVien.Text),
+            //    MaNhaPhanPhoi = int.Parse(cbb_npp.Text),
+            //    TongTien = int.Parse(txt_TongTien.Text),
+            //    NgayNhap = dateTimePicker1.Value
+            //};
+
+            //if (bllpn.putPN(cthdsp, int.Parse(txt_MaPhieuNhap.Text)))
+            //{
+            //    MessageBox.Show("Sửa thành công");
+            //    dgv_PhieuNhap.DataSource = bllpn.LoadPhieuNhapNV(int.Parse(txt_MaNhanVien.Text));
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Sửa thất bại");
+            //}
+            ThemPhieuNhap kh = new ThemPhieuNhap()
             {
-                MaPhieuNhap = int.Parse(txt_MaPhieuNhap.Text),
+
                 MaNhanVien = int.Parse(txt_MaNhanVien.Text),
                 MaNhaPhanPhoi = int.Parse(cbb_npp.Text),
-                TongTien = int.Parse(txt_TongTien.Text),
+                //TongTien = int.Parse(txt_TongTien.Text),
                 NgayNhap = dateTimePicker1.Value
             };
 
-            if (bllpn.putPN(cthdsp, int.Parse(txt_MaPhieuNhap.Text)))
+            if (bllpn.putPN(kh, int.Parse(txt_MaPhieuNhap.Text)))
             {
-                MessageBox.Show("Sửa thành công");
-                dgv_PhieuNhap.DataSource = bllpn.LoadPN();
+                MessageBox.Show(" Sửa thành công");
+                dgv_PhieuNhap.DataSource = bllpn.LoadPhieuNhapNV(int.Parse(txt_MaNhanVien.Text));
             }
             else
             {
                 MessageBox.Show("Sửa thất bại");
+                return;
             }
+           
+
         }
 
         private void btn_ThemCTPN_Click(object sender, EventArgs e)
@@ -99,7 +188,7 @@ namespace GUI
             ThemCTPN cthdsp = new ThemCTPN()
             {
                 MaPhieuNhap = int.Parse(txt_MaCTPN.Text),
-                MaSanPham = int.Parse(comboBox1.Text),
+                MaSanPham = int.Parse(cbb_MaSP.Text),
                 SoLuong =  int.Parse(txt_Soluong.Text),
                 TienNhap = int.Parse(txt_TienNhap.Text),
             };
@@ -148,7 +237,8 @@ namespace GUI
 
             if (fsf != null)
             {
-                return;
+                //return;
+                fsf.Close();
             }
             else
             {
@@ -181,8 +271,8 @@ namespace GUI
             {
                 DataGridViewRow row = this.dgv_PhieuNhap.Rows[e.RowIndex];
                 txt_MaPhieuNhap.Text = row.Cells[0].Value.ToString();
-                cbb_npp.Text = row.Cells[1].Value.ToString();
-                txt_MaNhanVien.Text = row.Cells[2].Value.ToString();
+                cbb_npp.Text = row.Cells[2].Value.ToString();
+                txt_MaNhanVien.Text = row.Cells[1].Value.ToString();
                 txt_TongTien.Text = row.Cells[3].Value.ToString();
                 dateTimePicker1.Text = dgv_PhieuNhap.Rows[e.RowIndex].Cells[4].Value.ToString();
 
@@ -193,6 +283,23 @@ namespace GUI
            
         }
 
+        private void dgv_ChiTietPhieuNhap_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv_ChiTietPhieuNhap.Rows[e.RowIndex];
+                txt_MaCTPN.Text = row.Cells[0].Value.ToString();
+                cbb_MaSP.Text = row.Cells[1].Value.ToString();
+                txt_Soluong.Text = row.Cells[2].Value.ToString();
+                txt_TienNhap.Text = row.Cells[3].Value.ToString();
+            
+
+                //dgv_ChiTietPhieuNhap.DataSource = bllpn.LoadCTPhieuNhap(int.Parse(row.Cells[0].Value.ToString()));
+
+            }
+        }
+
+   
 
 
 

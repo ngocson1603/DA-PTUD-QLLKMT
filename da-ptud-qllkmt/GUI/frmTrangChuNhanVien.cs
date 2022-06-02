@@ -35,13 +35,14 @@ namespace GUI
         {
             panel2.Controls.Clear();
 
-            //ActivateButton(sender);
-            frmQuanLySP frm2 = new frmQuanLySP();
-            frm2.TopLevel = false;
-            panel2.Controls.Add(frm2);
-            frm2.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            frm2.Dock = DockStyle.Fill;
-            frm2.Show();
+            ////ActivateButton(sender);
+            //frmQuanLySP frm2 = new frmQuanLySP();
+            //frm2.TopLevel = false;
+            //panel2.Controls.Add(frm2);
+            //frm2.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            //frm2.Dock = DockStyle.Fill;
+            //frm2.Show();
+            hp.motrangcon(new frmQuanLySP(), panel2);
         }
 
         private void btnNhanVien_Click(object sender, EventArgs e)
@@ -72,12 +73,14 @@ namespace GUI
         {
             panel2.Controls.Clear();
             //ActivateButton(sender);
-            frmNhapLinhKien frm2 = new frmNhapLinhKien();
-            frm2.TopLevel = false;
-            panel2.Controls.Add(frm2);
-            frm2.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            frm2.Dock = DockStyle.Fill;
-            frm2.Show();
+            //frmNhapLinhKien frm2 = new frmNhapLinhKien();
+            ////frm2.TopLevel = false;
+            ////panel2.Controls.Add(frm2);
+            //frm2.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            //frm2.Dock = DockStyle.Fill;
+            //frm2.Show();
+
+            hp.motrangcon(new frmNhapLinhKien(), panel2);
         }
 
         private void btn_BanSP_Click(object sender, EventArgs e)
