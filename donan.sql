@@ -26,6 +26,7 @@ CREATE TABLE [dbo].[SanPham](
 	[TenSanPham] [nvarchar](200),
 	[LoaiSanPham] int,
 	[HangSanXuat] int,
+	HSD int,
 	[GiaBan] int,
 	[TonKho] [int] NOT NULL,
 	[Image] nvarchar(100)
@@ -121,14 +122,17 @@ CREATE VIEW View_KH AS
 SELECT        MaKH, Gmail, Pass, TenKhachHang, Ngaysinh, GioiTinh, DiaChi, SDT
 FROM            dbo.KhachHang
 
+Go
 CREATE VIEW View_CTHDSP AS
 SELECT        MaHoaDon, MaSanPham, giaban, soluong, TongTien
 FROM            dbo.ChiTietHoaDon
 
+go
 CREATE VIEW View_CTHD AS
 SELECT        MaHoaDon, MaKH, NgayLapHoaDon, MaNhanVien
 FROM            dbo.HoaDon
 
+go
 CREATE VIEW View_BieuMauGio AS
 SELECT        dbo.SanPham.TenSanPham, dbo.ChiTietHoaDon.soluong, dbo.ChiTietHoaDon.giaban, dbo.HoaDon.NgayLapHoaDon, dbo.ChiTietHoaDon.MaHoaDon, dbo.ChiTietHoaDon.TongTien, dbo.KhachHang.MaKH
 FROM            dbo.ChiTietHoaDon INNER JOIN
@@ -136,6 +140,7 @@ FROM            dbo.ChiTietHoaDon INNER JOIN
                          dbo.SanPham ON dbo.ChiTietHoaDon.MaSanPham = dbo.SanPham.MaSanPham INNER JOIN
                          dbo.KhachHang ON dbo.HoaDon.MaKH = dbo.KhachHang.MaKH
 
+go
 CREATE VIEW View_GioHang AS
 SELECT        dbo.ChiTietHoaDon.MaHoaDon, dbo.ChiTietHoaDon.MaSanPham, dbo.KhachHang.MaKH, dbo.SanPham.TenSanPham, dbo.LoaiSanPham.TenLoaiSanPham, dbo.ChiTietHoaDon.soluong, dbo.ChiTietHoaDon.giaban, 
                          dbo.HoaDon.NgayLapHoaDon, dbo.SanPham.Image
@@ -146,10 +151,10 @@ FROM            dbo.ChiTietHoaDon INNER JOIN
                          dbo.LoaiSanPham ON dbo.SanPham.LoaiSanPham = dbo.LoaiSanPham.MaLoaiSanPham
 
 
-
+go
 CREATE VIEW View_SanPham AS
-SELECT MaSanPham, TenSanPham, LoaiSanPham, HangSanXuat, GiaBan, TonKho, Image
-FROM     dbo.SanPham
+SELECT        MaSanPham, TenSanPham, LoaiSanPham, HangSanXuat, HSD, GiaBan, TonKho, Image
+FROM            dbo.SanPham
 
 CREATE VIEW View_NhanVien AS
 SELECT MaNhanVien, TenNhanVien, NgaySinh, GioiTinh, NgayVaoLam, ChucVu, DiaChi, SoDT
@@ -343,12 +348,12 @@ INSERT [dbo].[Users] ([TenDangNhap], [Password],[MaNhanVien], [Quyen]) VALUES (N
 INSERT [dbo].[Users] ([TenDangNhap], [Password],[MaNhanVien], [Quyen]) VALUES (N'huy', N'huy',2, 0)
 
 SET IDENTITY_INSERT [SanPham] ON
-INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (1, N'Ban phim co AKKO', 10, 1, 1590000, 34,'ban-phim-co-akko-3108-v2-world-tour-tokyo.jpg')
-INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (2, N'Ban phim co Asus', 10, 6, 1590000, 100,'akko-3108-ds-matcha-red-bean-01.jpg')
-INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (3, N'Nguon GIGABYTE P1000GM', 8, 7, 4290000, 10,'PSU_GG_GP-P1000GM-5.jpg')
-INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (4, N'Intel Core i5 12600KF', 1, 3, 7990000, 10,'intelcorei5-12600k.jpg')
-INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (5, N'Laptop gaming Acer Predator Helios', 7, 5, 41990000, 10,'62709_laptop_acer_gaming_predator_helios_500_12.jpg')
-INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [LoaiSanPham], [HangSanXuat], [GiaBan], [TonKho], [Image]) VALUES (6, N'Chuot Akko AG325', 3, 1, 490000, 10,'akkoag325pink.jpg')
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [LoaiSanPham], [HangSanXuat],[HSD], [GiaBan], [TonKho], [Image]) VALUES (1, N'Ban phim co AKKO', 10, 1,24, 1590000, 34,'ban-phim-co-akko-3108-v2-world-tour-tokyo.jpg')
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [LoaiSanPham], [HangSanXuat],[HSD], [GiaBan], [TonKho], [Image]) VALUES (2, N'Ban phim co Asus', 10, 6,24, 1590000, 100,'akko-3108-ds-matcha-red-bean-01.jpg')
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [LoaiSanPham], [HangSanXuat],[HSD], [GiaBan], [TonKho], [Image]) VALUES (3, N'Nguon GIGABYTE P1000GM', 8, 7,24, 4290000, 10,'PSU_GG_GP-P1000GM-5.jpg')
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [LoaiSanPham], [HangSanXuat],[HSD], [GiaBan], [TonKho], [Image]) VALUES (4, N'Intel Core i5 12600KF', 1, 3,24, 7990000, 10,'intelcorei5-12600k.jpg')
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [LoaiSanPham], [HangSanXuat],[HSD], [GiaBan], [TonKho], [Image]) VALUES (5, N'Laptop gaming Acer Predator Helios', 7, 5,24, 41990000, 10,'62709_laptop_acer_gaming_predator_helios_500_12.jpg')
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [LoaiSanPham], [HangSanXuat],[HSD], [GiaBan], [TonKho], [Image]) VALUES (6, N'Chuot Akko AG325', 3, 1,24, 490000, 10,'akkoag325pink.jpg')
 SET IDENTITY_INSERT [SanPham] OFF
 
 SET IDENTITY_INSERT [PhieuNhap] ON
@@ -392,8 +397,3 @@ INSERT [dbo].[KetQua] ([TenTinhTrangOne],[TenTinhTrangTwo],[TenTinhTrangThree],[
 INSERT [dbo].[KetQua] ([TenTinhTrangOne],[TenTinhTrangTwo],[TenTinhTrangThree],[KetQua],[Anh]) VALUES (N'Máy tính tự bật lên khi đã shutdown',N'Máy tỏa nhiệt lớn, đôi lúc tắt đột ngột sau đó mở không lên nguồn',N'Bật nguồn nhưng ngắt nguồn',N'Lỗi Nguồn',N'loinguon.png')
 INSERT [dbo].[KetQua] ([TenTinhTrangOne],[TenTinhTrangTwo],[TenTinhTrangThree],[KetQua],[Anh]) VALUES (N'Máy tính thường xuyên bị đơ',N'laptop phát ra âm thanh ồn',N'Ổ cứng báo lỗi “Hard disk Corrupted”',N'Lỗi ổ cứng',N'loiocung.png')
 INSERT [dbo].[KetQua] ([TenTinhTrangOne],[TenTinhTrangTwo],[TenTinhTrangThree],[KetQua],[Anh]) VALUES (N'ổ đĩa chứa quá nhiều dữ liệu',N'ổ đĩa bị lỗi',N'bị virus hoặc sử dụng các phần mềm độc hại',N'Ổ đĩa chạy chậm',N'odiacham.png')
-
-
-
-
-delete from ChiTietPhieuNhap
