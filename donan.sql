@@ -131,6 +131,23 @@ create table [dbo].[SeriHD](
 
 	CONSTRAINT PK_serihd PRIMARY KEY (Seri,MaHoaDon)
 )
+create table [dbo].[BaoHanh](
+	MaBH int IDENTITY(1,1), 
+	NgayLap date,
+	MaNhanVien int,
+	MaHoaDon int,
+
+	CONSTRAINT PK_ddh PRIMARY KEY (MaBH)
+)
+
+create table [dbo].[CTBaoHanh](
+	MaBH int, 
+	MaSanPham int,
+	SoLuong int,
+	LyDo nvarchar(100),
+
+	CONSTRAINT PK_ddhct PRIMARY KEY (MaBH,MaSanPham)
+)
 
 CREATE VIEW View_KH AS
 SELECT        MaKH, Gmail, Pass, TenKhachHang, Ngaysinh, GioiTinh, DiaChi, SDT
@@ -221,7 +238,26 @@ go
 CREATE VIEW View_Anh AS
 SELECT        KetQua, Anh
 FROM            dbo.KetQua
+
+go
+CREATE VIEW View_BaoHanh AS
+SELECT        MaBH, NgayLap, MaNhanVien, MaHoaDon
+FROM            dbo.BaoHanh
+
+go
+CREATE VIEW View_BaoHanhCT AS
+SELECT        MaBH, MaSanPham, SoLuong, LyDo
+FROM            dbo.CTBaoHanh
 --KHOÁ NGOẠI
+ALTER TABLE [dbo].[BaoHanh]
+ADD CONSTRAINT FK_bh FOREIGN KEY(MaNhanVien) REFERENCES [dbo].[NhanVien](MaNhanVien)
+ALTER TABLE [dbo].[BaoHanh]
+ADD CONSTRAINT FK_bhhd FOREIGN KEY(MaHoaDon) REFERENCES [dbo].[HoaDon](MaHoaDon)
+ALTER TABLE [dbo].[CTBaoHanh]
+ADD CONSTRAINT FK_bhhdct FOREIGN KEY(MaBH) REFERENCES [dbo].[BaoHanh](MaBH)
+ALTER TABLE [dbo].[CTBaoHanh]
+ADD CONSTRAINT FK_bhhdctsp FOREIGN KEY(MaSanPham) REFERENCES [dbo].[SanPham](MaSanPham)
+
 ALTER TABLE [dbo].[SeriSP]
 ADD CONSTRAINT FK_seri FOREIGN KEY(MaSanPham) REFERENCES [dbo].[SanPham](MaSanPham)
 ALTER TABLE [dbo].[SeriHD]

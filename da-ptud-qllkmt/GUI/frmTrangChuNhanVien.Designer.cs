@@ -30,7 +30,6 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.btn_HeThong = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_NhaPhanPhoi = new System.Windows.Forms.Button();
@@ -45,6 +44,8 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.lblxinchao = new System.Windows.Forms.Label();
             this.lblLogo = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -54,7 +55,7 @@
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(165, 68);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(979, 534);
             this.panel2.TabIndex = 8;
@@ -63,6 +64,7 @@
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panelMenu.Controls.Add(this.button2);
+            this.panelMenu.Controls.Add(this.button3);
             this.panelMenu.Controls.Add(this.btn_HeThong);
             this.panelMenu.Controls.Add(this.button1);
             this.panelMenu.Controls.Add(this.btn_NhaPhanPhoi);
@@ -73,28 +75,10 @@
             this.panelMenu.Controls.Add(this.btnSanPham);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 68);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(2);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(165, 534);
             this.panelMenu.TabIndex = 6;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Image = global::GUI.Properties.Resources.settings;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 357);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(165, 51);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Hệ Thống";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // btn_HeThong
             // 
@@ -103,7 +87,7 @@
             this.btn_HeThong.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_HeThong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_HeThong.Location = new System.Drawing.Point(0, 306);
-            this.btn_HeThong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_HeThong.Margin = new System.Windows.Forms.Padding(2);
             this.btn_HeThong.Name = "btn_HeThong";
             this.btn_HeThong.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btn_HeThong.Size = new System.Drawing.Size(165, 51);
@@ -120,7 +104,7 @@
             this.button1.Image = global::GUI.Properties.Resources.log_out_icon_icons_com_50106;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(9, 470);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(51, 42);
             this.button1.TabIndex = 8;
@@ -134,7 +118,7 @@
             this.btn_NhaPhanPhoi.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_NhaPhanPhoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_NhaPhanPhoi.Location = new System.Drawing.Point(0, 255);
-            this.btn_NhaPhanPhoi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_NhaPhanPhoi.Margin = new System.Windows.Forms.Padding(2);
             this.btn_NhaPhanPhoi.Name = "btn_NhaPhanPhoi";
             this.btn_NhaPhanPhoi.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btn_NhaPhanPhoi.Size = new System.Drawing.Size(165, 51);
@@ -153,7 +137,7 @@
             this.btn_BanSP.Image = global::GUI.Properties.Resources.bar_chart;
             this.btn_BanSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_BanSP.Location = new System.Drawing.Point(0, 204);
-            this.btn_BanSP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_BanSP.Margin = new System.Windows.Forms.Padding(2);
             this.btn_BanSP.Name = "btn_BanSP";
             this.btn_BanSP.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btn_BanSP.Size = new System.Drawing.Size(165, 51);
@@ -172,7 +156,7 @@
             this.btn_NhapSP.Image = global::GUI.Properties.Resources.shopping_list;
             this.btn_NhapSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_NhapSP.Location = new System.Drawing.Point(0, 153);
-            this.btn_NhapSP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_NhapSP.Margin = new System.Windows.Forms.Padding(2);
             this.btn_NhapSP.Name = "btn_NhapSP";
             this.btn_NhapSP.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btn_NhapSP.Size = new System.Drawing.Size(165, 51);
@@ -191,7 +175,7 @@
             this.btnKhachHang.Image = global::GUI.Properties.Resources.value__1_;
             this.btnKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKhachHang.Location = new System.Drawing.Point(0, 102);
-            this.btnKhachHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.btnKhachHang.Name = "btnKhachHang";
             this.btnKhachHang.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnKhachHang.Size = new System.Drawing.Size(165, 51);
@@ -210,7 +194,7 @@
             this.btnNhanVien.Image = global::GUI.Properties.Resources.value;
             this.btnNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNhanVien.Location = new System.Drawing.Point(0, 51);
-            this.btnNhanVien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.btnNhanVien.Name = "btnNhanVien";
             this.btnNhanVien.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnNhanVien.Size = new System.Drawing.Size(165, 51);
@@ -230,7 +214,7 @@
             this.btnSanPham.Image = global::GUI.Properties.Resources.shopping_cart__1_;
             this.btnSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSanPham.Location = new System.Drawing.Point(0, 0);
-            this.btnSanPham.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSanPham.Margin = new System.Windows.Forms.Padding(2);
             this.btnSanPham.Name = "btnSanPham";
             this.btnSanPham.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnSanPham.Size = new System.Drawing.Size(165, 51);
@@ -251,7 +235,7 @@
             this.panelTitleBar.Controls.Add(this.panelLogo);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
-            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(2);
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(1144, 68);
             this.panelTitleBar.TabIndex = 7;
@@ -259,7 +243,7 @@
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(2, 68);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(150, 81);
             this.panel1.TabIndex = 2;
@@ -283,7 +267,7 @@
             this.panelLogo.Controls.Add(this.lblxinchao);
             this.panelLogo.Controls.Add(this.lblLogo);
             this.panelLogo.Location = new System.Drawing.Point(0, -7);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(2);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(165, 78);
             this.panelLogo.TabIndex = 1;
@@ -312,6 +296,42 @@
             this.lblLogo.TabIndex = 0;
             this.lblLogo.Text = "GEARVN\r\n";
             // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(0, 357);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Name = "button3";
+            this.button3.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.button3.Size = new System.Drawing.Size(165, 51);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "Bảo Hành";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button2.Image = global::GUI.Properties.Resources.settings;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 408);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(165, 51);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Hệ Thống";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // frmTrangChuNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -320,7 +340,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelTitleBar);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmTrangChuNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmTrangChuNhanVien";
@@ -353,5 +373,6 @@
         private System.Windows.Forms.Label lblLogo;
         private System.Windows.Forms.Button btn_HeThong;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

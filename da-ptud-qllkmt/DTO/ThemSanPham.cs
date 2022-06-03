@@ -37,5 +37,13 @@ namespace DTO
             this.anh = anh;
             this.ma = ma;
         }
+
+        public ThemSanPham(string tensp,int soluong,string anh,string ma)
+        {
+            this.tensp = tensp;
+            this.soluong = soluong;
+            this.anh = anh;
+            this.ma = ma;
+        }
     }
 }

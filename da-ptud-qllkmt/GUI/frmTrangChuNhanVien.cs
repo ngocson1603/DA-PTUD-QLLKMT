@@ -87,5 +87,11 @@ namespace GUI
 
             lblxinchao.Text = "Xin Chào : " + ten;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+            hp.motrangcon(new frmBaoHanh(), panel2);
+        }
     }
 }

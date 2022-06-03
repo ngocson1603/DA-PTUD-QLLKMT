@@ -70,6 +70,9 @@
     <Compile Include="QuanLyHoaDon.cs" />
     <Compile Include="QuanLyNhanVien.cs" />
     <Compile Include="QuanLySanPham.cs" />
+    <Compile Include="ThemBaoHanh.cs" />
+    <Compile Include="ThemBH.cs" />
+    <Compile Include="ThemCTBH.cs" />
     <Compile Include="ThemCTHD.cs" />
     <Compile Include="ThemCTPN.cs" />
     <Compile Include="ThemGioHang.cs" />
