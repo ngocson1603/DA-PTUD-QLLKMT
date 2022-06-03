@@ -76,6 +76,7 @@
     <Compile Include="DALNPP.cs" />
     <Compile Include="DALPhieuNhap.cs" />
     <Compile Include="DALSanPham.cs" />
+    <Compile Include="DALSeri.cs" />
     <Compile Include="DALTuVan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -103,11 +103,12 @@ namespace GUI
                 txt_TenSP.Text = row.Cells[1].Value.ToString();
                 txt_LoaiSP.Text = row.Cells[2].Value.ToString();
                 txt_HangSX.Text = row.Cells[3].Value.ToString();
-                txt_GiaBan.Text = row.Cells[4].Value.ToString();
-                txt_TonKho.Text = row.Cells[5].Value.ToString();
-                txt_Image.Text = row.Cells[6].Value.ToString();
+                txtHSD.Text = row.Cells[4].Value.ToString();
+                txt_GiaBan.Text = row.Cells[5].Value.ToString();
+                txt_TonKho.Text = row.Cells[6].Value.ToString();
+                txt_Image.Text = row.Cells[7].Value.ToString();
 
-                string direct = hp.Directory() + dgv_QLLK.CurrentRow.Cells[6].Value.ToString();
+                string direct = hp.Directory() + dgv_QLLK.CurrentRow.Cells[7].Value.ToString();
                 pictureBox1.Image = GetImg(direct, pictureBox1.Width, pictureBox1.Height);
 
                 btn_Xoa.Enabled = true;

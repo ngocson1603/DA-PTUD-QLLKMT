@@ -117,6 +117,20 @@ CREATE TABLE [dbo].[KetQua](
 	[KetQua] [nvarchar](100),
 	[Anh] [nvarchar](100)
 )
+create table [dbo].[SeriSP](
+	Seri nvarchar(50),
+	MaSanPham int,
+	TinhTrang bit,
+
+	CONSTRAINT PK_seri PRIMARY KEY (Seri)
+)
+
+create table [dbo].[SeriHD](
+	Seri nvarchar(50),
+	MaHoaDon int,
+
+	CONSTRAINT PK_serihd PRIMARY KEY (Seri,MaHoaDon)
+)
 
 CREATE VIEW View_KH AS
 SELECT        MaKH, Gmail, Pass, TenKhachHang, Ngaysinh, GioiTinh, DiaChi, SDT
@@ -156,49 +170,65 @@ CREATE VIEW View_SanPham AS
 SELECT        MaSanPham, TenSanPham, LoaiSanPham, HangSanXuat, HSD, GiaBan, TonKho, Image
 FROM            dbo.SanPham
 
+go
 CREATE VIEW View_NhanVien AS
 SELECT MaNhanVien, TenNhanVien, NgaySinh, GioiTinh, NgayVaoLam, ChucVu, DiaChi, SoDT
 FROM     dbo.NhanVien
 
+go
 CREATE VIEW View_HoaDon AS
 SELECT MaHoaDon, MaKH, NgayLapHoaDon, MaNhanVien
 FROM     dbo.HoaDon
 
+go
 CREATE VIEW View_PhieuNhap AS
 SELECT        MaPhieuNhap, MaNhanVien, MaNhaPhanPhoi, TongTien, NgayNhap
 FROM            dbo.PhieuNhap
 
+go
 CREATE VIEW View_CTPhieuNhap AS
 SELECT        MaPhieuNhap, MaSanPham, SoLuong, TienNhap
 FROM            dbo.ChiTietPhieuNhap
 
+go
 CREATE VIEW View_LSP AS
 SELECT        MaLoaiSanPham, TenLoaiSanPham
 FROM            dbo.LoaiSanPham
 
+go
 CREATE VIEW View_HSX AS
 SELECT        MaHangSanXuat, TenHangSanXuat
 FROM            dbo.HangSanXuat
 
+go
 CREATE VIEW View_NPP AS
 SELECT        MaNhaPhanPhoi, TenNhaPhanPhoi, DiaChi, SDT, Email
 FROM            dbo.NhaPhanPhoi
 
+go
 CREATE VIEW View_TinhTrangTwo AS
 SELECT        dbo.TinhTrangOne.TenTinhTrangOne, dbo.KetQua.TenTinhTrangTwo
 FROM            dbo.TinhTrangOne INNER JOIN
                          dbo.KetQua ON dbo.TinhTrangOne.TenTinhTrangOne = dbo.KetQua.TenTinhTrangOne
 
+go
 CREATE VIEW View_TinhTrangThree AS
 SELECT        dbo.TinhTrangOne.TenTinhTrangOne, dbo.TinhTrangTwo.TenTinhTrangTwo, dbo.KetQua.TenTinhTrangThree
 FROM            dbo.TinhTrangTwo INNER JOIN
                          dbo.KetQua ON dbo.TinhTrangTwo.TenTinhTrangTwo = dbo.KetQua.TenTinhTrangTwo INNER JOIN
                          dbo.TinhTrangOne ON dbo.KetQua.TenTinhTrangOne = dbo.TinhTrangOne.TenTinhTrangOne
-
+go
 CREATE VIEW View_Anh AS
 SELECT        KetQua, Anh
 FROM            dbo.KetQua
 --KHOÁ NGOẠI
+ALTER TABLE [dbo].[SeriSP]
+ADD CONSTRAINT FK_seri FOREIGN KEY(MaSanPham) REFERENCES [dbo].[SanPham](MaSanPham)
+ALTER TABLE [dbo].[SeriHD]
+ADD CONSTRAINT FK_serihd FOREIGN KEY(Seri) REFERENCES [dbo].[SeriSP](Seri)
+ALTER TABLE [dbo].[SeriHD]
+ADD CONSTRAINT FK_serihdsp FOREIGN KEY(MaHoaDon) REFERENCES [dbo].[HoaDon](MaHoaDon)
+
 ALTER TABLE [dbo].[KetQua]
 ADD CONSTRAINT FK_TinhTrang1 FOREIGN KEY(TenTinhTrangOne) REFERENCES [dbo].[TinhTrangOne](TenTinhTrangOne)
 ALTER TABLE [dbo].[KetQua]
@@ -300,6 +330,19 @@ BEGIN
 	SET TonKho = TonKho + (SELECT SoLuong FROM inserted)
 	WHERE MaSanPham=(SELECT MaSanPham FROM inserted)
 END
+
+--seri
+go
+CREATE TRIGGER updateseri
+ON SeriHD for insert
+as
+begin
+  BEGIN
+  UPDATE SeriSP
+  SET TinhTrang = 1 
+  WHERE Seri = (select Seri from inserted)
+  END
+end
 --------------------------------------------------------------------------------------------
 SET DATEFORMAT DMY
 
@@ -397,3 +440,19 @@ INSERT [dbo].[KetQua] ([TenTinhTrangOne],[TenTinhTrangTwo],[TenTinhTrangThree],[
 INSERT [dbo].[KetQua] ([TenTinhTrangOne],[TenTinhTrangTwo],[TenTinhTrangThree],[KetQua],[Anh]) VALUES (N'Máy tính tự bật lên khi đã shutdown',N'Máy tỏa nhiệt lớn, đôi lúc tắt đột ngột sau đó mở không lên nguồn',N'Bật nguồn nhưng ngắt nguồn',N'Lỗi Nguồn',N'loinguon.png')
 INSERT [dbo].[KetQua] ([TenTinhTrangOne],[TenTinhTrangTwo],[TenTinhTrangThree],[KetQua],[Anh]) VALUES (N'Máy tính thường xuyên bị đơ',N'laptop phát ra âm thanh ồn',N'Ổ cứng báo lỗi “Hard disk Corrupted”',N'Lỗi ổ cứng',N'loiocung.png')
 INSERT [dbo].[KetQua] ([TenTinhTrangOne],[TenTinhTrangTwo],[TenTinhTrangThree],[KetQua],[Anh]) VALUES (N'ổ đĩa chứa quá nhiều dữ liệu',N'ổ đĩa bị lỗi',N'bị virus hoặc sử dụng các phần mềm độc hại',N'Ổ đĩa chạy chậm',N'odiacham.png')
+
+INSERT [dbo].[SeriSP] ([Seri], [MaSanPham], [TinhTrang]) VALUES ('H1',1,0)
+INSERT [dbo].[SeriSP] ([Seri], [MaSanPham], [TinhTrang]) VALUES ('H2',1,0)
+INSERT [dbo].[SeriSP] ([Seri], [MaSanPham], [TinhTrang]) VALUES ('H3',1,0)
+INSERT [dbo].[SeriSP] ([Seri], [MaSanPham], [TinhTrang]) VALUES ('H4',1,0)
+INSERT [dbo].[SeriSP] ([Seri], [MaSanPham], [TinhTrang]) VALUES ('H5',1,0)
+INSERT [dbo].[SeriSP] ([Seri], [MaSanPham], [TinhTrang]) VALUES ('H6',1,0)
+INSERT [dbo].[SeriSP] ([Seri], [MaSanPham], [TinhTrang]) VALUES ('H7',1,0)
+INSERT [dbo].[SeriSP] ([Seri], [MaSanPham], [TinhTrang]) VALUES ('H8',1,0)
+INSERT [dbo].[SeriSP] ([Seri], [MaSanPham], [TinhTrang]) VALUES ('H9',1,0)
+INSERT [dbo].[SeriSP] ([Seri], [MaSanPham], [TinhTrang]) VALUES ('H10',1,0)
+INSERT [dbo].[SeriSP] ([Seri], [MaSanPham], [TinhTrang]) VALUES ('H11',1,0)
+INSERT [dbo].[SeriSP] ([Seri], [MaSanPham], [TinhTrang]) VALUES ('H12',1,0)
+INSERT [dbo].[SeriSP] ([Seri], [MaSanPham], [TinhTrang]) VALUES ('H13',1,0)
+INSERT [dbo].[SeriSP] ([Seri], [MaSanPham], [TinhTrang]) VALUES ('H14',1,0)
+INSERT [dbo].[SeriSP] ([Seri], [MaSanPham], [TinhTrang]) VALUES ('H15',1,0)

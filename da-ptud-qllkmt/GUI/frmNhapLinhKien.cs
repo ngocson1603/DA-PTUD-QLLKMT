@@ -253,6 +253,7 @@ namespace GUI
                 frm.txt_MaSP.Enabled = false;
                 frm.txt_TenSP.Enabled = false;
                 frm.txt_TonKho.Enabled = false;
+                frm.txtHSD.Enabled = false;
                 frm.btn_Sua.Visible = false;
                 frm.btn_Them.Visible = false;
                 frm.btn_Xoa.Visible = false;

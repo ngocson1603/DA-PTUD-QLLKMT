@@ -19,6 +19,7 @@ namespace GUI
         BLLGioHang bllgio = new BLLGioHang();
         BLLKhachHang bllkh = new BLLKhachHang();
         BLLDangNhap blldn = new BLLDangNhap();
+        BLLSeri bllsr = new BLLSeri();
 
         Helper hp = new Helper();
         public static string taikhoan;
@@ -100,16 +101,25 @@ namespace GUI
                             TongTien = int.Parse(dgv_Chitiethoadon.Rows[a].Cells[3].Value.ToString()) * int.Parse(dgv_Chitiethoadon.Rows[a].Cells[4].Value.ToString()),
 
                         };
-                        a++;
+                        
                         if (bllgio.postGioHangCTHD(cthd))
                         {
-
+                            for (int i = 0; i < int.Parse(dgv_Chitiethoadon.Rows[a].Cells[4].Value.ToString()); i++)
+                            {
+                                SeriHD sr = new SeriHD()
+                                {
+                                    Seri = bllsr.loadseritheoma(int.Parse(dgv_Chitiethoadon.Rows[a].Cells[6].Value.ToString())),
+                                    MaHoaDon = int.Parse(txt_MaHoaDon.Text),
+                                };
+                                bllsr.postSP(sr);
+                            }
                         }
                         else
                         {
                             MessageBox.Show("Mua hàng không thành công");
                             break;
                         }
+                        a++;
                     }
                     MessageBox.Show("Mua hàng thành công");
                 }
@@ -263,6 +273,7 @@ namespace GUI
                 frm.txt_MaSP.Enabled = false;
                 frm.txt_TenSP.Enabled = false;
                 frm.txt_TonKho.Enabled = false;
+                frm.txtHSD.Enabled = false;
                 frm.btn_Sua.Visible = false;
                 frm.btn_Them.Visible = false;
                 frm.btn_Xoa.Visible = false;

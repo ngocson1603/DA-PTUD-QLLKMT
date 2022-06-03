@@ -26,11 +26,22 @@ namespace DTO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-D97AHVVU\\SQLEXPRESS;Initial Catalog=QL_CUAHANGLINHKIENMAYTINH;" +
-            "User ID=sa;Password=sa123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ADMIN\\SQLEXPRESS;Initial Catalog=QL_CUAHANGLINHKIENMAYTINH;User ID=sa" +
+            ";Password=123")]
         public string QL_CUAHANGLINHKIENMAYTINHConnectionString {
             get {
                 return ((string)(this["QL_CUAHANGLINHKIENMAYTINHConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ADMIN\\SQLEXPRESS;Initial Catalog=QL_CUAHANGLINHKIENMAYTINH;User ID=sa" +
+            "")]
+        public string QL_CUAHANGLINHKIENMAYTINHConnectionString1 {
+            get {
+                return ((string)(this["QL_CUAHANGLINHKIENMAYTINHConnectionString1"]));
             }
         }
     }

@@ -34,89 +34,43 @@ namespace GUI
         private void btnSanPham_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
-
-            ////ActivateButton(sender);
-            //frmQuanLySP frm2 = new frmQuanLySP();
-            //frm2.TopLevel = false;
-            //panel2.Controls.Add(frm2);
-            //frm2.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //frm2.Dock = DockStyle.Fill;
-            //frm2.Show();
             hp.motrangcon(new frmQuanLySP(), panel2);
         }
 
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
-            //ActivateButton(sender);
-            frmNhanVien frm2 = new frmNhanVien();
-            frm2.TopLevel = false;
-            panel2.Controls.Add(frm2);
-            frm2.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            frm2.Dock = DockStyle.Fill;
-            frm2.Show();
+            hp.motrangcon(new frmNhanVien(), panel2);
         }
 
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
-            //ActivateButton(sender);
-            frmKhachHang frm2 = new frmKhachHang();
-            frm2.TopLevel = false;
-            panel2.Controls.Add(frm2);
-            frm2.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            frm2.Dock = DockStyle.Fill;
-            frm2.Show();
+            hp.motrangcon(new frmKhachHang(), panel2);
         }
 
         private void btn_NhapSP_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
-            //ActivateButton(sender);
-            //frmNhapLinhKien frm2 = new frmNhapLinhKien();
-            ////frm2.TopLevel = false;
-            ////panel2.Controls.Add(frm2);
-            //frm2.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //frm2.Dock = DockStyle.Fill;
-            //frm2.Show();
-
             hp.motrangcon(new frmNhapLinhKien(), panel2);
         }
 
         private void btn_BanSP_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
-            //ActivateButton(sender);
-            frmBanSanPham frm2 = new frmBanSanPham();
-            frm2.TopLevel = false;
-            panel2.Controls.Add(frm2);
-            frm2.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            frm2.Dock = DockStyle.Fill;
-            frm2.Show();
+            hp.motrangcon(new frmBanSanPham(), panel2);
         }
 
         private void btn_NhaPhanPhoi_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
-            //ActivateButton(sender);
-            frmNPP frm2 = new frmNPP();
-            frm2.TopLevel = false;
-            panel2.Controls.Add(frm2);
-            frm2.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            frm2.Dock = DockStyle.Fill;
-            frm2.Show();
+            hp.motrangcon(new frmNPP(), panel2);
         }
 
         private void btn_HeThong_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
-            //ActivateButton(sender);
-            frmLSPHSX frm2 = new frmLSPHSX();
-            frm2.TopLevel = false;
-            panel2.Controls.Add(frm2);
-            frm2.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            frm2.Dock = DockStyle.Fill;
-            frm2.Show();
+            hp.motrangcon(new frmLSPHSX(), panel2);
         }
         public static Panel pnltrang;
         public static string manv;
