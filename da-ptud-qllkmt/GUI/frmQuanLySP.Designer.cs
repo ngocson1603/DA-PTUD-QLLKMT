@@ -35,11 +35,9 @@
             this.txt_TonKho = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_GiaBan = new System.Windows.Forms.TextBox();
-            this.txt_LoaiSP = new System.Windows.Forms.TextBox();
             this.txt_MaSP = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_TenSP = new System.Windows.Forms.TextBox();
-            this.txt_HangSX = new System.Windows.Forms.TextBox();
             this.lblhoten = new System.Windows.Forms.Label();
             this.lblmalop = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,6 +56,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtHSD = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txt_LoaiSP = new System.Windows.Forms.ComboBox();
+            this.txt_HangSX = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_QLLK)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -84,7 +84,7 @@
             // btn
             // 
             this.btn.Location = new System.Drawing.Point(401, 206);
-            this.btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn.Margin = new System.Windows.Forms.Padding(2);
             this.btn.Name = "btn";
             this.btn.Size = new System.Drawing.Size(120, 31);
             this.btn.TabIndex = 80;
@@ -115,13 +115,6 @@
             this.txt_GiaBan.Size = new System.Drawing.Size(121, 20);
             this.txt_GiaBan.TabIndex = 76;
             // 
-            // txt_LoaiSP
-            // 
-            this.txt_LoaiSP.Location = new System.Drawing.Point(401, 57);
-            this.txt_LoaiSP.Name = "txt_LoaiSP";
-            this.txt_LoaiSP.Size = new System.Drawing.Size(121, 20);
-            this.txt_LoaiSP.TabIndex = 75;
-            // 
             // txt_MaSP
             // 
             this.txt_MaSP.Enabled = false;
@@ -143,17 +136,10 @@
             // txt_TenSP
             // 
             this.txt_TenSP.Location = new System.Drawing.Point(129, 94);
-            this.txt_TenSP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_TenSP.Margin = new System.Windows.Forms.Padding(2);
             this.txt_TenSP.Name = "txt_TenSP";
             this.txt_TenSP.Size = new System.Drawing.Size(121, 20);
             this.txt_TenSP.TabIndex = 72;
-            // 
-            // txt_HangSX
-            // 
-            this.txt_HangSX.Location = new System.Drawing.Point(401, 92);
-            this.txt_HangSX.Name = "txt_HangSX";
-            this.txt_HangSX.Size = new System.Drawing.Size(121, 20);
-            this.txt_HangSX.TabIndex = 71;
             // 
             // lblhoten
             // 
@@ -197,7 +183,7 @@
             this.dgv_QLLK.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_QLLK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_QLLK.Location = new System.Drawing.Point(9, 284);
-            this.dgv_QLLK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_QLLK.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_QLLK.Name = "dgv_QLLK";
             this.dgv_QLLK.RowTemplate.Height = 24;
             this.dgv_QLLK.Size = new System.Drawing.Size(907, 273);
@@ -314,7 +300,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(534, 24);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(364, 256);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -337,12 +323,30 @@
             this.label4.TabIndex = 84;
             this.label4.Text = "HSD";
             // 
+            // txt_LoaiSP
+            // 
+            this.txt_LoaiSP.FormattingEnabled = true;
+            this.txt_LoaiSP.Location = new System.Drawing.Point(400, 53);
+            this.txt_LoaiSP.Name = "txt_LoaiSP";
+            this.txt_LoaiSP.Size = new System.Drawing.Size(121, 21);
+            this.txt_LoaiSP.TabIndex = 86;
+            // 
+            // txt_HangSX
+            // 
+            this.txt_HangSX.FormattingEnabled = true;
+            this.txt_HangSX.Location = new System.Drawing.Point(400, 94);
+            this.txt_HangSX.Name = "txt_HangSX";
+            this.txt_HangSX.Size = new System.Drawing.Size(121, 21);
+            this.txt_HangSX.TabIndex = 87;
+            // 
             // frmQuanLySP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumTurquoise;
             this.ClientSize = new System.Drawing.Size(925, 567);
+            this.Controls.Add(this.txt_HangSX);
+            this.Controls.Add(this.txt_LoaiSP);
             this.Controls.Add(this.txtHSD);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox1);
@@ -353,18 +357,16 @@
             this.Controls.Add(this.txt_TonKho);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txt_GiaBan);
-            this.Controls.Add(this.txt_LoaiSP);
             this.Controls.Add(this.txt_MaSP);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_TenSP);
-            this.Controls.Add(this.txt_HangSX);
             this.Controls.Add(this.lblhoten);
             this.Controls.Add(this.lblmalop);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblmakhoa);
             this.Controls.Add(this.dgv_QLLK);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmQuanLySP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmQuanLySP";
@@ -402,15 +404,15 @@
         public System.Windows.Forms.Button btn;
         public System.Windows.Forms.TextBox txt_TonKho;
         public System.Windows.Forms.TextBox txt_GiaBan;
-        public System.Windows.Forms.TextBox txt_LoaiSP;
         public System.Windows.Forms.TextBox txt_MaSP;
         public System.Windows.Forms.TextBox txt_TenSP;
-        public System.Windows.Forms.TextBox txt_HangSX;
         public System.Windows.Forms.ToolStripButton btn_Sua;
         public System.Windows.Forms.ToolStripButton btn_Xoa;
         public System.Windows.Forms.ToolStripButton btn_Them;
         public System.Windows.Forms.ToolStripButton btn_nhapvao;
         public System.Windows.Forms.TextBox txtHSD;
         private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.ComboBox txt_LoaiSP;
+        public System.Windows.Forms.ComboBox txt_HangSX;
     }
 }

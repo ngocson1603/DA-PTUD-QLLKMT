@@ -12,6 +12,14 @@ namespace BLL
     {
         DALLSPHSX dallsp = new DALLSPHSX();
         public BLLLSPHSX() { }
+        public string tenl(int ma)
+        {
+            return dallsp.loadtenlsp(ma);
+        }
+        public string tenh(int ma)
+        {
+            return dallsp.loadtenhsx(ma);
+        }
         public List<LoaiSanPham> loadlsp()
         {
             return dallsp.GetDanhSachlsp();

@@ -16,6 +16,7 @@ namespace GUI
     {
         Helper hp = new Helper();
         BLLSanPham bllsanpham = new BLLSanPham();
+        BLLLSPHSX bll = new BLLLSPHSX();
         QL_CUAHANGLINHKIENMAYTINHDataContext qllk = new QL_CUAHANGLINHKIENMAYTINHDataContext();
         public frmQuanLySP()
         {
@@ -25,6 +26,15 @@ namespace GUI
         private void frmQuanLySP_Load(object sender, EventArgs e)
         {
             dgv_QLLK.DataSource = bllsanpham.LoadSanPham();
+            txt_LoaiSP.DataSource = bll.loadlsp();
+            txt_LoaiSP.DisplayMember = "TenLoaiSanPham";
+            txt_LoaiSP.ValueMember = "MaLoaiSanPham";
+            txt_LoaiSP.SelectedIndex = 0;
+
+            txt_HangSX.DataSource = bll.loadhsx();
+            txt_HangSX.DisplayMember = "TenHangSanXuat";
+            txt_HangSX.ValueMember = "MaHangSanXuat";
+            txt_HangSX.SelectedIndex = 0;
         }
         public OpenFileDialog openFileDialog = new OpenFileDialog();
         private void btn_Them_Click(object sender, EventArgs e)
@@ -47,8 +57,8 @@ namespace GUI
                 {
                     //MaSanPham = int.Parse(txt_MaSP.Text),
                     TenSanPham = txt_TenSP.Text,
-                    LoaiSanPham = int.Parse(txt_LoaiSP.Text),
-                    HangSanXuat = int.Parse(txt_HangSX.Text),
+                    LoaiSanPham = int.Parse(txt_LoaiSP.SelectedValue.ToString()),
+                    HangSanXuat = int.Parse(txt_HangSX.SelectedValue.ToString()),
                     GiaBan = int.Parse(txt_GiaBan.Text),
                     TonKho = int.Parse(txt_TonKho.Text),
                     Image = txt_Image.Text
@@ -72,8 +82,8 @@ namespace GUI
                 {
                     MaSanPham = int.Parse(txt_MaSP.Text),
                     TenSanPham = txt_TenSP.Text,
-                    LoaiSanPham = int.Parse(txt_LoaiSP.Text),
-                    HangSanXuat = int.Parse(txt_HangSX.Text),
+                    LoaiSanPham = int.Parse(txt_LoaiSP.SelectedValue.ToString()),
+                    HangSanXuat = int.Parse(txt_HangSX.SelectedValue.ToString()),
                     GiaBan = int.Parse(txt_GiaBan.Text),
                     TonKho = int.Parse(txt_TonKho.Text),
                     Image = txt_Image.Text
@@ -101,8 +111,10 @@ namespace GUI
                 txt_MaSP.Text = row.Cells[0].Value.ToString();
                 
                 txt_TenSP.Text = row.Cells[1].Value.ToString();
-                txt_LoaiSP.Text = row.Cells[2].Value.ToString();
-                txt_HangSX.Text = row.Cells[3].Value.ToString();
+
+
+                txt_LoaiSP.Text = bll.tenl(int.Parse(row.Cells[2].Value.ToString()));
+                txt_HangSX.Text = bll.tenh(int.Parse(row.Cells[3].Value.ToString()));
                 txtHSD.Text = row.Cells[4].Value.ToString();
                 txt_GiaBan.Text = row.Cells[5].Value.ToString();
                 txt_TonKho.Text = row.Cells[6].Value.ToString();
@@ -166,8 +178,8 @@ namespace GUI
             {
                 //MaSanPham = int.Parse(txt_MaSP.Text),
                 TenSanPham = txt_TenSP.Text,
-                LoaiSanPham = int.Parse(txt_LoaiSP.Text),
-                HangSanXuat = int.Parse(txt_HangSX.Text),
+                LoaiSanPham = int.Parse(txt_LoaiSP.SelectedValue.ToString()),
+                HangSanXuat = int.Parse(txt_HangSX.SelectedValue.ToString()),
                 GiaBan = int.Parse(txt_GiaBan.Text),
                 TonKho = int.Parse(txt_TonKho.Text),
                 Image = txt_Image.Text
@@ -218,8 +230,8 @@ namespace GUI
             string ma = txt_MaSP.Text;
             int tonkho = so;
             string tensp = txt_TenSP.Text;
-            string loai = txt_LoaiSP.Text;
-            string hang = txt_HangSX.Text;
+            string loai = txt_LoaiSP.SelectedValue.ToString();
+            string hang = txt_HangSX.SelectedValue.ToString();
             string gia = txt_GiaBan.Text;
             string anh = txt_Image.Text;
             if (lstsp.Any(n => n.ma == ma))
@@ -259,8 +271,8 @@ namespace GUI
             string ma = txt_MaSP.Text;
             
             string tensp = txt_TenSP.Text;
-            string loai = txt_LoaiSP.Text;
-            string hang = txt_HangSX.Text;
+            string loai = txt_LoaiSP.SelectedValue.ToString();
+            string hang = txt_HangSX.SelectedValue.ToString();
             string gia = txt_GiaBan.Text;
             string anh = txt_Image.Text;
            

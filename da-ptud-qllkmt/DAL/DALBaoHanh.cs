@@ -34,6 +34,16 @@ namespace DAL
         {
             return qllk.BaoHanhs.OrderByDescending(t => t.MaBH).First().MaBH;
         }
+        public string getngayhd(int ma)
+        {
+            var ngay = (from lk in qllk.HoaDons where lk.MaHoaDon == ma select lk.NgayLapHoaDon).FirstOrDefault();
+            return ngay.ToString();
+        }
+        public string gethsd(int ma)
+        {
+            var hsd = (from lk in qllk.SanPhams where lk.MaSanPham == ma select lk.HSD).FirstOrDefault();
+            return hsd.ToString();
+        }
         //bao hanh
         public List<View_BaoHanh> GetWatchListBH()
         {

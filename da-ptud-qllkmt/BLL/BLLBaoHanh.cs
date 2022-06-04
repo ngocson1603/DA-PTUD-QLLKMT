@@ -25,6 +25,10 @@ namespace BLL
         {
             return dalbh.GetWatchListBH();
         }
+        public List<View_BaoHanhCT> getctbh(int ma)
+        {
+            return dalbh.GetWatchListCT(ma);
+        }
         public string getten(int ma)
         {
             return dalbh.gettensp(ma);
@@ -32,6 +36,14 @@ namespace BLL
         public int laodmacuoicung()
         {
             return dalbh.loadMaCuoiCung();
+        }
+        public string getngay(int ma)
+        {
+            return dalbh.getngayhd(ma);
+        }
+        public string loadhsd(int ma)
+        {
+            return dalbh.gethsd(ma);
         }
         //bao hanh
         public bool thembh(ThemBaoHanh cthd)

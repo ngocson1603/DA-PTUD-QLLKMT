@@ -13,6 +13,18 @@ namespace DAL
         private ApiService _apiService = new ApiService();
         QL_CUAHANGLINHKIENMAYTINHDataContext qllk = new QL_CUAHANGLINHKIENMAYTINHDataContext();
         public DALLSPHSX() { }
+
+        public string loadtenlsp(int ma)
+        {
+            var ngay = (from lk in qllk.LoaiSanPhams where lk.MaLoaiSanPham == ma select lk.TenLoaiSanPham).FirstOrDefault();
+            return ngay.ToString();
+        }
+
+        public string loadtenhsx(int ma)
+        {
+            var ngay = (from lk in qllk.HangSanXuats where lk.MaHangSanXuat == ma select lk.TenHangSanXuat).FirstOrDefault();
+            return ngay.ToString();
+        }
         public List<LoaiSanPham> GetDanhSachlsp()
         {
             var response = _apiService.GetResponse(string.Format("api/LSP/"));

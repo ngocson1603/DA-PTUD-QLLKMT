@@ -45,6 +45,7 @@ namespace GUI
             comboBox2.DataSource = bllbh.getmabh();
             comboBox2.DisplayMember = "MaBH";
             comboBox2.ValueMember = "MaBH";
+            //comboBox2.SelectedIndex = 0;
 
             txtManv.Text = frmTrangChuNhanVien.manv;
             loaddata(frmBaoHanh.lstspbh);
@@ -63,34 +64,59 @@ namespace GUI
             }
         }
         public static BindingList<ThemBH> lstspbh = new BindingList<ThemBH>();
+
+        public int thang(DateTime compareTo, DateTime now)
+        {
+            int nMonths = 0;
+            if (now.Year == compareTo.Year)
+                nMonths = now.Month - compareTo.Month;
+            else
+                nMonths = (12 - compareTo.Month) + now.Month;
+            return nMonths;
+        }
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            string ma = txtMaSP.Text;
-            int tonkho = 1;
-            string lydo = richTextBox1.Text;
-            string ten = bllbh.getten(int.Parse(ma));
+            
 
-            if (lstspbh.Any(n => n.ma == ma))
+            DateTime compareTo = DateTime.Parse(bllbh.getngay(int.Parse(comboBox1.Text)));
+            DateTime now = DateTime.Now;
+            int so = thang(compareTo, now);
+            int hsd = int.Parse(bllbh.loadhsd(int.Parse(txtMaSP.Text)));
+
+            if (so > hsd)
             {
-                MessageBox.Show("Đã thêm");
-                var item = lstspbh.SingleOrDefault(x => x.ma == ma);
-
-                if (item.soluong == int.Parse(dataGridView2.CurrentRow.Cells[3].Value.ToString()) - 1)
-                {
-                    MessageBox.Show("Hiện tại số lượng sản phẩm của khách đã hết");
-                    return;
-                }
-                else
-                {
-                    item.soluong++;
-                }
+                MessageBox.Show("Sản phẩm đã hết bảo hành");
+                return;
             }
             else
             {
-                MessageBox.Show("Xong");
+                string ma = txtMaSP.Text;
+                int tonkho = 1;
+                string lydo = richTextBox1.Text;
+                string ten = bllbh.getten(int.Parse(ma));
 
-                ThemBH sp = new ThemBH(ten, tonkho, ma, lydo);
-                lstspbh.Add(sp);
+                if (lstspbh.Any(n => n.ma == ma))
+                {
+                    MessageBox.Show("Đã thêm");
+                    var item = lstspbh.SingleOrDefault(x => x.ma == ma);
+
+                    if (item.soluong == int.Parse(dataGridView2.CurrentRow.Cells[3].Value.ToString()) - 1)
+                    {
+                        MessageBox.Show("Hiện tại số lượng sản phẩm của khách đã hết");
+                        return;
+                    }
+                    else
+                    {
+                        item.soluong++;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Xong");
+
+                    ThemBH sp = new ThemBH(ten, tonkho, ma, lydo);
+                    lstspbh.Add(sp);
+                }
             }
         }
 
@@ -104,6 +130,7 @@ namespace GUI
             loaddata(frmBaoHanh.lstspbh);
             if (MessageBox.Show("Bạn có muốn bảo hành không!", "Bảo Hành", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) == DialogResult.OK)
             {
+
                 int a = 0;
                 ThemBaoHanh cthdsp = new ThemBaoHanh()
                 {
@@ -158,6 +185,16 @@ namespace GUI
             comboBox2.DataSource = bllbh.getmabh();
             comboBox2.DisplayMember = "MaBH";
             comboBox2.ValueMember = "MaBH";
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dataGridView3.DataSource = bllbh.getctbh(int.Parse(comboBox2.Text));
         }
     }
 }
