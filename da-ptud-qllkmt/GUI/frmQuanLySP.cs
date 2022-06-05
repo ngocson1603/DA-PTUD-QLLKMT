@@ -59,6 +59,7 @@ namespace GUI
                     TenSanPham = txt_TenSP.Text,
                     LoaiSanPham = int.Parse(txt_LoaiSP.SelectedValue.ToString()),
                     HangSanXuat = int.Parse(txt_HangSX.SelectedValue.ToString()),
+                    HSD = int.Parse(txtHSD.Text),
                     GiaBan = int.Parse(txt_GiaBan.Text),
                     TonKho = int.Parse(txt_TonKho.Text),
                     Image = txt_Image.Text
@@ -80,10 +81,11 @@ namespace GUI
             {
                 QuanLySanPham kh = new QuanLySanPham()
                 {
-                    MaSanPham = int.Parse(txt_MaSP.Text),
+                    //MaSanPham = int.Parse(txt_MaSP.Text),
                     TenSanPham = txt_TenSP.Text,
                     LoaiSanPham = int.Parse(txt_LoaiSP.SelectedValue.ToString()),
                     HangSanXuat = int.Parse(txt_HangSX.SelectedValue.ToString()),
+                    HSD = int.Parse(txtHSD.Text),
                     GiaBan = int.Parse(txt_GiaBan.Text),
                     TonKho = int.Parse(txt_TonKho.Text),
                     Image = txt_Image.Text
@@ -180,6 +182,7 @@ namespace GUI
                 TenSanPham = txt_TenSP.Text,
                 LoaiSanPham = int.Parse(txt_LoaiSP.SelectedValue.ToString()),
                 HangSanXuat = int.Parse(txt_HangSX.SelectedValue.ToString()),
+                HSD = int.Parse(txtHSD.Text),
                 GiaBan = int.Parse(txt_GiaBan.Text),
                 TonKho = int.Parse(txt_TonKho.Text),
                 Image = txt_Image.Text
