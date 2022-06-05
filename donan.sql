@@ -248,6 +248,14 @@ go
 CREATE VIEW View_BaoHanhCT AS
 SELECT        MaBH, MaSanPham, SoLuong, LyDo
 FROM            dbo.CTBaoHanh
+
+go
+CREATE VIEW View_BieuMauBaoHanh AS
+SELECT        dbo.SanPham.TenSanPham, dbo.ChiTietHoaDon.soluong, dbo.ChiTietHoaDon.giaban, dbo.HoaDon.NgayLapHoaDon, dbo.HoaDon.MaHoaDon, dbo.ChiTietHoaDon.TongTien, dbo.HoaDon.MaKH, dbo.SeriHD.Seri
+FROM            dbo.ChiTietHoaDon INNER JOIN
+                         dbo.HoaDon ON dbo.ChiTietHoaDon.MaHoaDon = dbo.HoaDon.MaHoaDon INNER JOIN
+                         dbo.SanPham ON dbo.ChiTietHoaDon.MaSanPham = dbo.SanPham.MaSanPham INNER JOIN
+                         dbo.SeriHD ON dbo.HoaDon.MaHoaDon = dbo.SeriHD.MaHoaDon
 --KHOÁ NGOẠI
 ALTER TABLE [dbo].[BaoHanh]
 ADD CONSTRAINT FK_bh FOREIGN KEY(MaNhanVien) REFERENCES [dbo].[NhanVien](MaNhanVien)
