@@ -20,6 +20,10 @@ namespace BLL
             return dalsanpham.GetWatchListSanPham();
         }
 
+        public List<SanPham> GetSLTheoDK()
+        {
+            return dalsanpham.GetSLTheoDK();
+        }
 
         // them xoa sua
 
@@ -38,6 +42,14 @@ namespace BLL
         }
         
 
+        public string LayTenSanPhamTheoMa(int maSP)
+        {
+            return dalsanpham.LayTenSanPhamTheoMa(maSP);
+        }
 
+        public SanPham LayThongTinSanPhamTheoMa(int maSP)
+        {
+            return dalsanpham.LayThongTinSanPhamTheoMa(maSP);
+        }
     }
 }

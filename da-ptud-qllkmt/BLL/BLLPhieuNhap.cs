@@ -67,5 +67,16 @@ namespace BLL
         {
             return dalphieunhap.DeleteCTPN(ma);
         }
+
+        public int GetLastPhieuNhap()
+        {
+            return dalphieunhap.GetLastPhieuNhap();
+        }
+
+        // bieu mau
+        public List<View_BieuMauNhapHang> LoadBieuMauNhapHang(int ma)
+        {
+            return dalphieunhap.LoadBieuMauNhap(ma);
+        }
     }
 }

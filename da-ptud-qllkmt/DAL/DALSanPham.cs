@@ -23,6 +23,13 @@ namespace DAL
 
         }
 
+        #region đonathang
+        public List<SanPham> GetSLTheoDK()
+        {
+            return qllk.SanPhams.Where(t => t.TonKho < 10).ToList();
+        }
+        #endregion
+
         public List<View_SanPham> GetWatchListSanPham()
         {
             var response = _apiService.GetResponse("api/SanPham/");
@@ -64,6 +71,14 @@ namespace DAL
         }
 
 
+        public string LayTenSanPhamTheoMa(int maSP)
+        {
+            return qllk.SanPhams.Where(t => t.MaSanPham == maSP).Select(t => t.TenSanPham).First();
+        }
 
+        public SanPham LayThongTinSanPhamTheoMa(int maSP)
+        {
+            return qllk.SanPhams.Where(t => t.MaSanPham == maSP).First();
+        }
     }
 }

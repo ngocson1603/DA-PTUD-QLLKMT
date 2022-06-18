@@ -31,17 +31,17 @@ namespace GUI
         {
             this.components = new System.ComponentModel.Container();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.cboTT3 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cboTT2 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cboTT1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cboTT2 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cboTT3 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cboTT1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -65,6 +65,62 @@ namespace GUI
             this.guna2GroupBox1.TabIndex = 0;
             this.guna2GroupBox1.Text = "Tình trạng máy tính";
             // 
+            // cboTT3
+            // 
+            this.cboTT3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboTT3.BackColor = System.Drawing.Color.Transparent;
+            this.cboTT3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboTT3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTT3.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboTT3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboTT3.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboTT3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cboTT3.ItemHeight = 30;
+            this.cboTT3.Location = new System.Drawing.Point(23, 347);
+            this.cboTT3.Name = "cboTT3";
+            this.cboTT3.Size = new System.Drawing.Size(571, 36);
+            this.cboTT3.TabIndex = 2;
+            // 
+            // cboTT2
+            // 
+            this.cboTT2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboTT2.BackColor = System.Drawing.Color.Transparent;
+            this.cboTT2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboTT2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTT2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboTT2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboTT2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboTT2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cboTT2.ItemHeight = 30;
+            this.cboTT2.Location = new System.Drawing.Point(23, 235);
+            this.cboTT2.Name = "cboTT2";
+            this.cboTT2.Size = new System.Drawing.Size(571, 36);
+            this.cboTT2.TabIndex = 1;
+            this.cboTT2.SelectedIndexChanged += new System.EventHandler(this.cboTT2_SelectedIndexChanged_1);
+            // 
+            // cboTT1
+            // 
+            this.cboTT1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboTT1.BackColor = System.Drawing.Color.Transparent;
+            this.cboTT1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboTT1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTT1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboTT1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboTT1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboTT1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cboTT1.ItemHeight = 30;
+            this.cboTT1.Location = new System.Drawing.Point(23, 134);
+            this.cboTT1.Name = "cboTT1";
+            this.cboTT1.Size = new System.Drawing.Size(571, 36);
+            this.cboTT1.TabIndex = 0;
+            this.cboTT1.SelectedIndexChanged += new System.EventHandler(this.cboTT1_SelectedIndexChanged_1);
+            // 
             // guna2GroupBox2
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.guna2GroupBox2, 2);
@@ -78,6 +134,26 @@ namespace GUI
             this.guna2GroupBox2.Size = new System.Drawing.Size(635, 519);
             this.guna2GroupBox2.TabIndex = 1;
             this.guna2GroupBox2.Text = "Lỗi";
+            // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Location = new System.Drawing.Point(23, 49);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PasswordChar = '\0';
+            this.guna2TextBox1.PlaceholderText = "";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.Size = new System.Drawing.Size(585, 36);
+            this.guna2TextBox1.TabIndex = 2;
             // 
             // pictureBox1
             // 
@@ -161,81 +237,6 @@ namespace GUI
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(23, 49);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(585, 36);
-            this.guna2TextBox1.TabIndex = 2;
-            // 
-            // cboTT2
-            // 
-            this.cboTT2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboTT2.BackColor = System.Drawing.Color.Transparent;
-            this.cboTT2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboTT2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTT2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboTT2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboTT2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboTT2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cboTT2.ItemHeight = 30;
-            this.cboTT2.Location = new System.Drawing.Point(23, 235);
-            this.cboTT2.Name = "cboTT2";
-            this.cboTT2.Size = new System.Drawing.Size(571, 36);
-            this.cboTT2.TabIndex = 1;
-            this.cboTT2.SelectedIndexChanged += new System.EventHandler(this.cboTT2_SelectedIndexChanged_1);
-            // 
-            // cboTT3
-            // 
-            this.cboTT3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboTT3.BackColor = System.Drawing.Color.Transparent;
-            this.cboTT3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboTT3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTT3.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboTT3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboTT3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboTT3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cboTT3.ItemHeight = 30;
-            this.cboTT3.Location = new System.Drawing.Point(23, 347);
-            this.cboTT3.Name = "cboTT3";
-            this.cboTT3.Size = new System.Drawing.Size(571, 36);
-            this.cboTT3.TabIndex = 2;
-            // 
-            // cboTT1
-            // 
-            this.cboTT1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboTT1.BackColor = System.Drawing.Color.Transparent;
-            this.cboTT1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboTT1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTT1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboTT1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboTT1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboTT1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cboTT1.ItemHeight = 30;
-            this.cboTT1.Location = new System.Drawing.Point(23, 134);
-            this.cboTT1.Name = "cboTT1";
-            this.cboTT1.Size = new System.Drawing.Size(571, 36);
-            this.cboTT1.TabIndex = 0;
-            this.cboTT1.SelectedIndexChanged += new System.EventHandler(this.cboTT1_SelectedIndexChanged_1);
             // 
             // frmTuVanSuaChua
             // 

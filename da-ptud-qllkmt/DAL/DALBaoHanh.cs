@@ -12,6 +12,7 @@ namespace DAL
     {
         private ApiService _apiService = new ApiService();
         QL_CUAHANGLINHKIENMAYTINHDataContext qllk = new QL_CUAHANGLINHKIENMAYTINHDataContext();
+
         public DALBaoHanh()
         {
 
@@ -25,6 +26,10 @@ namespace DAL
         {
             return qllk.View_BieuMauBaoHanhs.Where(t => t.MaHoaDon == ma).Select(t => t).ToList();
         }
+        public List<View_BieuMauBH> getbieumaubh(int ma)
+        {
+            return qllk.View_BieuMauBHs.Where(t => t.MaBH == ma).Select(t => t).ToList();
+        }
         public List<HoaDon> getmahd()
         {
             return qllk.HoaDons.Select(t => t).ToList();
@@ -36,6 +41,10 @@ namespace DAL
         public int loadMaCuoiCung()
         {
             return qllk.BaoHanhs.OrderByDescending(t => t.MaBH).First().MaBH;
+        }
+        public int? loadMaSPTheoSoSeri(string ma)
+        {
+            return qllk.SeriSPs.Where(t => t.Seri == ma).Select(t => t.MaSanPham).FirstOrDefault();
         }
         public string getngayhd(int ma)
         {

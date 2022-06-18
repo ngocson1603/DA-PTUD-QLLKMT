@@ -19,12 +19,12 @@ namespace GUI
         {
             InitializeComponent();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             DialogResult a = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
             if (a == DialogResult.Yes)
             {
+                frmBanSanPham.laygiatri = false;
                 Close();
                 frmDN f = new frmDN();
                 f.Show();
@@ -77,6 +77,7 @@ namespace GUI
 
         private void frmTrangChuNhanVien_Load(object sender, EventArgs e)
         {
+
             pnltrang = panel2;
 
             string ma = blldn.loadmanv(frmDN.taikhoan);
@@ -90,6 +91,18 @@ namespace GUI
         {
             panel2.Controls.Clear();
             hp.motrangcon(new frmBaoHanh(), panel2);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+            hp.motrangcon(new frmDonDatHang(), panel2);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmAbout frm = new frmAbout();
+            frm.ShowDialog();
         }
     }
 }

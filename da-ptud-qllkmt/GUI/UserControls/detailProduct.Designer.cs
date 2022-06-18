@@ -37,17 +37,19 @@ namespace GUI.UserControls
             this.gunathoat = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureDetailSP = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureDetailSP = new System.Windows.Forms.PictureBox();
             this.gunaMua = new Guna.UI2.WinForms.Guna2Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureDetailSP)).BeginInit();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblHSD = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDetailSP)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTonkho
@@ -56,11 +58,12 @@ namespace GUI.UserControls
             this.lblTonkho.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTonkho.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTonkho.ForeColor = System.Drawing.Color.Black;
-            this.lblTonkho.Location = new System.Drawing.Point(217, 370);
+            this.lblTonkho.Location = new System.Drawing.Point(220, 330);
             this.lblTonkho.Name = "lblTonkho";
-            this.lblTonkho.Size = new System.Drawing.Size(208, 74);
+            this.lblTonkho.Size = new System.Drawing.Size(211, 66);
             this.lblTonkho.TabIndex = 25;
             this.lblTonkho.Text = "Còn lại :";
+            this.lblTonkho.Click += new System.EventHandler(this.lblTonkho_Click);
             // 
             // lblGiaBan
             // 
@@ -68,11 +71,12 @@ namespace GUI.UserControls
             this.lblGiaBan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblGiaBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGiaBan.ForeColor = System.Drawing.Color.Black;
-            this.lblGiaBan.Location = new System.Drawing.Point(217, 296);
+            this.lblGiaBan.Location = new System.Drawing.Point(220, 264);
             this.lblGiaBan.Name = "lblGiaBan";
-            this.lblGiaBan.Size = new System.Drawing.Size(208, 74);
+            this.lblGiaBan.Size = new System.Drawing.Size(211, 66);
             this.lblGiaBan.TabIndex = 24;
             this.lblGiaBan.Text = "Còn lại :";
+            this.lblGiaBan.Click += new System.EventHandler(this.lblGiaBan_Click);
             // 
             // lblTenHang
             // 
@@ -80,11 +84,12 @@ namespace GUI.UserControls
             this.lblTenHang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTenHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenHang.ForeColor = System.Drawing.Color.Black;
-            this.lblTenHang.Location = new System.Drawing.Point(217, 222);
+            this.lblTenHang.Location = new System.Drawing.Point(220, 198);
             this.lblTenHang.Name = "lblTenHang";
-            this.lblTenHang.Size = new System.Drawing.Size(208, 74);
+            this.lblTenHang.Size = new System.Drawing.Size(211, 66);
             this.lblTenHang.TabIndex = 23;
             this.lblTenHang.Text = "Còn lại :";
+            this.lblTenHang.Click += new System.EventHandler(this.lblTenHang_Click);
             // 
             // lblTenLoai
             // 
@@ -92,11 +97,12 @@ namespace GUI.UserControls
             this.lblTenLoai.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTenLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenLoai.ForeColor = System.Drawing.Color.Black;
-            this.lblTenLoai.Location = new System.Drawing.Point(217, 148);
+            this.lblTenLoai.Location = new System.Drawing.Point(220, 132);
             this.lblTenLoai.Name = "lblTenLoai";
-            this.lblTenLoai.Size = new System.Drawing.Size(208, 74);
+            this.lblTenLoai.Size = new System.Drawing.Size(211, 66);
             this.lblTenLoai.TabIndex = 22;
             this.lblTenLoai.Text = "Còn lại :";
+            this.lblTenLoai.Click += new System.EventHandler(this.lblTenLoai_Click);
             // 
             // lblTenSanPham
             // 
@@ -104,11 +110,12 @@ namespace GUI.UserControls
             this.lblTenSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTenSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenSanPham.ForeColor = System.Drawing.Color.Black;
-            this.lblTenSanPham.Location = new System.Drawing.Point(217, 74);
+            this.lblTenSanPham.Location = new System.Drawing.Point(220, 66);
             this.lblTenSanPham.Name = "lblTenSanPham";
-            this.lblTenSanPham.Size = new System.Drawing.Size(208, 74);
+            this.lblTenSanPham.Size = new System.Drawing.Size(211, 66);
             this.lblTenSanPham.TabIndex = 21;
             this.lblTenSanPham.Text = "Còn lại :";
+            this.lblTenSanPham.Click += new System.EventHandler(this.lblTenSanPham_Click);
             // 
             // gunathoat
             // 
@@ -123,11 +130,11 @@ namespace GUI.UserControls
             this.gunathoat.FillColor = System.Drawing.SystemColors.ActiveCaption;
             this.gunathoat.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gunathoat.ForeColor = System.Drawing.Color.White;
-            this.gunathoat.Location = new System.Drawing.Point(430, 520);
+            this.gunathoat.Location = new System.Drawing.Point(436, 530);
             this.gunathoat.Margin = new System.Windows.Forms.Padding(2);
             this.gunathoat.Name = "gunathoat";
             this.gunathoat.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gunathoat.Size = new System.Drawing.Size(80, 31);
+            this.gunathoat.Size = new System.Drawing.Size(64, 31);
             this.gunathoat.TabIndex = 20;
             this.gunathoat.Text = "Thoát";
             this.gunathoat.UseTransparentBackground = true;
@@ -139,11 +146,12 @@ namespace GUI.UserControls
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(3, 370);
+            this.label6.Location = new System.Drawing.Point(3, 330);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(208, 74);
+            this.label6.Size = new System.Drawing.Size(211, 66);
             this.label6.TabIndex = 19;
             this.label6.Text = "Còn lại :";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -151,21 +159,12 @@ namespace GUI.UserControls
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(3, 296);
+            this.label5.Location = new System.Drawing.Point(3, 264);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(208, 74);
+            this.label5.Size = new System.Drawing.Size(211, 66);
             this.label5.TabIndex = 18;
             this.label5.Text = "Giá bán :";
-            // 
-            // pictureDetailSP
-            // 
-            this.pictureDetailSP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureDetailSP.Location = new System.Drawing.Point(431, 77);
-            this.pictureDetailSP.Name = "pictureDetailSP";
-            this.tableLayoutPanel1.SetRowSpan(this.pictureDetailSP, 6);
-            this.pictureDetailSP.Size = new System.Drawing.Size(640, 438);
-            this.pictureDetailSP.TabIndex = 15;
-            this.pictureDetailSP.TabStop = false;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -173,11 +172,12 @@ namespace GUI.UserControls
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(3, 222);
+            this.label4.Location = new System.Drawing.Point(3, 198);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(208, 74);
+            this.label4.Size = new System.Drawing.Size(211, 66);
             this.label4.TabIndex = 17;
             this.label4.Text = "Hãng :";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -185,11 +185,12 @@ namespace GUI.UserControls
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(3, 148);
+            this.label3.Location = new System.Drawing.Point(3, 132);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(208, 74);
+            this.label3.Size = new System.Drawing.Size(211, 66);
             this.label3.TabIndex = 16;
             this.label3.Text = "Loại :";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -197,11 +198,12 @@ namespace GUI.UserControls
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(3, 74);
+            this.label2.Location = new System.Drawing.Point(3, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(208, 74);
+            this.label2.Size = new System.Drawing.Size(211, 66);
             this.label2.TabIndex = 9;
             this.label2.Text = "Tên sản phẩm :";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -210,11 +212,12 @@ namespace GUI.UserControls
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(217, 0);
+            this.label1.Location = new System.Drawing.Point(220, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(854, 74);
+            this.label1.Size = new System.Drawing.Size(866, 66);
             this.label1.TabIndex = 8;
             this.label1.Text = "Thông Tin Sản Phẩm";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -234,23 +237,39 @@ namespace GUI.UserControls
             this.tableLayoutPanel1.Controls.Add(this.lblTenSanPham, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.gunaMua, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.gunathoat, 2, 7);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.gunathoat, 2, 8);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.lblHSD, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.gunaMua, 1, 8);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 8;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.50062F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.50062F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.50062F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.50062F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.50062F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.50062F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.50062F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.49563F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1074, 594);
+            this.tableLayoutPanel1.RowCount = 9;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11167F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11167F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11167F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11167F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11167F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11167F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11167F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.10723F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1089, 597);
             this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // pictureDetailSP
+            // 
+            this.pictureDetailSP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureDetailSP.Location = new System.Drawing.Point(437, 69);
+            this.pictureDetailSP.Name = "pictureDetailSP";
+            this.tableLayoutPanel1.SetRowSpan(this.pictureDetailSP, 6);
+            this.pictureDetailSP.Size = new System.Drawing.Size(649, 390);
+            this.pictureDetailSP.TabIndex = 15;
+            this.pictureDetailSP.TabStop = false;
+            this.pictureDetailSP.Click += new System.EventHandler(this.pictureDetailSP_Click);
             // 
             // gunaMua
             // 
@@ -265,11 +284,11 @@ namespace GUI.UserControls
             this.gunaMua.FillColor = System.Drawing.SystemColors.ActiveCaption;
             this.gunaMua.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gunaMua.ForeColor = System.Drawing.Color.White;
-            this.gunaMua.Location = new System.Drawing.Point(216, 520);
+            this.gunaMua.Location = new System.Drawing.Point(219, 530);
             this.gunaMua.Margin = new System.Windows.Forms.Padding(2);
             this.gunaMua.Name = "gunaMua";
             this.gunaMua.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gunaMua.Size = new System.Drawing.Size(113, 31);
+            this.gunaMua.Size = new System.Drawing.Size(97, 31);
             this.gunaMua.TabIndex = 26;
             this.gunaMua.Text = "Mua hàng";
             this.gunaMua.UseTransparentBackground = true;
@@ -281,11 +300,12 @@ namespace GUI.UserControls
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(3, 444);
+            this.label7.Location = new System.Drawing.Point(3, 462);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(208, 74);
+            this.label7.Size = new System.Drawing.Size(211, 66);
             this.label7.TabIndex = 27;
             this.label7.Text = "Mã sản phẩm";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -293,11 +313,36 @@ namespace GUI.UserControls
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(217, 444);
+            this.label8.Location = new System.Drawing.Point(220, 462);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(208, 74);
+            this.label8.Size = new System.Drawing.Size(211, 66);
             this.label8.TabIndex = 28;
             this.label8.Text = "label8";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(3, 396);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(211, 66);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "HSD";
+            // 
+            // lblHSD
+            // 
+            this.lblHSD.AutoSize = true;
+            this.lblHSD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblHSD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHSD.ForeColor = System.Drawing.Color.Black;
+            this.lblHSD.Location = new System.Drawing.Point(220, 396);
+            this.lblHSD.Name = "lblHSD";
+            this.lblHSD.Size = new System.Drawing.Size(211, 66);
+            this.lblHSD.TabIndex = 30;
+            this.lblHSD.Text = "label10";
             // 
             // detailProduct
             // 
@@ -306,9 +351,10 @@ namespace GUI.UserControls
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "detailProduct";
             this.Size = new System.Drawing.Size(1089, 597);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureDetailSP)).EndInit();
+            this.Load += new System.EventHandler(this.detailProduct_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDetailSP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -321,7 +367,6 @@ namespace GUI.UserControls
         private System.Windows.Forms.PictureBox pictureDetailSP;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Button gunathoat;
         private System.Windows.Forms.Label lblTonkho;
         private System.Windows.Forms.Label lblGiaBan;
         private System.Windows.Forms.Label lblTenHang;
@@ -329,7 +374,10 @@ namespace GUI.UserControls
         private System.Windows.Forms.Label lblTenSanPham;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Guna.UI2.WinForms.Guna2Button gunaMua;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private Guna.UI2.WinForms.Guna2Button gunathoat;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblHSD;
     }
 }

@@ -21,6 +21,7 @@ namespace GUI
         public frmQuanLySP()
         {
             InitializeComponent();
+            
         }
 
         private void frmQuanLySP_Load(object sender, EventArgs e)
@@ -213,7 +214,7 @@ namespace GUI
             string a = textBox1.Text;
             if (a.Length > 0)
             {
-                var orders = (from s in qllk.SanPhams where s.TenSanPham.Contains(a.ToString()) select s).ToList();
+                var orders = (from s in qllk.View_SanPhams where s.TenSanPham.Contains(a.ToString()) select s).ToList();
                 dgv_QLLK.DataSource = orders;
 
             }
@@ -270,7 +271,7 @@ namespace GUI
 
         private void btn_nhapvao_Click(object sender, EventArgs e)
         {
-            
+            int soluong = 1;
             string ma = txt_MaSP.Text;
             
             string tensp = txt_TenSP.Text;
@@ -280,11 +281,26 @@ namespace GUI
             string anh = txt_Image.Text;
            
                 MessageBox.Show("Đã thêm");
-                ThemSanPham sp = new ThemSanPham(tensp, loai, hang, gia, anh, ma);
+                ThemSanPham sp = new ThemSanPham(tensp, loai, hang, gia, soluong, anh, ma);
                 lstnhap.Add(sp);
-
         }
 
-        
+        private void txt_TonKho_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txtHSD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_GiaBan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
     }
 }

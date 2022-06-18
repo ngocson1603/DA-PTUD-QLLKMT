@@ -49,6 +49,15 @@
     <Reference Include="Accord.Statistics, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
       <HintPath>..\packages\Accord.Statistics.3.8.0\lib\net45\Accord.Statistics.dll</HintPath>
     </Reference>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="BLL">
       <HintPath>..\BLL\bin\Debug\BLL.dll</HintPath>
     </Reference>
@@ -260,8 +269,20 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="zxing, Version=0.16.8.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.8\lib\net45\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.8.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.8\lib\net45\zxing.presentation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBanSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +301,12 @@
     <Compile Include="frmChiTietGio.Designer.cs">
       <DependentUpon>frmChiTietGio.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChonKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChonKhachHang.Designer.cs">
+      <DependentUpon>frmChonKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDangKy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +324,18 @@
     </Compile>
     <Compile Include="frmDN.Designer.cs">
       <DependentUpon>frmDN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDonDatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDonDatHang.Designer.cs">
+      <DependentUpon>frmDonDatHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDonDatHang_v2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDonDatHang_v2.Designer.cs">
+      <DependentUpon>frmDonDatHang_v2.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGiaoDien.cs">
       <SubType>Form</SubType>
@@ -334,6 +373,12 @@
     <Compile Include="frmNhapLinhKien.Designer.cs">
       <DependentUpon>frmNhapLinhKien.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNhapTheoDonDatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhapTheoDonDatHang.Designer.cs">
+      <DependentUpon>frmNhapTheoDonDatHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmNPP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -351,6 +396,12 @@
     </Compile>
     <Compile Include="frmQuanLySP.Designer.cs">
       <DependentUpon>frmQuanLySP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemHoaDonTuDonDatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemHoaDonTuDonDatHang.Designer.cs">
+      <DependentUpon>frmThemHoaDonTuDonDatHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThongKeMuaHang.cs">
       <SubType>Form</SubType>
@@ -402,16 +453,28 @@
     <Compile Include="UserControls\listProduct.Designer.cs">
       <DependentUpon>listProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Text_Effect.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Text_Effect.Designer.cs">
+      <DependentUpon>Text_Effect.cs</DependentUpon>
+    </Compile>
     <Compile Include="XuLy\Constants.cs" />
     <Compile Include="XuLy\DangNhap.cs" />
     <Compile Include="XuLy\ExcelExport.cs" />
+    <Compile Include="XuLy\ExcelExportBaoHanh.cs" />
     <Compile Include="XuLy\ExcelExportBH.cs" />
     <Compile Include="XuLy\ExcelExportNV.cs" />
+    <Compile Include="XuLy\ExcelExportOnl.cs" />
+    <Compile Include="XuLy\ExcelExportPN.cs" />
     <Compile Include="XuLy\FileCommon.cs" />
     <Compile Include="XuLy\Global.cs" />
     <Compile Include="XuLy\ID3Learn.cs" />
     <Compile Include="XuLy\loadProduct.cs" />
     <Compile Include="XuLy\WordExport.cs" />
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBanSanPham.resx">
       <DependentUpon>frmBanSanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -421,6 +484,9 @@
     <EmbeddedResource Include="frmChiTietGio.resx">
       <DependentUpon>frmChiTietGio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmChonKhachHang.resx">
+      <DependentUpon>frmChonKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDangKy.resx">
       <DependentUpon>frmDangKy.cs</DependentUpon>
     </EmbeddedResource>
@@ -429,6 +495,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDN.resx">
       <DependentUpon>frmDN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDonDatHang.resx">
+      <DependentUpon>frmDonDatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDonDatHang_v2.resx">
+      <DependentUpon>frmDonDatHang_v2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGiaoDien.resx">
       <DependentUpon>frmGiaoDien.cs</DependentUpon>
@@ -448,6 +520,9 @@
     <EmbeddedResource Include="frmNhapLinhKien.resx">
       <DependentUpon>frmNhapLinhKien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmNhapTheoDonDatHang.resx">
+      <DependentUpon>frmNhapTheoDonDatHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNPP.resx">
       <DependentUpon>frmNPP.cs</DependentUpon>
     </EmbeddedResource>
@@ -456,6 +531,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLySP.resx">
       <DependentUpon>frmQuanLySP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemHoaDonTuDonDatHang.resx">
+      <DependentUpon>frmThemHoaDonTuDonDatHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThongKeMuaHang.resx">
       <DependentUpon>frmThongKeMuaHang.cs</DependentUpon>
@@ -491,6 +569,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\listProduct.resx">
       <DependentUpon>listProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Text_Effect.resx">
+      <DependentUpon>Text_Effect.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -577,6 +658,27 @@
     <Content Include="Images\ban-phim-co-akko-3108-v2-world-tour-tokyo.jpg" />
     <Content Include="Images\intelcorei5-12600k.jpg" />
     <Content Include="Images\PSU_GG_GP-P1000GM-5.jpg" />
+    <None Include="Resources\order32.png" />
+    <None Include="Resources\about31.png" />
+    <None Include="Resources\1486485589-about-error-notification-help-info-information_81162.png" />
+    <None Include="Resources\about.png" />
+    <None Include="Resources\order1.png" />
+    <None Include="Resources\order.png" />
+    <None Include="Resources\clipboard_paper_file_correct_done_list_document_icon_219488 %281%29.png" />
+    <None Include="Resources\clipboard_paper_file_correct_done_list_document_icon_219488.png" />
+    <None Include="Resources\96_pc_gaming %281%29.jpg" />
+    <None Include="Resources\distribution-center.png" />
+    <None Include="Resources\manufacture.png" />
+    <None Include="Resources\insurance.png" />
+    <None Include="Resources\factory.png" />
+    <None Include="Resources\pngaaa.com-5171640.png" />
+    <None Include="Resources\npp1.ico" />
+    <None Include="Resources\npp.ico" />
+    <None Include="Resources\ZlGSVm.jpg" />
+    <None Include="Resources\Home-80_icon-icons.com_573171.ico" />
+    <None Include="Resources\delete_delete_deleteusers_delete_male_user_maleclient_23481.png" />
+    <None Include="Resources\addusergroup_12511.png" />
+    <None Include="Resources\xoahd.ico" />
     <None Include="Resources\giphy.gif" />
     <None Include="Resources\trash-can_1153122.ico" />
     <None Include="Resources\addcthd.ico" />

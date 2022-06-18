@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using BLL;
+using GUI.XuLy;
 
 namespace GUI
 {
@@ -17,16 +18,19 @@ namespace GUI
         BLLPhieuNhap bllpn = new BLLPhieuNhap();
         BLLGioHang bllgio = new BLLGioHang();
         BLLNPP bllnpp = new BLLNPP();
+        BLLDangNhap blldn = new BLLDangNhap();
         public frmNhapLinhKien()
         {
             InitializeComponent();
         }
-
+        public static DataGridView dgv;
         private void frmNhapLinhKien_Load(object sender, EventArgs e)
         {
             //dgv_PhieuNhap.DataSource = bllpn.LoadPN();
             //dgv_ChiTietPhieuNhap.DataSource = bllpn.LoadCTPN();
             dgv_PhieuNhap.DataSource = bllpn.LoadPhieuNhapNV(int.Parse(frmTrangChuNhanVien.manv));
+            dgv_PhieuNhap.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight; 
+            //dgv.Refresh();
             loaddata(frmQuanLySP.lstnhap);
             if (dgv_Chitiethoadon.Rows.Count >= 0)
             {
@@ -39,6 +43,10 @@ namespace GUI
             cbb_npp.DisplayMember = "MaNhaPhanPhoi";
             cbb_npp.ValueMember = "MaNhaPhanPhoi";
 
+
+
+            // 
+            txt_maddh.Text = frmNhapTheoDonDatHang.ma.ToString();
 
         }
 
@@ -70,7 +78,8 @@ namespace GUI
                 MaNhanVien = int.Parse(txt_MaNhanVien.Text),
                 MaNhaPhanPhoi = int.Parse(cbb_npp.Text),
                 //TongTien = int.Parse(txt_TongTien.Text),
-                NgayNhap = dateTimePicker1.Value
+                NgayNhap = dateTimePicker1.Value,
+                MaDDH = int.Parse(txt_maddh.Text)
             };
 
             if (bllpn.postPN(cthdsp))
@@ -166,7 +175,8 @@ namespace GUI
                 MaNhanVien = int.Parse(txt_MaNhanVien.Text),
                 MaNhaPhanPhoi = int.Parse(cbb_npp.Text),
                 //TongTien = int.Parse(txt_TongTien.Text),
-                NgayNhap = dateTimePicker1.Value
+                NgayNhap = dateTimePicker1.Value,
+                MaDDH = int.Parse(txt_maddh.Text)
             };
 
             if (bllpn.putPN(kh, int.Parse(txt_MaPhieuNhap.Text)))
@@ -183,47 +193,47 @@ namespace GUI
 
         }
 
-        private void btn_ThemCTPN_Click(object sender, EventArgs e)
-        {
-            ThemCTPN cthdsp = new ThemCTPN()
-            {
-                MaPhieuNhap = int.Parse(txt_MaCTPN.Text),
-                MaSanPham = int.Parse(cbb_MaSP.Text),
-                SoLuong =  int.Parse(txt_Soluong.Text),
-                TienNhap = int.Parse(txt_TienNhap.Text),
-            };
+        //private void btn_ThemCTPN_Click(object sender, EventArgs e)
+        //{
+        //    ThemCTPN cthdsp = new ThemCTPN()
+        //    {
+        //        MaPhieuNhap = int.Parse(txt_MaCTPN.Text),
+        //        MaSanPham = int.Parse(cbb_MaSP.Text),
+        //        SoLuong =  int.Parse(txt_Soluong.Text),
+        //        TienNhap = int.Parse(txt_TienNhap.Text),
+        //    };
 
-            if (bllpn.postCTPN(cthdsp))
-            {
-                MessageBox.Show("Thêm thành công");
-                dgv_ChiTietPhieuNhap.DataSource = bllpn.LoadCTPN();
-            }
-            else
-            {
-                MessageBox.Show("Thêm thất bại");
-            }
-        }
+        //    if (bllpn.postCTPN(cthdsp))
+        //    {
+        //        MessageBox.Show("Thêm thành công");
+        //        dgv_ChiTietPhieuNhap.DataSource = bllpn.LoadCTPN();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Thêm thất bại");
+        //    }
+        //}
 
-        private void btn_XoaCTPN_Click(object sender, EventArgs e)
-        {
-            if (bllpn.deleteCTPN(int.Parse(txt_MaCTPN.Text)))
-            {
-                MessageBox.Show("Xóa thành công");
-                dgv_ChiTietPhieuNhap.DataSource = bllpn.LoadCTPN();
-            }
-            else
-            {
-                MessageBox.Show("Xóa thất bại");
-                return;
-            }
-        }
+        //private void btn_XoaCTPN_Click(object sender, EventArgs e)
+        //{
+        //    if (bllpn.deleteCTPN(int.Parse(txt_MaCTPN.Text)))
+        //    {
+        //        MessageBox.Show("Xóa thành công");
+        //        dgv_ChiTietPhieuNhap.DataSource = bllpn.LoadCTPN();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Xóa thất bại");
+        //        return;
+        //    }
+        //}
 
 
 
         public void loaddata(BindingList<ThemSanPham> loadsp)
         {
             dgv_Chitiethoadon.DataSource = loadsp;
-
+            dgv_Chitiethoadon.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight; 
             //dgv_Chitiethoadon.Columns[0].ReadOnly = true;
             //dgv_Chitiethoadon.Columns[1].ReadOnly = true;
             //dgv_Chitiethoadon.Columns[2].ReadOnly = true;
@@ -278,7 +288,7 @@ namespace GUI
                 dateTimePicker1.Text = dgv_PhieuNhap.Rows[e.RowIndex].Cells[4].Value.ToString();
 
                 dgv_ChiTietPhieuNhap.DataSource = bllpn.LoadCTPhieuNhap(int.Parse(row.Cells[0].Value.ToString()));
-
+                dgv_ChiTietPhieuNhap.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight; 
             }
 
            
@@ -293,6 +303,7 @@ namespace GUI
                 cbb_MaSP.Text = row.Cells[1].Value.ToString();
                 txt_Soluong.Text = row.Cells[2].Value.ToString();
                 txt_TienNhap.Text = row.Cells[3].Value.ToString();
+                //txt_maddh.Text = row.Cells[4].Value.ToString();
             
 
                 //dgv_ChiTietPhieuNhap.DataSource = bllpn.LoadCTPhieuNhap(int.Parse(row.Cells[0].Value.ToString()));
@@ -300,9 +311,89 @@ namespace GUI
             }
         }
 
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            frmQuanLySP.lstnhap.RemoveAt(dgv_Chitiethoadon.CurrentCell.RowIndex);
+            guna2Button1.Enabled = false;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            frmNhapTheoDonDatHang frm1 = new frmNhapTheoDonDatHang();
+            frm1.Show();
+        }
+        public static string tennv;
+        public static int mapn;
+        public static int npp;
+        public static int tongtien;
+        
+        private void btn_Xuat_Click(object sender, EventArgs e)
+        {
+            if (dgv_ChiTietPhieuNhap.Rows.Count == 0)
+            {
+                MessageBox.Show("khong co du lieu de xuat");
+                return;
+            }
+            npp = int.Parse(cbb_npp.Text);
+
+            tennv = blldn.loadtentheoma(txt_MaNhanVien.Text);
+
+            dataExcel.DataSource = bllpn.LoadBieuMauNhapHang(int.Parse(txt_MaPhieuNhap.Text));
+            
+            mapn = int.Parse(dgv_ChiTietPhieuNhap.CurrentRow.Cells[0].Value.ToString());
+
+            ExcelExportPN ex = new ExcelExportPN();
+           
+            int a = 0;
+            for (int x = 0; x < dataExcel.Rows.Count; x++)
+            {
+                tongtien += int.Parse(dataExcel.Rows[a].Cells[2].Value.ToString()) * int.Parse(dataExcel.Rows[a].Cells[3].Value.ToString());
+                a++;
+            }
+            List<View_BieuMauNhapHang> pListKhoa = new List<View_BieuMauNhapHang>();
+
+            foreach (DataGridViewRow item in dataExcel.Rows)
+            {
+                View_BieuMauNhapHang i = new View_BieuMauNhapHang();
+                i.MaPhieuNhap = int.Parse(item.Cells[0].Value.ToString());
+                i.MaSanPham = int.Parse(item.Cells[1].Value.ToString());
+                i.SoLuong = int.Parse(item.Cells[2].Value.ToString());
+                i.TienNhap = int.Parse(item.Cells[3].Value.ToString());
+                i.NgayNhap = DateTime.Parse(item.Cells[4].Value.ToString());
+                //i.TongTien = int.Parse(item.Cells[5].Value.ToString());
+
+                pListKhoa.Add(i);
+            }
+
+
+            string path = string.Empty;
+
+            ex.ExportKhoa(pListKhoa, ref path, false);
+
+            DialogResult r = MessageBox.Show("ban co muon mo file khong", "thong bao", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (!string.IsNullOrEmpty(path) && r == DialogResult.Yes)
+            {
+                System.Diagnostics.Process.Start(path);
+            }
+
+            btn_Xuat.Enabled = false;
+            toolStripButton1.Enabled = false;
+        }
+
+        private void btn_LoadLai_Click(object sender, EventArgs e)
+        {
+            //dgv_PhieuNhap.Refresh();
+            dgv_PhieuNhap.DataSource = bllpn.LoadPhieuNhapNV(int.Parse(frmTrangChuNhanVien.manv));
+
+        }
+
    
-
-
 
     }
 }
