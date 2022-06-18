@@ -393,6 +393,14 @@ namespace GUI
 
         }
 
+        private void dgv_Chitiethoadon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                guna2Button1.Enabled = true;
+            }
+        }
+
    
 
     }

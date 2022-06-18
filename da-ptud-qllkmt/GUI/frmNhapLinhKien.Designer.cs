@@ -42,6 +42,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_maddh = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.cbb_npp = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -55,6 +57,12 @@
             this.dgv_PhieuNhap = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btn_ThemPN = new System.Windows.Forms.ToolStripButton();
+            this.btn_XoaPN = new System.Windows.Forms.ToolStripButton();
+            this.btn_SuaPN = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.btn_Xuat = new System.Windows.Forms.ToolStripButton();
+            this.btn_LoadLai = new System.Windows.Forms.ToolStripButton();
             this.dgv_ChiTietPhieuNhap = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -66,14 +74,6 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_ThemPN = new System.Windows.Forms.ToolStripButton();
-            this.btn_XoaPN = new System.Windows.Forms.ToolStripButton();
-            this.btn_SuaPN = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.btn_Xuat = new System.Windows.Forms.ToolStripButton();
-            this.btn_LoadLai = new System.Windows.Forms.ToolStripButton();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataExcel)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -87,7 +87,7 @@
             // txt_TienNhap
             // 
             this.txt_TienNhap.Location = new System.Drawing.Point(141, 136);
-            this.txt_TienNhap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_TienNhap.Margin = new System.Windows.Forms.Padding(2);
             this.txt_TienNhap.Name = "txt_TienNhap";
             this.txt_TienNhap.Size = new System.Drawing.Size(103, 20);
             this.txt_TienNhap.TabIndex = 79;
@@ -105,7 +105,7 @@
             // txt_MaCTPN
             // 
             this.txt_MaCTPN.Location = new System.Drawing.Point(141, 23);
-            this.txt_MaCTPN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_MaCTPN.Margin = new System.Windows.Forms.Padding(2);
             this.txt_MaCTPN.Name = "txt_MaCTPN";
             this.txt_MaCTPN.Size = new System.Drawing.Size(103, 20);
             this.txt_MaCTPN.TabIndex = 72;
@@ -133,7 +133,7 @@
             // txt_Soluong
             // 
             this.txt_Soluong.Location = new System.Drawing.Point(141, 95);
-            this.txt_Soluong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Soluong.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Soluong.Name = "txt_Soluong";
             this.txt_Soluong.Size = new System.Drawing.Size(103, 20);
             this.txt_Soluong.TabIndex = 76;
@@ -161,9 +161,9 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(542, 26);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(357, 176);
             this.groupBox2.TabIndex = 87;
             this.groupBox2.TabStop = false;
@@ -173,7 +173,7 @@
             // 
             this.dataExcel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataExcel.Location = new System.Drawing.Point(342, 18);
-            this.dataExcel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataExcel.Margin = new System.Windows.Forms.Padding(2);
             this.dataExcel.Name = "dataExcel";
             this.dataExcel.RowTemplate.Height = 24;
             this.dataExcel.Size = new System.Drawing.Size(8, 11);
@@ -206,9 +206,9 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(2, 26);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(536, 176);
             this.groupBox1.TabIndex = 86;
             this.groupBox1.TabStop = false;
@@ -218,7 +218,7 @@
             // txt_maddh
             // 
             this.txt_maddh.Location = new System.Drawing.Point(124, 124);
-            this.txt_maddh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_maddh.Margin = new System.Windows.Forms.Padding(2);
             this.txt_maddh.Name = "txt_maddh";
             this.txt_maddh.Size = new System.Drawing.Size(103, 20);
             this.txt_maddh.TabIndex = 107;
@@ -233,250 +233,6 @@
             this.label11.TabIndex = 106;
             this.label11.Text = "Mã DDH";
             // 
-            // cbb_npp
-            // 
-            this.cbb_npp.FormattingEnabled = true;
-            this.cbb_npp.Location = new System.Drawing.Point(124, 54);
-            this.cbb_npp.Name = "cbb_npp";
-            this.cbb_npp.Size = new System.Drawing.Size(103, 21);
-            this.cbb_npp.TabIndex = 78;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(320, 58);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(151, 20);
-            this.dateTimePicker1.TabIndex = 76;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(241, 56);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 13);
-            this.label6.TabIndex = 71;
-            this.label6.Text = "Ngày Nhập";
-            // 
-            // txt_TongTien
-            // 
-            this.txt_TongTien.Location = new System.Drawing.Point(344, 20);
-            this.txt_TongTien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txt_TongTien.Name = "txt_TongTien";
-            this.txt_TongTien.Size = new System.Drawing.Size(103, 20);
-            this.txt_TongTien.TabIndex = 77;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(241, 20);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 13);
-            this.label5.TabIndex = 73;
-            this.label5.Text = "Tổng Tiền Phải Trả";
-            // 
-            // txt_MaPhieuNhap
-            // 
-            this.txt_MaPhieuNhap.Location = new System.Drawing.Point(124, 17);
-            this.txt_MaPhieuNhap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txt_MaPhieuNhap.Name = "txt_MaPhieuNhap";
-            this.txt_MaPhieuNhap.Size = new System.Drawing.Size(103, 20);
-            this.txt_MaPhieuNhap.TabIndex = 66;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 20);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 13);
-            this.label3.TabIndex = 65;
-            this.label3.Text = "Mã Phiếu Nhập";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 56);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
-            this.label1.TabIndex = 67;
-            this.label1.Text = "Mã Nhà Phân Phối";
-            // 
-            // txt_MaNhanVien
-            // 
-            this.txt_MaNhanVien.Location = new System.Drawing.Point(124, 89);
-            this.txt_MaNhanVien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txt_MaNhanVien.Name = "txt_MaNhanVien";
-            this.txt_MaNhanVien.Size = new System.Drawing.Size(103, 20);
-            this.txt_MaNhanVien.TabIndex = 70;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 92);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 13);
-            this.label4.TabIndex = 69;
-            this.label4.Text = "Mã Nhân Viên";
-            // 
-            // dgv_PhieuNhap
-            // 
-            this.dgv_PhieuNhap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_PhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_PhieuNhap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_PhieuNhap.Location = new System.Drawing.Point(2, 206);
-            this.dgv_PhieuNhap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dgv_PhieuNhap.Name = "dgv_PhieuNhap";
-            this.dgv_PhieuNhap.RowTemplate.Height = 24;
-            this.dgv_PhieuNhap.Size = new System.Drawing.Size(536, 176);
-            this.dgv_PhieuNhap.TabIndex = 84;
-            this.dgv_PhieuNhap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_PhieuNhap_CellClick);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btn_ThemPN,
-            this.btn_XoaPN,
-            this.btn_SuaPN,
-            this.toolStripButton1,
-            this.btn_Xuat,
-            this.btn_LoadLai});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(901, 27);
-            this.toolStrip1.TabIndex = 83;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // dgv_ChiTietPhieuNhap
-            // 
-            this.dgv_ChiTietPhieuNhap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_ChiTietPhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_ChiTietPhieuNhap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_ChiTietPhieuNhap.Location = new System.Drawing.Point(542, 206);
-            this.dgv_ChiTietPhieuNhap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dgv_ChiTietPhieuNhap.Name = "dgv_ChiTietPhieuNhap";
-            this.dgv_ChiTietPhieuNhap.Size = new System.Drawing.Size(357, 176);
-            this.dgv_ChiTietPhieuNhap.TabIndex = 82;
-            this.dgv_ChiTietPhieuNhap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ChiTietPhieuNhap_CellClick);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Turquoise;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tableLayoutPanel1.SetColumnSpan(this.label2, 2);
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(895, 24);
-            this.label2.TabIndex = 81;
-            this.label2.Text = "Thông tin linh kiện nhập vào";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.dgv_PhieuNhap, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.dgv_ChiTietPhieuNhap, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.dgv_Chitiethoadon, 0, 3);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 27);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(901, 565);
-            this.tableLayoutPanel1.TabIndex = 88;
-            // 
-            // dgv_Chitiethoadon
-            // 
-            this.dgv_Chitiethoadon.AllowUserToDeleteRows = false;
-            this.dgv_Chitiethoadon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_Chitiethoadon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Chitiethoadon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7});
-            this.tableLayoutPanel1.SetColumnSpan(this.dgv_Chitiethoadon, 2);
-            this.dgv_Chitiethoadon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_Chitiethoadon.Location = new System.Drawing.Point(2, 386);
-            this.dgv_Chitiethoadon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dgv_Chitiethoadon.Name = "dgv_Chitiethoadon";
-            this.dgv_Chitiethoadon.RowTemplate.Height = 24;
-            this.dgv_Chitiethoadon.Size = new System.Drawing.Size(897, 177);
-            this.dgv_Chitiethoadon.TabIndex = 88;
-            this.dgv_Chitiethoadon.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgv_Chitiethoadon_DataError);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "tensp";
-            this.Column1.HeaderText = "Tên SP";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "loai";
-            this.Column2.HeaderText = "Loại";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "hang";
-            this.Column3.HeaderText = "Hãng";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "gia";
-            this.Column4.HeaderText = "Gía";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "soluong";
-            this.Column5.HeaderText = "Số Lượng";
-            this.Column5.Name = "Column5";
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "anh";
-            this.Column6.HeaderText = "Ảnh";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "ma";
-            this.Column7.HeaderText = "Mã SP";
-            this.Column7.Name = "Column7";
-            // 
             // guna2Button1
             // 
             this.guna2Button1.AutoRoundedCorners = true;
@@ -486,6 +242,7 @@
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Enabled = false;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.Image = global::GUI.Properties.Resources.trash_can_1153122;
@@ -520,6 +277,133 @@
             this.guna2Button3.TabIndex = 104;
             this.guna2Button3.Text = "Chọn Sản Phẩm";
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
+            // 
+            // cbb_npp
+            // 
+            this.cbb_npp.FormattingEnabled = true;
+            this.cbb_npp.Location = new System.Drawing.Point(124, 54);
+            this.cbb_npp.Name = "cbb_npp";
+            this.cbb_npp.Size = new System.Drawing.Size(103, 21);
+            this.cbb_npp.TabIndex = 78;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(320, 58);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(151, 20);
+            this.dateTimePicker1.TabIndex = 76;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(241, 56);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(61, 13);
+            this.label6.TabIndex = 71;
+            this.label6.Text = "Ngày Nhập";
+            // 
+            // txt_TongTien
+            // 
+            this.txt_TongTien.Location = new System.Drawing.Point(344, 20);
+            this.txt_TongTien.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_TongTien.Name = "txt_TongTien";
+            this.txt_TongTien.Size = new System.Drawing.Size(103, 20);
+            this.txt_TongTien.TabIndex = 77;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(241, 20);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(99, 13);
+            this.label5.TabIndex = 73;
+            this.label5.Text = "Tổng Tiền Phải Trả";
+            // 
+            // txt_MaPhieuNhap
+            // 
+            this.txt_MaPhieuNhap.Location = new System.Drawing.Point(124, 17);
+            this.txt_MaPhieuNhap.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_MaPhieuNhap.Name = "txt_MaPhieuNhap";
+            this.txt_MaPhieuNhap.Size = new System.Drawing.Size(103, 20);
+            this.txt_MaPhieuNhap.TabIndex = 66;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(10, 20);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(81, 13);
+            this.label3.TabIndex = 65;
+            this.label3.Text = "Mã Phiếu Nhập";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 56);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 13);
+            this.label1.TabIndex = 67;
+            this.label1.Text = "Mã Nhà Phân Phối";
+            // 
+            // txt_MaNhanVien
+            // 
+            this.txt_MaNhanVien.Location = new System.Drawing.Point(124, 89);
+            this.txt_MaNhanVien.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_MaNhanVien.Name = "txt_MaNhanVien";
+            this.txt_MaNhanVien.Size = new System.Drawing.Size(103, 20);
+            this.txt_MaNhanVien.TabIndex = 70;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(10, 92);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 13);
+            this.label4.TabIndex = 69;
+            this.label4.Text = "Mã Nhân Viên";
+            // 
+            // dgv_PhieuNhap
+            // 
+            this.dgv_PhieuNhap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_PhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_PhieuNhap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_PhieuNhap.Location = new System.Drawing.Point(2, 206);
+            this.dgv_PhieuNhap.Margin = new System.Windows.Forms.Padding(2);
+            this.dgv_PhieuNhap.Name = "dgv_PhieuNhap";
+            this.dgv_PhieuNhap.RowTemplate.Height = 24;
+            this.dgv_PhieuNhap.Size = new System.Drawing.Size(536, 176);
+            this.dgv_PhieuNhap.TabIndex = 84;
+            this.dgv_PhieuNhap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_PhieuNhap_CellClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btn_ThemPN,
+            this.btn_XoaPN,
+            this.btn_SuaPN,
+            this.toolStripButton1,
+            this.btn_Xuat,
+            this.btn_LoadLai});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(901, 27);
+            this.toolStrip1.TabIndex = 83;
+            this.toolStrip1.Text = "toolStrip1";
             // 
             // btn_ThemPN
             // 
@@ -575,6 +459,124 @@
             this.btn_LoadLai.Text = "Refesh";
             this.btn_LoadLai.Click += new System.EventHandler(this.btn_LoadLai_Click);
             // 
+            // dgv_ChiTietPhieuNhap
+            // 
+            this.dgv_ChiTietPhieuNhap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_ChiTietPhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ChiTietPhieuNhap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_ChiTietPhieuNhap.Location = new System.Drawing.Point(542, 206);
+            this.dgv_ChiTietPhieuNhap.Margin = new System.Windows.Forms.Padding(2);
+            this.dgv_ChiTietPhieuNhap.Name = "dgv_ChiTietPhieuNhap";
+            this.dgv_ChiTietPhieuNhap.Size = new System.Drawing.Size(357, 176);
+            this.dgv_ChiTietPhieuNhap.TabIndex = 82;
+            this.dgv_ChiTietPhieuNhap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ChiTietPhieuNhap_CellClick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Turquoise;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tableLayoutPanel1.SetColumnSpan(this.label2, 2);
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(895, 24);
+            this.label2.TabIndex = 81;
+            this.label2.Text = "Thông tin linh kiện nhập vào";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dgv_PhieuNhap, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.dgv_ChiTietPhieuNhap, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.dgv_Chitiethoadon, 0, 3);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 27);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(901, 565);
+            this.tableLayoutPanel1.TabIndex = 88;
+            // 
+            // dgv_Chitiethoadon
+            // 
+            this.dgv_Chitiethoadon.AllowUserToDeleteRows = false;
+            this.dgv_Chitiethoadon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Chitiethoadon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Chitiethoadon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7});
+            this.tableLayoutPanel1.SetColumnSpan(this.dgv_Chitiethoadon, 2);
+            this.dgv_Chitiethoadon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_Chitiethoadon.Location = new System.Drawing.Point(2, 386);
+            this.dgv_Chitiethoadon.Margin = new System.Windows.Forms.Padding(2);
+            this.dgv_Chitiethoadon.Name = "dgv_Chitiethoadon";
+            this.dgv_Chitiethoadon.RowTemplate.Height = 24;
+            this.dgv_Chitiethoadon.Size = new System.Drawing.Size(897, 177);
+            this.dgv_Chitiethoadon.TabIndex = 88;
+            this.dgv_Chitiethoadon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Chitiethoadon_CellClick);
+            this.dgv_Chitiethoadon.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgv_Chitiethoadon_DataError);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "tensp";
+            this.Column1.HeaderText = "Tên SP";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "loai";
+            this.Column2.HeaderText = "Loại";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "hang";
+            this.Column3.HeaderText = "Hãng";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "gia";
+            this.Column4.HeaderText = "Gía";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "soluong";
+            this.Column5.HeaderText = "Số Lượng";
+            this.Column5.Name = "Column5";
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "anh";
+            this.Column6.HeaderText = "Ảnh";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "ma";
+            this.Column7.HeaderText = "Mã SP";
+            this.Column7.Name = "Column7";
+            // 
             // frmNhapLinhKien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -583,7 +585,7 @@
             this.ClientSize = new System.Drawing.Size(901, 592);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmNhapLinhKien";
             this.Text = "frmNhapLinhKien";
             this.Load += new System.EventHandler(this.frmNhapLinhKien_Load);
