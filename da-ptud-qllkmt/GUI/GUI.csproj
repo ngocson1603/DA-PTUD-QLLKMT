@@ -283,6 +283,12 @@
     <Compile Include="frmAbout.Designer.cs">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBackup.Designer.cs">
+      <DependentUpon>frmBackup.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBanSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -475,6 +481,9 @@
     <EmbeddedResource Include="frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBackup.resx">
+      <DependentUpon>frmBackup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBanSanPham.resx">
       <DependentUpon>frmBanSanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -658,6 +667,8 @@
     <Content Include="Images\ban-phim-co-akko-3108-v2-world-tour-tokyo.jpg" />
     <Content Include="Images\intelcorei5-12600k.jpg" />
     <Content Include="Images\PSU_GG_GP-P1000GM-5.jpg" />
+    <None Include="Resources\backup1.png" />
+    <None Include="Resources\backup.png" />
     <None Include="Resources\order32.png" />
     <None Include="Resources\about31.png" />
     <None Include="Resources\1486485589-about-error-notification-help-info-information_81162.png" />

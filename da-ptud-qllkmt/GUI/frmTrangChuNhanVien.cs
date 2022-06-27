@@ -104,5 +104,11 @@ namespace GUI
             frmAbout frm = new frmAbout();
             frm.ShowDialog();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            frmBackup frm = new frmBackup();
+            frm.ShowDialog();
+        }
     }
 }

@@ -34,7 +34,9 @@
             this.lblxinchao = new System.Windows.Forms.Label();
             this.lblLogo = new System.Windows.Forms.Label();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.text_Effect1 = new GUI.UserControls.Text_Effect();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -46,7 +48,6 @@
             this.btnKhachHang = new System.Windows.Forms.Button();
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.btnSanPham = new System.Windows.Forms.Button();
-            this.text_Effect1 = new GUI.UserControls.Text_Effect();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
@@ -55,6 +56,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.button5);
             this.panelMenu.Controls.Add(this.button4);
             this.panelMenu.Controls.Add(this.button2);
             this.panelMenu.Controls.Add(this.button3);
@@ -70,7 +72,7 @@
             this.panelMenu.Location = new System.Drawing.Point(0, 68);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(165, 586);
+            this.panelMenu.Size = new System.Drawing.Size(165, 616);
             this.panelMenu.TabIndex = 6;
             // 
             // panelLogo
@@ -121,6 +123,19 @@
             this.panelTitleBar.Size = new System.Drawing.Size(1144, 68);
             this.panelTitleBar.TabIndex = 7;
             // 
+            // text_Effect1
+            // 
+            this.text_Effect1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.text_Effect1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_Effect1.ForeColor = System.Drawing.Color.Lime;
+            this.text_Effect1.Location = new System.Drawing.Point(165, 9);
+            this.text_Effect1.Name = "text_Effect1";
+            this.text_Effect1.Set_Speed = 5;
+            this.text_Effect1.Size = new System.Drawing.Size(360, 39);
+            this.text_Effect1.TabIndex = 2;
+            this.text_Effect1.Text = "Một ngày mới tốt lành";
+            this.text_Effect1.UseCompatibleTextRendering = true;
+            // 
             // panel2
             // 
             this.panel2.BackgroundImage = global::GUI.Properties.Resources._96_pc_gaming__1_;
@@ -129,8 +144,27 @@
             this.panel2.Location = new System.Drawing.Point(165, 68);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(979, 586);
+            this.panel2.Size = new System.Drawing.Size(979, 616);
             this.panel2.TabIndex = 8;
+            // 
+            // button5
+            // 
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button5.Image = global::GUI.Properties.Resources.backup1;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(0, 510);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
+            this.button5.Name = "button5";
+            this.button5.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.button5.Size = new System.Drawing.Size(165, 51);
+            this.button5.TabIndex = 14;
+            this.button5.Text = "Backup";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -214,7 +248,7 @@
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.Image = global::GUI.Properties.Resources.log_out_icon_icons_com_50106;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(2, 532);
+            this.button1.Location = new System.Drawing.Point(2, 562);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 43);
@@ -341,24 +375,11 @@
             this.btnSanPham.UseVisualStyleBackColor = true;
             this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click);
             // 
-            // text_Effect1
-            // 
-            this.text_Effect1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.text_Effect1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_Effect1.ForeColor = System.Drawing.Color.Lime;
-            this.text_Effect1.Location = new System.Drawing.Point(165, 9);
-            this.text_Effect1.Name = "text_Effect1";
-            this.text_Effect1.Set_Speed = 5;
-            this.text_Effect1.Size = new System.Drawing.Size(360, 39);
-            this.text_Effect1.TabIndex = 2;
-            this.text_Effect1.Text = "Một ngày mới tốt lành";
-            this.text_Effect1.UseCompatibleTextRendering = true;
-            // 
             // frmTrangChuNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1144, 654);
+            this.ClientSize = new System.Drawing.Size(1144, 684);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelTitleBar);
@@ -396,5 +417,6 @@
         public System.Windows.Forms.Button btn_NhapSP;
         public System.Windows.Forms.Button button3;
         private UserControls.Text_Effect text_Effect1;
+        private System.Windows.Forms.Button button5;
     }
 }
