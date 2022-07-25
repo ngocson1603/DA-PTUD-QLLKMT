@@ -51,9 +51,9 @@ namespace GUI
                 splashScreenManager1.ShowWaitForm();
                 Thread.Sleep(1000);
                 splashScreenManager1.CloseWaitForm();
-                frmTrangChuNhanVien frm = new frmTrangChuNhanVien();
+                frmTrangChuNhanVien1 frm = new frmTrangChuNhanVien1();
                 frm.Show();
-                frm.btn_NhapSP.Visible = true;
+                frm.btnNhap.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                 this.Hide();
             }
             else if (a == 1)
@@ -61,9 +61,9 @@ namespace GUI
                 splashScreenManager1.ShowWaitForm();
                 Thread.Sleep(1000);
                 splashScreenManager1.CloseWaitForm();
-                frmTrangChuNhanVien frm = new frmTrangChuNhanVien();
+                frmTrangChuNhanVien1 frm = new frmTrangChuNhanVien1();
                 frm.Show();
-                frm.btn_BanSP.Visible = true;
+                frm.btnXuat.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                 this.Hide();
             }
             else if (a == 4)
@@ -76,9 +76,9 @@ namespace GUI
                 splashScreenManager1.ShowWaitForm();
                 Thread.Sleep(1000);
                 splashScreenManager1.CloseWaitForm();
-                frmTrangChuNhanVien frm = new frmTrangChuNhanVien();
+                frmTrangChuNhanVien1 frm = new frmTrangChuNhanVien1();
                 frm.Show();
-                frm.button3.Visible = true;
+                frm.btnBaoHanh.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                 this.Hide();
             }
             else if (a == 6)
@@ -86,11 +86,11 @@ namespace GUI
                 splashScreenManager1.ShowWaitForm();
                 Thread.Sleep(1000);
                 splashScreenManager1.CloseWaitForm();
-                frmTrangChuNhanVien frm = new frmTrangChuNhanVien();
+                frmTrangChuNhanVien1 frm = new frmTrangChuNhanVien1();
                 frm.Show();
-                frm.button3.Visible = true;
-                frm.btn_BanSP.Visible = true;
-                frm.btn_NhapSP.Visible = true;
+                frm.btnNhap.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                frm.btnBaoHanh.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                frm.btnXuat.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                 this.Hide();
             }
             else

@@ -433,6 +433,12 @@
     <Compile Include="frmTrangChuNhanVien.Designer.cs">
       <DependentUpon>frmTrangChuNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTrangChuNhanVien1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTrangChuNhanVien1.Designer.cs">
+      <DependentUpon>frmTrangChuNhanVien1.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTuVanSuaChua.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -555,6 +561,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTrangChuNhanVien.resx">
       <DependentUpon>frmTrangChuNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTrangChuNhanVien1.resx">
+      <DependentUpon>frmTrangChuNhanVien1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTuVanSuaChua.resx">
       <DependentUpon>frmTuVanSuaChua.cs</DependentUpon>

@@ -26,9 +26,9 @@ namespace GUI
         public static DataGridView dgv;
         private void frmNhapLinhKien_Load(object sender, EventArgs e)
         {
-            //dgv_PhieuNhap.DataSource = bllpn.LoadPN();
+            dgv_PhieuNhap.DataSource = bllpn.LoadPN();
             //dgv_ChiTietPhieuNhap.DataSource = bllpn.LoadCTPN();
-            dgv_PhieuNhap.DataSource = bllpn.LoadPhieuNhapNV(int.Parse(frmTrangChuNhanVien.manv));
+            //dgv_PhieuNhap.DataSource = bllpn.LoadPhieuNhapNV(int.Parse(frmTrangChuNhanVien.manv));
             dgv_PhieuNhap.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight; 
             //dgv.Refresh();
             loaddata(frmQuanLySP.lstnhap);

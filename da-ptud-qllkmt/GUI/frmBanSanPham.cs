@@ -41,7 +41,7 @@ namespace GUI
         {
             dgv = dgv_Chitiethoadon;
             dgv_Chitiethoadon.Refresh();
-            dgv_HoaDon.DataSource = bllhoadon.LoadHoaDonNV(int.Parse(frmTrangChuNhanVien.manv));
+            dgv_HoaDon.DataSource = bllhoadon.LoadHoaDon();
             loaddata(UserControls.detailProduct.lstspb);
             dgv_Chitiethoadon.Refresh();
             if (dgv_Chitiethoadon.Rows.Count >= 0)
@@ -116,10 +116,8 @@ namespace GUI
 
             if (bllhoadon.postHD(cthdsp))
                 {
-                    dgv_HoaDon.DataSource = bllhoadon.LoadHoaDonNV(int.Parse(txt_MaNV.Text));
-                    int so = dgv_HoaDon.RowCount;
-                    dgv_HoaDon.CurrentCell = dgv_HoaDon[1, so-1];
-                    txt_MaHoaDon.Text = dgv_HoaDon.CurrentRow.Cells[0].Value.ToString();
+                    int ma = int.Parse(txt_MaNV.Text);
+                    txt_MaHoaDon.Text = bllhoadon.loadmacuoi(ma).ToString();
                     for (int x = 0; x < dgv_Chitiethoadon.Rows.Count; x++)
                     {
                         ThemCTHD cthd = new ThemCTHD()

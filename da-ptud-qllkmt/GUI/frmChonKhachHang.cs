@@ -56,8 +56,8 @@ namespace GUI
             ma = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
             MessageBox.Show("Đã thêm");
 
-            frmTrangChuNhanVien.pnltrang.Controls.Clear();
-            hp.motrangcon(new frmBanSanPham(), frmTrangChuNhanVien.pnltrang);
+            frmTrangChuNhanVien1.pnltrang.Controls.Clear();
+            hp.motrangcon(new frmBanSanPham(), frmTrangChuNhanVien1.pnltrang);
 
             this.Close();
         }
