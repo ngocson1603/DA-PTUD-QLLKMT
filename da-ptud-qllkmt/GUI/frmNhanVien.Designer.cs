@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btn_ClearNV = new System.Windows.Forms.ToolStripButton();
             this.btn_ThemNV = new System.Windows.Forms.ToolStripButton();
@@ -52,48 +51,32 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_TimKiem = new System.Windows.Forms.TextBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dgv_NhanVien = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rbtnNunv = new System.Windows.Forms.RadioButton();
             this.rbtnNamnv = new System.Windows.Forms.RadioButton();
-            this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolStrip1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.groupBox1.Controls.Add(this.toolStrip1);
-            this.groupBox1.Controls.Add(this.groupBox5);
-            this.groupBox1.Controls.Add(this.groupBox4);
-            this.groupBox1.Controls.Add(this.groupBox7);
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(870, 573);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin nhân viên";
             // 
             // toolStrip1
             // 
+            this.tableLayoutPanel1.SetColumnSpan(this.toolStrip1, 2);
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_ClearNV,
             this.btn_ThemNV,
             this.btn_SuaNV,
             this.btn_XoaNV});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 16);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(864, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1041, 25);
             this.toolStrip1.TabIndex = 32;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -103,7 +86,7 @@
             this.btn_ClearNV.Image = global::GUI.Properties.Resources.actions_edit_clear_15784;
             this.btn_ClearNV.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_ClearNV.Name = "btn_ClearNV";
-            this.btn_ClearNV.Size = new System.Drawing.Size(58, 24);
+            this.btn_ClearNV.Size = new System.Drawing.Size(58, 22);
             this.btn_ClearNV.Text = "Clear";
             // 
             // btn_ThemNV
@@ -112,7 +95,7 @@
             this.btn_ThemNV.Image = global::GUI.Properties.Resources.business_application_addmale_useradd_insert_add_user_client_2312;
             this.btn_ThemNV.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_ThemNV.Name = "btn_ThemNV";
-            this.btn_ThemNV.Size = new System.Drawing.Size(61, 24);
+            this.btn_ThemNV.Size = new System.Drawing.Size(61, 22);
             this.btn_ThemNV.Text = "Thêm";
             this.btn_ThemNV.Click += new System.EventHandler(this.btn_ThemNV_Click);
             // 
@@ -122,7 +105,7 @@
             this.btn_SuaNV.Image = global::GUI.Properties.Resources._3709743_assistance_fix_problem_service_trouble_108085;
             this.btn_SuaNV.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_SuaNV.Name = "btn_SuaNV";
-            this.btn_SuaNV.Size = new System.Drawing.Size(50, 24);
+            this.btn_SuaNV.Size = new System.Drawing.Size(50, 22);
             this.btn_SuaNV.Text = "Sửa";
             this.btn_SuaNV.Click += new System.EventHandler(this.btn_SuaNV_Click);
             // 
@@ -132,12 +115,13 @@
             this.btn_XoaNV.Image = global::GUI.Properties.Resources.flat_style_circle_delete_trash_icon_icons_com_66945;
             this.btn_XoaNV.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_XoaNV.Name = "btn_XoaNV";
-            this.btn_XoaNV.Size = new System.Drawing.Size(51, 24);
+            this.btn_XoaNV.Size = new System.Drawing.Size(51, 22);
             this.btn_XoaNV.Text = "Xóa";
             this.btn_XoaNV.Click += new System.EventHandler(this.btn_XoaNV_Click);
             // 
             // groupBox5
             // 
+            this.tableLayoutPanel1.SetColumnSpan(this.groupBox5, 2);
             this.groupBox5.Controls.Add(this.dateTime_Ngayvaolam);
             this.groupBox5.Controls.Add(this.label8);
             this.groupBox5.Controls.Add(this.txtchuvu);
@@ -152,11 +136,12 @@
             this.groupBox5.Controls.Add(this.label1);
             this.groupBox5.Controls.Add(this.dateTimeNgaysinhnv);
             this.groupBox5.Controls.Add(this.label4);
-            this.groupBox5.Location = new System.Drawing.Point(67, 106);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox5.Location = new System.Drawing.Point(2, 87);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox5.Size = new System.Drawing.Size(641, 164);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox5.Size = new System.Drawing.Size(1037, 210);
             this.groupBox5.TabIndex = 31;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Thông tin nhân viên:";
@@ -165,8 +150,8 @@
             // 
             this.dateTime_Ngayvaolam.CustomFormat = "dd/MM/yyyy";
             this.dateTime_Ngayvaolam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTime_Ngayvaolam.Location = new System.Drawing.Point(392, 64);
-            this.dateTime_Ngayvaolam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTime_Ngayvaolam.Location = new System.Drawing.Point(619, 69);
+            this.dateTime_Ngayvaolam.Margin = new System.Windows.Forms.Padding(2);
             this.dateTime_Ngayvaolam.Name = "dateTime_Ngayvaolam";
             this.dateTime_Ngayvaolam.Size = new System.Drawing.Size(189, 20);
             this.dateTime_Ngayvaolam.TabIndex = 30;
@@ -175,7 +160,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(310, 64);
+            this.label8.Location = new System.Drawing.Point(535, 69);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(72, 13);
             this.label8.TabIndex = 29;
@@ -190,7 +175,7 @@
             // 
             // txtDiachinv
             // 
-            this.txtDiachinv.Location = new System.Drawing.Point(392, 107);
+            this.txtDiachinv.Location = new System.Drawing.Point(619, 112);
             this.txtDiachinv.Name = "txtDiachinv";
             this.txtDiachinv.Size = new System.Drawing.Size(187, 20);
             this.txtDiachinv.TabIndex = 11;
@@ -199,7 +184,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(310, 37);
+            this.label5.Location = new System.Drawing.Point(535, 42);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 13);
             this.label5.TabIndex = 3;
@@ -244,7 +229,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(310, 107);
+            this.label6.Location = new System.Drawing.Point(535, 112);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 4;
@@ -252,7 +237,7 @@
             // 
             // txtHotennv
             // 
-            this.txtHotennv.Location = new System.Drawing.Point(392, 35);
+            this.txtHotennv.Location = new System.Drawing.Point(619, 39);
             this.txtHotennv.Name = "txtHotennv";
             this.txtHotennv.Size = new System.Drawing.Size(187, 20);
             this.txtHotennv.TabIndex = 10;
@@ -273,7 +258,7 @@
             this.dateTimeNgaysinhnv.CustomFormat = "dd/MM/yyyy";
             this.dateTimeNgaysinhnv.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimeNgaysinhnv.Location = new System.Drawing.Point(70, 64);
-            this.dateTimeNgaysinhnv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimeNgaysinhnv.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimeNgaysinhnv.Name = "dateTimeNgaysinhnv";
             this.dateTimeNgaysinhnv.Size = new System.Drawing.Size(189, 20);
             this.dateTimeNgaysinhnv.TabIndex = 26;
@@ -281,6 +266,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label4.Location = new System.Drawing.Point(5, 64);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 13);
@@ -289,13 +275,15 @@
             // 
             // groupBox4
             // 
+            this.tableLayoutPanel1.SetColumnSpan(this.groupBox4, 2);
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Controls.Add(this.txt_TimKiem);
-            this.groupBox4.Location = new System.Drawing.Point(67, 40);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(2, 27);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox4.Size = new System.Drawing.Size(513, 61);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Size = new System.Drawing.Size(1037, 56);
             this.groupBox4.TabIndex = 30;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Tim kiếm nhân viên";
@@ -314,48 +302,38 @@
             // txt_TimKiem
             // 
             this.txt_TimKiem.Location = new System.Drawing.Point(166, 17);
-            this.txt_TimKiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_TimKiem.Margin = new System.Windows.Forms.Padding(2);
             this.txt_TimKiem.Name = "txt_TimKiem";
             this.txt_TimKiem.Size = new System.Drawing.Size(194, 20);
             this.txt_TimKiem.TabIndex = 0;
             this.txt_TimKiem.TextChanged += new System.EventHandler(this.txt_TimKiem_TextChanged);
             // 
-            // groupBox7
-            // 
-            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox7.Controls.Add(this.dgv_NhanVien);
-            this.groupBox7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox7.Location = new System.Drawing.Point(40, 336);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(814, 191);
-            this.groupBox7.TabIndex = 15;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Danh sách nhân viên";
-            // 
             // dgv_NhanVien
             // 
             this.dgv_NhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_NhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableLayoutPanel1.SetColumnSpan(this.dgv_NhanVien, 2);
+            this.dgv_NhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_NhanVien.GridColor = System.Drawing.Color.Gray;
-            this.dgv_NhanVien.Location = new System.Drawing.Point(12, 18);
-            this.dgv_NhanVien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_NhanVien.Location = new System.Drawing.Point(2, 361);
+            this.dgv_NhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_NhanVien.Name = "dgv_NhanVien";
             this.dgv_NhanVien.RowTemplate.Height = 24;
-            this.dgv_NhanVien.Size = new System.Drawing.Size(797, 167);
+            this.dgv_NhanVien.Size = new System.Drawing.Size(1037, 210);
             this.dgv_NhanVien.TabIndex = 0;
             this.dgv_NhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_NhanVien_CellClick);
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel1.SetColumnSpan(this.groupBox2, 2);
             this.groupBox2.Controls.Add(this.rbtnNunv);
             this.groupBox2.Controls.Add(this.rbtnNamnv);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox2.Location = new System.Drawing.Point(74, 275);
+            this.groupBox2.Location = new System.Drawing.Point(3, 302);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(251, 54);
+            this.groupBox2.Size = new System.Drawing.Size(1035, 54);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Giới tính";
@@ -384,35 +362,56 @@
             this.rbtnNamnv.Text = "Nam";
             this.rbtnNamnv.UseVisualStyleBackColor = false;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.dgv_NhanVien, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.toolStrip1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox5, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox4, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1041, 573);
+            this.tableLayoutPanel1.TabIndex = 33;
+            // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(870, 573);
-            this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.ClientSize = new System.Drawing.Size(1041, 573);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmNhanVien";
             this.Text = "frmNhanVien";
             this.Load += new System.EventHandler(this.frmNhanVien_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btn_ClearNV;
         private System.Windows.Forms.ToolStripButton btn_ThemNV;
@@ -436,10 +435,10 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_TimKiem;
-        private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.DataGridView dgv_NhanVien;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton rbtnNunv;
         private System.Windows.Forms.RadioButton rbtnNamnv;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

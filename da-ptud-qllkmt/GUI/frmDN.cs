@@ -25,12 +25,12 @@ namespace GUI
 
         public static string taikhoan = "";
         public static string pass = "";
-        
-        private void gunardangnhap_Click(object sender, EventArgs e)
+
+        public void DangNhap()
         {
             int dem = 0;
-            
-            int a = dn.dangNhap(txtUserName.Text,txtPassWord.Text);
+
+            int a = dn.dangNhap(txtUserName.Text, txtPassWord.Text);
             taikhoan = txtUserName.Text;
             pass = txtPassWord.Text;
             if (txtUserName.Text.Length == 0 || txtPassWord.Text.Length == 0)
@@ -103,7 +103,12 @@ namespace GUI
                     Application.Exit();
                 }
             }
+        }
+        
+        private void gunardangnhap_Click(object sender, EventArgs e)
+        {
 
+            DangNhap();
             //else if (blldn.kiemtrakh(txtUserName.Text, txtPassWord.Text))
             //{
             //    splashScreenManager1.ShowWaitForm();
@@ -189,6 +194,14 @@ namespace GUI
         private void guna2PictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void gunardangnhap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                DangNhap();
+            }
         }
     }
 }

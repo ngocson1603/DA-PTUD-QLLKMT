@@ -121,6 +121,7 @@
             this.gunardangnhap.Text = "Đăng Nhập";
             this.gunardangnhap.UseTransparentBackground = true;
             this.gunardangnhap.Click += new System.EventHandler(this.gunardangnhap_Click);
+            this.gunardangnhap.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gunardangnhap_KeyDown);
             // 
             // label1
             // 
@@ -268,6 +269,7 @@
             // 
             // frmDN
             // 
+            this.AcceptButton = this.gunardangnhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(363, 475);
